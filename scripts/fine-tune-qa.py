@@ -32,7 +32,7 @@ gradient_checkpointing=True
 learning_rate=2.5e-5
 disable_tqdm=False
 packing=False
-train_data_perc=0.5
+train_data_perc=1
 
 
 def format_prompt(data:Dataset):
@@ -73,7 +73,6 @@ def load_model(model_dir:str,model_name:str):
             add_eos_token=add_eos_token, 
             add_bos_token=add_bos_token
         )
-        tokenizer.pad_token = tokenizer.eos_token
         # model.save_pretrained(model_path)
         # tokenizer.save_pretrained(model_path)
     else:
@@ -89,7 +88,6 @@ def load_model(model_dir:str,model_name:str):
             add_eos_token=add_eos_token, 
             add_bos_token=add_bos_token
         )
-        tokenizer.pad_token = tokenizer.eos_token
     return model, tokenizer
         
 def print_trainable_parameters(model:AutoModelForCausalLM):
