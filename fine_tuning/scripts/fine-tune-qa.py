@@ -106,7 +106,7 @@ def fine_tune(
     dataset = dataset.select(range(train_data_num))
     
     # Load the base model
-    model, tokenizer = load_model(base_model_dir, base_model_name)
+    model, tokenizer = load_model(base_model_name)
     
     # Define LoRA parameters
     peft_config = LoraConfig(
