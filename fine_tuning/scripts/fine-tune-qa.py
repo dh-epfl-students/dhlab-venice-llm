@@ -22,7 +22,7 @@ bnb_4bit_compute_dtype=torch.bfloat16
 padding_side="right"
 add_eos_token=True
 add_bos_token=True
-save_steps=1000
+save_steps=10000
 logging_steps=1000
 optimizer="paged_adamw_8bit"
 num_train_epochs=1
@@ -32,8 +32,6 @@ gradient_checkpointing=True
 learning_rate=2.5e-5
 disable_tqdm=False
 packing=False
-train_data_perc=1
-
 
 def format_prompt(data:Dataset):
     """Create custom prompt"""
@@ -49,7 +47,7 @@ If you don't know the answer, just say that you don't know, don't try to make up
         output_texts.append(text)
     return output_texts
 
-def load_model(model_dir:str,model_name:str):
+def load_model(model_name:str):
     """Load the base model and tokenizer"""
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=load_in_4bit,
@@ -59,36 +57,21 @@ def load_model(model_dir:str,model_name:str):
     )
     
     # Load Base Model and Tokenizer
-    model_path = Path(os.path.abspath(model_dir) + "/" + model_name)
-    if not model_path.is_dir():
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name, 
-            quantization_config=bnb_config, 
-            use_cache = False,
-            device_map="auto"
-        )
-        tokenizer = AutoTokenizer.from_pretrained(
-            model_name, 
-            padding_side=padding_side, 
-            add_eos_token=add_eos_token, 
-            add_bos_token=add_bos_token
-        )
-        # model.save_pretrained(model_path)
-        # tokenizer.save_pretrained(model_path)
-    else:
-        model = AutoModelForCausalLM.from_pretrained(
-            model_path, 
-            quantization_config=bnb_config, 
-            use_cache = False,
-            device_map="auto"
-        )
-        tokenizer = AutoTokenizer.from_pretrained(
-            model_path, 
-            padding_side=padding_side, 
-            add_eos_token=add_eos_token, 
-            add_bos_token=add_bos_token
-        )
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name, 
+        quantization_config=bnb_config, 
+        use_cache = False,
+        device_map="auto"
+    )
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name, 
+        padding_side=padding_side, 
+        add_eos_token=add_eos_token, 
+        add_bos_token=add_bos_token
+    )
+    tokenizer.pad_token = tokenizer.eos_token
     return model, tokenizer
+
         
 def print_trainable_parameters(model:AutoModelForCausalLM):
     """
@@ -106,15 +89,15 @@ def print_trainable_parameters(model:AutoModelForCausalLM):
     
 def fine_tune(
     base_model_name:str="meta-llama/Llama-2-7b-hf",
-    base_model_dir:str='models/base/',
-    final_model_dir:str='models/fine-tuned/',
-    data_path:str='data/train/train_qa.csv',
+    final_model_dir:str='../models/fine-tuned/',
+    data_path:str='../../data/train/train_qa.csv',
     lora_r=lora_r,
     num_train_epochs=num_train_epochs,
-    disable_tqdm=disable_tqdm
+    disable_tqdm=disable_tqdm,
+    train_data_perc=1
 ):
-    logging_dir = os.path.abspath(final_model_dir) + "/" + base_model_name  + "/logs"
-    output_dir = os.path.abspath(final_model_dir) + "/" + base_model_name  + "/checkpoints" 
+    logging_dir = final_model_dir + base_model_name  + "/logs"
+    output_dir = final_model_dir + base_model_name  + "/checkpoints" 
 
     # Load the dataset
     dataset = load_dataset("csv", data_files=os.path.abspath(data_path))['train']
@@ -166,7 +149,7 @@ def fine_tune(
     )
 
     trainer.train()
-    trainer.save_model(os.path.abspath(final_model_dir) + base_model_name)
+    trainer.save_model(final_model_dir + base_model_name)
     
 if __name__ == "__main__":
     from jsonargparse import CLI
