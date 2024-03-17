@@ -1,0 +1,61 @@
+level,category,question,answer
+0,0,"What is the family name of ""chiara"" who owns ""casa in 2 affittanze, porcion"" in ""corte nova""?",stella
+0,0,"What is the surname of ""alvise"" for the proprietorship of ""casa, per l'altra metà"" at ""in fondamenta appresso il ponte di ca' marcello""?",minoto
+0,0,"What is the last name of ""zuanne"" who possesses ""casa"" at ""calle de gobbi""?",loredan
+0,0,"Can you tell me the family name of ""zuanne"" for the ownership of ""bottegha da fruttarol serve per proprio uso"" situated in ""calle larga""?",corao
+0,0,"Who is the owner's last name with the first name of ""gerolamo"" for the property type ""casa"" located at ""calle di ca' boldù""?",fini
+0,1,"How much does ""zuane"" ""dona"" earn from their property ""casa"" in ""calle del sonzonio""?",35 ducati
+0,1,"How much income does ""marc'antonio"" ""mocenigo"" generate from the property labeled as ""casa a pepian"" in ""calle de longhi""?",8 ducati
+0,1,"What is the rental revenue collected by ""piero"" ""giusti"" from their ""procuratia"" in ""seconda corte nella procuratia""?",128 ducati
+0,1,"What is the earnings of ""domenico"" ""giovanelli"" from their property type ""casa a pepiano"" located in ""corte della vida""?",12 ducati
+0,1,"What is the amount of ducats ""cristofolo"" ""rossetti"" makes annually from the ""altro appartamento"" in ""calle dei botteri""?",40 ducati
+0,2,"What type of property does ""fausto"" ""da pase"" own in ""al ponticello della toletta""?",casa in soler
+0,2,"What type of property does ""daniela"" ""morosini"" possess at ""calle del magazen vechio""?",casa
+0,2,"What category of real estate does ""anibal"" ""fonte"" own in ""corte stella""?",magazen
+0,2,"What kind of property is owned by ""piero"" ""foscarini"" at ""sopra altra casa""?","casa, vuota"
+0,2,"What is the property classification owned by ""zuanne"" ""frascinetti"" in ""corte dell'anzolo""?",casa a pepiano
+0,3,"Where is the property ""magazen da oglio"" of ""filippo"" ""pasqualigo"" located?",corte tagliapietra
+0,3,"Where is the ""casa"" owned by ""zacaria"" ""valier"" situated?",corte nova
+0,3,"What is the location of ""alvise"" ""barbarigo""'s ""volta una""?",calle del isolotto sopra le scalle primo soler
+0,3,"Can you pinpoint the whereabouts of the property owned by ""pietro"" ""grimani luca"" with the type of ""bottegha da fenestrer""?",calle di christi
+0,3,"In which area is the property owned by ""marco"" ""dariva"" found, categorized as ""not given""?",calle del spezier
+0,4,"Who owns a property ""casetta"" in ""corte della malvasia"" with the family name of ""mora""?",elisabetta palatina mora
+0,4,"Who is the proprietor of a ""casetta a pepian"" in ""corte busella"" with the family name ""contini""?",regina contini
+0,4,"Who owns the property type ""casa"" in ""calle del zadio"" and bears the surname ""alberegno""?",bortolo alberegno
+0,4,"Can you identify the individual who possesses a property categorized as ""casa in solari con bottega da casseler"" in ""salizada"" with the last name ""renier ponte""?",polo renier ponte
+0,4,"What is the name of the owner with the family name ""sagredo"" for the property type ""magazen"" situated in ""calle de favri""?",zuanne sagredo
+1,0,"How many properties are owned by ""michiel"" ""morosini""?",126
+1,0,"How many properties does ""maria"" ""zane venier"" own?",9
+1,0,"What is the count of properties owned by ""domenico"" ""aldi""?",2
+1,0,"How many properties are under the ownership of ""pier alvise"" ""barbaro""?",6
+1,0,"What is the total number of properties owned by ""fiama"" ""fiorelli""?",2
+1,1,How many different property types are there in the dataset?,3231
+1,1,How many distinct property types are present in the dataset?,3231
+1,1,What is the count of unique property types in the dataset?,3231
+1,1,How many different categories of properties exist in the dataset?,3231
+1,1,What is the total number of distinct property types listed?,3231
+1,2,How many unique owners are there in the dataset?,6012
+1,2,How many unique owners are listed in the dataset?,6012
+1,2,What is the count of distinct owners in the dataset?,6012
+1,2,How many different owners are recorded in the dataset?,6012
+1,2,What is the total number of individual owners represented in the dataset?,6012
+1,3,"How many properties are located in ""corte del caparozolo""?",7
+1,3,"How many properties are situated in ""corte delle candelle e in terren alli gesouiti""?",1
+1,3,"What is the count of properties located in ""corte del figher""?",21
+1,3,"How many properties exist within ""calle del volto""?",29
+1,3,"What is the total number of properties found in ""sopra la lista alla colonna""?",23
+1,4,"How many properties are owned by owners with the first name ""pier'alvise""?",1
+1,4,"How many properties are owned by individuals with the first name ""cecilia""?",74
+1,4,"What is the count of properties owned by those with the given name ""carlo""?",155
+1,4,"How many properties are in possession of individuals named ""michiel""?",317
+1,4,"What is the total number of properties owned by those with the first name ""zuane""?",119
+1,5,"How many properties are owned by owners with the last name ""carli""?",14
+1,5,"How many properties are owned by individuals with the last name ""nani""?",98
+1,5,"What is the count of properties owned by individuals with the surname ""previani""?",1
+1,5,"How many properties are registered under individuals with the family name ""loredan""?",203
+1,5,"What is the total number of properties held by individuals sharing the last name ""pasqualigo""?",126
+1,6,"What properties does ""zuanne"" ""bragadin"" own and where are they located?","['calle del forno', 'in corte dei vechii vicin al campo', 'in campo in faccia della chiesa', 'in calle scaletta', 'calle dei frati', 'corte delle ancore', 'soler di sotto', 'calle del capitello']"
+1,6,"Where are the properties owned by ""anzola"" ""acquisti"" situated?",['riva del vin']
+1,6,"Can you list the locations where ""simon"" ""contarini"" possesses properties?","['calle dei bianchi', 'cale di ka tron', 'calle del spezier', 'campo de frari', 'corte delle scalle']"
+1,6,"Which locations are properties owned by ""paolo"" ""campagna"" found in?",['calle del spicier']
+1,6,"What are the locations of the properties owned by ""nicolo"" ""contarini""?","['fondamenta del bagatin', 'giù dal ponte bagatin', 'traghetto di muran', 'calle di san zuanne', 'corte della malvasia', 'calle per andar in campo san filippo e giacomo', 'in calle del dose vicin al campo', ""calle ca' dolfin"", 'crosera']"
