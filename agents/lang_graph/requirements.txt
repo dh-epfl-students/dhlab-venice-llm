@@ -1,0 +1,12 @@
+transformers
+torch
+jsonargparse
+accelerate
+langchain
+langchain-community
+notebook
+deepl
+rapidfuzz
+sentence_transformers
+geopy
+langgraph
