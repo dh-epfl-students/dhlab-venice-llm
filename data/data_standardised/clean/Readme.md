@@ -1,1 +1,0 @@
-Files with `.geojson` extension are for the use of map visualization and contain the same data as `.csv` files.

@@ -1,0 +1,4506 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-05-18T15:26:52Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/2173365",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "religion": "christian",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3328817,
+          45.4463708
+        ]
+      },
+      "id": "relation/2173365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/3433920",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello della Malvasia",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3497984,
+          45.4329065
+        ]
+      },
+      "id": "relation/3433920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/4207323",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Santa Margherita",
+        "surface": "sett",
+        "type": "multipolygon",
+        "wikidata": "Q2248913",
+        "wikipedia": "it:Campo Santa Margherita",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3234482,
+          45.434305
+        ]
+      },
+      "id": "relation/4207323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/4224254",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Sant'Anzolo",
+        "place": "square",
+        "type": "multipolygon",
+        "wikidata": "Q3654628",
+        "wikipedia": "it:Campo Sant'Angelo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3319525,
+          45.4342152
+        ]
+      },
+      "id": "relation/4224254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/6913641",
+        "alt_name": "Campo Zobenigo",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Santa Maria del Giglio",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3329024,
+          45.4324274
+        ]
+      },
+      "id": "relation/6913641"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932511",
+        "alt_name": "Campo di San Zaccaria",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Zaccaria",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3431064,
+          45.4345951
+        ]
+      },
+      "id": "relation/7932511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932512",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Piazza San Marco",
+        "name:de": "Markusplatz",
+        "name:en": "St. Mark's Square",
+        "name:fr": "Place Saint-Marc",
+        "name:it": "Piazza San Marco",
+        "name:pt": "Praça de São Marcos",
+        "name:ru": "Площадь Сан Марко",
+        "surface": "paving_stones",
+        "tourism": "attraction",
+        "type": "multipolygon",
+        "wheelchair": "yes",
+        "wikidata": "Q217527",
+        "wikipedia": "it:Piazza San Marco",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3385068,
+          45.4342611
+        ]
+      },
+      "id": "relation/7932512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932554",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Piazzetta San Marco",
+        "name:de": "Kleiner Markusplatz",
+        "name:it": "Piazzetta San Marco",
+        "name:ja": "サン・マルコ広場",
+        "name:ko": "산 마르코 광장",
+        "name:ru": "Площадь Сан Марко",
+        "name:zh": "圣马可广场",
+        "surface": "paving_stones",
+        "tourism": "attraction",
+        "type": "multipolygon",
+        "wheelchair": "yes",
+        "wikidata": "Q10510932",
+        "wikimedia_commons": "Category:Piazzetta San Marco (Venice)",
+        "wikipedia": "it:Piazzetta San Marco",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3396096,
+          45.4337604
+        ]
+      },
+      "id": "relation/7932554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932576",
+        "alt_name": "Campo San Zanipolo",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Santi Giovanni e Paolo",
+        "place": "square",
+        "surface": "paving_stones",
+        "tourism": "yes",
+        "type": "multipolygon",
+        "wikidata": "Q3654630",
+        "wikipedia": "it:Campo Santi Giovanni e Paolo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3416758,
+          45.4392211
+        ]
+      },
+      "id": "relation/7932576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932730",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Fondamenta Santa Lucia",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3213378,
+          45.4407746
+        ]
+      },
+      "id": "relation/7932730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7932799",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Riva degli Schiavoni",
+        "name:de": "Ufer der Slawen",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3433257,
+          45.4338887
+        ]
+      },
+      "id": "relation/7932799"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7933074",
+        "alt_name": "Campo San Bartolomio",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Bartolomeo",
+        "surface": "paving_stones",
+        "tourism": "yes",
+        "type": "multipolygon",
+        "visible_name": "CAMPO S. BARTOLOMIO",
+        "wikidata": "Q3654613",
+        "wikipedia": "it:Campo San Bartolomeo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3368573,
+          45.4376819
+        ]
+      },
+      "id": "relation/7933074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7933096",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo San Salvador",
+        "type": "multipolygon",
+        "visible_name": "CAMPO S. SALVADOR",
+        "wikipedia": "it:Campo San Salvador",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3361501,
+          45.43688
+        ]
+      },
+      "id": "relation/7933096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7933178",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Maurizio",
+        "place": "square",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikidata": "Q3654619",
+        "wikipedia": "it:Campo San Maurizio",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.331588,
+          45.4328103
+        ]
+      },
+      "id": "relation/7933178"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7933179",
+        "alt_name": "Campo Morosini",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Santo Stefano",
+        "place": "square",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikidata": "Q3654631",
+        "wikipedia": "it:Campo Santo Stefano",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3302134,
+          45.4330928
+        ]
+      },
+      "id": "relation/7933179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7933188",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Samuele",
+        "place": "square",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3278968,
+          45.433487
+        ]
+      },
+      "id": "relation/7933188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7936359",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Giuseppe",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3569087,
+          45.4300804
+        ]
+      },
+      "id": "relation/7936359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7937290",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de l'Arsenal",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3498727,
+          45.4345615
+        ]
+      },
+      "id": "relation/7937290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7937551",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de Santa Giustina",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3461005,
+          45.4380393
+        ]
+      },
+      "id": "relation/7937551"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7938264",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo San Marcuola",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3286849,
+          45.4427031
+        ]
+      },
+      "id": "relation/7938264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7938265",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Zan Degolà",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3276788,
+          45.4415183
+        ]
+      },
+      "id": "relation/7938265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7940005",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo San Vidal",
+        "place": "square",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.329422,
+          45.4321966
+        ]
+      },
+      "id": "relation/7940005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7940215",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de la Salute",
+        "name:ko": "캄포 델라 살루테",
+        "surface": "paving_stones",
+        "svg:bezier": "no",
+        "type": "multipolygon",
+        "visible_name": "CAMPO DELLA SALUTE",
+        "wikipedia": "it:Campo della Salute",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3349515,
+          45.4306491
+        ]
+      },
+      "id": "relation/7940215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7940356",
+        "highway": "pedestrian",
+        "name": "Campiello Barbaro",
+        "source": "knowledge;Bing",
+        "source:date": "2017",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.332246,
+          45.4304544
+        ]
+      },
+      "id": "relation/7940356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7940395",
+        "highway": "pedestrian",
+        "name": "Corte del Sabion",
+        "source": "knowledge;Bing",
+        "source:date": "2017",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3311699,
+          45.430005
+        ]
+      },
+      "id": "relation/7940395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7941605",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de la Maddalena",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3311462,
+          45.4431192
+        ]
+      },
+      "id": "relation/7941605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7942669",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Santa Maria Formosa",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikidata": "Q3654629",
+        "wikipedia": "it:Campo Santa Maria Formosa",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.341037,
+          45.4372965
+        ]
+      },
+      "id": "relation/7942669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7944333",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Vio",
+        "type": "multipolygon",
+        "wikipedia": "it:Campo San Vio",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3301799,
+          45.4307831
+        ]
+      },
+      "id": "relation/7944333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7944415",
+        "alt_name": "Campo San Giacomo di Rialto",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Giacomo",
+        "type": "multipolygon",
+        "wikidata": "Q19691569",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3352369,
+          45.4386849
+        ]
+      },
+      "id": "relation/7944415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7944517",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte del Teatro",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3348925,
+          45.4363699
+        ]
+      },
+      "id": "relation/7944517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7944540",
+        "highway": "pedestrian",
+        "name": "Campo Santa Sofia",
+        "type": "multipolygon",
+        "wikidata": "Q56514108",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3347383,
+          45.4406467
+        ]
+      },
+      "id": "relation/7944540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7944740",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo San Marziale",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.332734,
+          45.4437402
+        ]
+      },
+      "id": "relation/7944740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7945450",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello de la Scuola",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3256837,
+          45.4447084
+        ]
+      },
+      "id": "relation/7945450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7945649",
+        "alt_name": "Campo San Simeon Grande",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Simon Grando",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3240477,
+          45.4410881
+        ]
+      },
+      "id": "relation/7945649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7948886",
+        "alt_name": "Campiello San Giovanni Grisostomo",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Giovanni Grisostomo",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3372687,
+          45.4393188
+        ]
+      },
+      "id": "relation/7948886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7948890",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte del Tintor",
+        "type": "multipolygon",
+        "visible_name": "CORTE DEL TENTOR",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3373131,
+          45.4381687
+        ]
+      },
+      "id": "relation/7948890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949134",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello del Vin",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.342503,
+          45.4343989
+        ]
+      },
+      "id": "relation/7949134"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949135",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte Bollani",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.345393,
+          45.4349225
+        ]
+      },
+      "id": "relation/7949135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949230",
+        "alt_name": "Campo de la Bragora",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Bandiera e Moro",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikidata": "Q56627862",
+        "wikipedia": "it:Campo Bandiera e Moro",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3466516,
+          45.434605
+        ]
+      },
+      "id": "relation/7949230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949231",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello del Piovan",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3469645,
+          45.4341196
+        ]
+      },
+      "id": "relation/7949231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949552",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "horse": "no",
+        "name": "Corte Soranzo",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3481364,
+          45.4355848
+        ]
+      },
+      "id": "relation/7949552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949560",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Do Pozzi",
+        "surface": "sett",
+        "type": "multipolygon",
+        "visible_name": "CAMPO DO POZZI",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3485656,
+          45.4361239
+        ]
+      },
+      "id": "relation/7949560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949576",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo de le Gorne",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3491799,
+          45.4356281
+        ]
+      },
+      "id": "relation/7949576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949589",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Santa Ternita",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3487332,
+          45.4372742
+        ]
+      },
+      "id": "relation/7949589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949778",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de la Chiesa",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3474567,
+          45.4378686
+        ]
+      },
+      "id": "relation/7949778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949785",
+        "alt_name": "Campo de Santa Giustina;Campo de Barbaria",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de Santa Giustina detto de Barbaria",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.345294,
+          45.4384584
+        ]
+      },
+      "id": "relation/7949785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7949929",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Lorenzo",
+        "surface": "sett",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3448987,
+          45.4371544
+        ]
+      },
+      "id": "relation/7949929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950122",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Canzian",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3383358,
+          45.440155
+        ]
+      },
+      "id": "relation/7950122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950123",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campiello Bruno Crovato",
+        "old_name": "Campiello San Canzian",
+        "surface": "sett",
+        "type": "multipolygon",
+        "visible_name": "CAMPIELLO BRUNO CROVATO GIA' S. CANZIAN",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3385939,
+          45.43988
+        ]
+      },
+      "id": "relation/7950123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950124",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello Santa Maria Nova",
+        "type": "multipolygon",
+        "visible_name": "CAMPIELLO S. MARIA NOVA",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3386135,
+          45.4396637
+        ]
+      },
+      "id": "relation/7950124"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950128",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo drio la Chiesa",
+        "type": "multipolygon",
+        "visible_name": "CAMPO DRIO LA CHIESA",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3370728,
+          45.440507
+        ]
+      },
+      "id": "relation/7950128"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950129",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Santi Apostoli",
+        "type": "multipolygon",
+        "visible_name": "CAMPO S.S. APOSTOLI",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3365278,
+          45.440382
+        ]
+      },
+      "id": "relation/7950129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950130",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3362882,
+          45.4419575
+        ]
+      },
+      "id": "relation/7950130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950131",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo de le Erbe",
+        "type": "multipolygon",
+        "visible_name": "CAMPO DE LE ERBE",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3352127,
+          45.4422347
+        ]
+      },
+      "id": "relation/7950131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950155",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte de le Candele",
+        "type": "multipolygon",
+        "visible_name": "CORTE DE LE CANDELE",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3378917,
+          45.4431702
+        ]
+      },
+      "id": "relation/7950155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950158",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Leonardo",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3268312,
+          45.4435712
+        ]
+      },
+      "id": "relation/7950158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950201",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo dei Gesuiti",
+        "surface": "sett",
+        "type": "multipolygon",
+        "wikipedia": "it:Campo dei Gesuiti",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3384704,
+          45.4431116
+        ]
+      },
+      "id": "relation/7950201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950208",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo de Gheto Novo",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3268873,
+          45.4453254
+        ]
+      },
+      "id": "relation/7950208"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7950213",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Geremia",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikipedia": "it:Campo San Geremia",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.32495,
+          45.4429576
+        ]
+      },
+      "id": "relation/7950213"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7951858",
+        "alt_name": "Campo San Giacomo da l'Orio",
+        "bicycle": "no",
+        "foot": "yes",
+        "highway": "pedestrian",
+        "name": "Campo San Giacomo dall'Orio",
+        "svg:bezier": "no",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3275643,
+          45.4400409
+        ]
+      },
+      "id": "relation/7951858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7951878",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campiello del Piovan",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3273433,
+          45.4402858
+        ]
+      },
+      "id": "relation/7951878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7951884",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo de le Strope",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3264994,
+          45.4394409
+        ]
+      },
+      "id": "relation/7951884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7952020",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Sant'Agostin",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3283991,
+          45.4387763
+        ]
+      },
+      "id": "relation/7952020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7952024",
+        "highway": "pedestrian",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3269519,
+          45.4379471
+        ]
+      },
+      "id": "relation/7952024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7952027",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo dei Frari",
+        "surface": "paving_stones",
+        "svg:bezier": "no",
+        "tourism": "yes",
+        "type": "multipolygon",
+        "wikipedia": "it:Campo dei Frari",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.326855,
+          45.4369109
+        ]
+      },
+      "id": "relation/7952027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7953107",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Ruga",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3571991,
+          45.4337649
+        ]
+      },
+      "id": "relation/7953107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7953136",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Corte del Bianco",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.357731,
+          45.4330565
+        ]
+      },
+      "id": "relation/7953136"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7953243",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Sant'Agnese",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3279756,
+          45.4296683
+        ]
+      },
+      "id": "relation/7953243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7966573",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte dell'Albero",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3308054,
+          45.4351018
+        ]
+      },
+      "id": "relation/7966573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7966615",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo San Beneto",
+        "type": "multipolygon",
+        "wikidata": "Q116473885",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.332436,
+          45.4355436
+        ]
+      },
+      "id": "relation/7966615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7966616",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Daniele Manin",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "wikipedia": "it:Campo Manin",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3342529,
+          45.435338
+        ]
+      },
+      "id": "relation/7966616"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7966671",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello del Remer",
+        "type": "multipolygon",
+        "visible_name": "CAMPIELLO DEL REMER",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3363189,
+          45.4394111
+        ]
+      },
+      "id": "relation/7966671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7997424",
+        "highway": "pedestrian",
+        "name": "Corte dei Preti",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3248655,
+          45.4362527
+        ]
+      },
+      "id": "relation/7997424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/8113204",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo della Guerra",
+        "type": "multipolygon",
+        "wikidata": "Q115955645",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3390051,
+          45.43605
+        ]
+      },
+      "id": "relation/8113204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/11701518",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Corte Rubbi",
+        "type": "multipolygon",
+        "visible_name": "CORTE RUBBI",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3380699,
+          45.4367189
+        ]
+      },
+      "id": "relation/11701518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13624650",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campiello de la Cason",
+        "name:it": "Campiello della Cason",
+        "type": "multipolygon",
+        "visible_name": "CAMPIELLO DE LA CASON",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3377675,
+          45.4405121
+        ]
+      },
+      "id": "relation/13624650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13624670",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Fondamenta dei Arsenalotti",
+        "surface": "paving_stones",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3499261,
+          45.4341564
+        ]
+      },
+      "id": "relation/13624670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13938879",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Santa Marina",
+        "type": "multipolygon",
+        "visible_name": "CAMPO S. MARINA",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3393134,
+          45.4384477
+        ]
+      },
+      "id": "relation/13938879"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/15080716",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Salizada San Lio",
+        "surface": "sett",
+        "type": "associatedStreet",
+        "wikidata": "Q115978682",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3391842,
+          45.4370689
+        ]
+      },
+      "id": "relation/15080716"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/56054567",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2024-02-01",
+        "denomination": "catholic",
+        "name": "Sant'Andrea della Zirada",
+        "religion": "christian",
+        "start_date": "1331",
+        "wheelchair": "limited",
+        "wikidata": "Q3672485",
+        "wikipedia": "it:Chiesa di Sant'Andrea della Zirada",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3162458,
+          45.4382582
+        ]
+      },
+      "id": "way/56054567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/104686433",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Trovaso",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "limited",
+        "wikidata": "Q1129555",
+        "wikimedia_commons": "Category:Church of San Trovaso (Venice)",
+        "wikipedia": "de:San Trovaso",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3260101,
+          45.4307889
+        ]
+      },
+      "id": "way/104686433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/118714648",
+        "alt_name": "Santa Maria del Rosario;Chiesa dei Gesuati",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Santa Maria del Rosario",
+        "name:it": "Santa Maria del Rosario (Gesuati)",
+        "name:lt": "Bažnyčia Džezuati",
+        "name:uk": "Церква Джезуаті",
+        "opening_hours": "Mo-Sa 10:30-16:30",
+        "religion": "christian",
+        "tourism": "attraction",
+        "website": "https://www.chorusvenezia.org/chiesa-di-santa-maria-del-rosario-gesuati",
+        "wheelchair": "no",
+        "wikidata": "Q1093909",
+        "wikimedia_commons": "Category:Gesuati (Venice)",
+        "wikipedia": "de:Santa Maria del Rosario",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3273265,
+          45.4295363
+        ]
+      },
+      "id": "way/118714648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800353",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:colour": "white",
+        "building:material": "plaster",
+        "denomination": "catholic",
+        "height": "29",
+        "name": "Chiesa di San Salvador",
+        "name:es": "Iglesia de San Salvador",
+        "name:fr": "Église San Salvador",
+        "name:he": "כנסיית סן סלבדור",
+        "name:pl": "Kościół San Salvador",
+        "name:pt": "Igreja de San Salvador",
+        "name:sk": "Kostol San Salvador",
+        "name:vec": "Céxa de San Salvador",
+        "name:zh": "圣救主堂",
+        "religion": "christian",
+        "roof:colour": "#BD492F",
+        "roof:height": "6",
+        "roof:material": "roof_tiles",
+        "start_date": "1534",
+        "wikidata": "Q1028202",
+        "wikipedia": "it:Chiesa di San Salvador",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3365371,
+          45.4366863
+        ]
+      },
+      "id": "way/138800353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800410",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Gregorio",
+        "religion": "christian",
+        "wikidata": "Q3670710",
+        "wikimedia_commons": "Category:San Gregorio (Venice)",
+        "wikipedia": "it:Chiesa di San Gregorio (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3339581,
+          45.4306666
+        ]
+      },
+      "id": "way/138800410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800508",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "loc_name": "San Giacometto",
+        "name": "Chiesa di San Giacomo Apostolo",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q922677",
+        "wikipedia": "it:Chiesa di San Giacomo di Rialto",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3354734,
+          45.4385041
+        ]
+      },
+      "id": "way/138800508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800554",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Luca",
+        "religion": "christian",
+        "start_date": "1617",
+        "wikidata": "Q3585362",
+        "wikimedia_commons": "Category:San Luca (Venice)",
+        "wikipedia": "it:Chiesa di San Luca (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3337817,
+          45.4357547
+        ]
+      },
+      "id": "way/138800554"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800730",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Basilica di San Pietro di Castello",
+        "name:uk": "Церква Сан-П'єтро ді Кастелло",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "no",
+        "wikidata": "Q945981",
+        "wikimedia_commons": "Category:San Pietro di Castello (Venice)",
+        "wikipedia": "it:Basilica di San Pietro di Castello",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3598627,
+          45.4345413
+        ]
+      },
+      "id": "way/138800730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800835",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "lutheran",
+        "height": "18",
+        "name": "Scuola dell'Angelo custode",
+        "religion": "christian",
+        "roof:height": "2",
+        "roof:material": "roof_tiles",
+        "roof:shape": "hipped",
+        "wheelchair": "no",
+        "wikidata": "Q55599854",
+        "wikimedia_commons": "Category:Scola dell'Angelo Custode (Venice)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3363048,
+          45.4401811
+        ]
+      },
+      "id": "way/138800835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800840",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "email": "info@chorusvenezia.org",
+        "name": "Chiesa di Santa Maria dei Miracoli",
+        "name:uk": "Церква Санта-Марія деї Міраколі",
+        "opening_hours": "Mo-Sa 10:30-16:30",
+        "religion": "christian",
+        "style": "renaissance",
+        "tourism": "attraction",
+        "wikidata": "Q533680",
+        "wikipedia": "it:Chiesa di Santa Maria dei Miracoli (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3392413,
+          45.4395029
+        ]
+      },
+      "id": "way/138800840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800932",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2023-08-25",
+        "denomination": "catholic",
+        "ele": "0.3",
+        "height": "13",
+        "importance": "international",
+        "name": "Basilica di San Marco",
+        "name:cs": "Bazilika svatého Marka",
+        "name:da": "Markuskirken",
+        "name:de": "Markusdom",
+        "name:en": "St Mark's Basilica",
+        "name:es": "Basílica de San Marcos",
+        "name:hu": "Szent Márk székesegyház",
+        "name:it": "Basilica di San Marco",
+        "name:ja": "サン・マルコ寺院",
+        "name:ko": "산 마르코 대성당",
+        "name:lt": "Šv. Morkaus bazilika",
+        "name:pl": "Bazylika św. Marka",
+        "name:ru": "Базилика Сан Марко",
+        "name:uk": "Собор святого Марка",
+        "name:zh": "圣马可大教堂",
+        "opening_hours": "Oct 29-Apr 15,Apr 16-Oct 27 Mo-Sa 09:30-17:00; Oct 29-Apr 15 Su 14:00-16:30; Apr 16-Oct 27 Su 14:00-17:00",
+        "religion": "christian",
+        "tourism": "attraction",
+        "url": "http://www.basilicasanmarco.it/",
+        "wheelchair": "limited",
+        "wikidata": "Q172988",
+        "wikimedia_commons": "Category:St. Mark's Basilica (Venice)",
+        "wikipedia": "it:Basilica di San Marco",
+        "wikipedia:en": "St Mark's Basilica",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3398366,
+          45.4345551
+        ]
+      },
+      "id": "way/138800932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138800998",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Santa Maria del Giglio o Zobenigo",
+        "name:it": "Santa Maria del Giglio o Zobenigo",
+        "name:zh": "百合圣母教堂",
+        "religion": "christian",
+        "wikidata": "Q220811",
+        "wikipedia": "de:Santa Maria Zobenigo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3327977,
+          45.4326004
+        ]
+      },
+      "id": "way/138800998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801057",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Bartolomeo",
+        "religion": "christian",
+        "roof:colour": "#BD492F",
+        "roof:material": "roof_tiles",
+        "wikidata": "Q1648609",
+        "wikimedia_commons": "Category:San Bartolomeo (Venice)",
+        "wikipedia": "it:Chiesa di San Bartolomeo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3364533,
+          45.437545
+        ]
+      },
+      "id": "way/138801057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801077",
+        "addr:housenumber": "3790",
+        "addr:place": "Castello",
+        "addr:postcode": "30122",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giovanni in Bragora",
+        "religion": "christian",
+        "start_date": "1505",
+        "wheelchair": "limited",
+        "wikidata": "Q521260",
+        "wikimedia_commons": "Category:San Giovanni in Bragora (Venice)",
+        "wikipedia": "it:Chiesa di San Giovanni in Bragora",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3469876,
+          45.4343511
+        ]
+      },
+      "id": "way/138801077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801086",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Sofia",
+        "religion": "christian",
+        "start_date": "1534",
+        "wikidata": "Q3585442",
+        "wikimedia_commons": "Category:Santa Sofia (Venice)",
+        "wikipedia": "it:Chiesa di Santa Sofia (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3350413,
+          45.4410353
+        ]
+      },
+      "id": "way/138801086"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801138",
+        "alt_name": "Santa Maria dei Derelitti",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa dell'Ospedaletto",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q3668820",
+        "wikimedia_commons": "Category:Santa Maria dei Derelitti (Venice)",
+        "wikipedia": "it:Chiesa dell'Ospedaletto",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.342901,
+          45.4389176
+        ]
+      },
+      "id": "way/138801138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801285",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Sant' Aponal",
+        "religion": "christian",
+        "wikidata": "Q1403387",
+        "wikimedia_commons": "Category:Sant'Aponal (Venice)",
+        "wikipedia": "en:Sant'Aponal",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3326011,
+          45.4379655
+        ]
+      },
+      "id": "way/138801285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801433",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Felice",
+        "religion": "christian",
+        "start_date": "1531",
+        "wheelchair": "no",
+        "wikidata": "Q3585332",
+        "wikipedia": "it:Chiesa di San Felice (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.333346,
+          45.441794
+        ]
+      },
+      "id": "way/138801433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801509",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2024-04-12",
+        "denomination": "catholic",
+        "height": "18",
+        "name": "Santa Maria della Salute",
+        "name:he": "סנטה מריה דלה סאלוטה",
+        "name:it": "Santa Maria della Salute",
+        "name:ko": "산타 마리아 델라 살루테 성당",
+        "name:uk": "Собор Санта-Марія делла Салюте",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "no",
+        "wikidata": "Q52531",
+        "wikipedia": "de:Santa Maria della Salute",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3347226,
+          45.4305667
+        ]
+      },
+      "id": "way/138801509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801532",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Santa Maria del Pianto",
+        "religion": "christian",
+        "wikidata": "Q3673752",
+        "wikimedia_commons": "Category:Santa Maria del Pianto (Venice)",
+        "wikipedia": "en:Santa Maria del Pianto, Venice",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3453738,
+          45.4398447
+        ]
+      },
+      "id": "way/138801532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801661",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "greek_orthodox",
+        "name": "Chiesa di San Giorgio dei Greci",
+        "name:he": "סן ג'ורג'ו דיי גרקי",
+        "name:uk": "Церква Сан-Джорджо дей Гречі",
+        "religion": "christian",
+        "wikidata": "Q1784082",
+        "wikipedia": "it:Chiesa di San Giorgio dei Greci",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3448288,
+          45.4354268
+        ]
+      },
+      "id": "way/138801661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138801674",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2024-02-08",
+        "denomination": "roman_catholic",
+        "name": "Chiesa dei Santi Apostoli",
+        "religion": "christian",
+        "start_date": "1021",
+        "wheelchair": "yes",
+        "wikidata": "Q2717786",
+        "wikipedia": "it:Chiesa dei Santi Apostoli (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3367424,
+          45.44051
+        ]
+      },
+      "id": "way/138801674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138802078",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Zulian",
+        "name:fr": "Église San Zulian",
+        "name:vec": "Céxa de San Zulian",
+        "name:zh": "圣儒利安堂",
+        "note": "per la facciata e i lati usata la pianta \"Le chiese di Venezia: l'arte e la storia\" p 294",
+        "religion": "christian",
+        "wikidata": "Q1251035",
+        "wikipedia": "de:San Zulian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3386363,
+          45.4358076
+        ]
+      },
+      "id": "way/138802078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138802170",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "historic": "church",
+        "name": "Chiesa di San Lazzaro dei Mendicanti",
+        "opening_hours": "Mo-Su 10:00-17:00; PH closed",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q3585357",
+        "wikimedia_commons": "Category:San Lazzaro dei Mendicanti (Venice)",
+        "wikipedia": "it:Chiesa di San Lazzaro dei Mendicanti",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3426397,
+          45.4411855
+        ]
+      },
+      "id": "way/138802170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138802284",
+        "amenity": "place_of_worship",
+        "building": "chapel",
+        "building:levels": "1",
+        "denomination": "catholic",
+        "name": "Oratorio della Beata Vergine Addolorata",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3452037,
+          45.4382583
+        ]
+      },
+      "id": "way/138802284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803200",
+        "addr:city": "Venezia",
+        "addr:country": "IT",
+        "addr:place": "San Marco",
+        "addr:postcode": "30124",
+        "addr:street": "Campo San Fantin",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Fantin",
+        "religion": "christian",
+        "wikidata": "Q1407670",
+        "wikimedia_commons": "Category:San Fantin (Venice)",
+        "wikipedia": "it:Chiesa di San Fantin",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3342694,
+          45.4338736
+        ]
+      },
+      "id": "way/138803200"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803207",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:material": "plaster",
+        "denomination": "roman_catholic",
+        "name": "Chiesa di San Canciano",
+        "religion": "christian",
+        "roof:colour": "maroon",
+        "roof:material": "roof_tiles",
+        "wikidata": "Q1400212",
+        "wikimedia_commons": "Category:San Canciano (Venezia)",
+        "wikipedia": "it:Chiesa di San Canciano",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3386275,
+          45.4401082
+        ]
+      },
+      "id": "way/138803207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803212",
+        "alt_name": "Chiesa di San Biagio dei Marinai",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "5",
+        "denomination": "catholic",
+        "name": "Ex Chiesa di San Biagio",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q533409",
+        "wikimedia_commons": "Category:San Biagio (Venice)",
+        "wikipedia": "it:Chiesa di San Biagio (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3502761,
+          45.4325039
+        ]
+      },
+      "id": "way/138803212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803218",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Lio",
+        "religion": "christian",
+        "wikidata": "Q647427",
+        "wikipedia": "it:Chiesa di San Lio",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.338574,
+          45.4375615
+        ]
+      },
+      "id": "way/138803218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803298",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Maria della Pieta",
+        "religion": "christian",
+        "wikidata": "Q1559661",
+        "wikimedia_commons": "Category:Chiesa della Pietà (Venice)",
+        "wikipedia": "it:Chiesa della Pietà (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3449503,
+          45.4341899
+        ]
+      },
+      "id": "way/138803298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803318",
+        "alt_name": "La Fava",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Maria della Consolazione",
+        "religion": "christian",
+        "wikidata": "Q3585434",
+        "wikimedia_commons": "Category:Santa Maria della Fava (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria della Fava",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3383016,
+          45.4369322
+        ]
+      },
+      "id": "way/138803318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803603",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Silvestro",
+        "religion": "christian",
+        "start_date": "1843",
+        "wheelchair": "limited",
+        "wikidata": "Q3585383",
+        "wikimedia_commons": "Category:San Silvestro (Venice)",
+        "wikipedia": "it:Chiesa di San Silvestro (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3334165,
+          45.437441
+        ]
+      },
+      "id": "way/138803603"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803652",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Martino Vescovo",
+        "religion": "christian",
+        "source": "survey",
+        "wheelchair": "limited",
+        "wikidata": "Q980366",
+        "wikimedia_commons": "Category:San Martino (Venice)",
+        "wikipedia": "it:Chiesa di San Martino (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3489937,
+          45.4345834
+        ]
+      },
+      "id": "way/138803652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803921",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "loc_name": "Gesuiti",
+        "name": "Chiesa di Santa Maria Assunta",
+        "name:fr": "Église Santa Maria Assunta de Venise",
+        "religion": "christian",
+        "wikidata": "Q46592",
+        "wikipedia": "it:Chiesa di Santa Maria Assunta detta I Gesuiti",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3391425,
+          45.4433295
+        ]
+      },
+      "id": "way/138803921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138803936",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giuseppe di Castello",
+        "religion": "christian",
+        "start_date": "1543",
+        "wheelchair": "no",
+        "wikidata": "Q938556",
+        "wikimedia_commons": "Category:San Giuseppe di Castello (Venice)",
+        "wikipedia": "it:Chiesa di San Giuseppe di Castello",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3574179,
+          45.4305926
+        ]
+      },
+      "id": "way/138803936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138804072",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Moisè",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "limited",
+        "wikidata": "Q1068131",
+        "wikipedia": "de:San Moisè",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3361511,
+          45.4330896
+        ]
+      },
+      "id": "way/138804072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138804284",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:colour": "#835445",
+        "building:material": "plaster",
+        "check_date": "2024-04-14",
+        "denomination": "roman_catholic",
+        "name": "San Giovanni Grisostomo",
+        "religion": "christian",
+        "roof:colour": "#BD492F",
+        "roof:material": "roof_tiles",
+        "wheelchair": "yes",
+        "wikidata": "Q915746",
+        "wikipedia": "en:San Giovanni Grisostomo, Venice",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3372547,
+          45.439156
+        ]
+      },
+      "id": "way/138804284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138804512",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Chiesa di Santa Maria Formosa",
+        "name:it": "Chiesa di Santa Maria Formosa",
+        "name:ru": "Санта Мария Формоза",
+        "name:uk": "Церква Санта-Марія Формоза",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "limited",
+        "wikidata": "Q1813687",
+        "wikimedia_commons": "Category:Santa Maria Formosa (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria Formosa",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3410016,
+          45.4370337
+        ]
+      },
+      "id": "way/138804512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138804531",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Francesco della Vigna",
+        "name:uk": "Церква Сан-Франческо делла Вінья",
+        "religion": "christian",
+        "wikidata": "Q946542",
+        "wikipedia": "it:Chiesa di San Francesco della Vigna",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3480842,
+          45.4382191
+        ]
+      },
+      "id": "way/138804531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841129",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa delle Cappuccine",
+        "religion": "christian",
+        "start_date": "1623",
+        "wikidata": "Q3585897",
+        "wikipedia": "it:Chiesa delle Cappuccine",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3242345,
+          45.4467014
+        ]
+      },
+      "id": "way/138841129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841138",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "3",
+        "denomination": "jehovahs_witness",
+        "name": "Testimoni di Geova",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3257768,
+          45.447517
+        ]
+      },
+      "id": "way/138841138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841141",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "2",
+        "name": "Chiesa di San Bonaventura",
+        "religion": "christian",
+        "roof:shape": "gabled",
+        "wheelchair": "limited",
+        "wikidata": "Q3585321",
+        "wikimedia_commons": "Category:San Bonaventura (Venice)",
+        "wikipedia": "it:Chiesa di San Bonaventura (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3267555,
+          45.4478246
+        ]
+      },
+      "id": "way/138841141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841179",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Chiesa di San Simeon Piccolo",
+        "religion": "christian",
+        "service_times": "Mo-Su 11:00",
+        "wikidata": "Q185910",
+        "wikimedia_commons": "Category:San Simeone Piccolo (Venice)",
+        "wikipedia": "it:Chiesa di San Simeon Piccolo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3224148,
+          45.4403001
+        ]
+      },
+      "id": "way/138841179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841333",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "3",
+        "name": "Oratorio di Santa Maria dell'Addolorata",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3211278,
+          45.4447215
+        ]
+      },
+      "id": "way/138841333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841482",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Santa Teresa",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q3669279",
+        "wikimedia_commons": "Category:Santa Teresa (Venice)",
+        "wikipedia": "it:Chiesa delle Terese (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3162474,
+          45.4331461
+        ]
+      },
+      "id": "way/138841482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841670",
+        "alt_name": "Chiesa di San Simeone Grande",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Simeone Profeta",
+        "religion": "christian",
+        "wikidata": "Q3585385",
+        "wikimedia_commons": "Category:San Simeone profeta (Venice)",
+        "wikipedia": "it:Chiesa di San Simeone Profeta (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.324519,
+          45.440692
+        ]
+      },
+      "id": "way/138841670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841671",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giovanni Evangelista",
+        "religion": "christian",
+        "wikidata": "Q3585347",
+        "wikimedia_commons": "Category:San Giovanni Evangelista (Venice)",
+        "wikipedia": "it:Chiesa di San Giovanni Evangelista (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3261031,
+          45.438149
+        ]
+      },
+      "id": "way/138841671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841723",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Samuele",
+        "name:he": "סן סמואלה",
+        "religion": "christian",
+        "wikidata": "Q1895574",
+        "wikimedia_commons": "Category:San Samuele (Venice)",
+        "wikipedia": "de:San Samuele",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3283051,
+          45.4336146
+        ]
+      },
+      "id": "way/138841723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841815",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Nicola da Tolentino",
+        "name:he": "טולנטיני",
+        "religion": "christian",
+        "source": "Bing",
+        "wikidata": "Q2219891",
+        "wikimedia_commons": "Category:San Nicola da Tolentino (Venice)",
+        "wikipedia": "it:Chiesa di San Nicola da Tolentino (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3220464,
+          45.437571
+        ]
+      },
+      "id": "way/138841815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841819",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "height": "28",
+        "name": "Basilica di Santa Maria Gloriosa dei Frari",
+        "name:fr": "Basilique Santa Maria Gloriosa dei Frari",
+        "name:he": "בזיליקת סנטה מריה גלוריוזה דיי פרארי",
+        "name:it": "Basilica di Santa Maria Gloriosa dei Frari",
+        "opening_hours": "Mo-Sa 09:00-18:00; Su 13:00-18:00",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "limited",
+        "wikidata": "Q224961",
+        "wikipedia": "de:Santa Maria Gloriosa dei Frari",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3263629,
+          45.4368721
+        ]
+      },
+      "id": "way/138841819"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841862",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Nicolò dei Mendicoli",
+        "religion": "christian",
+        "source": "survey",
+        "wheelchair": "yes",
+        "wikidata": "Q2483408",
+        "wikimedia_commons": "Category:San Nicolò dei Mendicoli (Venice)",
+        "wikipedia": "it:Chiesa di San Nicolò dei Mendicoli",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3159072,
+          45.4325191
+        ]
+      },
+      "id": "way/138841862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841900",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Cassiano",
+        "religion": "christian",
+        "wikidata": "Q3585323",
+        "wikimedia_commons": "Category:San Cassiano (Venice)",
+        "wikipedia": "it:Chiesa di San Cassiano (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3321417,
+          45.4397103
+        ]
+      },
+      "id": "way/138841900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841903",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Girolamo",
+        "religion": "christian",
+        "wikidata": "Q3585350",
+        "wikimedia_commons": "Category:San Girolamo (Venice)",
+        "wikipedia": "it:Chiesa di San Girolamo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3252865,
+          45.4460485
+        ]
+      },
+      "id": "way/138841903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138841938",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa del Nome di Gesù",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q3580188",
+        "wikimedia_commons": "Category:Nome di Gesù (Venice)",
+        "wikipedia": "it:Chiesa del Nome di Gesù",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3167487,
+          45.4390754
+        ]
+      },
+      "id": "way/138841938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842007",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "russian_orthodox",
+        "loc_name": "San Zandegolà",
+        "name": "San Giovanni Decollato",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q1080619",
+        "wikimedia_commons": "Category:San Giovanni Decollato (Venice)",
+        "wikipedia": "de:San Zan Degolà",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3279017,
+          45.4415896
+        ]
+      },
+      "id": "way/138842007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842011",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Polo",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q1281097",
+        "wikipedia": "it:Chiesa di San Polo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3296503,
+          45.4371564
+        ]
+      },
+      "id": "way/138842011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842015",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Pantalon",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q1093901",
+        "wikimedia_commons": "Category:San Pantaleone (Venice)",
+        "wikipedia": "de:San Pantalon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3247439,
+          45.4357225
+        ]
+      },
+      "id": "way/138842015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842110",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Fosca",
+        "religion": "christian",
+        "start_date": "1733",
+        "wheelchair": "no",
+        "wikidata": "Q3585412",
+        "wikipedia": "it:Chiesa di Santa Fosca (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3322097,
+          45.4429324
+        ]
+      },
+      "id": "way/138842110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842879",
+        "addr:street": "Campo San Tomà",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Tomà",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q3585387",
+        "wikimedia_commons": "Category:San Tomà (Venice)",
+        "wikipedia": "it:Chiesa di San Tomà",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3277737,
+          45.4359293
+        ]
+      },
+      "id": "way/138842879"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842928",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santo Stefano",
+        "name:de": "Santo Stefano",
+        "name:en": "Santo Stefano",
+        "name:fr": "Église Santo Stefano de Venise",
+        "name:uk": "Церква Санто-Стефано",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q974832",
+        "wikimedia_commons": "Category:Santo Stefano (Venice)",
+        "wikipedia": "en:Santo Stefano, Venice",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3311232,
+          45.4336573
+        ]
+      },
+      "id": "way/138842928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842933",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Sant'Alvise",
+        "religion": "christian",
+        "start_date": "1388",
+        "wikidata": "Q1400201",
+        "wikipedia": "it:Chiesa di Sant'Alvise",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3291844,
+          45.4473871
+        ]
+      },
+      "id": "way/138842933"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842954",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "La Maddalena",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q2268642",
+        "wikimedia_commons": "Category:Santa Maria Maddalena (Venice)",
+        "wikipedia": "it:Chiesa della Maddalena (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3311227,
+          45.4429857
+        ]
+      },
+      "id": "way/138842954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842959",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Vidal",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q769514",
+        "wikimedia_commons": "Category:San Vidal (Venice)",
+        "wikipedia": "it:Chiesa di San Vidal",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3295205,
+          45.4324243
+        ]
+      },
+      "id": "way/138842959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138842963",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Sant'Agnese",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q2929832",
+        "wikimedia_commons": "Category:Sant'Agnese (Venice)",
+        "wikipedia": "it:Chiesa di Sant'Agnese (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3281765,
+          45.4297792
+        ]
+      },
+      "id": "way/138842963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843118",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "layer": "1",
+        "name": "Chiesa di San Sebastian",
+        "religion": "christian",
+        "source": "survey",
+        "wheelchair": "yes",
+        "wikidata": "Q588559",
+        "wikimedia_commons": "Category:San Sebastiano (Venice)",
+        "wikipedia": "de:San Sebastiano (Kirche in Venedig)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3200504,
+          45.4319887
+        ]
+      },
+      "id": "way/138843118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843126",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Raffaele Arcangelo",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q1255964",
+        "wikipedia": "en:Angelo San Raffaele, Venice",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3190055,
+          45.4324442
+        ]
+      },
+      "id": "way/138843126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843137",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giobbe",
+        "religion": "christian",
+        "start_date": "1493",
+        "wikidata": "Q2717507",
+        "wikipedia": "it:Chiesa di San Giobbe",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.320415,
+          45.4449687
+        ]
+      },
+      "id": "way/138843137"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843174",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa degli Ognissanti",
+        "religion": "christian",
+        "wikidata": "Q3669447",
+        "wikipedia": "it:Chiesa di Ognissanti (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.323361,
+          45.4312765
+        ]
+      },
+      "id": "way/138843174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843459",
+        "alt_name": "Chiesa degli Scalzi",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2024-02-01",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Maria di Nazareth",
+        "name:it": "Chiesa di Santa Maria di Nazareth",
+        "name:uk": "Церква Скальці",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q748689",
+        "wikipedia": "it:Chiesa di Santa Maria di Nazareth (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3219457,
+          45.4414771
+        ]
+      },
+      "id": "way/138843459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843464",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "San Barnaba",
+        "religion": "christian",
+        "wikidata": "Q2356961",
+        "wikimedia_commons": "Category:San Barnaba (Venice)",
+        "wikipedia": "it:Chiesa di San Barnaba (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3254573,
+          45.4330719
+        ]
+      },
+      "id": "way/138843464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843471",
+        "abandoned": "yes",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Chiesa di San Leonardo",
+        "religion": "christian",
+        "wikidata": "Q3585356",
+        "wikimedia_commons": "Category:San Leonardo (Venice)",
+        "wikipedia": "it:Chiesa di San Leonardo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3269338,
+          45.4433865
+        ]
+      },
+      "id": "way/138843471"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843481",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giacomo dall'Orio",
+        "religion": "christian",
+        "wikidata": "Q1150698",
+        "wikimedia_commons": "Category:San Giacomo da l'Orio (Venice)",
+        "wikipedia": "it:Chiesa di San Giacomo da l'Orio",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.327433,
+          45.4401218
+        ]
+      },
+      "id": "way/138843481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843630",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa San Marcuola",
+        "religion": "christian",
+        "wikidata": "Q1585514",
+        "wikimedia_commons": "Category:San Marcuola (Venice)",
+        "wikipedia": "it:Chiesa di San Marcuola",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3286677,
+          45.4429189
+        ]
+      },
+      "id": "way/138843630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843633",
+        "addr:housenumber": "334",
+        "addr:street": "Campo San Geremia",
+        "alt_name": "Santuario di Lucia",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa dei Santi Geremia e Lucia",
+        "opening_hours": "09:30-13:00; 14:30-17:00",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q1040043",
+        "wikimedia_commons": "Category:San Geremia (Venice)",
+        "wikipedia": "it:Santuario di Lucia",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3253173,
+          45.4426562
+        ]
+      },
+      "id": "way/138843633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843642",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2023-11-06",
+        "denomination": "catholic",
+        "name": "Chiesa di San Rocco",
+        "religion": "christian",
+        "start_date": "1494",
+        "tourism": "attraction",
+        "wheelchair": "no",
+        "wikidata": "Q5418235",
+        "wikipedia": "it:Chiesa di San Rocco (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3252298,
+          45.4369492
+        ]
+      },
+      "id": "way/138843642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843762",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Chiesa di San Stae",
+        "name:he": "סן סטאה",
+        "name:it": "Chiesa di San Stae",
+        "religion": "christian",
+        "wikidata": "Q2220127",
+        "wikipedia": "it:Chiesa di San Stae",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3306332,
+          45.4413182
+        ]
+      },
+      "id": "way/138843762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843829",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3257716,
+          45.4456771
+        ]
+      },
+      "id": "way/138843829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/138843914",
+        "alt_name": "Carmini",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Santa Maria dei Carmini",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q2780025",
+        "wikimedia_commons": "Category:Santa Maria dei Carmini (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria dei Carmini",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3222886,
+          45.4333829
+        ]
+      },
+      "id": "way/138843914"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/142378731",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Madonna dell'Orto",
+        "name:he": "מדונה דל'אורטו",
+        "name:uk": "Церква Мадонна делл'Орто",
+        "religion": "christian",
+        "wikidata": "Q861436",
+        "wikipedia": "de:Madonna dell’Orto",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3326421,
+          45.4465164
+        ]
+      },
+      "id": "way/142378731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/153483298",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Basilica dei santi Giovanni e Paolo",
+        "name:en": "Basilica of Saints John and Paul",
+        "name:uk": "Собор Санті-Джованні е Паоло",
+        "opening_hours": "Mo-Sa 09:00-18:00; Su 12:00-18:00",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wheelchair": "yes",
+        "wikidata": "Q155225",
+        "wikipedia": "it:Basilica dei Santi Giovanni e Paolo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3421972,
+          45.4392537
+        ]
+      },
+      "id": "way/153483298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/162035005",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "2",
+        "denomination": "catholic",
+        "name": "Chiesa di San Zaccaria",
+        "name:he": "כנסיית סן זכריה",
+        "name:it": "Chiesa di San Zaccaria",
+        "name:uk": "Церква Сан-Заккаріа",
+        "opening_hours": "Mo-Sa 10:00-12:00, 16:00-18:00; Su 16:00-18:00",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wikidata": "Q794876",
+        "wikipedia": "it:Chiesa di San Zaccaria",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3436026,
+          45.4347114
+        ]
+      },
+      "id": "way/162035005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/166171823",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Beneto",
+        "religion": "christian",
+        "start_date": "1685",
+        "wikidata": "Q3585318",
+        "wikimedia_commons": "Category:San Beneto (Venice)",
+        "wikipedia": "it:Chiesa di San Beneto",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3323746,
+          45.435649
+        ]
+      },
+      "id": "way/166171823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/173196994",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Campo Sant' Aponal",
+        "place": "square",
+        "surface": "sett",
+        "wikidata": "Q56631530",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3323438,
+          45.4378217
+        ]
+      },
+      "id": "way/173196994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/181063193",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "name": "Campo Pisani",
+        "place": "square",
+        "surface": "paving_stones",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3303446,
+          45.4324122
+        ]
+      },
+      "id": "way/181063193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/181460186",
+        "area": "yes",
+        "bicycle": "no",
+        "highway": "pedestrian",
+        "lit": "yes",
+        "name": "Salizada San Samuele",
+        "place": "square",
+        "surface": "paving_stones",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3294767,
+          45.4342095
+        ]
+      },
+      "id": "way/181460186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/205848942",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Maurizio",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q251686",
+        "wikimedia_commons": "Category:San Maurizio (Venice)",
+        "wikipedia": "it:Chiesa di San Maurizio (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3315903,
+          45.4330793
+        ]
+      },
+      "id": "way/205848942"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/205850072",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Chiesa di Santa Maria della Visitazione",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q2223139",
+        "wikimedia_commons": "Category:Santa Maria della Visitazione (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria della Visitazione (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3266696,
+          45.4296417
+        ]
+      },
+      "id": "way/205850072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250421433",
+        "alt_name": "Scuola Spagnola",
+        "amenity": "place_of_worship",
+        "name": "Scuola Ponentina",
+        "religion": "jewish",
+        "wheelchair": "no",
+        "wikidata": "Q2897799",
+        "wikimedia_commons": "Category:Scola spagnola (Venice)",
+        "wikipedia": "en:Spanish Synagogue (Venice)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3255604,
+          45.4446333
+        ]
+      },
+      "id": "node/250421433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250421434",
+        "amenity": "place_of_worship",
+        "name": "Scuola Levantina",
+        "religion": "jewish",
+        "wheelchair": "no",
+        "wikidata": "Q62259167"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3258217,
+          45.4447594
+        ]
+      },
+      "id": "node/250421434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250421436",
+        "amenity": "place_of_worship",
+        "denomination": "jewish",
+        "name": "Bet Chabad",
+        "religion": "jewish"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3273488,
+          45.4453435
+        ]
+      },
+      "id": "node/250421436"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/286784078",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Lorenzo",
+        "religion": "christian",
+        "wikidata": "Q428317",
+        "wikimedia_commons": "Category:San Lorenzo (Venice)",
+        "wikipedia": "it:Chiesa di San Lorenzo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3455424,
+          45.4372558
+        ]
+      },
+      "id": "way/286784078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/301042344",
+        "name": "Campo de la Chiesa",
+        "place": "square",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3651478,
+          45.4271661
+        ]
+      },
+      "id": "way/301042344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/313876759",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "anglican",
+        "name": "Chiesa di Saint George",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q2929845",
+        "wikimedia_commons": "Category:Saint George (Venice)",
+        "wikipedia": "it:Chiesa di Saint George",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3303593,
+          45.4306827
+        ]
+      },
+      "id": "way/313876759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/314754899",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giovanni di Malta",
+        "religion": "christian",
+        "wheelchair": "limited",
+        "wikidata": "Q935076",
+        "wikimedia_commons": "Category:San Giovanni del Tempio (Venice)",
+        "wikipedia": "it:Chiesa di San Giovanni di Malta (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3463743,
+          45.4364368
+        ]
+      },
+      "id": "way/314754899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/370395380",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Chiesa di Sant'Antonin",
+        "religion": "christian",
+        "wikidata": "Q3585394",
+        "wikimedia_commons": "Category:Sant'Antonin (Venice)",
+        "wikipedia": "it:Chiesa di Sant'Antonin",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3465285,
+          45.4355804
+        ]
+      },
+      "id": "way/370395380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/410105956",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Francesco di Paola",
+        "religion": "christian",
+        "wheelchair": "no",
+        "wikidata": "Q3585337",
+        "wikimedia_commons": "Category:San Francesco di Paola (Venice)",
+        "wikipedia": "it:Chiesa di San Francesco di Paola (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3541836,
+          45.4326115
+        ]
+      },
+      "id": "way/410105956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/410105957",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Gallo",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "wikidata": "Q3585339",
+        "wikimedia_commons": "Category:San Gallo (Venice)",
+        "wikipedia": "it:Chiesa di San Gallo (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3368697,
+          45.4345557
+        ]
+      },
+      "id": "way/410105957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/410105958",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Giovanni Nuovo",
+        "religion": "christian",
+        "wikidata": "Q3585345",
+        "wikimedia_commons": "Category:San Giovanni Novo (Venice)",
+        "wikipedia": "it:Chiesa di San Giovanni Nuovo",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3415833,
+          45.4356637
+        ]
+      },
+      "id": "way/410105958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/410353934",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Maria Mater Domini",
+        "religion": "christian",
+        "wikidata": "Q520477",
+        "wikimedia_commons": "Category:Santa Maria Mater Domini (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria Mater Domini",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3303551,
+          45.4400419
+        ]
+      },
+      "id": "way/410353934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/410353935",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Santa Maria delle Penitenti",
+        "religion": "christian",
+        "wikidata": "Q3585437",
+        "wikimedia_commons": "Category:Santa Maria delle Penitenti (Venice)",
+        "wikipedia": "it:Chiesa di Santa Maria delle Penitenti",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3192666,
+          45.4467375
+        ]
+      },
+      "id": "way/410353935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/416123114",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Chiesa di Santa Croce degli Armeni",
+        "name:fr": "Église Santa Croce degli Armeni",
+        "religion": "christian",
+        "wikidata": "Q3585410",
+        "wikimedia_commons": "Category:Santa Croce degli Armeni (Venice)",
+        "wikipedia": "it:Chiesa di Santa Croce degli Armeni",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3377471,
+          45.4355228
+        ]
+      },
+      "id": "way/416123114"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/416601131",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa delle Eremite",
+        "religion": "christian",
+        "wikidata": "Q3585917",
+        "wikimedia_commons": "Category:Chiesa delle Eremite (Venezia)",
+        "wikipedia": "it:Chiesa delle Eremite",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3245178,
+          45.4318965
+        ]
+      },
+      "id": "way/416601131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/439574789",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di San Marziale",
+        "religion": "christian",
+        "wikidata": "Q690779",
+        "wikimedia_commons": "Category:San Marziale (Venice)",
+        "wikipedia": "it:Chiesa di San Marziale (Venezia)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3329312,
+          45.44383
+        ]
+      },
+      "id": "way/439574789"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469085280",
+        "alt_name": "Campo Zobenigo",
+        "area": "yes",
+        "highway": "pedestrian",
+        "name": "Campo Santa Maria del Giglio",
+        "place": "square",
+        "surface": "sett",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3329024,
+          45.4324274
+        ]
+      },
+      "id": "way/469085280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/489091752",
+        "name": "Campo San Stin",
+        "place": "square",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3269519,
+          45.4379471
+        ]
+      },
+      "id": "way/489091752"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/582322560",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Chiesa di Cristo Re alla Celestia",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3493237,
+          45.4380991
+        ]
+      },
+      "id": "way/582322560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1001557907",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "loc_name": "San Zuane de Rialto",
+        "name": "Chiesa di San Giovanni Elemosinario",
+        "religion": "christian",
+        "roof:orientation": "along",
+        "wheelchair": "no",
+        "wikidata": "Q1543347",
+        "wikimedia_commons": "Category:San Giovanni Elemosinario (Venice)",
+        "wikipedia": "it:Chiesa di San Giovanni Elemosinario",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.334562,
+          45.4386723
+        ]
+      },
+      "id": "way/1001557907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1081020184",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Ex chiesa di Santa Maria Ausiliatrice (vulgo San Gioacchin)",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3564479,
+          45.4326278
+        ]
+      },
+      "id": "way/1081020184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1103897422",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Chiesa dei santi Rocco e Margherita",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3299235,
+          45.433818
+        ]
+      },
+      "id": "way/1103897422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1103897423",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Oratorio dell'Annunziata",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3317989,
+          45.4343024
+        ]
+      },
+      "id": "way/1103897423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1104018125",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Oratorio della Madre di Dio",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3211877,
+          45.4450877
+        ]
+      },
+      "id": "way/1104018125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1105486385",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "layer": "1",
+        "name": "Chiesa di San Giovanni Battista ai Catecumeni",
+        "religion": "christian",
+        "wikidata": "Q21856008",
+        "wikimedia_commons": "Category:San Giovanni Battista ai Catecumeni (Venice)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3339302,
+          45.4300786
+        ]
+      },
+      "id": "way/1105486385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131683701",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Cappella di San Vio",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3300817,
+          45.4305342
+        ]
+      },
+      "id": "way/1131683701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1149400851",
+        "amenity": "place_of_worship",
+        "building": "chapel",
+        "name": "cappella del corpo di San Marco",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3489733,
+          45.4384319
+        ]
+      },
+      "id": "way/1149400851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1243709109",
+        "name": "Corte del morer",
+        "place": "square",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3313067,
+          45.4290447
+        ]
+      },
+      "id": "way/1243709109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1278224663",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "evangelical",
+        "name": "Chiesa Evangelica Valdese",
+        "name:en": "Valdese Evangelical Church",
+        "religion": "christian",
+        "service_times": "Su 11:00-11:00; Mo-Sa closed; PH closed",
+        "wheelchair": "yes",
+        "wikidata": "Q112266141",
+        "wikimedia_commons": "Category:Chiesa Evangelica Valdese (Venice)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.342726,
+          45.4378275
+        ]
+      },
+      "id": "way/1278224663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4819941851",
+        "amenity": "place_of_worship",
+        "building": "synagogue",
+        "denomination": "jewish",
+        "name": "Scuola Grande Tedesca",
+        "name:de": "Große Deutsche Synagoge",
+        "name:en": "Great German Synagogue",
+        "religion": "jewish",
+        "website": "http://jvenice.org/en/great-german-synagogue?jjj=1498992675744",
+        "wheelchair": "no",
+        "wikidata": "Q12051106",
+        "wikimedia_commons": "Category:Scola Grande Tedesca (Venice)",
+        "wikipedia": "en:Great German Synagogue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3271218,
+          45.4450594
+        ]
+      },
+      "id": "node/4819941851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6045579408",
+        "amenity": "place_of_worship",
+        "building": "synagogue",
+        "name": "Scuola Italiana",
+        "name:cs": "Italská synagoga",
+        "religion": "jewish",
+        "wheelchair": "no",
+        "wikidata": "Q65015",
+        "wikimedia_commons": "Category:Scola Italiana (Venice)",
+        "wikipedia": "en:Italian Synagogue (Venice)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3266278,
+          45.4451422
+        ]
+      },
+      "id": "node/6045579408"
+    }
+  ]
+}
