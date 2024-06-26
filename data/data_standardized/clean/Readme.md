@@ -17,7 +17,7 @@ Files with `.geojson` extension are for the use of map visualization and contain
 
 
 ### Simplifications on `sommarioni` (buildings_1808) dataset
-- `parcetl_type` = 'building'
+- `parcel_type` = 'building'
 - kept not null `own_uid`
 - removed nan `ownership_types`
 - removed `district_acronym`='NCC'
