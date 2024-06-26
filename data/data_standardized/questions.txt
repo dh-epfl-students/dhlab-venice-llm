@@ -97,3 +97,27 @@ gold merchant
 female guardian
 herbalist
 blacksmith
+
+# Spatial aggregation (catastici and landmarks)
+- What is the average rent price in each parish, and how does it vary spatially across Venice?
+- Where are the high rent areas in 1740s Venice, and how do they relate spatially to the distribution of churches and squares?
+- What are the spatial patterns of rent prices in relation to the building functions?
+- Is there a correlation between the number of building functions and the rent price across different locations?
+- How do the professions of building owners cluster geographically?
+- What is the spatial distribution of buildings with the highest and lowest rent prices?
+- Are there any spatial clusters of buildings owned by the same family?
+- How does the density of buildings with multiple functions vary by parish?
+- What is the spatial distribution of different owner professions across Venice in 1740?
+- What is the density of residential vs. commercial buildings near churches compared to squares?
+
+# Spatial comparison (catastici, sommarioni and landmarks)
+- How did the distribution of building functions change from 1740 to 1808?
+- What is the average rent price of buildings in 1740 and how does it compare spatially to the building areas in 1808?
+- How did the number of buildings with multiple functions change from 1740 to 1808?
+- Are there any geographic shifts in building locations between 1740 and 1808?
+- What is the relationship between the proximity to landmarks (churches and squares) and the building functions or rent prices in 1740 compared to 1808?
+- How do the ownership patterns (family names) compare between 1740 and 1808, and are there any significant spatial clusters of certain family names?
+- What are the spatial patterns of tenant-occupied buildings in 1740 and how do they compare to owner-occupied buildings in 1808?
+- How does the spatial density of buildings vary between 1740 and 1808?
+- What is the average distance between buildings with similar functions in 1740 and 1808?
+- Are there any significant changes in the geographic distribution of buildings between 1740 and 1808 based on their longitude and latitude?

@@ -1,4 +1,4 @@
-Owner_First_Name,Owner_Family_Name,Owner_Profession,Tenant_Name,Property_Functions,Rent_Price,Location,Parish,Property_Functions_Count,Longitude,Latitude
+Owner_First_Name,Owner_Family_Name,Owner_Profession,Tenant_Name,Building_Functions,Rent_Price,Location,Parish,Building_Functions_Count,Longitude,Latitude
 liberal,campi,,francesco zeni,"bottega, casa",70,campo vicino alla chiesa,san cancian,2,12.338315191259134,45.440397691052866
 filippo,frari,,dio m'aiuti lazara,casa,60,campo vicino alla chiesa,san cancian,1,12.338431859140826,45.44027817805552
 filippo,frari,,bortolamio piazza,bottega,4,campo vicino alla chiesa,san cancian,1,12.338492541778166,45.44031867953029
