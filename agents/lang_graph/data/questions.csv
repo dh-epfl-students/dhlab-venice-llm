@@ -1,0 +1,70 @@
+question,type,answer_type,n_matches
+What is the average rent price for properties located within 100 meters of a church compared to those further away in 1740?,spatial,numerical,1
+Which square has the highest density of nearby tenants in 1740?,spatial,entity_name,1
+Is the price of the rent correlated with the distance from the nearest square in 1740?,spatial,yes/no,1
+Where are the houses densely located in 1740?,spatial,entity_name,1
+Are low-rent properties clustered in specific areas in 1740?,spatial,yes/no,0
+How many people live within 50 meters of a church in 1740?,spatial,numerical,1
+"On average, how much more expensive are houses near the squares compared to those further away in 1740?",spatial,numerical,2
+How many properties are located around square of San Marco in 1740?,spatial,numerical,2
+Are the properties located near San Marco more expensive than the properties located around other squares in 1740?,spatial,yes/no,2
+On average how far people live from the squares in 1740?,spatial,numerical,1
+Are different families closely situated in specific neighborhoods rather than being widespread across the city in 1740?,spatial,yes/no,0
+How many churches does each parish have in general in 1740?,spatial,numerical,1
+Is there a significant difference in rent prices for properties near churches versus squares in 1740?,spatial,yes/no,2
+Are there any spatial clusters of high-rent properties in 1740?,spatial,yes/no,0
+What is the name of the most densely populated square in 1740?,spatial,entity_name,1
+How many buildings are there per parish on average in 1740?,spatial,numerical,0
+What is the parish with the highest rent price  in 1740?,spatial,entity_name,0
+"Among all the parishes, what is the highest density of buildings with multiple functions  in 1740?",spatial,numerical,0
+What is the average rent difference between the parishes with the highest and the lowest rent prices in 1740?,spatial,numerical,0
+What is the most common function of properties that are closest to a square  in 1740?,functions,entity_name,1
+Which squares are the centers of various activities based on surrounding property functions in 1740?,functions,entity_name,1
+Are residential properties more closely located to the squares than the commercial properties in 1740?,functions,yes/no,3
+What is the average distance between workshops and their nearest square in 1740?,functions,numerical,2
+Are properties with multiple functions more expensive than the ones with a single function in 1740?,functions,yes/no,0
+What are the most common combinations of property functions in the dataset in 1740?,functions,entity_name,0
+Is there a correlation between property functions and their proximity to the churches in 1740?,functions,yes/no,1
+Which square is surrounded by the most diverse set of property functions in 1740?,functions,entity_name,1
+Is there a correlation between the number of building functions and the rent price in 1740?,functions,yes/no,0
+Which square is the biggest commercial hub in 1740?,functions,entity_name,2
+Which family owns the most number of properties in 1740?,personal,entity_name,0
+Is there any correlation between the family name and the profession in 1740?,personal,yes/no,0
+Are different families wide spread across the city or closely situated in certain neighborhoods in 1740?,personal,yes/no,0
+Are there any spatial clusters of buildings owned by the same family in 1740?,personal,yes/no,0
+How many lawyers are there in Venice in 1740?,personal,numerical,1
+In which parish do lawyers own the most number of properties in 1740?,personal,entity_name,1
+Is there a significant difference in rent prices based on the profession of the property owner in 1740?,personal,yes/no,0
+What is the most common building functions of properties owned by the same family in 1740?,personal,entity_name,0
+Are there any notable family alliances or rivalries suggested by the spatial distribution of properties in 1740?,personal,yes/no,0
+Do certain professions tend to own properties with specific functions in 1740?,personal,yes/no,0
+How many families were relocated by more than 1km from 1740 to 1808?,comparison_geolocation,numerical,0
+What is the average distance moved by families who owned properties in both 1740 and 1808?,comparison_geolocation,numerical,0
+Are there any specific areas in Venice where families tended to relocate to more frequently from 1740 to 1808?,comparison_geolocation,entity_name,0
+Did certain professions exhibit higher rates of relocation compared to others from 1740 to 1808?,comparison_geolocation,entity_name,0
+Is there a correlation between the rent price in 1740 and the distance moved by families by 1808?,comparison_geolocation,yes/no,0
+Are there any notable patterns in the professions of families that remained in Venice from 1740 to 1808?,comparison_geolocation,,0
+How many families expanded their property holdings from 1740 to 1808?,comparison_geolocation,numerical,0
+How many families relocated their properties closer to or further from squares from 1740 to 1808?,comparison_geolocation,numerical,0
+What is the average distance between family properties and the nearest church or square in 1740 compared to 1808?,comparison_geolocation,numerical,2
+How did the density of family properties around central squares change from 1740 to 1808?,comparison_geolocation,numerical,2
+How many families present in Venice in 1740 still exist in the 1808?,comparison_ownership,numerical,0
+Which family increased the number of properties they owned the most from 1740 to 1808?,comparison_ownership,entity_name,0
+How many building shift from residential to commercial use between 1740 and 1808?,comparison_ownership,numerical,2
+How many families retained the same profession (as indicated by building functions) across the two time periods from 1740 to 1808?,comparison_ownership,numerical,0
+Can we identify any patterns of inheritance or succession among families who maintained property ownership from 1740 to 1808?,comparison_ownership,,0
+How many new families appear in Venice in 1808 that were not present in 1740?,comparison_ownership,numerical,0
+Is there any decrease in the number of properties held by a family on average from 1740 to 1808?,comparison_ownership,yes/no,0
+Are there any families who moved closer to or further away from the churches in general from 1740 to 1808?,comparison_ownership,entity_name,1
+"How many families who owned properties in both 1740 and 1808 changed the type of buildings they owned, such as from residential to commercial?",comparison_ownership,numerical,2
+Did any families transition from being tenants in 1740 to property owners in 1808?,comparison_ownership,entity_name,0
+Have the squares for commercial hubs changed from 1740 to 1808?,comparison_functions,yes/no,3
+"Where are the houses densely located in both 1740 and 1808, and how has this changed?",comparison_functions,entity_name,0
+"Are smaller buildings, in terms of area, specifically clustered in certain areas in 1808 compared to the locations of low-rent properties in 1740?",comparison_functions,yes/no,0
+How many buildings are located within 50 meters of a church in 1808 compared to 1740?,comparison_functions,numerical,0
+"On average, how much larger are the buildings near the squares in 1808 compared to those further away, and how does this compare to rent price differences in 1740?",comparison_functions,numerical,0
+How many properties are located around the square of San Marco in 1808 compared to 1740?,comparison_functions,numerical,2
+Are there any spatial clusters of large buildings in 1808 compared to high-rent properties in 1740?,comparison_functions,entity_name,0
+Are different families widely spread across the city or closely situated in certain neighborhoods in both 1740 and 1808?,comparison_functions,entity_name,0
+What are the names of the most densely populated squares in both 1740 to 1808?,comparison_functions,entity_name,1
+What type of buildings have been moved further away from or closer to the churches from 1740 to 1808?,comparison_functions,entity_name,0

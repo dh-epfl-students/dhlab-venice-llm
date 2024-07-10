@@ -10,3 +10,4 @@ rapidfuzz
 sentence_transformers
 geopy
 langgraph
+langchain-huggingface
