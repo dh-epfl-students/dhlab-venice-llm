@@ -5,6 +5,7 @@ Files with `.geojson` extension are for the use of map visualization and contain
 - `owner_count`=1
 - `owner_code`='PPL'
 - '_' not in `owner_first_name`
+- removed NaN `owner_first_name` `tenant_name` `building_functions` `location`
 
 #### Sample
 |Owner_First_Name|Owner_Family_Name|Owner_Profession|Tenant_Name|Building_Functions|Rent_Price|Location|Parish|Building_Functions_Count|Longitude|Latitude|
@@ -19,7 +20,7 @@ Files with `.geojson` extension are for the use of map visualization and contain
 ### Simplifications on `sommarioni` (buildings_1808) dataset
 - `parcel_type` = 'building'
 - kept not null `own_uid`
-- removed nan `ownership_types`
+- removed nan `building_functions`
 - removed `district_acronym`='NCC'
 
 #### Sample

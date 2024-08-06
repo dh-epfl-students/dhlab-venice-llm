@@ -1,5 +1,4 @@
-Entity_Name,Entity_Type,Longitude,Latitude
-,church,12.3328817,45.4463708
+landmark_name,landmark_type,longitude,latitude
 campiello della malvasia,square,12.3497984,45.4329065
 campo santa margherita,square,12.3234482,45.434305
 campo sant'anzolo,square,12.3319525,45.4342152
@@ -51,7 +50,6 @@ campiello bruno crovato,square,12.3385939,45.43988
 campiello santa maria nova,square,12.3386135,45.4396637
 campo drio la chiesa,square,12.3370728,45.440507
 campo santi apostoli,square,12.3365278,45.440382
-,square,12.3362882,45.4419575
 campo de le erbe,square,12.3352127,45.4422347
 corte de le candele,square,12.3378917,45.4431702
 campo san leonardo,square,12.3268312,45.4435712
@@ -62,7 +60,6 @@ campo san giacomo dall'orio,square,12.3275643,45.4400409
 campiello del piovan,square,12.3273433,45.4402858
 campo de le strope,square,12.3264994,45.4394409
 campo sant'agostin,square,12.3283991,45.4387763
-,square,12.3269519,45.4379471
 campo dei frari,square,12.326855,45.4369109
 campo ruga,square,12.3571991,45.4337649
 corte del bianco,square,12.357731,45.4330565
@@ -154,7 +151,6 @@ chiesa san marcuola,church,12.3286677,45.4429189
 chiesa dei santi geremia e lucia,church,12.3253173,45.4426562
 chiesa di san rocco,church,12.3252298,45.4369492
 chiesa di san stae,church,12.3306332,45.4413182
-,church,12.3257716,45.4456771
 santa maria dei carmini,church,12.3222886,45.4333829
 madonna dell'orto,church,12.3326421,45.4465164
 basilica dei santi giovanni e paolo,church,12.3421972,45.4392537

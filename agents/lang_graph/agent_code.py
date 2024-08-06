@@ -1,25 +1,45 @@
-# LangChain supports many other chat models. Here, we're using Ollama
+from langgraph.graph import END, StateGraph
+
 from langchain_community.chat_models import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
-
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.output_parsers import JsonOutputParser
 
-import re
-import ast
-from tqdm import tqdm
 import pandas as pd
+from typing_extensions import TypedDict
+from typing import List
+from tqdm import tqdm
+import traceback
+import argparse
+import sys
+import re
+from io import StringIO
 
-from rapidfuzz import fuzz
-from sentence_transformers import SentenceTransformer, util
+from prompts import prompt_plan, prompt_code, prompt_debug
 
-from prompts import prompt_detect_entities_template
+MAX_NUM_STEPS = 10
 
-MODEL = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-DATASET_PATHS = {1: "data/buildings_1740.csv", 2: "data/buildings_1808.csv", 3: "data/landmarks.csv"}
+def execute_code(code):
+    global_namespace = globals().copy()
+    local_namespace = locals().copy()
+    combined_namespace = {**global_namespace, **local_namespace}
+    
+    # Redirect stdout to capture printed output
+    stdout_orig = sys.stdout
+    sys.stdout = StringIO()
 
-def get_questions(questions_path='data/questions.csv'):
+    try:
+        # Execute the code in the combined namespace
+        exec(code, combined_namespace)
+
+        # Get the captured output
+        output = sys.stdout.getvalue()
+        return output.strip()
+    finally:
+        # Restore stdout
+        sys.stdout = stdout_orig
+
+def read_questions(questions_path='data/matches.csv'):
     questions = pd.read_csv(questions_path)
     return questions
 
@@ -28,476 +48,229 @@ def get_llm(model='llama3', repeat_penalty=1.1, temperature=0.8, top_k=40, top_p
     
     return llm
 
-def extract_phrase_info(input_string):
-    # Use regular expression to find the pattern
-    pattern = r"\[\(.*?\)\]"
-    matches = re.findall(pattern, input_string)
-    
-    # Convert the string found to a list of tuples using ast.literal_eval for safety
-    result = ast.literal_eval(matches[0]) if matches else []
-    return result
-
-def is_in_column(input_string):
-    return bool("True" in input_string)
-
-def exact_search(query, strings):
-    """
-    Perform an exact search on a list of strings and return values with a similarity score higher than threshold.
-    """
-    if query in strings:
-        return [query]
-    else:
-        return []
-
-def fuzzy_search(query, strings, threshold=70):
-    """
-    Perform a fuzzy similarity search on a list of strings and return values with a similarity score higher than threshold.
-    Relies on Levenshtein Distance: Measures the minimum number of single-character edits (insertions, deletions, or substitutions) required to change one word into the other.
-    """
-    strings_str = strings.astype(str)
-    return [string for string in strings_str if fuzz.ratio(string, query) > threshold]
-
-
-def similarity_search(query, strings, threshold=0.7):
-    """
-    Perform a similarity search on a list of strings and return values with a similarity score higher than threshold.
-    """
-    strings_str = strings.astype(str)
-
-    query_embedding = MODEL.encode(query, convert_to_tensor=True)
-    strings_embeddings = MODEL.encode(strings_str, convert_to_tensor=True)
-    
-    similarities = util.pytorch_cos_sim(query_embedding, strings_embeddings)[0]
-    result = [strings_str[i] for i in range(len(strings_str)) if similarities[i] > threshold]
-    
-    return result
-
 def extract_python_code(text):
-    # Define a regular expression pattern to match Python code blocks
+    # Find all code block matches in the text
     pattern = r'```python(.*?)```|```\s*(.*?)```|```Python(.*?)```'
-    
-    # Find all matches in the text
     matches = re.findall(pattern, text, re.DOTALL)
     
     # Extract the code from matches
     code_blocks = [match[0] if match[0] else match[1] for match in matches]
-    
-    # Join all code blocks into a single string with new lines between blocks
+    code_blocks = [code_block[len('python'):].lstrip() if code_block.lower().startswith('python') else code_block for code_block in code_blocks]
     code = '\n\n'.join(code_blocks).strip()
     
     return code
-    
-    
-def main():
-    # Read all questions
-    questions = get_questions()
 
-    # Get LLM
-    llm = get_llm(top_k=1)
+def get_planner():
+    llm = get_llm(top_k=5)
 
-    # Detect entity
     planner_prompt = PromptTemplate(
-        template=planner_prompt_template,
-    input_variables=["question", "entities_matches"],
+        template=prompt_plan,
+        input_variables=["question", "entities_matches"],
     )
+
     planner = planner_prompt | llm | StrOutputParser()
 
-    # Code
+    return planner
+
+def get_coder():
+    llm = get_llm(top_k=5)
+
     coder_prompt = PromptTemplate(
-        template=coder_prompt_template,
-    input_variables=["question", "entities_matches", "plan"],
+        template=prompt_code,
+        input_variables=['answer_type', "question", "entities_matches", "plan"],
     )
+
     coder = coder_prompt | llm | StrOutputParser()
 
-    # Debugger   
+    return coder
+
+def get_debugger():
+    llm = get_llm(top_k=5)
+
     debugger_prompt = PromptTemplate(
-        template=debugger_prompt_template,
-    input_variables=["question", "entities_matches", "plan", "code", "error_message"],
+        template=prompt_debug,
+        input_variables=["question", "entities_matches", "plan", "code", "error_message"],
     )
+
     debugger = debugger_prompt | llm | StrOutputParser()
 
+    return debugger
 
+### State
+class GraphState(TypedDict):
+    """
+    Represents the state of our graph.
 
-    ### TEST ###
-    all_entities = []
-    all_entity_matches = []
-
-    for sample_question in tqdm(questions['question'].tolist()):
-        print(sample_question)
-        ### try phrase mapper ###
-        result = entity_detecter.invoke({"question":sample_question})
-        entities = extract_phrase_info(result)
-        all_entities.append(entities)
-
-        ### try Match phrases ###
-        phrase_matches_ls = []
-        for entity in entities:
-            if len(entity) != 3:
-                continue
-
-            try:
-                # get phrase info
-                phrase_name = entity[0].lower()
-                phrase_column = entity[1] #.lower()
-                phrase_dataset = entity[2]
-            
-                # get the column values from the dataset
-                dataset = pd.read_csv(DATASET_PATHS[int(phrase_dataset)])
-                dataset = dataset[dataset[phrase_column].notna()]
-                column_values = dataset[phrase_column].unique()
-            except Exception as e:
-                print('ERROR:')
-                print(sample_question)
-                print(entity)
-                print(e)
-                print('-'*30, end='\n\n')
-                continue
-        
-            # get exact matching
-            matches = exact_search(phrase_name, column_values)
-        
-            # fuzzy search
-            if len(matches) == 0:
-                matches = fuzzy_search(phrase_name, column_values)
-        
-            # similarity search
-            threshold = 0.9
-            while len(matches) == 0 and threshold >= 0.5:
-                matches = similarity_search(phrase_name, column_values, threshold=threshold)
-                threshold -= 0.05
-        
-            # skip this entity if not matches are found with at least 50% of similarity
-            if len(matches) == 0:
-                continue
-        
-            # set the entity name
-            phrase_matches = {}
-            phrase_matches[phrase_name] = {}
-            phrase_matches[phrase_name]['dataset'] = DATASET_PATHS[int(phrase_dataset)]
-            phrase_matches[phrase_name]['column'] = phrase_column
-            phrase_matches[phrase_name]['matches'] = matches
-            phrase_matches_ls.append(phrase_matches)
-        print(phrase_matches_ls)
-            
-        all_entity_matches.append(phrase_matches_ls)
+    Attributes:
+        question: question
+        entities_matches: matched values of the entities
+        plan: analysis plan
+        code: code
+        error_message: error message
+        error: flag for error
+        num_steps: number of steps
+        output: output of the code
+    """
+    question : str
+    entities_matches : dict
+    references: dict
+    answer_format: str
+    plan : str
+    code : str
+    error_message: str
+    error : bool
+    num_steps : int
+    output: str
     
-    questions['entity'] = all_entities
-    questions['entity_matches'] = all_entity_matches
-    questions['n_matches_predict'] = questions['entity_matches'].apply(lambda x: len(x))
+def create_plan(state):
+    """creates a plan to answer the question"""
+    question = state['question']
+    entities_matches = state['entities_matches']
+    references = state['references']
+    answer_format = state['answer_format']
 
-    questions.loc[questions['n_matches_predict'] == questions['n_matches'], 'match_acc'] = True
-    questions['match_acc'].fillna(False, inplace=True)
+    # create the plan
+    planner = get_planner()
+    plan = planner.invoke({
+            "question": question, 
+            "entities_matches": entities_matches, 
+            "references": references, 
+            "answer_format": answer_format
+        })
 
-    match_acc = questions['match_acc'].mean()
-    print(f"Entity detect accuracy: {match_acc}")
+    print("--------------- Plan ---------------")
+    print(plan, end='\n\n')
 
-    questions.to_csv('phrase_matches.csv',index=False)
+    return {"plan": plan}
+
+def write_code(state):
+    """writes / debugs a code following the given plan / error message"""
+    question = state['question']
+    entities_matches = state['entities_matches']
+    references = state['references']
+    answer_format = state['answer_format']
+    plan = state['plan']
+    code = state['code']
+    error_message = state['error_message']
+    error = state['error']
+    num_steps = state['num_steps']
+
+    # Generate or Debug the code
+    if error:
+        debugger = get_debugger()
+        code = debugger.invoke({
+                "question": question, 
+                "entities_matches": entities_matches, 
+                "references": references, 
+                "plan": plan, 
+                "code": code, 
+                "error_message": error_message,
+                "answer_format": answer_format
+            })
+    else:
+        coder = get_coder()
+        code = coder.invoke({
+                "question": question, 
+                "plan": plan,
+                "answer_format": answer_format
+            })
+
+    # extract the code block
+    code_block = extract_python_code(code)
     
+    print("--------------- Code ---------------")
+    print(code_block, end='\n\n')
 
-
-
-
-# # Planner
-# planner_prompt = PromptTemplate(
-#     template=prompt_plan,
-#     input_variables=["question", "entities_matches"],
-# )
-
-# planner = planner_prompt | llm | StrOutputParser()
-
-# # print(question)
-# # print(entities_matches)
-# # print("-"*30)
-
-# # plan = planner.invoke({"question": question, "entities_matches": entities_matches})
-# # print(plan)
-
-# # Coder
-# import re
-
-# def extract_python_code(text):
-#     # Define a regular expression pattern to match Python code blocks
-#     pattern = r'```(?:python|Python)?\s*([\s\S]*?)\s*```'
+    num_steps += 1
     
-#     # Find all matches in the text
-#     code_blocks = re.findall(pattern, text)
-      
-#     # Join all code blocks into a single string with new lines between blocks
-#     code = '\n\n'.join(code_blocks).strip()
+    return {"code": code_block, "num_steps": num_steps}
+
+def execute(state):
+    """executes the given code"""
+    code = state['code']
+
+    # execute the code
+    try:
+        print("--------------- Output ---------------")
+        output = execute_code(code)
+        print(output, end='\n\n')
+    except Exception:
+        error_message = traceback.format_exc()
+        error_message = error_message.split('exec(code, combined_namespace)')[1]
+
+        print("--------------- Error ---------------")
+        print(error_message, end='\n\n')
+
+        return {"error_message": error_message, "error": True, 'output': None}
+
+    return {"error_message": None, "error": False, "output": output}
+
+def check_output(state: GraphState):
+    """determines whether to finish."""
+    error = state["error"]
+    num_steps = state["num_steps"]
+
+    if error == False or num_steps == MAX_NUM_STEPS:
+        return "end"
+    else:
+        return "debug"
     
-#     return code
+def main(out_path: str):
+    # Define workflow
+    workflow = StateGraph(GraphState)
+
+    # Define the nodes 
+    workflow.add_node("create_plan", create_plan)
+    workflow.add_node("write_code", write_code)
+    workflow.add_node("execute", execute)
+
+    # Build graph
+    workflow.set_entry_point("create_plan")
+    workflow.add_edge("create_plan", "write_code")
+    workflow.add_edge("write_code", "execute")
+    workflow.add_conditional_edges(
+        "execute",
+        check_output,
+        {
+            "debug": "write_code",
+            "end": END,
+        },
+    )
+    app = workflow.compile()
     
-# coder_prompt = PromptTemplate(
-#     template=prompt_code,
-#     input_variables=["question", "entities_matches", "plan"],
-# )
-
-# coder = coder_prompt | llm | StrOutputParser()
-
-# # print(question)
-# # print(entities_matches)
-# # print("-"*50)
-
-# # code = coder.invoke({"question": question, "entities_matches": entities_matches, "plan": plan})
-# # print(code)
-# # print("-"*50)
-
-# # code_clean = extract_python_code(code)
-# # print(code_clean)
-
-# # Debugger   
-# debugger_prompt = PromptTemplate(
-#     template=prompt_debug,
-#     input_variables=["question", "entities_matches", "plan"],
-# )
-
-# debugger = debugger_prompt | llm | StrOutputParser()
-# # code = debugger.invoke({"question": question, "entities_matches": entities_matches, "plan": plan})
-# # code_clean = extract_python_code(code)
-
-# from typing_extensions import TypedDict
-# from typing import List
-
-# ### State
-# class GraphState(TypedDict):
-#     """
-#     Represents the state of our graph.
-
-#     Attributes:
-#         question: question
-#         entities: entities found in the question
-#         entities_matches: matche valus of the entities
-#         plan: analysis plan
-#         code: code
-#         error_message: error message
-#         error: flag for error
-#         num_steps: number of steps
-#         output: output of the code
-#     """
-#     question : str
-#     entities: List[tuple]
-#     entities_matches : dict
-#     plan : str
-#     code : str
-#     error_message: str
-#     error : bool
-#     num_steps : int
-#     output: str
+    # Read questions
+    questions = read_questions(questions_path=out_path)
+    if (questions['code'].ne('-').all() or
+        questions['plan'].ne('-').all() or
+        questions['output'].ne('-').all() or
+        questions['error_message'].ne('-').all()):
+        print("Already finished: ", out_path)
+        exit()
     
-# def detect_entities(state):
-#     """detect the entity names in the question"""
-#     question = state['question']
+    # Run experiment
+    for i, r in tqdm(questions.iterrows()):
+        if (r['code']=='-') & (r['plan']=='-') & (r['output']=='-') & (r['error_message']=='-'):
+            final_state = app.invoke({
+                "question": r['question'],
+                "answer_format": r['answer_format'],
+                "references": r['references'],
+                "entities_matches": r['phrase_matches'], 
+                "error": False,
+                "num_steps": 0
+            })
+            questions.loc[i, 'plan'] = final_state['plan']
+            questions.loc[i, 'code'] = final_state['code']
+            questions.loc[i, 'output'] = final_state['output']
+            questions.loc[i, 'error_message'] = final_state['error_message']
 
-#     # find the entity names
-#     entities = entity_detector.invoke({"question": question}).split("<|start_header_id|>assistant<|end_header_id|>")[1]
-
-#     # extract the list of entities
-#     entities_extracted = extract_landmark_info(entities)
-
-#     print("--------------- Detected Entities ---------------")
-#     print(entities_extracted, end='\n\n')
-
-#     return {"entities": entities_extracted}
-
-# def find_matches(state):
-#     """find the matches of the entities from the datasets"""
-#     entities = state['entities']
-
-#     # define dataset mapping
-#     datasets = {1: "data/buildings_1740.csv", 2: "data/buildings_1808.csv", 3: "data/landmarks.csv"}
-
-#     # initialize entities matches
-#     entities_matches = {}
-
-#     for entity in entities:
-#         # get entity name
-#         entity_name = entity[0].lower()
-    
-#         # translate the entity name if needed
-#         entity_name_translation = None
-#         if entity[3]:
-#             entity_name_translation = translate_text(entity_name)
-    
-#         # get the column values from the dataset
-#         dataset = pd.read_csv(datasets[entity[2]])
-#         try:
-#             dataset = dataset[dataset[entity[1]].notna()]
-#             column_values = dataset[entity[1]].unique()
-#         except:
-#             continue
-    
-#         # get exact matching
-#         matches = exact_search(entity_name, column_values)
-    
-#         # fuzzy search
-#         if len(matches) == 0:
-#             matches = fuzzy_search(entity_name, column_values)
-    
-#         # similarity search
-#         threshold = 0.9
-#         while len(matches) == 0 and threshold >= 0.5:
-#             matches = similarity_search(entity_name, column_values, threshold=threshold)
-#             threshold -= 0.05
-    
-#         # skip this entity if not matches are found with at least 50% of similarity
-#         if len(matches) == 0:
-#             break
-    
-#         # set the entity name
-#         entities_matches[entity_name] = {}
-#         entities_matches[entity_name]['dataset'] = datasets[entity[2]]
-#         entities_matches[entity_name]['column'] = entity[1]
-#         entities_matches[entity_name]['matches'] = matches
-#         if entity_name_translation is not None:
-#             entities_matches[entity_name]['italian_translation'] = entity_name_translation
-
-#     print("--------------- Matched Entities ---------------")
-#     print(entities_matches, end='\n\n')
-
-#     return {"entities_matches": entities_matches}
-
-# def create_plan(state):
-#     """creates a plan to answer the question"""
-#     question = state['question']
-#     entities_matches = state['entities_matches']
-
-#     # create the plan
-#     plan = planner.invoke({"question": question, "entities_matches": entities_matches}).split("<|start_header_id|>assistant<|end_header_id|>")[1]
-
-#     print("--------------- Plan ---------------")
-#     print(plan, end='\n\n')
-
-#     return {"plan": plan}
-
-# def write_code(state):
-#     """writes / debugs a code following the given plan / error message"""
-#     question = state['question']
-#     entities_matches = state['entities_matches']
-#     plan = state['plan']
-#     code = state['code']
-#     error_message = state['error_message']
-#     error = state['error']
-#     num_steps = state['num_steps']
-
-#     # Generate or Debug the code
-#     if error:
-#         code = debugger.invoke({"question": question, "entities_matches": entities_matches, "plan": plan, "code": code, "error_message": error_message}).split("<|start_header_id|>assistant<|end_header_id|>")[1]
-#     else:
-#         code = coder.invoke({"question": question, "entities_matches": entities_matches, "plan": plan}).split("<|start_header_id|>assistant<|end_header_id|>")[1]
-
-#     # extract the code block
-#     code_block = extract_python_code(code)
-    
-#     print("--------------- Code ---------------")
-#     print(code_block, end='\n\n')
-
-#     num_steps += 1
-    
-#     return {"code": code_block, "num_steps": num_steps}
-
-# import traceback
-
-# def execute(state):
-#     """executes the given code"""
-#     code = state['code']
-
-#     # execute the code
-#     try:
-#         print("--------------- Output ---------------")
-#         output = exec(code)
-#     except Exception:
-#         error_message = traceback.format_exc()
-
-#         print("--------------- Error ---------------")
-#         print(error_message, end='\n\n')
-
-#         return {"error_message": error_message, "error": True}
-
-#     return {"output": output, "error": False}
-
-# def check_entities(state):
-#     """decides whether to go to planner or entity matcher"""
-#     entities = state['entities']
-
-#     if len(entities) == 0:
-#         return "create_plan"
-#     else:
-#         return "find_matches"
-
-# max_num_steps = 10
-
-# def check_output(state: GraphState):
-#     """determines whether to finish."""
-#     error = state["error"]
-#     num_steps = state["num_steps"]
-
-#     if error == False or num_steps == max_num_steps:
-#         return "end"
-#     else:
-#         return "degub"
-    
-# from langgraph.graph import END, StateGraph
-
-# workflow = StateGraph(GraphState)
-
-# # Define the nodes 
-# workflow.add_node("detect_entities", detect_entities)
-# workflow.add_node("find_matches", find_matches)
-# workflow.add_node("create_plan", create_plan)
-# workflow.add_node("write_code", write_code)
-# workflow.add_node("execute", execute)
-
-# # Build graph
-# workflow.set_entry_point("detect_entities")
-# workflow.add_conditional_edges(
-#     "detect_entities",
-#     check_entities,
-#     {
-#         "create_plan": "create_plan",
-#         "find_matches": "find_matches",
-#     },
-# )
-# workflow.add_edge("find_matches", "create_plan")
-# workflow.add_edge("create_plan", "write_code")
-# workflow.add_edge("write_code", "execute")
-# workflow.add_conditional_edges(
-#     "execute",
-#     check_output,
-#     {
-#         "degub": "write_code",
-#         "end": END,
-#     },
-# )
-
-# app = workflow.compile()
-
-# from tqdm import tqdm 
-
-# # question = "How many people live around the square of San Marco?"
-# final_states = []
-# for _, r in tqdm(questions.iterrows()):
-#     try:
-#         final_state = app.invoke({"question": r['question'], "error": False, "num_steps": 0})
-#         final_states.append(final_state)
-#     except:
-#         continue
-    
-# import json
-
-# # Define a custom JSON encoder to preserve newlines
-# class CustomJSONEncoder(json.JSONEncoder):
-#     def encode(self, obj):
-#         json_str = super().encode(obj)
-#         # Replace escaped newline characters with actual newlines
-#         json_str = json_str.replace('\\n', '\n')
-#         return json_str
-
-# # Convert the list of JSON objects to a pretty-printed JSON string
-# pretty_json = json.dumps(final_states, indent=4, ensure_ascii=False, cls=CustomJSONEncoder)
-
-# # Write the pretty-printed JSON string to a file
-# with open('agent_out.json', 'w', encoding='utf-8') as f:
-#     f.write(pretty_json)
+            # Store the outputs
+            questions.to_csv(out_path, index=False)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out-path', type=str, required=True)
+    args = parser.parse_args()
+    
+    assert args.out_path.endswith('.csv')
+
+    main(args.out_path)
