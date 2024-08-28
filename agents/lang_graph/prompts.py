@@ -8,7 +8,6 @@
 # - tenant_name -- name of the tenant in the building
 # - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 # - rent_price -- numerical value that refers to Italian ducats.
-# - location -- approximate location of the building
 # - parish -- parish that the building is located at
 # - building_functions_count -- same as the length of building_functions
 # - longitude
@@ -20,7 +19,6 @@
 # - building_functions -- a list of the functions the building served as. Given in italian.
 # - building_functions_count -- same as length of Building_Functions
 # - building_area -- in meters square.
-# - location -- approximate location of the building
 # - district -- district that the building is located at
 # - longitude
 # - latitude
@@ -72,7 +70,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -84,7 +81,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -134,7 +130,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -146,7 +141,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -200,7 +194,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -212,7 +205,6 @@ You are a highly skilled data analyst specializing in historical data analysis. 
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -260,7 +252,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -272,7 +263,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -315,7 +305,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -327,7 +316,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -388,7 +376,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - tenant_name -- name of the tenant in the building
 - building_functions -- a comma separated list of the functions the building is used as. Given in italian.
 - rent_price -- numerical value that refers to Italian ducats.
-- location -- approximate location of the building
 - parish -- parish that the building is located at
 - building_functions_count -- same as the length of building_functions
 - longitude
@@ -400,7 +387,6 @@ You are a highly skilled Python developer with expertise in data analysis. You a
 - building_functions -- a list of the functions the building served as. Given in italian.
 - building_functions_count -- same as length of Building_Functions
 - building_area -- in meters square.
-- location -- approximate location of the building
 - district -- district that the building is located at
 - longitude
 - latitude
@@ -433,5 +419,4 @@ Output:
 {output}
 
 New Python Code:
-```python
 <|eot_id|><|start_header_id|>assistant<|end_header_id|>"""

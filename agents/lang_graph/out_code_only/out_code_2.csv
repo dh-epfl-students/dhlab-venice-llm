@@ -1,0 +1,2674 @@
+question,category,answer_format,code,output,error_message
+What is the average rent price of all buildings that are located within 100 meters of a church compared to those further away in 1740?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Extract longitude and latitude from landmarks DataFrame
+landmarks[['longitude', 'latitude']] = landmarks[['longitude', 'latitude']].astype(float)
+
+# Extract longitude, latitude from buildings DataFrame
+buildings_1740[['longitude', 'latitude']] = buildings_1740[['longitude', 'latitude']].astype(float)
+
+# Merge buildings and landmarks based on location (assuming landmark_name is unique)
+merged_data = pd.merge(buildings_1740, landmarks.rename(columns={'landmark_type': 'landmark_type'}), left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Calculate the distance from each building to its nearest landmark
+def calculate_distance(lat1, lon1):
+    return lambda lat2, lon2: geodesic((lat1, lon1), (lat2, lon2)).meters
+
+merged_data['distance_to_nearest_landmark'] = merged_data.apply(lambda row: calculate_distance(row['latitude'], row['longitude'])(row['location_y'], row['location_x']), axis=1)
+
+# Filter out buildings within 100 meters of a church
+buildings_near_church = merged_data[(merged_data['landmark_type'] == 'church') & (merged_data['distance_to_nearest_landmark'].le(100))]
+buildings_further_away = merged_data[(~((merged_data['landmark_type'] == 'church')) | (merged_data['distance_to_nearest_landmark'].gt(100)))]
+buildings_near_church = buildings_near_church[buildings_near_church['building_functions_count'].notna()]
+buildings_further_away = buildings_further_away[buildings_further_away['rent_price'].notna()]
+
+# Calculate the average rent price for each group
+avg_rent_price_near_church = buildings_near_church['rent_price'].mean()
+avg_rent_price_further_away = buildings_further_away['rent_price'].mean()
+
+print(f""The answer is: [[{avg_rent_price_near_church / avg_rent_price_further_away}]]"")",,"
+  File ""<string>"", line 21, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4289, in __setitem__
+    self._set_item_frame_value(key, value)
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4447, in _set_item_frame_value
+    raise ValueError(
+ValueError: Cannot set a DataFrame with multiple columns to the single column distance_to_nearest_landmark
+"
+What is the average building area of all buildings that are located within 100 meters of a church compared to those further away in 1808?,spatial,a single number,"import pandas as pd
+import numpy as np
+from scipy.spatial import distance
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge landmarks with itself to create a new dataframe containing longitude and latitude
+merged_landmarks = landmarks[['longitude', 'latitude']].copy()
+merged_landmarks.columns = ['Longitude', 'Latitude']
+
+# Rename the columns for easier merging later on
+buildings_1808.columns = [col.strip().replace(' ', '_') for col in buildings_1808.columns]
+landmarks.columns = [col.strip().replace(' ', '_') for col in landmarks.columns]
+
+# Merge landmarks with buildings_1808 based on longitude and latitude
+merged_data = pd.merge(buildings_1808, merged_landmarks, how='left', left_on=['longitude'], right_on=['Longitude'])
+
+# Calculate the distance from each building to its closest landmark (church)
+def calculate_distance(row):
+    if not np.isnan([row['latitude'], row['longitude']]):
+        return distance.euclidean((row['latitude'], row['longitude']), (row['Latitude'], row['Longitude']))
+
+merged_data['distance'] = merged_data.apply(lambda row: calculate_distance(row), axis=1)
+
+# Filter buildings within 100 meters of a church
+near_church_buildings = merged_data[merged_data['distance'].apply(lambda x: np.hypot(0,0) if np.isnan(x) else x).le(100)]
+
+# Calculate the average building area for buildings near and far from churches
+average_area_near_church = near_church_buildings['building_area'].mean()
+far_from_church_buildings = merged_data[~merged_data['distance'].isin(near_church_buildings['distance'])]
+average_area_far_from_church = far_from_church_buildings['building_area'].mean()
+
+# Print the final answer
+final_answer = average_area_near_church - average_area_far_from_church
+print(f""The answer is: [[{final_answer}]]"")",,"
+  File ""<string>"", line 26, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 10361, in apply
+    return op.apply().__finalize__(self, method=""apply"")
+           ^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/apply.py"", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/apply.py"", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/apply.py"", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""<string>"", line 26, in <lambda>
+  File ""<string>"", line 23, in calculate_distance
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+"
+Which square has the highest density of tenants within 100 meters in 1740?,spatial,a single entity name,"import numpy as np
+import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert location columns in buildings_1740 and landmarks to float (matching the type of longitude)
+buildings_1740[['longitude', 'latitude']] = buildings_1740[['longitude', 'latitude']].astype(float)
+landmarks[['longitude', 'latitude']] = landmarks[['longitude', 'latitude']].astype(float)
+
+# Function to calculate distances between each building in 1740 and all landmarks
+def calculate_distances(buildings, landmarks):
+    distances = []
+    for index, row in buildings.iterrows():
+        distance = []
+        for landmark_index, landmark_row in landmarks.iterrows():
+            distance.append(np.sqrt((row['longitude'] - landmark_row['longitude']) ** 2 + (row['latitude'] - landmark_row['latitude']) ** 2))
+        distances.append(distance)
+    return distances
+
+# Calculate the distances between each building in 1740 and all landmarks
+distances = calculate_distances(buildings_1740, landmarks)
+
+# Add the calculated distances to the buildings_1740 dataframe
+buildings_1740['distance_to_landmarks'] = [min(x) for x in distances]
+
+# Find the closest landmark to each building in 1740
+closest_landmarks = pd.DataFrame({'building_first_name': buildings_1740['owner_first_name'], 
+                                  'landmark_name': buildings_1740.groupby('longitude')['distance_to_landmarks'].transform(min).idxmin().apply(lambda x: landmarks.loc[x, 'landmark_name']),
+                                 'distance': buildings_1740.groupby('longitude')['distance_to_landmarks'].transform(min)})
+
+# Merge the closest landmarks with buildings in 1740
+merged_data = pd.merge_asof(closest_landmarks.sort_values(by='distance'), 
+                            buildings_1740, by='building_first_name', direction='forward')
+
+# Calculate the density of tenants per square meter within 100 meters in 1740
+def calculate_density(row):
+    distance_mask = (row['distance_to_landmarks'] <= 100)
+    nearby_landmarks = merged_data[distance_mask]
+    tenant_count = len(nearby_landmarks[nearby_landmarks['landmark_type'] == 'square'])
+    building_area = row['rent_price']
+    density = tenant_count / building_area if building_area > 0 else None
+    return density
+
+merged_data['density'] = merged_data.apply(calculate_density, axis=1)
+
+# Find the square with the highest density of tenants
+max_density_square = merged_data.loc[merged_data['density'].idxmax()]
+
+print(f""The answer is: [[{max_density_square['landmark_name']}]]"")",,"
+  File ""<string>"", line 31, in <module>
+AttributeError: 'int' object has no attribute 'apply'
+"
+Which square has the highest density of buildings within 100 meters in 1808?,spatial,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to a list in 1808 dataset
+buildings_1808['building_functions'] = buildings_1808['building_functions'].apply(lambda x: x.split(','))
+
+# Merge the three datasets based on location and latitude/longitude
+merged_df = pd.merge(buildings_1740, buildings_1808, how='outer', on=['location', 'latitude', 'longitude'])
+merged_df = merged_df.dropna()  # Remove rows with missing values
+
+# Calculate the distance between each building and every landmark
+distance_matrix = []
+for i in range(len(merged_df)):
+    row = [0] * len(landmarks)
+    for j in range(len(landmarks)):
+        dist = np.sqrt((merged_df.iloc[i]['latitude'] - landmarks.iloc[j]['latitude'])**2 + (merged_df.iloc[i]['longitude'] - landmarks.iloc[j]['longitude'])**2)
+        row[j] = dist
+    distance_matrix.append(row)
+
+# Calculate the density of buildings within 100 meters for each square
+density_matrix = []
+for i in range(len(landmarks)):
+    square_buildings = [index for index, value in merged_df.iterrows() if (value['latitude'] - landmarks.iloc[i]['latitude'])**2 + (value['longitude'] - landmarks.iloc[i]['longitude'])**2 <= 100]
+    density_matrix.append(len(square_buildings))
+
+# Find the square with the highest density
+max_density_square = landmarks.iloc[np.argmax(np.array(density_matrix))]['landmark_name']
+
+print(f""The answer is: [[{max_density_square}]]"")",The answer is: [[campiello della malvasia]],
+Is the building rent price correlated with the distance from the nearest square in 1740?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+from scipy.stats import spearmanr
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings and landmarks based on location
+merged_data = pd.merge(buildings_1740, landmarks, how='left', left_on=['longitude'], right_on=['longitude'])
+
+# Calculate the distance from each building to the nearest square in 1740
+def calculate_distance(row):
+    if row['landmark_type'] == 'square':
+        return np.sqrt((row['latitude'] - row['latitude'])**2)
+    else:
+        return None
+
+merged_data['distance_to_nearest_square'] = merged_data.apply(calculate_distance, axis=1)
+
+# Filter the data to only include rows where a square is found within 500 meters
+filtered_data = merged_data[merged_data['distance_to_nearest_square'].notna() & (merged_data['distance_to_nearest_square'] <= 500)]
+
+# Check if there's a correlation between building rent price and distance to nearest square
+correlation_coefficient, _ = spearmanr(filtered_data['rent_price'], filtered_data['distance_to_nearest_square'])
+
+print(f""The answer is: [[{correlation_coefficient > 0.5}]]"")",The answer is: [[False]],
+Is the building area correlated with the distance from the nearest square in 1808?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Add longitude and latitude columns to buildings_1808
+buildings_1808['longitude'] = landmarks['longitude'].astype(float)
+buildings_1808['latitude'] = landmarks['latitude'].astype(float)
+
+# Group landmarks by location and find the nearest landmark for each building in 1740
+nearest_landmarks = landmarks.groupby('location').mean().reset_index()
+
+# Merge buildings_1740 with the nearest landmark's distance
+merged_df = pd.merge_asof(buildings_1740, nearest_landmarks, left_on='location', right_on='location')
+
+# Calculate the distance from the building to the nearest square
+merged_df['distance'] = ((merged_df.longitude - merged_df.longitude) ** 2 + (merged_df.latitude - merged_df.latitude) ** 2) ** 0.5
+
+# Drop unnecessary columns
+merged_df = merged_df.drop(['longitude', 'latitude'], axis=1)
+
+# Merge buildings_1808 with the nearest square's distance
+merged_df = pd.merge_asof(buildings_1808, merged_df.sort_values(by='location'), left_on='location', right_index=True)
+
+# Calculate the correlation between building area and distance to the nearest square
+correlation = np.corrcoef(merged_df['building_area'], merged_df['distance'])[0, 1]
+
+print(f""The answer is: [[{correlation > 0.5}]]"")",,"
+  File ""<string>"", line 14, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 9170, in groupby
+    return DataFrameGroupBy(
+           ^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/groupby/groupby.py"", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+                               ^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/groupby/grouper.py"", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'location'
+"
+Where are the houses densely located in 1740?,spatial,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert the location column in both datasets into a more usable format
+buildings_1740['location'] = buildings_1740['location'].str.title()
+landmarks['landmark_name'] = landmarks['landmark_name'].str.title()
+
+# Group the 1740 buildings by their locations and count the number of buildings in each location
+location_counts = buildings_1740.groupby('location')['building_functions_count'].count().reset_index(name='counts')
+
+# Merge the location counts with the landmark data to get the coordinates for each location
+merged_data = pd.merge(location_counts, landmarks, how='left', left_on='location', right_on='landmark_name')
+
+# Calculate the density of houses in each location
+density = merged_data.groupby('location')['counts'].sum() / merged_data['counts'].count()
+
+# Get the locations with high densities (densely located)
+high_density_locations = density[density > np.mean(density)].index
+
+print(f""The houses are densely located in [[{', '.join(map(str, high_density_locations))}]]."")","The houses are densely located in [[A Santa Chiara, Al Capitello Vicino La Calle Larga, Al Paré Di Tolle, Al Ponte Dell'Anzolo, Al Ponte Di Ca' Minio, Al Ponte Di Noal, Al Ponticello Della Toletta, Al Volto, Alla Fondamenta Di Cà Barbaro, Alla Scoazzera, Alla Toletta, Appresso Calle Morosini, Arzere, Ascensione, Attacco Il Fondaco De Tedeschi, Barbaria Delle Tavole, Borgo, Borgo Dalla Parte Delle Romite, Brusà Sopra La Fondamenta Dello Stesso Forno, Cale De Albanesi, Cale Del Forno, Cale Del Pistor, Cale Del Ravano, Cale Dell'Oglio, Calesella Dietro La Chiesa, Calessela Fuori Da Campo Ruzolo Per Andar In Calle Dei Fabri, Calle Al Ponte Del Riello, Calle Al Ponte Di Sant'Anna, Calle Alberegno, Calle Amigoni, Calle Balastro, Calle Bressana, Calle Ca' Falier, Calle Ca' Surian, Calle Caleri, Calle Colombina, Calle Corrente Dell'Occa, Calle Corrente Verso La Chiesa, Calle Correra Fondamenta San Domenico, Calle Dall'Oglio, Calle De Albanesi, Calle De Ca' Renier, Calle De Colori, Calle De Cà Cocco, Calle De Fabri, Calle De Favri, Calle De Franchi, Calle De Furlani, Calle De Fuseri, Calle De Lavadori, Calle De Mattarelli, Calle De Mezzo In Rugaiuffa, Calle De Orbi, Calle De Preti, Calle De Putti, Calle De Ragusei, Calle De Sartori, Calle De Scoachamini In Calle De Fabri, Calle De Stagneri, Calle Degli Orbi, Calle Dei Albanesi, Calle Dei Bianchezini, Calle Dei Bianchi, Calle Dei Botteri, Calle Dei Cerchieri, Calle Dei Frati, Calle Dei Greci, Calle Dei Preti, Calle Dei Ragusei, Calle Dei Saoneri, Calle Dei Savoneri, Calle Del Bezzo, Calle Del Campaniel, Calle Del Capitello, Calle Del Carbon, Calle Del Carro, Calle Del Centon, Calle Del Christo, Calle Del Cordellotto, Calle Del Corpus Domini, Calle Del Dose, Calle Del Dragan, Calle Del Erbariol, Calle Del Ferraci, Calle Del Figher, Calle Del Fontico Dalla Parte Della Riva Del Vin, Calle Del Fontico Dalla Parte Di Ruga, Calle Del Forno, Calle Del Forno Dietro La Tanna, Calle Del Forno In Borgo, Calle Del Forno Vicina Al Campraner, Calle Del Frutariol, Calle Del Fruttarol, Calle Del Fumo, Calle Del Gesù E Maria, Calle Del Luganegher, Calle Del Luganegher Verso Il Ponte Di Legno, Calle Del Magazen, Calle Del Magazen Vechio, Calle Del Magazenetto, Calle Del Orese, Calle Del Paradiso, Calle Del Pestrin, Calle Del Pestrino, Calle Del Pin, Calle Del Pistor, Calle Del Pistor Fondamenta San Domenico, Calle Del Ponte Del Lovo Fino Alla Calle De Favri, Calle Del Redivo In Calle De Fabri, Calle Del Squero, Calle Del Squero O Sia Della Madonna, Calle Del Stendardo, Calle Del Stramazer, Calle Del Sturion, Calle Del Tagliapietra, Calle Del Traghetto, Calle Del Volto, Calle Del Volto A Santa Maria Maggior Contrà Di San Nicolò, Calle Del Zadio, Calle Del Zio, Calle Dell'Aquila Nera, Calle Dell'Asedo, Calle Dell'Aseo, Calle Dell'Occa, Calle Dell'Oglio, Calle Dell'Opera, Calle Della Bissa, Calle Della Botta, Calle Della Chiesa, Calle Della Comedia, Calle Della Commedia, Calle Della Fortuna, Calle Della Gallia, Calle Della Grilla, Calle Della Lanza, Calle Della Madona, Calle Della Madonna, Calle Della Malvasia, Calle Della Masena, Calle Della Misericordia, Calle Della Mora, Calle Della Nave, Calle Della Panada, Calle Della Passion In Cassellaria, Calle Della Pegola, Calle Della Pietà, Calle Della Pigna, Calle Della Rabbia, Calle Della Regina, Calle Della Riosa, Calle Della Testa, Calle Della Torre, Calle Della Vida, Calle Delle Aque, Calle Delle Ballotte, Calle Delle Beccarie, Calle Delle Capucine, Calle Delle Carozze, Calle Delle Monache, Calle Delle Moschette, Calle Delle Turchette, Calle Delle Velle, Calle Delle Zotte, Calle Delli Bergamaschi, Calle Dello Squero, Calle Dello Strazzaruol, Calle Di Ca Bernardo, Calle Di Ca Lini, Calle Di Ca' Bembo, Calle Di Ca' Boldù, Calle Di Ca' Capello, Calle Di Ca' Da Lezze, Calle Di Ca' Dolfin, Calle Di Ca' Fossa, Calle Di Ca' Garzoni, Calle Di Ca' Lando In Salizzada, Calle Di Ca' Mocenigo Casa Vecchia, Calle Di Ca' Pasqualigo, Calle Di Ca' Priuli, Calle Di Ca' Tasca, Calle Di Cà Bernardo, Calle Di Cà Erizo, Calle Di Cà Flangini, Calle Di Cà Pasqualigo, Calle Di Cà Tiepolo, Calle Di Cà Vitturi, Calle Di Mezzo, Calle Di San Christofolo, Calle Di San Domenico, Calle Di Sant'Antonio Dalla Riva Del Carbon Sino Alla Calle De Favri, Calle Di Santa Cattarina Principia Alle Fondamenta Nove, Calle Dolera, Calle Drio La Chiesa, Calle Drio La Scuola Di San Rocco, Calle Dè Drazzi, Calle Fiubera, Calle Galliazza, Calle Gradeniga, Calle Gussoni, Calle In Faccia Le Pizzocchere, Calle Larga, Calle Larga Dietro La Chiesa, Calle Larga Vicino La Ca' Matta, Calle Largha, Calle Lionpardo, Calle Longa, Calle Longa Giù Dal Ponte, Calle Lunga Di Santa Cattarina, Calle Lunga Per Andare A S. Moisé, Calle Moranda, Calle Morosina, Calle Nova, Calle Occhialera, Calle Per Andar Al Fontico Della Farina, Calle Per Andar In Campo Ruzolo, Calle Per Andar In Campo San Filippo E Giacomo, Calle Pesera, Calle Pignatte, Calle Querina, Calle Rotonda, Calle Rubina, Calle Scaramella, Calle Schiavonina, Calle Sporca, Calle Terrazzera, Calle Toscana, Calle Trevisana, Calle Valaressa, Callesella In Fazza Il Fontico Della Farina, Callesella Per Andar In Riva, Calleselle, Callesselle, Campiel De Squelini, Campiel De Tedeschi, Campiel Del Forno Alla Carità, Campiel Del Pestrin, Campiel Del Remer, Campiel Di Ca Canal Ognisanti, Campiel Di Ka Zen, Campiel Di Ka' Alimante, Campiel Panizza, Campiel San Rocco, Campieleto In Rugga, Campiello, Campiello Del Bonomo, Campiello Dell'Ascension, Campiello Della Cason, Campiello Della Pace Corte Friziera, Campiello Di Ca' Lucca, Campiello Dietro La Chiesa, Campielo, Campo, Campo De Do Pozzi, Campo De Frari, Campo De Todeschi, Campo Del Pistor, Campo Dell'Erba, Campo Delle Gatte, Campo Di San Polo, Campo Di San Salvatore, Campo Di Santa Margherita, Campo E Corte Delle Monache, Campo Grande, Campo Piccolo, Campo San Cassan, Campo San Rocco, Campo Santa Margherita, Campo Santo, Casaria, Casaria Vecchia, Case Alte, Case Della Procuratia Di Citra, Case Nove Di Ca' Lipomano Dietro Alla Toletta, Case Nove Sopra Canal, Case Nove, Porton Primo, Case Nove, Porton Quarto, Case Nove, Porton Quinto, Case Nove, Porton Secondo, Case Nove, Porton Sesto, Case Nove, Porton Terzo, Case Vecchie, Casselaria, Cassellaria, Chiovere, Chioverette, Chioverette Per Andar Al Gesù E Maria, Corte, Corte Barbariga, Corte Bassa Dietro La Tanna, Corte Bevilacqua, Corte Bondumiera, Corte Bonfadina, Corte Busella, Corte Colonna, Corte Coltrera Dietro La Tanna, Corte Contarina, Corte Contarina Campiello, Corte Contarina Parte Del Forno, Corte Contarina Parte Della Malvasia, Corte Cornera, Corte D'Amai, Corte Dal Cavalo, Corte Dal Zio, Corte Dall'Oglio, Corte Dalla Vida, Corte De Cà Celsi, Corte De Càmici, Corte De Forno, Corte De Guardiani, Corte De Ka Zoppa, Corte De Risi, Corte Dei Baruchi, Corte Dei Cavalli, Corte Dei Cavalli Fondamenta San Domenico, Corte Dei Marasoni In Rugga, Corte Dei Muti, Corte Dei Pometti, Corte Del Basegò, Corte Del Battifuogo, Corte Del Cristo San Iseppo, Corte Del Degolin, Corte Del Figher, Corte Del Folio, Corte Del Forner, Corte Del Forno, Corte Del Gallo, Corte Del Magazen San Iseppo, Corte Del Navaro, Corte Del Pignater, Corte Del Pozzetto, Corte Del Sarasin Nel Largo, Corte Del Sarasin Nel Stretto, Corte Del Scaleter, Corte Del Scotti, Corte Del Solta San Iseppo, Corte Del Tagliapietra, Corte Del Tagliapietra Sopra La Stessa Fondamenta, Corte Del Tentor, Corte Del Terco In Rugga, Corte Del Testa, Corte Del Zuccaro, Corte Dell'Albero, Corte Dell'Anguria, Corte Dell'Anzolo, Corte Dell'Anzolo Fondamenta Di San Domenico, Corte Dell'Orso, Corte Della Borsa, Corte Della Cenere, Corte Della Comare, Corte Della Comedia, Corte Della Grana, Corte Della Madena Dietro La Tanna, Corte Della Malvasia, Corte Della Malvasia Vecchia, Corte Della Sbiacca, Corte Della Stua, Corte Della Vida, Corte Delle Ancore, Corte Delle Ancore Fondamenta San Domenico, Corte Delle Candelle, Corte Delle Colonne Fondamenta San Domenico, Corte Delle Mende, Corte Delle Pizzocchere, Corte Delle Procuratie Prima, Corte Delle Scalle, Corte Di Ca Canal, Corte Di Ca Malipiero, Corte Di Ca Miani, Corte Di Ca Pisani, Corte Di Ca Sagredo, Corte Di Ca Trevisan, Corte Di Ca' Biancho, Corte Di Ca' Cocco, Corte Di Ca' Da Mosto, Corte Di Ca' Dolfin, Corte Di Ca' Gritti, Corte Di Ca' Lombardo, Corte Di Ca' Malipiero, Corte Di Ca' Nani, Corte Di Cà Basadonna, Corte Di Cà Foscari, Corte Di Cà Petriani, Corte Di Cà Pozzo, Corte Di Cà Zen, Corte Di Martin Novello San Iseppo, Corte Dolfina, Corte Ficca Fondamenta San Domenico, Corte Friziera Dietro La Tanna, Corte Giustiniana, Corte Grimana, Corte Lardona, Corte Larga Vicino Al Ponte D'Arzere, Corte Lavezera, Corte Loredana, Corte Malatina, Corte Marcona, Corte Massarini, Corte Mazor, Corte Moretta, Corte Morosina, Corte Mozzeniga, Corte Navagera, Corte Nova, Corte Nuova Ossia Dai Tre Pozzi, Corte Pisana, Corte Pugese, Corte Querina, Corte Schiavona Fondamenta San Domenico, Corte Scura, Corte Spinella, Corte Squelini Sulle Scale, Corte Tagliapietra, Corte Toretta, Corte Vecchia, Corte Veniera, Corte Vicino Al Riello In Detta Contrà, Corte Zanoli, Crociera Moro Brita, Crosera, Cà Brusada, Dal Ponte Del Tentor Sino Al Fruttarol Del Campaniel, Dietro Corte Nova, Dietro La Chiesa, Due Corti, Fondamenta, Fondamenta 2 Ponti, Fondamenta Al Malcanton, Fondamenta Alla Madonna Dell'Orto Alla Sacca, Fondamenta Dal Filippini, Fondamenta De Carmini, Fondamenta De Tentori, Fondamenta Del Forno, Fondamenta Del Squero Dietro Alla Toletta, Fondamenta Del Trappolin, Fondamenta Della Tanna, Fondamenta Delle Cappucine, Fondamenta Di Ca' Antelmi, Fondamenta Di Ca' Tiepolo, Fondamenta Di Cà Bon, Fondamenta Di Rempetto La Chiesa, Fondamenta Di S. Andrea, Fondamenta Di San Francesco Di Paola, Fondamenta In Faccia L'Isola, Fondamenta In Faccia Santa Margherita, Fondamenta In Fazza Cà Bragadin P., Fondamenta In Fazza Il Squero, Fondamenta In Fazza La Beccaria, Fondamenta In Riello, Fondamenta Nove, Fondamenta Nove In Paluo, Fondamenta Ormesini, Fondamenta San Domenico, Fondamenta San Iseppo, Fossa Capera, Frezzaria, Ghetto Novissimo, Ghetto Nuovo, Giù Dal Ponte Bagatin, Giù Dal Ponte Di San Polo, Giù Del Ponte De Ferali, Giù Del Ponte Della Guerra, Giù Del Ponte Della Mandollina, Giù Del Ponte Di San Severo, E Rugagiuffa, Il Rio Del Ponte Longo, In Brusà, In Calle, In Calle Del Dose Vicin Al Campo, In Calle Del Forno, In Calle Del Magazen, In Calle Del Piombo, In Calle Della Malvasia Vecchia, In Calle Della Pegola, In Calle Di Cornaro, In Calle Larga, In Campo, In Campo Grande, In Canonica, In Caroi, In Corte Cortese, In Corte Nova, In Faccia Il Magazenetto, In Fazza Corte Di Cà Michiel, In Fondamenta, In Fondamenta Vicin Alla Chiesa, In Marzeria, In Orto, In Pescina, In Rugga, In Salizada, Intorno Alla Chiesa Di San Giacomo De Rialto, Isola, Isola Di Ca' Moro, La Calle Vicina Al Campiel Dal Panizza In Arzere, Le Poste, Malcanton, Marzaria All'Orologio, Merceria, Mercerietta Principia Al Campo Di San Salvatore Termina Al Campo San Bortolameo, Palvò Di S. Antonio, Per Andar Al Ponte Che Porta A Santa Marina, Per Andar Al Ponte S. Antonio, Pescaria, Pescaria Dalla Parte Della Sanità, Piazzetta, Piscina, Piscina Di Frezzaria, Piscina Giù Dal Ponte, Ponte Di San Giobbe, Ponte Donna Onesta, Portico Dei Vedeli, Portico Del Picini, Portico Scuro, Procuratie Nove, Procuratie Vecchie, Quintavalle, Rialto Novo, Riello, Riello Con La Corte Dei Preti, Rio Della Sensa, Rio Delle Burchielle Appresso Ca' Diedo, Rio Delle Fornase Fondamenta Del Specier, Rio Marin, Rio Terrà, Riva Dal Oglio, Riva Del Vin, Riva Del Vino, Riva Grande, Ruga, Ruga De Due Pozzi, Ruga De Speciali, Ruga De Speciali Alla Panataria, Ruga Degli Orefici Dalla Parte Di San Mattio, Ruga Vecchia, Rugagiuffa, Rughetta Al Ponte D'Arzere, Rughetta Verso Calle Del Sturion, Salizada, Salizada A Ca Contarini, Salizada All'Ospedaletto, Salizada Appresso La Chiesa, Salizada Di San Francesco, Salizada Di San Stae, Salizada Per Andar A San Lio, Salizzada, Scala Del Botteghin Di Voltera, Scala In Ghetto Novissimo, Scaloni In Calle Del Luganegher, Scaloni In Calle Del Stramazzer, Scavezadura, Seconda Corte Delle Procuratie Cioè Dalla Parte Del Ponte Storto, Secondo Piano O Stradon Del Ponte Di Rialto, Secondo Ramo, Secondo Soler, Segue La Riva Vicin Al Ponte Della Ca' Di Dio, Segue Ruga D'Orefici, Segue Volte Corini Soler Di Sotto, Soccorso, Soler Di Sotto, Sopra Canal Al Canton, Corpo De Stabili Del Nobil Homo Ser Domenico Michieli, Sopra La Fondamenta, Sopra La Fondamenta De Pensieri, Sopra La Fondamenta Delli Nobili Homini Rizzi A Santa Maria Maggiore, Sopra La Fondamenta In Fazza Li Patroni Dell'Arsenal, Sopra La Lista Alla Colonna, Sopra La Riva Del Carbon, Sopra Le Scalle De Corini - Primo Soler Di Sopra, Sotto Il Portego Del Forner, Sotto Il Portico, Sotto Il Portico Del Cristo, Sotto Il Portico Della Stua In Riello, Sotto Il Portico Di Ca' Dario, Sotto Il Portico Di Ca' Zorzi, Sotto Le Collonelle, Sotto Le Procuratie Nove, Sotto Li Porteci In Facia Alla Chiesa Di San Giacomo De Rialto, Sotto Li Portici De Panni, Sotto Porticho Zurlin In Rugga, Sottoportico Alle Colonne, Sottoportico Calle Longa, Spadaria, Squero Grossi, Squero Vecchio, Su La Fondamenta Appresso Il Ponte Della Gacciola, Su La Fondamenta Della Crea, Sul Secco San Iseppo, Sulla Fondamenta Dei Frari, Terrazza All'Ospedaletto, Terren Dietro La Celestia, Vicin Al Ponte Di Ca' Dandolo, Vicin Al Ponte Noris, Volta De Canal, Zattere, Zo Del Ponte De Fuseri, [Appartamento] Li Formenti Sopra La Strada Verso Santa Marta]].",
+Where are the houses densely located in 1808?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to list in 1740 dataset for consistency
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+
+# Merge the datasets based on location and longitude
+merged_df = pd.merge(buildings_1808, buildings_1740[['location', 'longitude']], how='outer', left_on=['location', 'longitude'], right_on=['location', 'longitude'])
+
+# Count the number of houses in each district
+house_counts = merged_df.groupby('district')['building_functions_count'].sum().reset_index()
+
+# Sort the districts by house count and get the top 5
+top_5_densely_located_districts = house_counts.sort_values(by='building_functions_count', ascending=False).head(5)
+
+# Find the intersection of densely located districts and top 5 districts
+final_answer = list(set([x for x in house_counts.iloc[0:5]['district']]) & set(buildings_1808['district'].unique()))
+
+print(f""The answer is: [[{', '.join(final_answer)}]]"")","The answer is: [[cannaregio, castello, san marco, dorsoduro, san polo]]",
+Are low-rent buildings with less than average rent price clustered in specific areas in 1740?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Calculate the average rent price in 1740
+avg_rent_price = buildings_1740['rent_price'].mean()
+
+# Identify low-rent buildings with less than average rent price
+low_rent_buildings = buildings_1740[buildings_1740['rent_price'] < avg_rent_price]
+
+# Check if these buildings are clustered in specific areas
+low_rent_areas = set()
+for index, row in low_rent_buildings.iterrows():
+    location = row['location']
+    if location not in low_rent_areas:
+        low_rent_areas.add(location)
+
+if len(low_rent_areas) > 5:  # assuming more than 5 unique locations is ""clustered""
+    final_answer = ""yes""
+else:
+    final_answer = ""no""
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[yes]],
+Are small buildings with smaller than average building size clustered in specific areas in 1808?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1808.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Calculate the average building size in 1808
+avg_building_area = np.mean(buildings_1808['building_area'])
+
+# Filter small buildings with smaller than average size
+small_buildings = buildings_1808[buildings_1808['building_area'] < avg_building_area]
+
+# Group small buildings by district and count the number of occurrences
+small_buildings_by_district = small_buildings.groupby('district').size().reset_index(name='count')
+
+# Merge the small buildings with districts to identify clusters
+merged_data = pd.merge(small_buildings_by_district, buildings_1808[['district', 'longitude', 'latitude']], how='left', on=['district'])
+
+# Calculate the average number of small buildings per district
+avg_small_buildings_per_district = np.mean(merged_data['count'])
+
+# Check if the average is significantly larger than 1
+if avg_small_buildings_per_district > 1:
+    print(f""The answer is: [[yes]]"")
+else:
+    print(f""The answer is: [[no]]"")",The answer is: [[yes]],
+How many people live within 100 meters of a church in 1740?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings that are within 100 meters of a church in 1740
+church_buildings = landmarks[landmarks['landmark_type'] == 'church']
+
+# Initialize the count of people living near churches
+num_people = 0
+
+for index, landmark in church_buildings.iterrows():
+    # Filter buildings based on their location and distance from the current church
+    nearby_buildings = buildings_1740[(buildings_1740['location'].str.contains(landmark['landmark_name']))]
+    
+    # Count the number of people living within 100 meters of the current church
+    num_people += nearby_buildings.shape[0]
+
+print(f""The answer is: [[{num_people}]]"")",The answer is: [[24]],
+How many people live within 100 meters of a church in 1808?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1808.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings with the landmarks dataset based on latitude and longitude
+merged_df = pd.merge(buildings_1808, landmarks, left_on=['latitude', 'longitude'], right_on=['latitude', 'longitude'], how='inner')
+merged_df = merged_df[merged_df['landmark_type'] == 'church']
+
+# Calculate the distance between each building and the closest church
+def calculate_distance(lat1, lon1, lat2, lon2):
+    from math import radians, sin, cos, sqrt, atan2
+    R = 6371.0
+    dlat = radians(lat2 - lat1)
+    dlon = radians(lon2 - lon1)
+    a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1-a))
+    distance = R * c
+    return distance
+
+# Calculate the distance and assign it to a new column in the merged_df DataFrame
+merged_df['distance'] = [calculate_distance(row['latitude'], row['longitude'], landmark_lat, landmark_lon) for index, row in merged_df.iterrows() for _, landmark_row in landmarks.iterrows() if (row['latitude'] == landmark_row['latitude']) & (row['longitude'] == landmark_row['longitude'])]
+
+# Filter the buildings that are within 100 meters of a church
+filtered_df = merged_df[merged_df['distance'].le(100)]
+
+# Count the number of people living in these buildings
+people_count = len(filtered_df)
+print(f""The answer is: [[{people_count}]]"")",The answer is: [[0]],
+"On average, how much more expensive are houses near the squares within 100 meters compared to those further away in 1740?",spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert latitude and longitude to numeric values
+buildings_1740['latitude'] = pd.to_numeric(buildings_1740['latitude'])
+buildings_1740['longitude'] = pd.to_numeric(buildings_1740['longitude'])
+
+landmarks['latitude'] = pd.to_numeric(landmarks['latitude'])
+landmarks['longitude'] = pd.to_numeric(landmarks['longitude'])
+
+# Sort the dataframes by longitude
+buildings_1740 = buildings_1740.sort_values('longitude')
+landmarks = landmarks.sort_values('longitude')
+
+# Calculate the distance between each building and the landmarks
+merged_df = pd.merge_asof(buildings_1740, 
+                           landmarks, 
+                           left_on='longitude', right_on='longitude')
+
+# Select only those buildings that are within 100 meters of a square
+merged_df = merged_df[merged_df['landmark_type'] == 'square']
+
+# Calculate the average rent price for houses near squares
+average_rent_price_near_squares = merged_df['rent_price'].mean()
+
+# Load the 1740 buildings dataset again to calculate the average rent price for all buildings
+buildings_1740_again = pd.read_csv('data/buildings_1740.csv')
+
+# Calculate the average rent price for all houses in 1740
+average_rent_price_all_houses = buildings_1740_again['rent_price'].mean()
+
+# Calculate the difference between the average rent price near squares and the average rent price for all houses
+difference_in_rent_price = average_rent_price_near_squares - average_rent_price_all_houses
+
+print(f""The answer is: [[{difference_in_rent_price}]]"")",The answer is: [[4.195430729013701]],
+"On average, how much bigger are houses near the squares within 100 meters compared to those further away in 1808?",spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the necessary datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the buildings and landmarks datasets based on location
+merged_data = buildings_1808.merge(landmarks, how='left', left_on=['longitude'], right_on=['longitude'])
+
+# Convert longitude values to float type
+merged_data['longitude'] = merged_data['longitude'].astype(float)
+
+# Calculate the distance from each building to the nearest landmark (square or church)
+merged_data['distance'] = np.sqrt((merged_data.longitude - merged_data.longitude)**2)  # changed this line
+
+# Filter the data to only include buildings within 100 meters of a square or church
+near_squares = merged_data[merged_data['distance'] <= 100]
+
+# Calculate the average building area for buildings near squares and those further away
+avg_area_near_squares = near_squares['building_area'].mean()
+avg_area_further_away = merged_data[~merged_data.index.isin(near_squares.index)]['building_area'].mean()
+
+# Calculate the difference in average building areas
+difference_in_avg_areas = avg_area_near_squares - avg_area_further_away
+
+print(f""The answer is: [[{difference_in_avg_areas}]]"")",The answer is: [[nan]],
+"On average, how much more expensive are houses near the churches within 100 meters compared to those further away in 1740?",spatial,a single number,"import numpy as np
+
+
+import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings 1740 with landmarks based on longitude and latitude
+merged_buildings_1740 = buildings_1740.merge(landmarks, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Calculate distance from churches for each building in 1740
+merged_buildings_1740['distance_from_church'] = np.sqrt((merged_buildings_1740['latitude'] - landmarks['latitude'])**2 + (merged_buildings_1740['longitude'] - landmarks['longitude'])**2)
+
+# Filter rows where the distance is within 100 meters
+filtered_buildings_1740_near_churches = merged_buildings_1740[merged_buildings_1740['distance_from_church'] <= 100]
+
+# Calculate average rent price for houses near churches in 1740
+avg_rent_price_near_churches = filtered_buildings_1740_near_churches['rent_price'].mean()
+
+# Filter rows where the distance is greater than 100 meters
+filtered_buildings_1740_far_from_churches = merged_buildings_1740[merged_buildings_1740['distance_from_church'] > 100]
+
+# Calculate average rent price for houses far from churches in 1740
+avg_rent_price_far_from_churches = filtered_buildings_1740_far_from_churches['rent_price'].mean()
+
+# Merge buildings 1808 with landmarks based on longitude and latitude
+merged_buildings_1808 = buildings_1808.merge(landmarks, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter rows where the distance is greater than 100 meters (assuming building_area can be used as a proxy for distance)
+filtered_buildings_1808_far_from_churches = merged_buildings_1808[merged_buildings_1808['building_area'] > 100]
+
+# Calculate average rent price for houses far from churches in 1808
+avg_rent_price_far_from_churches_1808 = filtered_buildings_1808_far_from_churches['rent_price'].mean()
+
+# Calculate the difference between the two averages
+diff = avg_rent_price_near_churches - avg_rent_price_far_from_churches
+
+print(f""The answer is: [[{diff}]]"")",,"
+  File ""<string>"", line 37, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/indexes/base.py"", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'rent_price'
+"
+"On average, how much bigger are houses near the churches within 100 meters compared to those further away in 1808?",spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+building_1740 = pd.read_csv('data/buildings_1740.csv')
+building_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert 'building_functions' to a list in 1808 dataset
+building_1808['building_functions'] = building_1808['building_functions'].apply(lambda x: [i.strip() for i in x.replace(""casa,"", """").split("","") if not pd.isna(x)])
+
+# Merge the datasets based on longitude and latitude
+merged_data = pd.merge(building_1808, landmarks, on=['longitude', 'latitude'], how='left')
+
+# Filter the data to include only houses near churches within 100 meters
+near_churches = merged_data[(merged_data['landmark_type'] == ""church"") & (merged_data['building_functions'].apply(len) > 0)]
+
+# Calculate the average building area for houses near churches and those further away
+average_near_churches = np.mean(near_churches['building_area'])
+average_further_away = np.mean(merged_data[~((merged_data['landmark_type'] == ""church""))]['building_area'])
+
+# Calculate the difference between the two averages
+difference = average_near_churches - average_further_away
+
+print(f""The answer is: [[{difference}]]"")",The answer is: [[nan]],
+How many buildings are located around the square of San Marco within 100 meters in 1740?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter landmarks that are squares and have San Marco in their name
+square_san_marco_landmarks = landmarks[(landmarks['landmark_type'] == 'square') & (landmarks['landmark_name'].str.contains('San Marco'))]
+
+# Check if the DataFrame has at least one row
+if not square_san_marco_landmarks.empty:
+    # Get the longitude and latitude of the square San Marco
+    longitude_square_san_marco = square_san_marco_landmarks['longitude'].values[0]
+    latitude_square_san_marco = square_san_marco_landmarks['latitude'].values[0]
+
+    # Filter buildings from 1740 within 100 meters from the square San Marco
+    buildings_around_san_marco = buildings_1740[(abs(buildings_1740['longitude'] - longitude_square_san_marco) <= 0.001) & (abs(buildings_1740['latitude'] - latitude_square_san_marco) <= 0.001)]
+
+    # Print the number of buildings
+    print(f""The answer is: [[{len(buildings_around_san_marco)}]]"")
+else:
+    print(""No landmarks found with San Marco in their name."")",No landmarks found with San Marco in their name.,
+How many buildings are located around the square of San Marco within 100 meters in 1808?,spatial,a single number,"import pandas as pd
+import math
+
+# Load the necessary datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings dataset with the landmarks dataset based on location
+merged_data = pd.merge(buildings_1808, landmarks, how='left', left_on='location', right_on='landmark_name')
+
+# Filter the merged data to get only the buildings around San Marco square
+san_marco_buildings = merged_data[merged_data['landmark_type'] == 'square']
+
+# Check if San Marco is in the landmarks DataFrame
+if 'San Marco' not in landmarks['landmark_name'].values:
+    print(""Error: San Marco landmark not found."")
+else:
+    # Calculate the distance from San Marco square to each building in 1808
+    def calculate_distance(lat1, lon1, lat2, lon2):
+        R = 6371.0
+        dlat = math.radians(lat2 - lat1)
+        dlon = math.radians(lon2 - lon1)
+        a = math.sin(dlat/2)*math.sin(dlat/2) + math.cos(math.radians(lat1))*math.cos(math.radians(lat2))*math.sin(dlon/2)*math.sin(dlon/2)
+        c = 2*math.atan2(math.sqrt(a), math.sqrt(1-a))
+        distance = R * c
+        return distance
+
+    # Add a new column 'distance' to the DataFrame
+    san_marco_buildings['latitude'] = buildings_1808['latitude']
+    san_marco_buildings['longitude'] = buildings_1808['longitude']
+    san_marco_buildings['distance'] = san_marco_buildings.apply(lambda row: calculate_distance(row['latitude'], row['longitude'], landmarks[landmarks['landmark_name'] == 'San Marco']['latitude'].values[0], landmarks[landmarks['landmark_name'] == 'San Marco']['longitude'].values[0]), axis=1)
+
+    # Count the buildings within 100 meters from San Marco square
+    buildings_within_100m = san_marco_buildings[san_marco_buildings['distance'] <= 100]
+
+    print(f""The answer is: [[{len(buildings_within_100m)}]]"")",Error: San Marco landmark not found.,
+Are the buildings located within 100 meters from San Marco more expensive than the buildings located within 100 meters from other squares in 1740?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings within 100 meters from San Marco in 1740
+san_marco_buildings_1740 = buildings_1740[(np.abs(buildings_1740.longitude) <= 45.4344) & (np.abs(buildings_1740.latitude) <= 45.4706)]
+
+# Filter buildings within 100 meters from other squares in 1740
+other_squares_buildings_1740 = buildings_1740[(~((buildings_1740.longitude) <= 45.4344)) & (~((buildings_1740.latitude) <= 45.4706))]
+
+# Calculate average rent price for San Marco and other squares
+average_rent_price_san_marco = san_marco_buildings_1740['rent_price'].mean()
+average_rent_price_other_squares = other_squares_buildings_1740['rent_price'].mean()
+
+# Check if San Marco buildings are more expensive
+are_san_marco_buildings_more_expensive = average_rent_price_san_marco > average_rent_price_other_squares
+
+print(f""The answer is: [[{are_san_marco_buildings_more_expensive}]]"")",The answer is: [[False]],
+Are the buildings located within 100 meters from San Marco bigger than the buildings located within 100 meters from other squares in 1808?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings located within 100 meters from San Marco in 1808
+san_marco_buildings = buildings_1808[(buildings_1808['location'] == 'San Marco') & (buildings_1808['building_area'] > 0)]
+
+# Calculate average building area for San Marco
+average_san_marco_building_area = np.mean(san_marco_buildings['building_area'])
+
+# Filter buildings located within 100 meters from other squares in 1808
+other_squares_buildings = buildings_1808[(buildings_1808['district'] != 'San Marco') & (buildings_1808['location'] != 'San Marco') & (buildings_1808['building_area'] > 0)]
+
+# Calculate average building area for other squares
+average_other_squares_building_area = np.mean(other_squares_buildings['building_area'])
+
+# Compare the average building areas
+if average_san_marco_building_area > average_other_squares_building_area:
+    final_answer = ""yes""
+else:
+    final_answer = ""no""
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[no]],
+On average how far do people live from the squares in 1740?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+squares = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings that are located near squares in 1740
+squares = squares[squares['landmark_type'] == 'square']
+
+# Sort index of both dataframes before merging
+buildings_1740.sort_values(by='latitude', inplace=True)
+squares.sort_values(by='latitude', inplace=True)
+
+# Merge buildings and squares based on latitude as a proxy for unique identifier
+near_squares = pd.merge_asof(buildings_1740, squares, left_on='latitude', right_on='latitude')
+
+print(f""The answer is: [[{np.mean(near_squares['distance_to_square'].dropna())}]]"")",,"
+  File ""<string>"", line 18, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4090, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/indexes/base.py"", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'distance_to_square'
+"
+On average how far do people live from the squares in 1808?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings_1808 and landmarks based on longitude and latitude
+merged_df = pd.merge(buildings_1808, landmarks, how='inner', left_on=['longitude'], right_on=['longitude'])
+
+# Calculate the average distance for each landmark
+merged_df['distance'] = np.sqrt((merged_df['latitude_y'] - merged_df['latitude_x'])**2)
+
+average_distance = merged_df.groupby('landmark_name')['distance'].mean().mean()
+
+print(f""The answer is: [[{average_distance}]]"")",The answer is: [[0.003982799999995734]],
+Which neighborhood has the highest density of different families in 1740?,spatial,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Group the 1740 buildings by neighborhood and count the number of unique families
+neighborhoods_with_families_count = buildings_1740.groupby(['location', 'parish'])['owner_family_name'].nunique().reset_index(name='family_count')
+
+# Calculate the density of different families for each neighborhood
+neighborhoods_with_families_density = neighborhoods_with_families_count.groupby('location')['family_count'].sum() / neighborhoods_with_families_count['family_count'].sum()
+
+# Sort the result in descending order and get the top row (i.e., the neighborhood with the highest density)
+result = neighborhoods_with_families_density.sort_values(ascending=False).head(1)
+
+print(f""The answer is: [[{result.index[0]}]]"")",The answer is: [[calle del forno]],
+Which neighborhood has the highest density of different families in 1808?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert the 'building_functions' column in buildings_1808 to a list of strings
+buildings_1808['building_functions'] = buildings_1808['building_functions'].apply(lambda x: str(x).split(','))
+
+# Merge the datasets based on location and longitude/latitude (assuming these values are identical)
+merged_data = pd.merge(buildings_1740, buildings_1808, how='left', left_on=['location', 'longitude', 'latitude'], right_on=['location', 'longitude', 'latitude'])
+
+# Group the data by district and count the number of unique owner family names from 1740
+district_families_count = merged_data.groupby('district')['owner_family_name_y'].nunique().reset_index(name='family_count')
+
+# Sort the districts by family count in descending order
+sorted_districts = district_families_count.sort_values(by='family_count', ascending=False)
+
+# Get the top district with the highest density of different families
+if not sorted_districts.empty:
+    final_answer = sorted_districts.iloc[0]['district']
+else:
+    final_answer = ""No districts found""
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[No districts found]],
+How many churches does each parish have on average in 1740?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+building_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the landmarks data frame to include only the necessary columns
+landmarks = landmarks[['longitude', 'latitude', 'landmark_type']]
+
+# Merge building_1740 with landmarks based on latitude and longitude
+merged_data = pd.merge(building_1740, landmarks, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter the merged data to only include buildings that are churches
+churches_1740 = merged_data[merged_data['landmark_type'] == 'church']
+
+# Group by parish and count the number of churches in each parish
+parish_church_count = churches_1740.groupby('parish')['building_functions'].count().reset_index(name='num_churches')
+
+# Calculate the average number of churches per parish
+avg_churches_per_parish = parish_church_count['num_churches'].mean()
+
+print(f""The answer is: [[{avg_churches_per_parish}]]"")",The answer is: [[nan]],
+How many churches does each district have on average in 1808?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings dataset with the landmarks dataset based on longitude and latitude
+merged_data = pd.merge(buildings_1808, landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter merged data to only include churches
+churches = merged_data[merged_data['landmark_type'] == 'church']
+
+# Group the filtered data by district and count the number of churches
+churches_by_district = churches.groupby('district')['landmark_name'].count().fillna(0)
+
+# Calculate the average number of churches per district, excluding districts with no churches
+average_churches_per_district = churches_by_district.mean()
+
+print(f""The answer is: [[{int(average_churches_per_district)}]]"")",,"
+  File ""<string>"", line 20, in <module>
+ValueError: cannot convert float NaN to integer
+"
+Is there a significant difference in the rent prices for buildings within 100 meters from churches versus from squares in 1740?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+from scipy.stats import ttest_ind
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the buildings dataset with landmarks based on location proximity (100 meters)
+merged_data = pd.merge(buildings_1740, landmarks, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter the merged data to only include buildings within 100 meters from churches or squares
+buildings_near_landmark = merged_data[(merged_data['landmark_type'] == 'church') | (merged_data['landmark_name'].str.contains('square'))]
+
+# Group the filtered data by landmark type and calculate the mean rent price for each group
+rent_prices = buildings_near_landmark.groupby(['landmark_type'])['rent_price'].mean().to_dict()
+
+# Check if there is a significant difference between the rent prices for buildings near churches versus squares
+if 'church' in rent_prices and 'square' in rent_prices:
+    church_rent_price = rent_prices['church']
+    square_rent_price = rent_prices['square']
+    _, p_value = ttest_ind([church_rent_price], [square_rent_price])
+    
+    if p_value < 0.05:
+        print(f""The answer is: [[yes]]"")
+    else:
+        print(f""The answer is: [[no]]"")
+else:
+    print(""Not enough data for the t-test."")",Not enough data for the t-test.,
+Is there a significant difference in the area of buildings within 100 meters from churches versus from squares in 1808?,spatial,"yes or ""no""","import pandas as pd
+import numpy as np
+from scipy.stats import ttest_ind
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings dataset with the landmarks dataset based on proximity
+distance_threshold = 100  # in meters
+
+def calculate_distance(row):
+    return np.sqrt((row['longitude'] - landmarks.iloc[0]['longitude'])**2 + (row['latitude'] - landmarks.iloc[0]['latitude'])**2)
+
+buildings_1808_with_distances = buildings_1808.copy()
+buildings_1808_with_distances['distance_to_landmark'] = buildings_1808.apply(calculate_distance, axis=1)
+buildings_1808_with_distances['near_church_or_square'] = np.where(buildings_1808_with_distances['distance_to_landmark'] <= distance_threshold, landmarks.iloc[0]['landmark_type'], 'none')
+
+# Group the data by whether it's near a church or square and calculate the average building area
+church_buildings = buildings_1808_with_distances[buildings_1808_with_distances['near_church_or_square'] == 'church'].groupby('near_church_or_square')['building_area'].mean()
+square_buildings = buildings_1808_with_distances[buildings_1808_with_distances['near_church_or_square'] == 'square'].groupby('near_church_or_square')['building_area'].mean()
+
+# Perform Welch's t-test to compare the means of the two groups
+t_stat, p_value = ttest_ind(church_buildings.dropna(), square_buildings.dropna())
+
+# Print the final answer
+if p_value < 0.05:
+    print(f""The answer is: [[yes]]"")
+else:
+    print(f""The answer is: [[no]]"")",The answer is: [[no]],
+Which neighborhood contains the buildings with the highest rent price on average in 1740?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+building_1740 = pd.read_csv('data/buildings_1740.csv')
+building_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings from 1740 to only include those with a rent price
+buildings_1740_rented = building_1740[building_1740['rent_price'].notna()]
+
+# Group the rented buildings by location and calculate average rent price
+avg_rent_by_location = buildings_1740_rented.groupby('location')['rent_price'].mean().reset_index()
+
+# Merge the landmarks dataset with the average rent data to get neighborhood names
+neighborhoods = pd.merge(avg_rent_by_location, landmarks, how='left', left_on='location', right_on='landmark_name')
+
+# Filter out non-neighborhood locations (i.e., churches and squares)
+neighborhoods = neighborhoods[~((neighborhoods['landmark_type'] == 'church') | (neighborhoods['landmark_type'].isna()))]
+
+# Sort the neighborhood data by average rent price in descending order
+neighborhoods.sort_values(by='rent_price', ascending=False, inplace=True)
+
+# Get the top neighborhood with the highest average rent price
+top_neighborhood = neighborhoods.iloc[0]['location']
+
+print(f""The answer is: [[{top_neighborhood}]]"")",The answer is: [[corte dei preti]],
+Which neighborhood contains the buildings with the largest area on average in 1808?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge 1808 buildings with landmarks based on longitude and latitude
+merged_buildings = pd.merge(buildings_1808, landmarks, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Calculate the average building area per neighborhood
+neighborhoods = merged_buildings[merged_buildings['district'].notna()]['district'].value_counts().reset_index()
+neighborhoods.columns = ['district', 'building_area']
+
+# Calculate the average building area for each district
+neighborhoods_avg = neighborhoods.groupby('district')['building_area'].mean().reset_index()
+
+# Find the neighborhood with the largest average building area
+largest_neighborhood = neighborhoods_avg.loc[neighborhoods_avg['building_area'].idxmax()]
+
+# Print the final answer
+print(f""The neighborhood containing the buildings with the largest area on average in 1808 is: [[{largest_neighborhood['district']}]]"")",The neighborhood containing the buildings with the largest area on average in 1808 is: [[cannaregio]],
+What is the name of the most densely populated square within 100 meters in 1740?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the buildings within 100 meters of a landmark
+filtered_buildings = buildings_1740[(buildings_1740['longitude'] >= landmarks['longitude'].min()) & 
+                                    (buildings_1740['longitude'] <= landmarks['longitude'].max()) & 
+                                    (buildings_1740['latitude'] >= landmarks['latitude'].min()) & 
+                                    (buildings_1740['latitude'] <= landmarks['latitude'].max())]
+
+# Group the buildings by location and calculate the total building_functions_count
+building_counts = filtered_buildings.groupby('location')['building_functions_count'].sum().reset_index()
+
+# Filter the buildings within 100 meters of a landmark for each square
+squares = []
+for index, row in landmarks.iterrows():
+    if row['landmark_type'] == 'square':
+        square_buildings = filtered_buildings[(filtered_buildings['longitude'] >= row['longitude'] - 0.1) & 
+                                             (filtered_buildings['longitude'] <= row['longitude'] + 0.1) & 
+                                             (filtered_buildings['latitude'] >= row['latitude'] - 0.1) & 
+                                             (filtered_buildings['latitude'] <= row['latitude'] + 0.1)]
+        square_building_counts = square_buildings.groupby('location')['building_functions_count'].sum().reset_index()
+        squares.append(square_building_counts)
+
+# Calculate the density of each building in terms of the number of buildings per square meter
+for i, square in enumerate(squares):
+    if i == 0:
+        most_densely_populated_square = square.loc[square['building_functions_count'].idxmax()]
+        print(f""The name of the most densely populated square within 100 meters in 1740 is: [[{most_densely_populated_square['location']}]]"")
+    else:
+        break",The name of the most densely populated square within 100 meters in 1740 is: [[calle del forno]],
+What is the name of the most densely populated square within 100 meters in 1808?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the building datasets to get information about both time periods
+merged_buildings = buildings_1808
+
+# Filter the merged dataset to only include buildings with a location within 100 meters of a landmark and also filter out squares (only consider churches)
+near_landmark_buildings = pd.merge(merged_buildings, landmarks[[""longitude"", ""latitude""]], 
+                                   how=""left"", 
+                                   left_on=[""longitude"", ""latitude""], 
+                                   right_on=[""longitude"", ""latitude""])
+
+# Filter the near landmark buildings to only include those that are within 100 meters of a landmark
+near_landmark_buildings = near_landmark_buildings.assign(**landmarks[[""landmark_name"", ""landmark_type""]]).sort_values(by='building_functions_count', ascending=False).head(1)
+
+most_densely_populated_square = near_landmark_buildings.iloc[0]
+
+print(f""The answer is: [[{most_densely_populated_square['landmark_name']}]"")",The answer is: [[nan],
+How many buildings are there per parish on average in 1740?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the datasets based on longitude and latitude
+merged_data = buildings_1740.merge(landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Group by parish and count the number of buildings
+parish_buildings_count = merged_data.groupby('parish')['building_functions_count'].count().reset_index(name='buildings_count')
+
+# Calculate the average number of buildings per parish
+average_buildings_per_parish = parish_buildings_count['buildings_count'].mean()
+
+print(f""The answer is: [[{average_buildings_per_parish}]]"")",The answer is: [[nan]],
+How many buildings are there per district on average in 1808?,spatial,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings dataset with itself based on district
+merged_df = buildings_1808.groupby('district')['building_functions_count'].mean().reset_index()
+
+# Calculate the average number of buildings per district
+avg_buildings_per_district = merged_df['building_functions_count'].mean()
+
+print(f""The answer is: [[{avg_buildings_per_district}]]"")",The answer is: [[1.33667948514373]],
+What is the parish with the highest rent price in 1740?,spatial,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+
+# Convert building_functions column into a list for further processing
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+
+# Calculate the total rent price per parish
+rent_per_parish = buildings_1740.groupby('parish')['rent_price'].sum().reset_index()
+
+# Rename the sum column to rent_sum
+rent_per_parish.columns = ['parish', 'rent_sum']
+
+# Join with buildings dataset to get the parish name and coordinates, as well as the rent price
+rent_and_buildings = pd.merge(rent_per_parish, buildings_1740, on='parish')
+
+# Sort the data by rent_sum in descending order
+sorted_data = rent_and_buildings.sort_values(by='rent_sum', ascending=False)
+
+# Get the top row (i.e., the parish with the highest rent price)
+highest_rent_parish = sorted_data.iloc[0]['parish']
+
+print(f""The answer is: [[{highest_rent_parish}]]"")",The answer is: [[san ziminian]],
+What is the district with the largest buildings in 1808?,spatial,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings in 1808 dataset that have a building area greater than 0
+buildings_1808 = buildings_1808[buildings_1808['building_area'] > 0]
+
+# Group the filtered buildings by district and calculate the total area of each district
+district_areas = buildings_1808.groupby('district')['building_area'].sum().reset_index()
+
+# Sort the districts by total area in descending order and get the first row (the largest district)
+largest_district = district_areas.sort_values(by='building_area', ascending=False).head(1)
+
+# Print the answer in the required format
+print(f""The district with the largest buildings in 1808 is: [[{largest_district['district'].values[0]}]]"")",The district with the largest buildings in 1808 is: [[cannaregio]],
+"Among all the parishes, what is the highest density of buildings with multiple functions in 1740?",spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings with multiple functions in 1740
+buildings_with_multiple_functions_1740 = buildings_1740[buildings_1740['building_functions_count'] > 1]
+
+# Group by parish and calculate the count of buildings with multiple functions per parish
+parish_counts = buildings_with_multiple_functions_1740.groupby('parish')['parish'].count()
+
+# Calculate the density of buildings with multiple functions per parish
+densities = parish_counts / len(buildings_1740[buildings_1740['parish'].isin(parish_counts.index)])
+
+# Find the highest density
+max_density = densities.max()
+
+print(f""The answer is: [[{max_density}]]"")",The answer is: [[0.010921799912625601]],
+"Among all the districts, what is the highest density of buildings with multiple functions in 1808?",spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings with multiple functions in 1808 dataset
+buildings_with_multiple_functions_1808 = buildings_1808[buildings_1808['building_functions_count'] > 1]
+
+# Group the filtered data by district and count the number of buildings
+districts_buildings_count = buildings_with_multiple_functions_1808.groupby('district').size().reset_index(name='count')
+
+# Calculate the density of buildings with multiple functions per district
+density_per_district = districts_buildings_count['count'] / len(buildings_with_multiple_functions_1808)
+
+# Find the maximum density
+max_density = density_per_district.max()
+
+print(f""The answer is: [[{max_density}]]"")",The answer is: [[0.2132596685082873]],
+What is the average rent price difference between the parishes with the highest and the lowest rent prices in 1740?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Calculate the average rent price for each parish in 1740
+parish_rent_prices = buildings_1740.groupby('parish')['rent_price'].mean()
+
+# Find the parish with the highest and lowest rent prices
+max_parish = parish_rent_prices.idxmax()
+min_parish = parish_rent_prices.idxmin()
+
+# Calculate the average rent price difference between the parishes
+avg_rent_diff = (buildings_1740.loc[buildings_1740['parish'] == max_parish, 'rent_price'].mean() -
+                 buildings_1740.loc[buildings_1740['parish'] == min_parish, 'rent_price'].mean())
+
+print(f""The answer is: [[{avg_rent_diff}]]"")",The answer is: [[83.79856459330145]],
+What is the average size difference between the districts with the largest and the smalles buildings in 1808?,spatial,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge 1808 buildings with landmarks on location (longitude and latitude)
+merged_df = pd.merge(buildings_1808, landmarks, how='left', on=['longitude', 'latitude'])
+
+# Calculate the average size difference between districts with largest and smallest buildings
+largest_district = merged_df.groupby('district')['building_area'].max().reset_index()
+smallest_district = merged_df.groupby('district')['building_area'].min().reset_index()
+
+average_size_diff = np.mean(largest_district['building_area'] - smallest_district['building_area'])
+
+print(f""The answer is: [[{average_size_diff}]]"")",The answer is: [[5033.2415]],
+What is the most common function of buildings that are within 100 meters from a square in 1740?,function,a single entity name,"import pandas as pd
+import math
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Create new columns for latitude and longitude in landmarks dataset
+landmarks['longitude'] = landmarks['longitude']
+landmarks['latitude'] = landmarks['latitude']
+
+# Merge the two datasets based on location
+merged_data = buildings_1740.merge(landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Define a function to calculate distance between two points in meters (assuming longitude and latitude are in decimal degrees)
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6373.0 * 1000  # Radius of the earth in meters
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = math.sin(dlat/2) * math.sin(dlat/2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon/2) * math.sin(dlon/2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    distance = R * c
+    return [distance]
+
+# Calculate the distance between buildings and landmarks in meters (assuming longitude and latitude are in decimal degrees)
+merged_data['distance'] = merged_data.apply(lambda row: haversine(row['latitude'], row['longitude'], row['landmark_latitude'], row['landmark_longitude']), axis=1).applymap(float)
+
+# Filter buildings within 100 meters from a square
+buildings_near_square = merged_data[merged_data['distance'].applymap(float) <= 100]
+
+# Get the most common function of buildings near squares in 1740
+from collections import Counter
+functions = [func.strip() for func in buildings_near_square['building_functions']]
+function_counts = Counter(functions)
+most_common_function = function_counts.most_common(1)[0][0]
+
+print(f""The answer is: [[{most_common_function}]]"")",,"
+  File ""<string>"", line 26, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4289, in __setitem__
+    self._set_item_frame_value(key, value)
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4447, in _set_item_frame_value
+    raise ValueError(
+ValueError: Cannot set a DataFrame with multiple columns to the single column distance
+"
+What is the most common function of buildings that are within 100 meters from a square in 1808?,function,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings_1808 with landmarks based on longitude and latitude
+merged_data = pd.merge(buildings_1808, landmarks, how='inner', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter the data to include only buildings within 100 meters from a square
+filtered_data = merged_data[merged_data['landmark_type'] == 'square']
+
+# Check if there are any rows in the filtered data
+if not filtered_data.empty:
+    # Get the most common function of these buildings
+    most_common_function = filtered_data['building_functions'].value_counts().index[0]
+else:
+    most_common_function = ""No buildings found within 100 meters from a square""
+
+print(f""The answer is: [[{most_common_function}]]"")",The answer is: [[No buildings found within 100 meters from a square]],
+Which square is surrounded with the buildings with the most diverse functions within the radius of 100 meters in 1740?,function,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions column from 1740 dataset to list type for easier processing
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+buildings_1740['building_functions_count'] = buildings_1740['building_functions'].apply(len)
+
+# Create a new dictionary to store the distance from each building to every landmark
+distance_dict = {}
+for index, row in landmarks.iterrows():
+    distances = []
+    for i, building in buildings_1740.iterrows():
+        if (row['longitude'] - building['longitude'])**2 + (row['latitude'] - building['latitude'])**2 <= 100**2:
+            distance_to_landmark = ((row['longitude'] - building['longitude'])**2 + (row['latitude'] - building['latitude'])**2)**0.5
+            distances.append(distance_to_landmark)
+    distance_dict[row['landmark_name']] = distances
+
+# Calculate the average diversity of building functions within each landmark's area
+function_diversity_dict = {}
+for landmark, distances in distance_dict.items():
+    if len(distances) > 0:
+        unique_functions = set()
+        for i, row in buildings_1740.iterrows():
+            if any((row['longitude'] - landmarks.loc[0, 'longitude'])**2 + (row['latitude'] - landmarks.loc[0, 'latitude'])**2 <= 100**2 for j in range(len(distances))):
+                unique_functions.update(set(row['building_functions']))
+        function_diversity = len(unique_functions)
+        function_diversity_dict[landmark] = function_diversity
+
+# Find the landmark with the most diverse functions
+most_diverse_square = max(function_diversity_dict, key=function_diversity_dict.get)
+
+print(f""The answer is: [[{most_diverse_square}]])"")",The answer is: [[campiello della malvasia]]),
+Which square is surrounded with the buildings with the most diverse functions within the radius of 100 meters in 1808?,function,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building functions to set for 1740 dataset
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(set)
+
+# Merge the 1808 dataset with landmarks based on longitude and latitude
+merged_buildings = pd.merge(buildings_1808, landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter buildings within a radius of 100 meters in 1808
+distance_threshold = 100
+merged_buildings['distance'] = np.sqrt((merged_buildings.longitude - merged_buildings.longitude) ** 2 + (merged_buildings.latitude - landmarks.latitude) ** 2)
+squares = merged_buildings[merged_buildings.distance <= distance_threshold][['landmark_name']].drop_duplicates()
+
+# Group squares by the number of unique building functions and sort in descending order
+function_counts = buildings_1808.groupby('location')['building_functions'].apply(lambda x: len(set(x))).reset_index()
+function_counts.columns = ['location', 'function_count']
+function_counts.sort_values(by='function_count', ascending=False, inplace=True)
+
+# Find the square with the most diverse building functions
+most_diverse_square = function_counts.iloc[0]['location']
+
+print(f""The answer is: [[{most_diverse_square}]]"")",The answer is: [[contrada s. marcuola]],
+Are residential buildings more closely located to the squares than commercial buildings in 1740?,function,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to a set of unique functions for easier comparison
+unique_functions_1740 = set(buildings_1740['building_functions'].apply(lambda x: tuple(x.split(', '))))
+
+# Merge the 1740 buildings dataset with the landmarks dataset based on location
+merged_data = pd.merge(buildings_1740, landmarks, left_on='location', right_on='landmark_name')
+
+# Group the merged data by unique functions and calculate the average distance to squares for each function
+residential_functions = merged_data[merged_data['tenant_name'].str.contains('abitazione|residenza|casa')]
+commercial_functions = merged_data[~merged_data['tenant_name'].str.contains('abitazione|residenza|casa')]
+
+avg_distance_residential_to_squares = residential_functions.groupby('building_functions')['location'].apply(lambda x: np.mean(np.abs(x.astype(str) != 'campo della guerra').astype(float))).mean()
+avg_distance_commercial_to_squares = commercial_functions.groupby('building_functions')['location'].apply(lambda x: np.mean(np.abs(x.astype(str) != 'campo della guerra').astype(float))).mean()
+
+# Compare the average distances
+if avg_distance_residential_to_squares < avg_distance_commercial_to_squares:
+    final_answer = ""yes""
+else:
+    final_answer = ""no""
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[no]],
+Are residential buildings more closely located to the squares than commercial buildings in 1808?,function,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter residential and commercial buildings in 1808 dataset
+residential_buildings = buildings_1808[buildings_1808['building_functions'].apply(lambda x: 'abitazione' in x.lower())]
+commercial_buildings = buildings_1808[~buildings_1808['building_functions'].apply(lambda x: 'abitazione' in x.lower())]
+
+# Merge residential and commercial buildings with landmarks based on longitude and latitude
+residential_merged = pd.merge(residential_buildings, landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'], how='inner')
+commercial_merged = pd.merge(commercial_buildings, landmarks, left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'], how='inner')
+
+# Calculate distance to squares for each building type
+residential_squares_distance = ((residential_merged['longitude'] - landmarks['longitude'])**2 + (residential_merged['latitude'] - landmarks['latitude'])**2)**0.5
+commercial_squares_distance = ((commercial_merged['longitude'] - landmarks['longitude'])**2 + (commercial_merged['latitude'] - landmarks['latitude'])**2)**0.5
+
+# Check if residential buildings are more closely located to squares than commercial buildings
+residential_mean_distance = residential_squares_distance.mean()
+commercial_mean_distance = commercial_squares_distance.mean()
+
+print(f""The answer is: [[{residential_mean_distance < commercial_mean_distance}]]"")",The answer is: [[False]],
+What is the average distance between workshops and their nearest square in 1740?,function,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings and landmarks based on latitude and longitude
+merged_data = pd.merge(buildings_1740, landmarks, left_on=['latitude', 'longitude'], right_on=['latitude', 'longitude'])
+
+# Filter the data to only include workshops (buildings with 'bottega' in building_functions)
+workshops = merged_data[merged_data['building_functions'].str.contains('bottega')]
+
+# Calculate the distance between each workshop and its nearest square
+workshops['distance'] = np.sqrt((workshops['longitude'] - landmarks['longitude'])**2 + (workshops['latitude'] - landmarks['latitude'])**2)
+
+# Find the minimum distance for each workshop to its nearest square
+min_distance = workshops.groupby('location')['distance'].min()
+
+# Calculate the average distance between workshops and their nearest squares
+average_distance = min_distance.mean()
+
+print(f""The answer is: [[{average_distance}]]"")",The answer is: [[nan]],
+What is the average distance between workshops and their nearest square in 1808?,function,a single number,"buildings_1808['location'] = buildings_1808['location'].astype(float)
+
+
+import pandas as pd
+import math
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Sort the 'latitude' column in the buildings_1808 DataFrame
+buildings_1808.sort_values(by='latitude', inplace=True)
+
+# Convert the location column to a numeric dtype (float64)
+buildings_1808['location'] = pd.to_numeric(buildings_1808['location'].astype(str), errors='coerce').dropna()
+
+# Merge buildings_1808 and landmarks based on location to find the nearest landmark for each building
+merged_df = pd.merge_asof(buildings_1808, landmarks.sort_values(by='latitude'), left_on='location', right_on='longitude').reset_index()
+
+# Calculate the distance between each building and its nearest square
+def calculate_distance(lat1, lon1, lat2, lon2):
+    R = 6373.0  # radius of the earth in km
+
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+
+    a = math.sin(dlat / 2) * math.sin(dlat / 2) + math.cos(math.radians(lat1)) \
+        * math.cos(math.radians(lat2)) * math.sin(dlon / 2) * math.sin(dlon / 2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    distance = R * c
+    return distance
+
+# Calculate the distance between each building and its nearest landmark
+merged_df['distance'] = merged_df.apply(lambda row: calculate_distance(row['latitude'], row['location'], landmarks.iloc[0]['latitude'], landmarks.iloc[0]['longitude']), axis=1)
+
+# Select only the buildings with a location (i.e., not NaN)
+buildings_1808 = buildings_1808.dropna(subset=['location'])
+
+# Calculate the distance between each building and its nearest square
+merged_df['distance'] = merged_df.apply(lambda row: calculate_distance(row['latitude'], row['location'], landmarks.iloc[0]['latitude'], landmarks.iloc[0]['longitude']), axis=1)
+
+# Now we can use the 'distance' column for further analysis.",,"
+  File ""<string>"", line 1, in <module>
+NameError: name 'buildings_1808' is not defined
+"
+"On average, are buildings with multiple functions more expensive than the ones with a single function in 1740?",function,"yes or ""no""","import pandas as pd
+
+# Load the necessary datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Merge the two 1740 and 1808 building datasets based on 'location' column
+merged_buildings = buildings_1740.merge(buildings_1808, how='left', left_on='location', right_on='location')
+
+# Create a new column to count the number of functions for each building in 1740
+buildings_1740['functions_count'] = buildings_1740['building_functions'].apply(lambda x: len(x.split(',')))
+
+# Filter out buildings with only one function
+single_function_buildings = buildings_1740[buildings_1740['functions_count'] == 1]
+multi_function_buildings = buildings_1740[buildings_1740['functions_count'] > 1]
+
+# Calculate the average rent price for all buildings in 1740
+average_rent_price_all = buildings_1740['rent_price'].mean()
+
+# Calculate the average rent price for buildings with multiple functions in 1740
+average_rent_price_multi = multi_function_buildings['rent_price'].mean()
+
+print(f""The answer is: [[{average_rent_price_multi > average_rent_price_all}]]"")",The answer is: [[True]],
+"On average, are buildings with multiple functions larger than the ones with a single function in 1808?",function,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings with single function in 1808 dataset
+single_function_buildings = buildings_1808[buildings_1808['building_functions_count'] == 1]
+
+# Calculate average area for single-function and multi-function buildings separately
+avg_area_single_function = np.mean(single_function_buildings['building_area'])
+multi_function_buildings = buildings_1808[buildings_1808['building_functions_count'] > 1]
+avg_area_multi_function = np.mean(multi_function_buildings['building_area'])
+
+# Check if the average area for multi-function buildings is larger than single-function buildings
+is_larger = avg_area_multi_function > avg_area_single_function
+
+print(f""The answer is: [[{str(is_larger)}]]"")",The answer is: [[True]],
+What is the most common combination of functions of multi-functional buildings in 1740?,function,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings in 1740 that have multiple functions
+multi_functional_buildings_1740 = buildings_1740[buildings_1740['building_functions_count'] > 1]
+
+# Extract the building functions from the filtered dataframe
+functions = multi_functional_buildings_1740['building_functions'].str.split(',').explode().value_counts()
+
+# Get the most common combination of functions
+most_common_combination = functions.index[0]
+
+print(f""The answer is: [[{most_common_combination}]]"")",The answer is: [[ casa]],
+What is the most common combination of functions of multi-functional buildings in 1808?,function,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the 1808 dataset to include only multi-functional buildings (those with more than one function)
+multi_functional_buildings = buildings_1808[buildings_1808['building_functions_count'] > 1]
+
+# Group the filtered data by building functions and count the frequency of each combination
+function_frequency = multi_functional_buildings.groupby('building_functions')['building_functions'].count()
+
+# Sort the frequency in descending order to find the most common combination
+most_common_function = function_frequency.sort_values(ascending=False).head(1)
+
+print(f""The most common combination of functions of multi-functional buildings in 1808 is: [[{most_common_function.index[0]}]]"")","The most common combination of functions of multi-functional buildings in 1808 is: [[casa, corto]]",
+Is there a correlation between building functions and their proximity to the churches in 1740?,function,"yes or ""no""","import pandas as pd
+
+# Load the data
+df_1740 = pd.read_csv('data/buildings_1740.csv')
+df_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks_df = pd.read_csv('data/landmarks.csv')
+
+merged_data = pd.concat([df_1740, df_1808])
+
+# Convert the lists of functions to sets
+merged_data['building_functions'] = merged_data['building_functions'].apply(lambda x: set(x.split(',')))
+
+print(""The answer is: [["",)",The answer is: [[,
+Is there a correlation between building functions and their proximity to the churches in 1808?,function,"yes or ""no""","import pandas as pd
+import numpy as np
+from scipy.stats import pearsonr
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1808 buildings dataset with the landmarks dataset based on proximity
+merged_df = pd.concat([buildings_1808, landmarks], ignore_index=True)
+
+# Sort the merged dataframe by latitude and longitude for nearest-neighbor matching
+merged_df.sort_values(['latitude', 'longitude'], inplace=True)
+
+# Reset index to avoid issues with asof merging
+merged_df.reset_index(drop=True, inplace=True)
+
+# Calculate the distance between each building and the closest church
+def haversine_distance(building_coords, landmark_coords):
+    building_lat = building_coords[1]
+    building_long = building_coords[0]
+
+    landmark_lat = landmark_coords[1]
+    landmark_long = landmark_coords[0]
+
+    radius = 6371  # Radius of the Earth in kilometers
+
+    dlat = np.radians(building_lat - landmark_lat)
+    dlong = np.radians(landmark_long - building_long)
+
+    a = np.sin(dlat / 2)**2 + np.cos(np.radians(building_lat)) * np.cos(np.radians(landmark_lat)) * np.sin(dlong / 2)**2
+    c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
+
+    distance = radius * c
+
+    return distance
+
+# Calculate the distance between each building and the closest church
+merged_df['distance_to_church'] = merged_df.apply(lambda row: haversine_distance((row.longitude, row.latitude), (row.longitude, row.latitude)), axis=1)
+
+# Merge the 1808 buildings dataset with the calculated distances
+buildings_1808_with_distances = pd.merge(buildings_1808, merged_df[['building_functions', 'distance_to_church']], on='building_functions')
+
+# Group the data by building functions and calculate the average distance to the closest church for each group
+function_grouped_data = buildings_1808_with_distances.groupby('building_functions')['distance_to_church'].mean().reset_index()
+
+# Calculate the correlation between building functions and their proximity to churches
+correlation_coefficient, _ = pearsonr(buildings_1808['building_functions_count'], function_grouped_data['distance_to_church'])
+
+print(f""The answer is: [[{correlation_coefficient > 0.5}]]"")",,"
+  File ""<string>"", line 49, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/scipy/stats/_stats_py.py"", line 4724, in pearsonr
+    raise ValueError('x and y must have the same length.')
+ValueError: x and y must have the same length.
+"
+Which church is surrounded by the most diverse set of building functions in 1740?,function,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the buildings in 1740 that are churches
+churches_1740 = buildings_1740[(buildings_1740['parish'].str.contains(""Chiesa"")) & (buildings_1740['tenant_name'].isna())]
+
+# Group the churches by their locations and calculate the average building functions count
+churches_avg_functions_count = churches_1740.groupby('location')['building_functions_count'].mean().reset_index()
+
+# Filter the landmarks dataframe to include only churches
+landmarks_churches = landmarks[landmarks['landmark_type'] == ""church""]
+
+# Merge the church locations with the landmarks to get the church names
+merged_data = pd.merge(churches_avg_functions_count, landmarks_churches, how='inner', left_on='location', right_on=['longitude'])  # Note: changed 'location' in left_on to 'longitude'
+
+# Sort the merged data by average building functions count in descending order and select the top row
+result = merged_data.sort_values(by='building_functions_count', ascending=False).head(1)
+
+# Print the result if there's at least one record
+if not result.empty:
+    final_answer = result['landmark_name'].values[0]
+    print(f""The answer is: [[{final_answer}]]"")
+else:
+    print(""No church found with building functions count."")",No church found with building functions count.,
+Which church is surrounded by the most diverse set of building functions in 1808?,function,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings in 1808 that are churches
+church_buildings_1808 = buildings_1808[buildings_1808['building_functions'] == 'church']
+
+# Initialize a dictionary to store the count of building functions for each church
+function_counts = {}
+
+for index, row in church_buildings_1808.iterrows():
+    building_functions_list = [func.strip() for func in row['building_functions'].split(',')]
+    function_set = set(building_functions_list)
+    if row['landmark_name'] not in function_counts:
+        function_counts[row['landmark_name']] = set()
+    function_counts[row['landmark_name']].update(function_set)
+
+# Find the church with the most diverse set of building functions
+most_diverse_church = max(function_counts, key=lambda x: len(set.intersection(*[set(y) for y in function_counts.values()]))) if any(list(function_counts.values())) else None
+
+print(f""The answer is: [[{most_diverse_church}]]"")",The answer is: [[None]],
+Is there a correlation between the number of building functions and the rent price in 1740?,function,"yes or ""no""","import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on location
+merged_buildings = buildings_1740.merge(buildings_1808, how='inner', left_on='location', right_on='location')
+
+# Select only the necessary columns for the analysis from each dataset
+buildings_1740_analysis_data = buildings_1740[['building_functions_count', 'rent_price']]
+buildings_1808_analysis_data = buildings_1808[['building_functions_count', 'building_area']]
+
+# Perform Pearson correlation test to check if there's a correlation between building functions and rent price in 1740
+correlation, _ = pearsonr(buildings_1740['building_functions_count'], buildings_1740['rent_price'])
+
+print(f""The correlation coefficient is: {correlation}"")
+
+if abs(correlation) > 0.5:
+    print(f""The answer is: [[Yes]]"")
+else:
+    print(f""The answer is: [[No]]"")","The correlation coefficient is: 0.05173537769852081
+The answer is: [[No]]",
+Is there a correlation between the number of building functions and the size of the building in 1808?,function,"yes or ""no""","import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Select the necessary columns from both dataframes
+buildings_1740_selected = buildings_1740[['longitude', 'latitude', 'building_functions_count']]
+buildings_1808_selected = buildings_1808[['longitude', 'latitude', 'building_area']]
+
+# Merge the 1740 and 1808 buildings datasets based on longitude, latitude and owner's name (if available)
+merged_buildings = pd.merge(buildings_1808_selected, buildings_1740_selected, how='left', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter out rows where building_functions_count is zero or less
+filtered_buildings = merged_buildings[merged_buildings['building_functions_count'] > 0]
+
+# Calculate the correlation coefficient between building_functions_count (from 1740) and building_area (from 1808)
+correlation_coefficient, p_value = pearsonr(filtered_buildings[['building_functions_count', 'building_area']].values.T)
+
+print(f""The correlation coefficient is: {correlation_coefficient}"")
+
+if abs(correlation_coefficient) > 0.5:
+    print(f""The answer is: [[yes]]"")
+else:
+    print(f""The answer is: [[no]]"")",,"
+  File ""<string>"", line 21, in <module>
+TypeError: pearsonr() missing 1 required positional argument: 'y'
+"
+Which square has the larges number of commercial buildings within 100 meters in the dataset in 1740?,function,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings in 1740 dataset to only include commercial buildings
+commercial_buildings_1740 = buildings_1740[buildings_1740['building_functions'].str.contains(""bottega|negozio|magazzino"")]
+
+# Merge the commercial buildings with landmarks based on latitude and longitude
+merged_data = pd.merge(commercial_buildings_1740, landmarks, left_on=['latitude', 'longitude'], right_on=['latitude', 'longitude'])
+
+# Filter the merged data to only include squares
+squares = merged_data[merged_data['landmark_type'] == 'square']
+
+# Group the squares by landmark_name and count the number of commercial buildings in each square
+square_commercial_buildings_count = squares.groupby('landmark_name').size().reset_index(name='commercial_building_count')
+
+# Find the square with the largest number of commercial buildings (or None if no such square exists)
+largest_square = square_commercial_buildings_count['landmark_name'].value_counts().idxmax() if len(square_commercial_buildings_count) > 0 else None
+
+print(f""The answer is: [[{largest_square}]]"")",The answer is: [[None]],
+Which square has the larges number of commercial buildings within 100 meters in the dataset in 1808?,function,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1808.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Split the location column in buildings_1808 into latitude and longitude
+location_series = [row.split(',') for row in buildings_1808['location']]
+latitude_longitude = []
+for row in location_series:
+    if len(row) >= 2:
+        latitude_longitude.append([row[0], row[1]])
+buildings_1808[['longitude', 'latitude']] = pd.DataFrame(latitude_longitude, columns=['longitude', 'latitude'])
+
+# Filter buildings from 1808 dataset that are within 100 meters of a square
+buildings_near_squares_1808 = pd.merge(buildings_1808, landmarks, how='left', on=['latitude', 'longitude']).dropna(subset=['landmark_name'])
+
+# Count the number of commercial buildings near each square
+commercial_buildings_per_square = (buildings_near_squares_1808[buildings_near_squares_1808['building_functions'].str.contains('commercio')]
+                                   .groupby('landmark_name')['building_functions']
+                                   .count()
+                                   .reset_index(name='commercial_building_count'))
+
+# Get the square with the largest number of commercial buildings
+largest_number_of_commercial_buildings = commercial_buildings_per_square.loc[commercial_buildings_per_square['commercial_building_count'].idxmax() if not commercial_buildings_per_square.empty else None, 'landmark_name']
+
+print(f""The answer is: [[{largest_number_of_commercial_buildings}]]"")",,"
+  File ""<string>"", line 26, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/indexing.py"", line 1183, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 4209, in _get_value
+    row = self.index.get_loc(index)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/indexes/range.py"", line 417, in get_loc
+    raise KeyError(key)
+KeyError: None
+"
+Which family owns the most number of buildings in 1740?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Group the 1740 buildings by family name and count the number of buildings owned
+family_building_counts = buildings_1740.groupby('owner_family_name')['building_functions_count'].count()
+
+# Get the family with the most building counts
+most_common_family = family_building_counts.idxmax()
+
+print(f""The answer is: [[{most_common_family}]]"")",The answer is: [[morosini]],
+Which family owns the most number of buildings in 1808?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on owner information
+merged_buildings = pd.concat([buildings_1740, buildings_1808])
+
+# Group the merged dataset by 'owner_family_name' and count the number of occurrences (i.e., the number of buildings owned)
+family_building_count = merged_buildings.groupby('owner_family_name')['building_functions_count'].count().reset_index(name='total_buildings_owned')
+
+# Sort the family-building count dataframe in descending order based on the total number of buildings owned
+family_building_count = family_building_count.sort_values(by='total_buildings_owned', ascending=False)
+
+# Get the topmost row (i.e., the family that owns the most number of buildings)
+max_building_owner = family_building_count.iloc[0]['owner_family_name']
+
+print(f""The answer is: [[{max_building_owner}]]"")",The answer is: [[morosini]],
+Is there any correlation between the family name and the profession in 1740?,personal,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+
+# Filter out rows where rent_price is not a number
+buildings_1740 = buildings_1740[~pd.to_numeric(buildings_1740['rent_price'], errors='coerce').isna()]
+
+# Group the buildings 1740 dataset by family name and profession, then calculate the mean rent price for each group
+grouped_df = buildings_1740.groupby(['owner_family_name', 'owner_profession'])['rent_price'].mean().reset_index(name='average_rent')
+
+# Check if there is any correlation between the family name and the profession in 1740 based on the rent prices
+print(f""The answer is: [[{grouped_df.shape[0] > 1}]"")",The answer is: [[True],
+Which family owns the most number of buildings per parish in 1740?,personal,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Group the data by parish and count the number of buildings owned by each family
+family_building_count = buildings_1740.groupby(['parish', 'owner_family_name']).size().reset_index(name='building_count')
+
+# Sort the data to find the family that owns the most number of buildings per parish in 1740
+result = family_building_count.sort_values(by=['parish', 'building_count'], ascending=False).drop_duplicates(subset='parish', keep='first').head(1)
+
+# Print the final answer
+final_answer = result['owner_family_name'].values[0]
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[zorzi]],
+Which family owns the most number of buildings per district in 1740?,personal,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on location (parish in 1740, district in 1808)
+merged_buildings = pd.concat([buildings_1740, buildings_1808]).reset_index(drop=True)
+
+# Replace 'parish' with 'district' for consistency
+merged_buildings['location'] = merged_buildings['location'].fillna(merged_buildings['district'])
+
+# Count the number of buildings per district
+building_counts = merged_buildings.groupby('location')['owner_family_name'].count().reset_index(name='counts')
+
+# Sort the counts in descending order and get the top family
+top_families = building_counts.sort_values(by='counts', ascending=False).head(1)
+
+# Check if the top family owns more than one building per district in 1740
+final_answer = 'yes' if (building_counts['counts'].max() > 1) else 'no'
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[yes]],
+How many lawyers are there in Venice in 1740?,personal,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings to only include those in Venice
+venice_buildings_1740 = buildings_1740[buildings_1740['location'].str.contains('Venezia')]
+
+# Filter the professions column for 'avvocato' (lawyer)
+lawyers_1740 = venice_buildings_1740[venice_buildings_1740['owner_profession'].str.contains('avvocato', case=False)]
+
+# Calculate and print the answer
+final_answer = lawyers_1740.shape[0]
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[0]],
+In which parish do lawyers own the most number of buildings in 1740?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+
+# Filter the data to only include lawyers as building owners and residential buildings
+lawyers_residential_buildings = buildings_1740[(buildings_1740['owner_profession'] == 'Avvocato') & (buildings_1740['building_functions'].str.contains('abitazione'))]
+
+# Group the data by parish and count the number of buildings owned by lawyers
+parish_buildings_count = lawyers_residential_buildings.groupby('parish')['building_functions_count'].count().reset_index(name='buildings_owned')
+
+# Check if there are any rows in the DataFrame before finding the maximum
+if not parish_buildings_count.empty:
+    # Find the parish where lawyers own the most number of buildings
+    max_buildings_parish = parish_buildings_count.loc[parish_buildings_count['buildings_owned'].idxmax()]
+    print(f""The answer is: [[{max_buildings_parish['parish']}]]"")
+else:
+    print(""There are no rows in the DataFrame."")",There are no rows in the DataFrame.,
+Is there a significant difference in rent prices based on the profession of the building owner in 1740?,personal,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings datasets based on location (latitude and longitude)
+buildings_1740 = buildings_1740.merge(buildings_1808, how='outer', on=['longitude', 'latitude'])
+
+# Filter out rows where building owner's profession is missing
+buildings_1740 = buildings_1740.dropna(subset=['owner_profession'])
+
+# Define a function to map Italian professions to English categories (for simplicity)
+def map_profession(profession):
+    if profession == 'mercante':
+        return 'Merchant'
+    elif profession == 'artigiano':
+        return 'Artisan'
+    else:
+        return 'Other'
+
+# Apply the mapping function
+buildings_1740['owner_profession'] = buildings_1740['owner_profession'].apply(map_profession)
+
+# Group by profession and calculate mean rent price
+professions = buildings_1740['owner_profession'].unique()
+rent_prices_by_profession = {}
+for profession in professions:
+    filtered_data = buildings_1740[buildings_1740['owner_profession'] == profession]
+    rent_price = np.mean(filtered_data['rent_price'])
+    rent_prices_by_profession[profession] = rent_price
+
+# Calculate the difference in rent prices between merchants and artisans
+merchant_rent = rent_prices_by_profession.get('Merchant', 0)
+artisan_rent = rent_prices_by_profession.get('Artisan', 0)
+
+difference = merchant_rent - artisan_rent
+
+print(f""The answer is: [[{difference > 5}]]"")",The answer is: [[False]],
+What is the most common building functions of buildings owned by the same family in 1740?,personal,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings owned by the same family in 1740
+same_family_buildings = buildings_1740[buildings_1740['owner_family_name'] != 'unknown']
+
+# Extract building functions from the same family buildings and count them
+building_functions = same_family_buildings['building_functions'].str.split(',').explode().value_counts()
+
+# Get the most common building function
+most_common_function = building_functions.index[0]
+
+print(f""The answer is: [[{most_common_function}]]"")",The answer is: [[casa]],
+What is the most common building functions of buildings owned by the same family in 1808?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter buildings owned by the same family in 1808
+same_family_buildings = buildings_1808.groupby(['owner_first_name', 'owner_family_name']).filter(lambda x: len(x) > 1)
+
+# Extract building functions from these buildings
+building_functions = same_family_buildings['building_functions'].apply(lambda x: x.split(','))
+
+# Count the occurrences of each building function
+function_counts = {}
+for row in building_functions:
+    for func in row:
+        if func.strip() not in function_counts:
+            function_counts[func.strip()] = 0
+        function_counts[func.strip()] += 1
+
+# Find the most common building function
+max_count = max(function_counts.values())
+most_common_functions = [k for k, v in function_counts.items() if v == max_count]
+
+print(f""The most common building functions of buildings owned by the same family in 1808 are: [[{', '.join(most_common_functions)}]]"")",The most common building functions of buildings owned by the same family in 1808 are: [[casa]],
+What type of building is owned the most by lawyers in 1740?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the data to only include lawyers as owners in 1740
+lawyers_1740 = buildings_1740[(buildings_1740['owner_profession'] == 'Avvocato')]
+
+# Drop unnecessary columns and reset index
+lawyers_1740 = lawyers_1740.drop(['longitude', 'latitude'], axis=1).reset_index(drop=True)
+
+# Filter the data to only include buildings owned by lawyers in 1740
+lawyer_buildings = lawyers_1740.groupby('building_functions').size().reset_index(name='count')
+
+if lawyer_buildings.empty:
+    print(""No common building function found."")
+else:
+    # Find the most common building function owned by lawyers in 1740
+    most_common_function = lawyer_buildings.loc[lawyer_buildings['count'].idxmax(), 'building_functions']
+    
+    if not pd.isna(most_common_function):
+        print(f""The answer is: [[{most_common_function}]]"")",No common building function found.,
+What type of building is owned the most by doctors in 1740?,personal,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Merge the 1740 and 1808 building datasets based on the owner's profession
+merged_buildings = buildings_1740.merge(buildings_1808, how='outer', indicator=True)
+
+# Filter out rows where the owner is not a doctor (profession is 'dottore')
+doctors_buildings = merged_buildings[~merged_buildings['owner_family_name'].str.contains('Dottore')]
+
+# Count the occurrences of each building type owned by doctors
+building_types = doctors_buildings.groupby(['building_functions'])['rent_price'].count().reset_index()
+building_types.columns = ['building_functions', 'count']
+
+# Sort the results and get the most common building type
+most_common_building_type = building_types.sort_values(by='count', ascending=False).head(1)
+
+print(f""The answer is: [[{most_common_building_type['building_functions'].values[0]}]]"")",The answer is: [[casa]],
+How many families were relocated by more than 1km from 1740 to 1808?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+building_1740 = pd.read_csv('data/buildings_1740.csv')
+building_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Rename the columns in building_1808 to match those in building_1740
+building_1808 = building_1808.rename(columns={'latitude': 'latitude_y', 'longitude': 'longitude_y'})
+
+# Merge the 1740 and 1808 building datasets based on latitude and longitude
+merged_buildings = pd.merge(building_1740, building_1808.rename(columns={'location_x': 'location', 'parish_x': 'parish'}), how='inner', left_on=['latitude'], right_on=['latitude_y'])
+
+# Calculate the distance between each pair of buildings
+def calculate_distance(lat1, lon1, lat2, lon2):
+    from math import radians, sin, cos, sqrt, atan2
+    R = 6371.0
+
+    dlat = radians(lat2 - lat1)
+    dlon = radians(lon2 - lon1)
+    a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1-a))
+    distance = R * c
+
+    return distance
+
+merged_buildings['distance'] = merged_buildings.apply(lambda row: calculate_distance(row['latitude'], row['longitude'], row['latitude_y'], row['longitude_y']), axis=1)
+
+# Filter the rows where families were relocated by more than 1km
+relocated_families = merged_buildings[merged_buildings['distance'] > 1]
+
+# Merge the relocated families with the original 1740 building dataset based on owner family name
+family_counts = pd.merge(relocated_families, building_1740.rename(columns={'tenant_name': 'owner_first_name'}), how='left', left_on='owner_family_name', right_on='owner_family_name')
+
+# Count the number of unique families
+unique_relocated_families = family_counts.drop_duplicates(subset='owner_family_name').shape[0]
+
+print(f""The answer is: [[{unique_relocated_families}]]"")",,"
+  File ""<string>"", line 33, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 1310, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/generic.py"", line 1910, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'owner_family_name'
+"
+What is the average distance moved by families who owned buildings in both 1740 and 1808?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the two building datasets based on longitude and latitude
+merged_buildings = buildings_1740.merge(buildings_1808, how='inner', left_on=['longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Filter out the rows where the owner family name is present in both datasets
+common_families = merged_buildings[merged_buildings['owner_family_name_x'].isin(merged_buildings['owner_family_name_y'])]
+
+# Calculate the average distance moved by these families (Note: there is no 'location' column, so we'll use longitude and latitude)
+average_distance = np.mean(np.sqrt((common_families['longitude'] - common_families['longitude'].min())**2 + (common_families['latitude'] - common_families['latitude'].min())**2))
+
+print(f""The answer is: [[{average_distance}]]"")",The answer is: [[nan]],
+Which Location in Venice the families moved to the most from 1740 to 1808?,comparison,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on location
+merged_buildings = pd.merge(buildings_1740, buildings_1808, how='inner', left_on='location', right_on='location')
+
+# Count the number of families moved to each location from 1740 to 1808
+moved_families_count = merged_buildings.groupby('location').size().reset_index(name='count')
+
+# Sort the result in descending order based on the count and print the top location
+print(f""The most popular location is: [[{moved_families_count.loc[moved_families_count['count'].idxmax(), 'location']}]]"")",The most popular location is: [[calle del forno]],
+Which profession exhibited the highest rate of relocation compared to others from 1740 to 1808?,comparison,a single entity name,"import pandas as pd
+
+# Load the datasets
+building_1740 = pd.read_csv('data/buildings_1740.csv')
+building_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Merge the 1740 and 1808 building datasets based on location (latitude and longitude)
+merged_buildings = pd.merge(building_1740, building_1808, left_on=['location', 'longitude', 'latitude'], right_on=['location', 'longitude', 'latitude'])
+
+# Calculate the total count of buildings for each profession in both years
+professions_1740 = building_1740.groupby('owner_profession')['building_functions_count'].count().reset_index()
+professions_1808 = building_1808.groupby('owner_family_name')['building_functions_count'].count().reset_index()
+
+# Merge the two datasets based on owner family name (for comparison)
+merged_professions = pd.merge(professions_1740, professions_1808, left_on='owner_profession', right_on='owner_family_name')
+
+# Calculate the relocation rate for each profession
+merged_professions['relocation_rate'] = merged_professions['building_functions_count_x'] / merged_professions['building_functions_count_y']
+
+# Sort the professions by their relocation rates in descending order and select the top one
+top_profession = merged_professions.sort_values(by='relocation_rate', ascending=False).head(1)
+
+print(f""The answer is: [[{top_profession.iloc[0]['owner_family_name'][:]}]]"")",The answer is: [[fabro]],
+How many families own more buildings in 1808 than what they owned in 1740?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on owner information
+merged_buildings = buildings_1740.merge(buildings_1808, on=['owner_first_name', 'owner_family_name'], how='left', indicator=True)
+
+# Calculate the difference in building count for each family between 1740 and 1808
+merged_buildings['building_diff'] = merged_buildings['building_functions_count_y'] - merged_buildings['building_functions_count_x']
+
+# Count the number of families that own more buildings in 1808 than in 1740
+families_with_more_buildings = len(merged_buildings[merged_buildings['building_diff'] > 0])
+
+print(f""The answer is: [[{families_with_more_buildings}]]"")",The answer is: [[6886]],
+How many families relocated their buildings closer to squares from 1740 to 1808?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions column to list type for both datasets
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+buildings_1808['building_functions'] = buildings_1808['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+
+# Merge the datasets
+merged_data = pd.merge(buildings_1740, buildings_1808, on=['location', 'longitude', 'latitude'], how='inner')
+
+# Create a new column to check if the building is closer to squares or not
+def is_closer_to_squares(row):
+    square_distance = np.inf
+    church_distance = np.inf
+    for index, location_info in landmarks.iterrows():
+        if row['location'] == location_info['landmark_name']:
+            distance = np.sqrt((row.longitude - location_info['longitude'])**2 + (row.latitude - location_info['latitude'])**2)
+            if 'square' == location_info['landmark_type'] and distance < square_distance:
+                square_distance = distance
+            elif 'church' == location_info['landmark_type'] and distance < church_distance:
+                church_distance = distance
+    if square_distance < church_distance:
+        return 1
+    else:
+        return 0
+
+merged_data['is_closer_to_squares'] = merged_data.apply(is_closer_to_squares, axis=1)
+
+# Count the number of families that relocated their buildings closer to squares from 1740 to 1808
+relocated_families = len(merged_data[merged_data['is_closer_to_squares'] == 1])
+
+print(f""The answer is: [[{relocated_families}]]"")",The answer is: [[0]],
+How many families relocated their buildings further away from squares from 1740 to 1808?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to a list for easier manipulation
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: x.split(','))
+buildings_1808['building_functions'] = buildings_1808['building_functions'].apply(lambda x: x.split(','))
+
+# Define a function to check if a building is close to a landmark
+def is_close_to_landmark(row):
+    for index, landmark in landmarks.iterrows():
+        distance = np.sqrt((row['latitude'] - landmark['latitude'])**2 + (row['longitude'] - landmark['longitude'])**2)
+        if distance < 0.1:  
+            return True
+    return False
+
+# Apply the function to both datasets and count the number of families that relocated their buildings further away from squares
+relocated_families = 0
+for index, row in buildings_1740.iterrows():
+    if is_close_to_landmark(row):
+        matching_buildings_1808 = buildings_1808[buildings_1808['owner_first_name'] == row['owner_first_name']]
+        for _, row_1808 in matching_buildings_1808.iterrows():
+            if not is_close_to_landmark(row_1808):
+                relocated_families += 1
+                break
+
+print(f""The answer is: [[{relocated_families}]]"")",The answer is: [[0]],
+How many more buildings are located within 100 meters from squares in 1808 compared to 1740?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the landmarks dataset with the 1808 buildings dataset to get the buildings within 100 meters from squares
+squares_buildings_1808 = pd.merge(buildings_1808, landmarks[[""longitude"", ""latitude""]], how=""left"", left_on=[""longitude"", ""latitude""], right_on=[""longitude"", ""latitude""])
+
+# Merge the landmarks dataset with the 1740 buildings dataset to get the buildings within 100 meters from squares
+squares_buildings_1740 = pd.merge(buildings_1740, landmarks[[""longitude"", ""latitude""]], how=""left"", left_on=[""longitude"", ""latitude""], right_on=[""longitude"", ""latitude""])
+
+# Calculate the distance between each building in 1808 and the nearest square
+squares_buildings_1808['distance_to_square'] = ((squares_buildings_1808['latitude'] - landmarks['latitude'])**2 + (squares_buildings_1808['longitude'] - landmarks['longitude'])**2)**0.5
+
+# Filter the buildings that are within 100 meters from squares in 1808
+buildings_within_distance_1808 = squares_buildings_1808[squares_buildings_1808['distance_to_square'] <= 100]
+
+# Count the number of buildings within 100 meters from squares in 1808
+buildings_within_distance_count_1808 = len(buildings_within_distance_1808)
+
+# Calculate the distance between each building in 1740 and the nearest square
+squares_buildings_1740['distance_to_square'] = ((squares_buildings_1740['latitude'] - landmarks['latitude'])**2 + (squares_buildings_1740['longitude'] - landmarks['longitude'])**2)**0.5
+
+# Filter the buildings that are within 100 meters from squares in 1740
+buildings_within_distance_1740 = squares_buildings_1740[squares_buildings_1740['distance_to_square'] <= 100]
+
+# Count the number of buildings within 100 meters from squares in 1740
+buildings_within_distance_count_1740 = len(buildings_within_distance_1740)
+
+# Calculate the difference between the two counts
+difference = buildings_within_distance_count_1808 - buildings_within_distance_count_1740
+
+print(f""The answer is: [[{difference}]]"")",The answer is: [[0]],
+How many less buildings are located within 100 meters from squares in 1808 compared to 1740?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the necessary datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Filter the 1808 buildings dataset to get only the buildings located within 100 meters from squares
+squares_1808_buildings = buildings_1808[buildings_1808['location'].str.contains('piazza') & (np.abs(buildings_1808['latitude']) < 0.2)]
+
+# Filter the 1740 buildings dataset to get only the buildings located within 100 meters from squares
+squares_1740_buildings = buildings_1740[buildings_1740['location'].str.contains('piazza') & (np.abs(buildings_1740['latitude']) < 0.2)]
+
+# Calculate the difference in the number of buildings located within 100 meters from squares between 1808 and 1740
+difference = len(squares_1808_buildings) - len(squares_1740_buildings)
+
+print(f""The answer is: [[{difference}]]"")",The answer is: [[0]],
+How many families present in Venice in 1740 still exist in 1808?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+building_1740_df = pd.read_csv('data/buildings_1740.csv')
+building_1808_df = pd.read_csv('data/buildings_1808.csv')
+landmarks_df = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions column to a list of unique values in the 1740 dataset
+building_1740_df['building_functions'] = building_1740_df['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+unique_families_1740 = set([f'{owner_first_name} {owner_family_name}' for owner_first_name, owner_family_name in zip(building_1740_df['owner_first_name'], building_1740_df['owner_family_name'])])
+
+# Convert building_functions column to a list of unique values in the 1808 dataset
+building_1808_df['building_functions'] = building_1808_df['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+unique_families_1808 = set([f'{owner_first_name}' for owner_first_name in building_1808_df['owner_first_name']])
+
+# Find the common families
+common_families = unique_families_1740.intersection(unique_families_1808)
+
+# Calculate the count of common families
+final_answer = len(common_families)
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[2]],
+Which family increased the number of buildings they owned the most from 1740 to 1808?,comparison,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge 1740 and 1808 datasets based on owner_first_name, owner_family_name
+merged_data = buildings_1740.merge(buildings_1808, how='left', 
+                                  left_on=['owner_first_name', 'owner_family_name'], 
+                                  right_on=['owner_first_name', 'owner_family_name'])
+
+# Calculate the change in number of buildings owned by each family
+merged_data['change_in_buildings'] = merged_data['building_functions_count_y'] - merged_data['building_functions_count_x']
+
+# Find the family that increased the number of buildings they owned the most
+max_change = merged_data['change_in_buildings'].max()
+family_with_max_increase = merged_data[merged_data['change_in_buildings'] == max_change]['owner_family_name'].values[0]
+
+print(f""The answer is: [[{family_with_max_increase}]]"")",The answer is: [[bembo]],
+How many building changed from residential to commercial use between 1740 and 1808?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to a set for efficient lookups
+building_functions_set_1740 = set(buildings_1740['building_functions'].apply(lambda x: x.replace(' ', '').lower()))
+
+# Merge the 1808 dataset with the landmarks dataset based on location
+buildings_1808 = pd.merge(buildings_1808, landmarks, left_on='location', right_on='landmark_name')
+
+# Convert building_functions to a set for efficient lookups
+building_functions_set_1808 = set(buildings_1808['building_functions'].apply(lambda x: x.replace(' ', '').lower()))
+
+# Find the buildings that changed from residential to commercial use
+changed_buildings = buildings_1740[(buildings_1740['building_functions_count'] > 1) & (~buildings_1740['building_functions'].isin(building_functions_set_1808))]
+
+# Calculate the number of changed buildings
+final_answer = len(changed_buildings)
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[2372]],
+How many buildings retained the same function across the two time periods?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings datasets based on location and longitude
+merged_buildings = pd.merge(buildings_1740, buildings_1808, how='inner', left_on=['location', 'longitude'], right_on=['location', 'longitude'])
+
+# Filter out the rows where building functions changed across time periods
+same_functions = merged_buildings[merged_buildings.apply(lambda row: set(row['building_functions'].split(',')) == set(row['building_functions_count']), axis=1)]
+
+# Count the number of buildings that retained the same function across both time periods
+final_answer = len(same_functions)
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[0]],
+How many new families appeared in Venice in 1808 that were not present in 1740?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Extract unique families in 1740 and 1808
+families_1740 = set(buildings_1740['owner_family_name'])
+families_1808 = set(buildings_1808['owner_family_name'])
+
+# Calculate the difference between 1808 and 1740 to get new families that appeared in 1808
+new_families = families_1808 - families_1740
+
+print(f""The answer is: [[{len(new_families)}]]"")",The answer is: [[2592]],
+Is there any decrease in the number of buildings held by a family on average from 1740 to 1808?,comparison,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the 1740 and 1808 building datasets based on the location
+merged_buildings = buildings_1740.merge(buildings_1808, how='inner', left_on='location', right_on='location')
+
+# Filter out the rows where the owner's family name is not the same in both datasets
+filtered_buildings = merged_buildings[merged_buildings['owner_family_name_x'] == merged_buildings['owner_family_name_y']]
+
+# Calculate the average number of buildings held by each family in 1740 and 1808
+avg_1740 = filtered_buildings.groupby('owner_family_name_x')['building_functions_count_y'].mean()
+avg_1808 = filtered_buildings.groupby('owner_family_name_y')['building_functions_count_y'].mean()
+
+# Check if there is a decrease in the average number of buildings held by each family from 1740 to 1808
+is_decrease = np.mean(avg_1808) < np.mean(avg_1740)
+
+print(f""The answer is: [[{is_decrease}]]"")",The answer is: [[False]],
+Are there any families who moved closer to the churches in general from 1740 to 1808?,comparison,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert the 'location' column in both buildings datasets to a numerical value
+buildings_1740['location'] = buildings_1740['parish']
+buildings_1808['location'] = buildings_1808['district']
+
+# Merge the landmarks with the buildings dataframes on location
+merged_landmarks_1740 = pd.merge(buildings_1740, landmarks, how='left', left_on='location', right_on='landmark_name')
+merged_landmarks_1808 = pd.merge(buildings_1808, landmarks, how='left', left_on='location', right_on='landmark_name')
+
+# Calculate the average distance between the building and the church for each family in both years
+merged_data = merged_landmarks_1740[['owner_family_name', 'longitude_x', 'latitude_x']].merge(merged_landmarks_1808[['owner_family_name', 'longitude_y', 'latitude_y']], on='owner_family_name')
+merged_data['distance_1740'] = (merged_data['longitude_x'].astype(float) - merged_data['longitude_y']).pow(2) + (merged_data['latitude_x'].astype(float) - merged_data['latitude_y']).pow(2)
+merged_data['distance_1808'] = merged_data['distance_1740']
+
+# Calculate the average change in distance for each family
+merged_data['distance_change'] = merged_data.apply(lambda row: np.sqrt(row['distance_1740']) - np.sqrt(row['distance_1740']), axis=1)
+
+# Check if there are any families who moved closer to the churches in general from 1740 to 1808
+final_answer = len(merged_data[merged_data['distance_change'] < 0])
+
+print(f""The answer is: [[{final_answer > 0}]]"")",The answer is: [[False]],
+Are there any families who moved further away from the churches in general from 1740 to 1808?,comparison,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings 1740 and landmarks on parish, longitude, and latitude
+merged_buildings_1740_landmarks = pd.merge(buildings_1740, landmarks, how='left', left_on=['parish', 'longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Rename the location column to match with 1808 data
+merged_buildings_1740_landmarks = merged_buildings_1740_landmarks.rename(columns={'location': 'location_y'})
+
+# Merge buildings 1808 and landmarks on district, longitude, and latitude
+merged_buildings_1808_landmarks = pd.merge(buildings_1808, landmarks, how='left', left_on=['district', 'longitude', 'latitude'], right_on=['longitude', 'latitude'])
+
+# Calculate the distance between the original locations and the new locations
+merged_buildings_1740_landmarks['distance'] = ((merged_buildings_1740_landmarks.latitude - merged_buildings_1740_landmarks.latitude)**2 + (merged_buildings_1740_landmarks.longitude - merged_buildings_1740_landmarks.longitude)**2)**(1/2)
+
+# Group the data by families and calculate the mean distance
+families_moved_further = merged_buildings_1740_landmarks.groupby('owner_family_name')['distance'].mean()
+
+print(f""The answer is: [[{families_moved_further.size > 0}]]"")",,"
+  File ""<string>"", line 9, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 786, in __init__
+    self.left_on, self.right_on = self._validate_left_right_on(left_on, right_on)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/reshape/merge.py"", line 1628, in _validate_left_right_on
+    raise ValueError(""len(right_on) must equal len(left_on)"")
+ValueError: len(right_on) must equal len(left_on)
+"
+How many families who owned buildings in both 1740 and 1808 changed the type of buildings they owned?,comparison,a single number,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Merge the 1740 dataset with the 1800 dataset on owner_first_name and family_name
+merged_data = buildings_1740.merge(buildings_1808, how='inner', 
+                                  left_on=['owner_first_name', 'owner_family_name'], 
+                                  right_on=['owner_first_name', 'owner_family_name'])
+
+# Get the count of changed families
+num_changed_families = len(merged_data[(merged_data['building_functions_x'] != merged_data['building_functions_y'])])
+
+print(f""The answer is: [[{num_changed_families}]]"")",The answer is: [[17178]],
+Did any families transition from being tenants in 1740 to building owners in 1808?,comparison,a single entity name,"import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+
+# Merge the two datasets based on owner_first_name and owner_family_name, including only necessary columns
+merged_data = buildings_1740.merge(buildings_1808[['owner_first_name', 'owner_family_name']], how='inner',
+                                  left_on=['owner_first_name', 'owner_family_name'], right_on=['owner_first_name', 'owner_family_name'])
+
+# Filter the merged data to only include rows where tenant_name is not null and building_functions_count from 1740 is greater than 0
+merged_data = merged_data[merged_data['tenant_name'].notna() & (merged_data['building_functions_count'] > 0)]
+
+# Group the filtered data by owner_first_name and owner_family_name, then count the number of rows for each group
+grouped_data = merged_data.groupby(['owner_first_name', 'owner_family_name']).size().reset_index(name='count')
+
+# Check if any families transitioned from being tenants to building owners
+transitioned_families = grouped_data[grouped_data['count'] > 1]
+
+# Print the final answer
+if not transitioned_families.empty:
+    print(f""The answer is: [[{transitioned_families.shape[0]} families]]"")
+else:
+    print(f""The answer is: [[0 families]]"")",The answer is: [[349 families]],
+Have the squares with the most number of commercial buildings within 100 meters changed from 1740 to 1808?,comparison,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions to list in 1740 dataset
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: x.split(','))
+
+# Filter commercial buildings from 1740 and get their locations
+commercial_buildings_1740 = buildings_1740[buildings_1740['building_functions'].apply(lambda x: 'negozio' in str(x) or 'bottega' in str(x))]
+commercial_locations_1740 = commercial_buildings_1740[['location', 'longitude', 'latitude']]
+
+# Filter commercial buildings from 1808 and get their locations
+commercial_buildings_1808 = buildings_1808[buildings_1808['building_functions'].apply(lambda x: any(function in str(x) for function in ['negozio', 'bottega']))]
+commercial_locations_1808 = commercial_buildings_1808[['location', 'longitude', 'latitude']]
+
+# Merge the locations of both years into a single dataframe
+combined_locations = pd.concat([commercial_locations_1740, commercial_locations_1808])
+
+# Calculate distances between each location and landmarks
+distances = []
+for index, row in combined_locations.iterrows():
+    for landmark_index, landmark_row in landmarks.iterrows():
+        distance = np.sqrt((row['longitude'] - landmark_row['longitude'])**2 + (row['latitude'] - landmark_row['latitude'])**2)
+        distances.append((distance, index))
+
+# Get the closest landmark for each location
+closest_landmarks = [max(distances[i:i+1], key=lambda x: x[0])[1] for i in range(len(distances))]
+
+# Check if any square is within 100 meters from a commercial building
+changed_squares = set()
+for index, row in combined_locations.iterrows():
+    if closest_landmarks[index] == 0 and np.sqrt((row['longitude'] - landmarks.loc[0]['longitude'])**2 + (row['latitude'] - landmarks.loc[0]['latitude'])**2) <= 100:
+        changed_squares.add('Piazza San Marco')
+    elif closest_landmarks[index] == 1 and np.sqrt((row['longitude'] - landmarks.loc[1]['longitude'])**2 + (row['latitude'] - landmarks.loc[1]['latitude'])**2) <= 100:
+        changed_squares.add('Piazza dei Frari')
+
+# Print the answer
+if len(changed_squares) > 0:
+    print(f""The answer is: [[yes]]"")
+else:
+    print(f""The answer is: [[no]]"")",The answer is: [[yes]],
+How many buildings are located within 100 meters of a church in 1808 compared to 1740?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions column in buildings_1740 to list type for comparison
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: [i.strip() for i in x.split(',')])
+
+# Merge the datasets based on location and longitude, latitude
+merged_1808 = pd.merge(buildings_1808, landmarks, how='left', left_on=['location', 'longitude', 'latitude'], right_on=['landmark_name', 'longitude', 'latitude'])
+
+# Check if landmark type is ""church"" for each row in the merged dataset
+merged_1808['is_church'] = merged_1808['landmark_type'] == ""church""
+
+# Count the number of buildings within 100 meters of a church in 1808
+buildings_near_church_1808 = len(merged_1808[merged_1808['is_church']].reset_index(drop=True))
+
+# Repeat the process for 1740 data
+merged_1740 = pd.merge(buildings_1740, landmarks, how='left', left_on=['location', 'longitude', 'latitude'], right_on=['landmark_name', 'longitude', 'latitude'])
+merged_1740['is_church'] = merged_1740['landmark_type'] == ""church""
+buildings_near_church_1740 = len(merged_1740[merged_1740['is_church']].reset_index(drop=True))
+
+# Calculate the difference in number of buildings within 100 meters of a church between 1808 and 1740
+difference = buildings_near_church_1808 - buildings_near_church_1740
+
+print(f""The answer is: [[{difference}]]"")",The answer is: [[0]],
+How many more buildings are located within 100 meters from the square of San Marco in 1808 compared to 1740?,comparison,a single number,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Find the location of San Marco square
+san_marco_square = landmarks[landmarks['landmark_name'] == 'Piazza San Marco'].dropna()
+
+# Check if there is at least one row found in the previous operation
+if not san_marco_square.empty:
+    # Calculate the latitude and longitude of San Marco square
+    san_marco_lat = san_marco_square['latitude'].values[0]
+    san_marco_long = san_marco_square['longitude'].values[0]
+
+    # Filter buildings within 100 meters from San Marco square in both years
+    buildings_1740_sanmarco = buildings_1740[(np.abs(buildings_1740['longitude'] - san_marco_long) + np.abs(buildings_1740['latitude'] - san_marco_lat)) <= 100]
+    buildings_1808_sanmarco = buildings_1808[(np.abs(buildings_1808['longitude'] - san_marco_long) + np.abs(buildings_1808['latitude'] - san_marco_lat)) <= 100]
+
+    # Calculate the difference in number of buildings
+    difference = len(buildings_1808_sanmarco) - len(buildings_1740_sanmarco)
+else:
+    print(""No data found for Piazza San Marco"")
+    difference = None
+
+print(f""The answer is: [[{difference}]]"")","No data found for Piazza San Marco
+The answer is: [[None]]",
+What are the names of the most densely populated squares with the most number of buildings within 100 meters in both periods 1740 and 1808?,comparison,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge the buildings datasets with the landmarks dataset based on longitude and latitude
+merged_1740 = pd.merge(buildings_1740, landmarks, on=['longitude', 'latitude'])
+merged_1808 = pd.merge(buildings_1808, landmarks, on=['longitude', 'latitude'])
+
+# Calculate the distance between each building and landmark
+merged_1740['distance'] = np.sqrt((merged_1740['longitude'] - merged_1740['longitude'])**2 + (merged_1740['latitude'] - merged_1740['latitude'])**2)
+merged_1808['distance'] = np.sqrt((merged_1808['longitude'] - merged_1808['longitude'])**2 + (merged_1808['latitude'] - merged_1808['latitude'])**2)
+
+# Filter the data to only include buildings within 100 meters of a landmark
+merged_1740_filtered = merged_1740[merged_1740['distance'] <= 100]
+merged_1808_filtered = merged_1808[merged_1808['distance'] <= 100]
+
+# Group the filtered data by landmark and count the number of buildings within 100 meters
+landmark_counts_1740 = merged_1740_filtered.groupby('landmark_name')['building_functions_count'].count()
+landmark_counts_1808 = merged_1808_filtered.groupby('landmark_name')['building_functions_count'].count()
+
+# Get the most densely populated squares in both periods
+if landmark_counts_1740.shape[0] > 0:
+    most_densely_populated_squares_1740 = landmark_counts_1740.sort_values(ascending=False).head(1)
+    most_dense_1740_square = most_densely_populated_squares_1740.index[0]
+else:
+    most_dense_1740_square = ""No buildings found within 100 meters of any landmark in 1740""
+
+if landmark_counts_1808.shape[0] > 0:
+    most_densely_populated_squares_1808 = landmark_counts_1808.sort_values(ascending=False).head(1)
+    most_dense_1808_square = most_densely_populated_squares_1808.index[0]
+else:
+    most_dense_1808_square = ""No buildings found within 100 meters of any landmark in 1808""
+
+# Print the final answer
+final_answer = f""The most densely populated squares are: [[{most_dense_1740_square}]] and [[{most_dense_1808_square}]]""
+print(final_answer)",The most densely populated squares are: [[No buildings found within 100 meters of any landmark in 1740]] and [[No buildings found within 100 meters of any landmark in 1808]],
+Which type of a building have been moved further away from the churches the most from 1740 to 1808?,comparison,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Create a new column to calculate the distance from each building to the nearest landmark (church or square)
+def calculate_distance(df):
+    df['distance'] = 0
+    for index, row in df.iterrows():
+        min_distance = float('inf')
+        for landmark_index, landmark_row in landmarks.iterrows():
+            distance = np.sqrt((row['longitude'] - landmark_row['longitude'])**2 + (row['latitude'] - landmark_row['latitude'])**2)
+            if distance < min_distance:
+                min_distance = distance
+        row['distance'] = min_distance
+
+# Calculate the distance for each building in both datasets
+calculate_distance(buildings_1740)
+buildings_1808['distance'] = 0
+for index, row in buildings_1808.iterrows():
+    min_distance = float('inf')
+    for landmark_index, landmark_row in landmarks.iterrows():
+        distance = np.sqrt((row['longitude'] - landmark_row['longitude'])**2 + (row['latitude'] - landmark_row['latitude'])**2)
+        if distance < min_distance:
+            min_distance = distance
+    row['distance'] = min_distance
+
+# Find the type of building that has been moved further away from the churches the most from 1740 to 1808
+buildings_1740['distance_difference'] = buildings_1808['distance'] - buildings_1740['distance']
+most_moved_building_type = buildings_1740.groupby('building_functions')['distance_difference'].mean().idxmax()
+
+print(f""The answer is: [[{most_moved_building_type}]]"")",The answer is: [[appartamento]],
+Which type of a building have been moved closer to the churches the most from 1740 to 1808?,comparison,a single entity name,"import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Create a new dataframe that combines location, latitude, and longitude from both datasets
+merged_location_df = pd.DataFrame({'location': buildings_1808['location'], 'latitude': buildings_1808['latitude'], 'longitude': buildings_1808['longitude']})
+
+# Merge the 1808 buildings dataset with the merged landmarks dataframe based on location
+merged_df = pd.merge(buildings_1808, merged_location_df, left_on='location', right_on='location')
+
+# Calculate the distance from each building to its nearest landmark (church or square)
+def calculate_distance(row):
+    if 'latitude' in row and 'longitude' in row:
+        min_distance = float('inf')
+        for index, landmark in landmarks.iterrows():
+            dist = np.sqrt((row['latitude'] - landmark['latitude'])**2 + (row['longitude'] - landmark['longitude'])**2)
+            if dist < min_distance:
+                min_distance = dist
+        return min_distance
+    else:
+        return None
+
+# Apply the calculate_distance function only to rows where building_functions exists
+merged_df['distance_to_landmark'] = merged_df.apply(lambda row: calculate_distance(row) if 'building_functions' in row.to_dict() else None, axis=1)
+
+# Group the data by building functions and calculate the average distance to landmarks
+building_functions = pd.unique(buildings_1808['building_functions'])
+average_distances = []
+for function in building_functions:
+    temp_df = merged_df[merged_df['building_functions'].str.contains(function)]
+    avg_distance = temp_df[temp_df['distance_to_landmark'].notna()]['distance_to_landmark'].mean()
+    average_distances.append((function, avg_distance))
+
+# Find the building type with the smallest average distance to landmarks
+min_distance = min(average_distances, key=lambda x: x[1])
+
+print(f""The answer is: [[{min_distance[0]}]]"")",The answer is: [[casa]],
+Did the number of buildings with more than one function increase over time from 1740 to 1808?,comparison,"yes or ""no""","import pandas as pd
+import numpy as np
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Convert building_functions column in 1740 dataset to list type
+buildings_1740['building_functions'] = buildings_1740['building_functions'].apply(lambda x: x.split(','))
+
+# Convert building_functions column in 1808 dataset to list type
+buildings_1808['building_functions'] = buildings_1808['building_functions'].apply(lambda x: x.split(','))
+
+# Count the number of buildings with more than one function in each year
+buildings_with_multiple_functions_1740 = len(buildings_1740[buildings_1740['building_functions_count'] > 1])
+buildings_with_multiple_functions_1808 = len(buildings_1808[buildings_1808['building_functions_count'] > 1])
+
+# Check if the number of buildings with more than one function increased over time
+if buildings_with_multiple_functions_1808 > buildings_with_multiple_functions_1740:
+    final_answer = ""yes""
+else:
+    final_answer = ""no""
+
+print(f""The answer is: [[{final_answer}]]"")",The answer is: [[yes]],
+Are there any parishes with more than 5 buildings owned by a single family in 1740?,spatial,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Group the 1740 buildings by parish and count the number of buildings owned by each family
+family_buildings_count = buildings_1740.groupby(['parish', 'owner_family_name']).size().reset_index(name='count')
+
+# Filter the results to include only parishes with more than 5 buildings owned by a single family
+parishes_with_multiple_families = family_buildings_count[family_buildings_count['count'] > 5]
+
+# Print the final answer
+final_answer = len(parishes_with_multiple_families) > 0
+print(f""The answer is: [[{str(final_answer)}]]"")",The answer is: [[True]],
+Are there any districts with more than 5 buildings owned by a single family in 1808?,spatial,"yes or ""no""","import pandas as pd
+
+# Load the datasets
+buildings_1740 = pd.read_csv('data/buildings_1740.csv')
+buildings_1808 = pd.read_csv('data/buildings_1808.csv')
+landmarks = pd.read_csv('data/landmarks.csv')
+
+# Merge buildings 1808 and 1740 based on location
+merged_buildings = pd.merge(buildings_1808, buildings_1740[['location', 'owner_family_name']], left_on='location', right_on='location')
+
+# Group by 'owner_family_name' from the merged dataset and count the number of buildings owned by each family in 1808
+family_building_count = merged_buildings.groupby('owner_family_name')['building_functions_count_x'].count().reset_index(name='count')
+
+# Filter the families with more than 5 buildings in 1808
+families_with_multiple_buildings = family_building_count[family_building_count['count'] > 5]
+
+print(f""The answer is: [[{not families_with_multiple_buildings.empty}]]"")",,"
+  File ""<string>"", line 12, in <module>
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/frame.py"", line 9170, in groupby
+    return DataFrameGroupBy(
+           ^^^^^^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/groupby/groupby.py"", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+                               ^^^^^^^^^^^^
+  File ""/home/saydalie/.conda/envs/myenv/lib/python3.11/site-packages/pandas/core/groupby/grouper.py"", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'owner_family_name'
+"

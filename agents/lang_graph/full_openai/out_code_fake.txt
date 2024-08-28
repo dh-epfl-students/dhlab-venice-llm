@@ -1,0 +1,107 @@
+Will be save at: out/out_code_fake.csv
+0it [00:00, ?it/s]--------------- Plan ---------------
+1. **Identify the Churches**: Start by examining the Landmarks Dataset (data/landmarks.csv) to extract the geographical coordinates (longitude and latitude) of all the landmarks that are classified as "churches". This will give us a list of church locations in Venice.
+
+2. **Extract Building Data for 1740**: Next, review the 1740 Buildings Dataset (data/buildings_1740.csv) to obtain the geographical coordinates of all buildings along with their owners' family names. For each building in this dataset, create a mapping of the owner's family name to the building's location (longitude and latitude).
+
+3. **Extract Building Data for 1808**: Similarly, analyze the 1808 Buildings Dataset (data/buildings_1808.csv) to gather the geographical coordinates of buildings and their owners' family names. Create a mapping of the owner's family name to the building's location in this dataset as well.
+
+4. **Calculate Distances from Churches**: For each family name extracted from both the 1740 and 1808 datasets, calculate the distance from their building locations to all church locations obtained in step 1. Use an appropriate formula, such as the Haversine formula, to compute the distances based on the geographical coordinates.
+
+5. **Compare Distances**: After calculating the distances, compare the distances of each family member's building from the nearest church in 1740 with their distance from the nearest church in 1808. 
+
+6. **Determine Movement Towards Churches**: For each family, check if the distance to the nearest church has decreased from 1740 to 1808. If the distance has decreased for any family, mark it as having moved closer to a church.
+
+7. **Final Evaluation**: Based on the analysis, determine if there are any families that have moved closer to the churches in general. If at least one family has moved closer, the answer will be "yes"; if none have, the answer will be "no".
+
+8. **Prepare the Final Answer**: Format the final answer based on the findings from the previous step, ensuring that it is clearly stated as either "yes" or "no".
+
+*********************** CODE ***********************
+```python
+import pandas as pd
+import numpy as np
+from geopy.distance import great_circle
+
+# Step 1: Identify the Churches
+landmarks_df = pd.read_csv('data/landmarks.csv')
+churches = landmarks_df[landmarks_df['landmark_type'] == 'church'][['landmark_name', 'longitude', 'latitude']]
+
+# Step 2: Extract Building Data for 1740
+buildings_1740_df = pd.read_csv('data/buildings_1740.csv')
+buildings_1740_df = buildings_1740_df[['owner_family_name', 'longitude', 'latitude']]
+
+# Step 3: Extract Building Data for 1808
+buildings_1808_df = pd.read_csv('data/buildings_1808.csv')
+buildings_1808_df = buildings_1808_df[['owner_family_name', 'longitude', 'latitude']]
+
+# Function to calculate the distance to the nearest church
+def nearest_church_distance(building_location, churches):
+    return min(great_circle(building_location, (row['latitude'], row['longitude'])).meters for _, row in churches.iterrows())
+
+# Step 4: Calculate Distances from Churches for 1740
+buildings_1740_df['nearest_church_distance'] = buildings_1740_df.apply(
+    lambda row: nearest_church_distance((row['latitude'], row['longitude']), churches), axis=1)
+
+# Step 5: Calculate Distances from Churches for 1808
+buildings_1808_df['nearest_church_distance'] = buildings_1808_df.apply(
+    lambda row: nearest_church_distance((row['latitude'], row['longitude']), churches), axis=1)
+
+# Step 6: Combine data for analysis
+combined_df = pd.merge(buildings_1740_df, buildings_1808_df, on='owner_family_name', suffixes=('_1740', '_1808'))
+
+# Step 7: Determine Movement Towards Churches
+combined_df['moved_closer'] = combined_df['nearest_church_distance_1740'] > combined_df['nearest_church_distance_1808']
+
+# Step 8: Final Evaluation
+families_moved_closer = combined_df['moved_closer'].any()
+
+# Prepare the Final Answer
+final_answer = "yes" if families_moved_closer else "no"
+print(f"The answer is: [[{final_answer}]]")
+```
+--------------- Code ---------------
+import pandas as pd
+import numpy as np
+from geopy.distance import great_circle
+
+# Step 1: Identify the Churches
+landmarks_df = pd.read_csv('data/landmarks.csv')
+churches = landmarks_df[landmarks_df['landmark_type'] == 'church'][['landmark_name', 'longitude', 'latitude']]
+
+# Step 2: Extract Building Data for 1740
+buildings_1740_df = pd.read_csv('data/buildings_1740.csv')
+buildings_1740_df = buildings_1740_df[['owner_family_name', 'longitude', 'latitude']]
+
+# Step 3: Extract Building Data for 1808
+buildings_1808_df = pd.read_csv('data/buildings_1808.csv')
+buildings_1808_df = buildings_1808_df[['owner_family_name', 'longitude', 'latitude']]
+
+# Function to calculate the distance to the nearest church
+def nearest_church_distance(building_location, churches):
+    return min(great_circle(building_location, (row['latitude'], row['longitude'])).meters for _, row in churches.iterrows())
+
+# Step 4: Calculate Distances from Churches for 1740
+buildings_1740_df['nearest_church_distance'] = buildings_1740_df.apply(
+    lambda row: nearest_church_distance((row['latitude'], row['longitude']), churches), axis=1)
+
+# Step 5: Calculate Distances from Churches for 1808
+buildings_1808_df['nearest_church_distance'] = buildings_1808_df.apply(
+    lambda row: nearest_church_distance((row['latitude'], row['longitude']), churches), axis=1)
+
+# Step 6: Combine data for analysis
+combined_df = pd.merge(buildings_1740_df, buildings_1808_df, on='owner_family_name', suffixes=('_1740', '_1808'))
+
+# Step 7: Determine Movement Towards Churches
+combined_df['moved_closer'] = combined_df['nearest_church_distance_1740'] > combined_df['nearest_church_distance_1808']
+
+# Step 8: Final Evaluation
+families_moved_closer = combined_df['moved_closer'].any()
+
+# Prepare the Final Answer
+final_answer = "yes" if families_moved_closer else "no"
+print(f"The answer is: [[{final_answer}]]")
+
+--------------- Output ---------------
+The answer is: [[yes]]
+
+1it [05:42, 342.75s/it]1it [05:42, 342.75s/it]
