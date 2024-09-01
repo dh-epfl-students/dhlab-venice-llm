@@ -99,7 +99,7 @@ id,question,category,answer_format,n_matches,entity_match
 98,How many merchants are there in Venice in 1740?,personal,a single number,1,1
 99,In which parish do prosecutors inhabit the most in 1740?,personal,a single entity name,1,1
 100,In which parish do lawyers own the most number of buildings in 1740?,personal,a single entity name,1,1
-101,How much of do doctors earch from rent on average in 1740?,personal,a single number,1,1
+101,How much do doctors earn from rent on average in 1740?,personal,a single number,1,1
 102,Who is the richest person in term of how much they earn from rent in 1740?,personal,a single number,0,0
 103,Is there a significant difference in rent prices based on the profession of the building owner in 1740?,personal,yes or no,0,0
 104,What is the most common building functions of buildings owned by the same family in 1740?,personal,a single entity name,0,0
