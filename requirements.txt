@@ -5,3 +5,4 @@ langchain_openai==0.1.22
 langchain-core==0.2.34
 langgraph==0.0.51
 numpy==1.23.5
+ipykernel==6.29.5
