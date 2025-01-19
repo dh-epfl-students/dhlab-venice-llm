@@ -50,9 +50,9 @@ def read_questions(questions_path='out/out_matches.csv'):
 
 def get_openai_llm(model_name: str = 'gpt-4o-mini', seed: int = 42, do_sample=True, temperature=0, top_p=0): # temperature=0, top_p=0 -> greedy
     if do_sample:
-        llm = ChatOpenAI(model_name=model_name, model_kwargs={"seed":seed})
+        llm = ChatOpenAI(model_name=model_name, seed=seed)
     else:
-        llm = ChatOpenAI(model_name=model_name, temperature=temperature, model_kwargs={"seed":seed, "top_p":top_p})
+        llm = ChatOpenAI(model_name=model_name, temperature=temperature, seed=seed, top_p=top_p)
     
     return llm
 

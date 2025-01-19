@@ -124,12 +124,12 @@ def write_code(state):
     references = state['references']
     answer_format = state['answer_format']
     plan = state['plan']
-    code = state['code']
-    error_message = state['error_message']
     num_steps = state['num_steps']
+    error_message = state['error_message']
 
     # Generate or Debug the code
     if error_message:
+        code = state['code']
         debugger = get_debugger(state['llm'])
         code = debugger.invoke({
                 "question": question, 
