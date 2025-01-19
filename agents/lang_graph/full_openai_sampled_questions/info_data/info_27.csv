@@ -1,0 +1,281 @@
+owner_first_name,owner_family_name,owner_profession,tenant_name,building_functions,rent_price,parish,building_functions_count,longitude,latitude
+valentin,artman,medico,zuanne bonetti,casa,74,san cancian,1,12.340156517557736,45.44182498583398
+nicolo,foscarini,procurator,francesco borin,casa,35,san felice,1,12.334485361217467,45.44175761984373
+piero,bianchi,mercante da legname,francesco grillo,casa,10,san felice,1,12.33374849502328,45.44170358480181
+piero,bianchi,mercante da legname,zuanne alferà,casa,12,san felice,1,12.333777486051734,45.44170042175982
+piero,dador,procurator,antonio marchiori,bottega,10,san felice,1,12.33335988098136,45.44160966024912
+andrea,soranzo,procurator,carlo clementi,"bottega, casa",65,san felice,2,12.33301533200802,45.44159120435904
+giovanni,pesaro,procurator,carlo forlico,"bottega, casa",50,san felice,2,12.333943588000585,45.44230906726518
+giovanni,pesaro,procurator,carlo forlico,casa,36,san felice,1,12.33395939574712,45.44233890411007
+pietro,getta,orefice,francesco marchesi,casa,80,san geremia,1,12.322372862321687,45.44192598199326
+mondanina,bonaventura,fruttarola,isabetta tonei,casa,12,san geremia,1,12.317677970811614,45.44523313120225
+mondarina,bonaventura,fruttarola,andrea maggiori,casa,12,san geremia,1,12.317766439016662,45.4448791691616
+piero,foscarini,procurator,marc'antonio dondolo,casa,26,san lunardo,1,12.326629130057862,45.44332197065753
+piero,foscarini,procurator,francesco frason,casa,8,san lunardo,1,12.326606362978628,45.4432793353383
+piero,foscarini,procurator,gasparo [vitola],casa,14,san lunardo,1,12.326582903025429,45.443253061418936
+piero,foscarini,procurator,batista mioni,casetta,10,san lunardo,1,12.326632308256814,45.44335066591668
+zuanne battista,albrizzi,procurator,antonio dall'aqua,bottega,15,san marcilian,1,12.332607459124112,45.4443484265173
+zuanne battista,albrizzi,procurator,gabriel piazza,bottega,16,san marcilian,1,12.332577739321492,45.444363855642855
+zuanne battista,albrizzi,procurator,benetto gasparini,casa,20,san marcilian,1,12.332602495721147,45.444398713537375
+zuanne battista,albrizzi,procurator,egidio nassivera,casa,34,san marcilian,1,12.332618153307386,45.44439563053948
+zuanne battista,albrizzi,procurator,nicolò covina,casa,50,san marcilian,1,12.332655518804664,45.444445177535
+carlo,alberegno,dottor,anzolo negri,casetta,8,san marcuola,1,12.328667968881838,45.445962045998925
+carlo,alberegno,dottor,francesco franceschi,casetta,8,san marcuola,1,12.328695861249084,45.44595536053309
+carlo,alberegno,dottor,costanza miles,casetta,8,san marcuola,1,12.328694667208312,45.44600914320574
+giacomo,costanzi,dottor,maria campana,casetta,8,san marcuola,1,12.328732295692646,45.44600208709784
+gerolamo,marcello,nodaro veneto,giacomo angeli,casetta,10,san marcuola,1,12.328118347323525,45.445254801968495
+gerolamo,marcello,nodaro veneto,francesco pandian fabro,"bottega, casa",11,san marcuola,2,12.328125240120148,45.44519450886538
+gerolamo,marcello,nodaro veneto,francesco rossi,casa,24,san marcuola,1,12.328056045767662,45.445163882374445
+gerolamo,marcello,nodaro veneto,gaetano pini,casa,24,san marcuola,1,12.327963249288286,45.44515605730712
+zuanne,basadonna,procurator,signor domenico antonio rotta,casa,110,santa fosca,1,12.332138839905875,45.44237696841755
+francesco,dona,procurator,illustrissima signora contessa metilde canossa relita del illustrissimo signor conte valvason,casa,200,santa fosca,1,12.33268856759638,45.442709898687205
+felino,sandei,procurator,meneghina angeli,casetta,8,santa sofia,1,12.335538876192286,45.44122185927464
+felino,sandei,procuratore,antonio vencini,casetta,26,santa sofia,1,12.33567627852929,45.44132669145689
+daniel,bragadin,procurator,giovanni battista talota,casa,36,santi apostoli,1,12.336798582180034,45.44169192771093
+daniel,bragadin,procurator,giovanni battista confalonieri,casa,80,santi apostoli,1,12.336840594645524,45.44167897121585
+pietro,foscarini,procurator,iseppo fabris,"bottega, casa",74,san biasio,2,12.349706505374668,45.432762533294365
+pietro,foscarini,procurator,liberal sala,bottega,28,san biasio,1,12.349654119221968,45.43277651548251
+pietro,foscarini,procurator,pietro biasini,casa,36,san biasio,1,12.349672384819437,45.43283998191863
+pietro,foscarini,procurator,reverendo don antonio barghi,casa,36,san biasio,1,12.34980535249293,45.43289392579537
+pietro,foscarini,procurator,stefano scomparin,"bottega, casa",34,san biasio,2,12.349753821511142,45.43276157817794
+antonio,marini,procuratore,lorenzo cavallini,casa,11,san giovanni nuovo,1,12.341573019532596,45.435517644422255
+antonio,loredan,procurator,zuanne del favro,casa,20,san giovanni in bragora,1,12.347614785956436,45.43389326305645
+piero,foscarini,procurator,patron mattio de rafael,casa,24,san giovanni in bragora,1,12.34585641632984,45.434886802434754
+giovanni battista,albrizzi,procurator,bortolo e giacomo zanchi,casa,150,san giovanni in bragora,1,12.34476463136986,45.43505902805485
+daniel,bragadin,procuratore,andrea comel,bottega,26,san lio,1,12.339416430773875,45.437114555557066
+francesco,fini,procurator,vittoria sottosora,casa,6,san martin,1,12.34977663530302,45.43401685634474
+francesco,fini,procurator,andriana vlaminero,"appartamento, casa",6,san martin,2,12.349745301411772,45.43401944296356
+francesco,fini,procurator,domenico piovesana,"appartamento, casa",7,san martin,2,12.349742481960318,45.43400845010652
+francesco,fini,procurator,maria gernovich,"appartamento, casa",8,san martin,2,12.349737430465131,45.43399407367752
+francesco,fini,procurator,domenico zugno,casa,18,san martin,1,12.349716146162214,45.43402472139284
+francesco,fini,procurator,bastian rigoni,"appartamento, casa",10,san martin,2,12.349694797682568,45.43402900728809
+francesco,fini,procurator,zuanne bianchi,"appartamento, casa",10,san martin,2,12.349686905432808,45.434016127153605
+francesco,fini,procurator,iseppo lazari,casa,16,san martin,1,12.349659640493185,45.43403312777624
+francesco,fini,procurator,viena buliana,casa,8,san martin,1,12.349569675658348,45.434042120633485
+francesco,fini,procurator,zuanne zanchi,casa,16,san martin,1,12.349537626214008,45.43404820355649
+francesco,fini,procurator,anzola zemella,"appartamento, casa",14,san martin,2,12.349500877741642,45.43405724145847
+francesco,fini,procurator,cattarina magoni,"appartamento, casa",10,san martin,2,12.349491842818496,45.4340423236467
+francesco,fini,procurator,zuanne de paoli,"appartamento, casa",8,san martin,2,12.349485969055062,45.43403006006269
+francesco,fini,procurator,cattarina borzé,casa,16,san martin,1,12.349459270042214,45.43406715907484
+francesco,fini,procurator,gaetano saltasbara,casa,14,san martin,1,12.349350696298886,45.43396273429572
+francesco,fini,procurator,zuanne paneti,"appartamento, casa",16,san martin,2,12.349405738848256,45.43394813987939
+francesco,fini,procurator,antonio de bernardo,"appartamento, casa",13,san martin,2,12.349412381521386,45.43395759885972
+francesco,fini,procurator,domenico vergoumbello,"appartamento, casa",10,san martin,2,12.349418095072345,45.433967787187285
+francesco,fini,procurator,antonia piti,casa,16,san martin,1,12.349443416386306,45.43393837265885
+francesco,fini,procurator,margarita carara,casa,6,san martin,1,12.349463835725125,45.43393481615823
+francesco,fini,procurator,carlo frate,"appartamento, casa",10,san martin,2,12.3495263111978,45.43391438689796
+francesco,fini,procurator,santo vezzari,"appartamento, casa",8,san martin,2,12.349533007285595,45.43392453762497
+francesco,fini,procurator,giacomo mori,"appartamento, casa",6,san martin,2,12.34958316082508,45.43389760963329
+francesco,fini,procurator,francesco basegio,"appartamento, casa",6,san martin,2,12.349588642506736,45.433907384443344
+francesco,fini,procurator,marietta tessona,"appartamento, casa",13,san martin,2,12.349636995581667,45.43388057280375
+francesco,fini,procurator,andrea martinovich,casa,14,san martin,1,12.349680917209009,45.43386779816541
+francesco,fini,procurator,maddalena romana,casa,6,san martin,1,12.34970798399184,45.4338612154556
+francesco,fini,procurator,maria olimar,"appartamento, casa",9,san martin,2,12.349722729945425,45.433888940793686
+francesco,fini,procurator,reverendo don antonio bufalino,"appartamento, casa",13,san martin,2,12.349704918798809,45.43389295054048
+francesco,fini,procurator,zuanne mori,"appartamento, casa",10,san martin,2,12.349740182689192,45.43394152396864
+francesco,fini,procurator,anzolo tessari,"appartamento, casa",8,san martin,2,12.349712586498734,45.43395145513077
+andrea,contarini,procurator,capitan giacomo bolani,"appartamento, casa",28,san martin,2,12.349758966210606,45.43463123997466
+andrea,contarini,procurator,zuanne gilli,"appartamento, casa",28,san martin,2,12.349762089757172,45.434649996159536
+andrea,contarini,procurator,santo benvenuti,magazzeno,6,san martin,1,12.349774813450832,45.434666441788536
+giovanni battista,molin,procurator,antonio ferigo,"appartamento, casa",30,san martin,2,12.349302987963595,45.43599899120106
+giovanni battista,molin,procurator,francesco santini,"appartamento, casa",24,san martin,2,12.349259969507846,45.43602375283268
+giovanni battista,molin,procurator,antonia relicta di pietro de santi,"appartamento, casa",12,san martin,2,12.349210152721271,45.43604999116232
+giovanni battista,molin,procurator,mattio de giacomo ghezi,bottega,12,san martin,1,12.349321678326728,45.436039641149286
+bortolamio,gradenigo,procurator,bortolo giacometi,"appartamento, casa",20,san martin,2,12.348542788785329,45.43578007214848
+bortolamio,gradenigo,procurator,ogniben ferrari,"appartamento, casa",20,san martin,2,12.34857558703442,45.435791517532
+alvise,gritti,procurator,giovanni battista muttoni,"bottega, casa",60,san martin,2,12.348486704578333,45.43488791220613
+alvise,gritti,procurator,reverendo pre gerolamo vincenti,casa,60,san martin,1,12.348404259330104,45.43487388111437
+alvise,gritti,procurator,antonia relicta di iseppo niccolini,casa,8,san martin,1,12.348257630611966,45.43481912841725
+alvise,gritti,procurator,medea brespi,casa,5,san martin,1,12.348190993353256,45.4347896267177
+alvise,gritti,procurator,andriana pamfilo,casa,7,san martin,1,12.34818988788976,45.43477530145299
+alvise,gritti,procurator,giacomo buranello,casa,10,san martin,1,12.348214794726143,45.43475224480307
+alvise,gritti,procurator,alvise de bortolo bao,casa,9,san martin,1,12.348211966669153,45.43474102471991
+alvise,gritti,procurator,benetto guglieri,casa,10,san martin,1,12.34821192014243,45.434730250836544
+niccolo,canal,procurator,agustin petuello,"appartamento, casa",10,san martin,2,12.34817558219033,45.43470180052263
+niccolo,canal,procurator,giacomo magrini,casa,10,san martin,1,12.348110680327837,45.43467444279741
+niccolo,canal,procurator,gaetano magrini,casa,8,san martin,1,12.347957689280245,45.43460403621632
+niccolo,canal,procurator,battista varisco,casa,18,san martin,1,12.347942544044212,45.43460102362789
+alvise,gritti,procurator,piero ziano,casa,9,san martin,1,12.348225023773413,45.43471126922675
+alvise,gritti,procurator,pietro de bastiano piccolo,casa,18,san martin,1,12.348305221355488,45.43471072800428
+alvise,gritti,procurator,antonio cogni,casa,28,san martin,1,12.34842130764514,45.43473956292455
+daniel,bragadin,procurator,bernardo pianetti,bottega,16,san pietro di castello,1,12.356838393105347,45.433283592893225
+daniel,bragadin,procurator,zuanne bazzon,casa,16,san pietro di castello,1,12.357097408000596,45.43328366766536
+nicolo,marcello,procurator,mattio de clin,casa,14,san pietro di castello,1,12.355664895843876,45.43298293943772
+francesco,fini,procuratore,lorenzo bevilacqua,casa,32,san pietro di castello,1,12.356095396640436,45.43144203798915
+tommaso,mondini,avocato,iseppo rodo,casa,14,san pietro di castello,1,12.356781747798673,45.4308261567525
+zuan,marcello,medico,francesco ferando,casa,8,san pietro di castello,1,12.358654497511774,45.43157306804546
+zuan,marcello,medico,zuan scamparin,casa,20,san pietro di castello,1,12.358674766865848,45.43152805476137
+bortolo,landar,procuratore,battista rusconi,"bottega, casa",50,san pietro di castello,2,12.352203107117283,45.432057848868105
+marin,zorzi,procurator,nobil homo ser zorzi cottoni,casa,660,san severo,1,12.343041585749056,45.43623045638845
+marin,zorzi,procurator,alessandro panciera,"bottega, casa",48,san severo,2,12.342706578764645,45.436124173926544
+marin,zorzi,procurator,pietro righini,bottega,14,san severo,1,12.34260400965807,45.43607662509069
+marin,zorzi,procurator,ignatio beltrami,casa,62,san severo,1,12.34258246093775,45.4360946039748
+marin,zorzi,procurator,mattio benedetti,casa,36,san severo,1,12.34256647387012,45.436110352077584
+marin,zorzi,procurator,iseppo gighi da lui sublocata a pier antonio bonarii,"bottega, casa",50,san severo,2,12.342499080115246,45.436147237944205
+marin,zorzi,procurator,giacomo variton,"bottega, casa",58,san severo,2,12.34248174136367,45.43616404682586
+marin,zorzi,procurator,santa relicta del quondam luca rossi,"bottega, casa",44,san severo,2,12.342420108420002,45.43621988659551
+marin,zorzi,procurator,filippo zanetti da lui sublocata a bernardo rogantin,"bottega, casa",55,san severo,2,12.342390072721624,45.43627653766725
+marin,zorzi,procurator,zuanne bulfon,bottega,18,san severo,1,12.342366440905437,45.43630468766115
+marin,zorzi,procurator,lorenzo trani,casa,50,san severo,1,12.342404153553662,45.43634765007303
+marin,zorzi,procurator,maffio vezaschin,casa,64,san severo,1,12.342453100578332,45.43636899099427
+marin,zorzi,procurator,nobil homo ser giambattista fu di ser nicolò bon,casa,140,san severo,1,12.34276223878084,45.43651158306551
+lunardo,venier,procurator,battista barobini,"bottega, casa",100,san severo,2,12.342161190148348,45.43635693074842
+lunardo,venier,procurator,dottor vicenzo cherubin,casa,60,san severo,1,12.34221988756499,45.43630019411514
+francesco,dona,procurator,pietro zanetti,casa,14,sant'antonino,1,12.346110973356886,45.43591138439564
+marc'antonio,giustinian,procurator,zuanne marsili,bottega,100,santa giustina,1,12.344024847128006,45.43853051397881
+marc'antonio,giustinian,procurator,alvise pontini,casa,52,santa giustina,1,12.344607338474503,45.43851488124612
+marc'antonio,giustinian,procurator,giovanni battista paganoni,magazzeno,16,santa giustina,1,12.344714886277682,45.43851747911957
+antonio,ganossa,dottor,maria zuchina,casa,26,santa giustina,1,12.346951186342052,45.438598308170846
+francesco,dolfin,medico,bortolo boegan,casa,42,santa maria formosa,1,12.341890590141537,45.43745024029132
+giambattista,sozzi,avvocato,anzola gavagnina,casa,26,santa maria formosa,1,12.342067251993791,45.43755523867602
+francesco,pedrocchi rosa,economo,benetto giuliani,casa,60,santa maria formosa,1,12.342107594687665,45.43646843755316
+cecilia,grimani,procurator,domenico ferazutto,casa,16,santa marina,1,12.34110096660036,45.44123973378144
+cecilia,grimani,procurator,rocco rossetti,casa,10,santa marina,1,12.34107720085253,45.44122208464632
+cecilia,grimani,procurator,lunardo duzzolo,casa,18,santa marina,1,12.341049666449846,45.44118973415323
+piero,foscarini,procuratore,battista zanin,casa,12,santa ternita,1,12.348125518384755,45.43632362230665
+gerardo,sagredo,procurator,illustrissimo vicenzo zorzi,casa,50,santa ternita,1,12.34924529389984,45.43807227836147
+gerardo,sagredo,procurator,illustrissimo abate giovanni francesco viccamano,casa,50,santa ternita,1,12.349260296533734,45.43809678928833
+gerardo,sagredo,procurator,elisabetta molina,casa,36,santa ternita,1,12.349275432240727,45.43811846065788
+daniel,bragadin,procurator,alvise gagietta,casa,16,san nicolo,1,12.314526220812912,45.43242594993005
+daniel,bragadin,procurator,gasparo da canal,casa,14,san nicolo,1,12.31446208275291,45.43230041582009
+vicenzo,pisani,procurator,nadalina scattiggio,casa,8,san nicolo,1,12.314475139947524,45.43311948790614
+francesco,canal,procurator,iseppo poro,casa,8,san nicolo,1,12.316969455826266,45.43407839845806
+filippo,aram,cuoco,giovanni battista angelini,casa,20,san nicolo,1,12.318380222463697,45.43471516635671
+filippo,aram,cuoco,giovanni battista angelini,bottega,16,san nicolo,1,12.318402923483989,45.43471875723321
+lorenzo,tiepolo,procurator,lunardo gorgò,casa,60,san trovaso,1,12.326834560308114,45.431293042999485
+nicolo,foscarini,procurator,antonio maria casiola,casa,12,san trovaso,1,12.327748825190872,45.43066964493767
+nicolo,foscarini,procurator,giacinto di zuanni,casa,15,san trovaso,1,12.32790054019016,45.43064828365967
+nicolo,foscarini,procurator,nobil homo ser gerolamo ravagnin,casa,200,san trovaso,1,12.328073981697198,45.43058045469221
+nicolo,foscarini,procurator,adamo maschio,casa,8,san trovaso,1,12.328188416704362,45.43054715450018
+iseppo,balbi,ecconomo,angiolo sorosina,"bottega, casa",50,san trovaso,2,12.325959612090422,45.43190595205235
+giovanni battista,moscheni,orefice,vittoria bedena,casa,8,san trovaso,1,12.325990046883058,45.43215012442402
+paulo,legrenzi,procurator,domenico silan,casa,16,san trovaso,1,12.32559055560921,45.4324712074477
+paulo,legrenzi,procurator,antonio rossi,casa,6,san trovaso,1,12.325549306089178,45.43231066639383
+iseppo,balbi,ecconomo,nicolò londini,casa,25,san trovaso,1,12.325787925092646,45.43197519050596
+iseppo,balbi,ecconomo,benetto coto,casa,10,san trovaso,1,12.325811384761655,45.43193275607268
+salvador,girardini,procurator,cattarina roncata,casa,8,san trovaso,1,12.32528132825801,45.4315680800727
+salvador,girardini,procurator,bastian costa,magazzeno,6,san trovaso,1,12.325127461885227,45.431579421757775
+zuanne,emo,procurator,nobil homo ser pietro zorzi,casa,60,san vio,1,12.332014196341095,45.43028685640905
+piero,foscarini,procurator,alvise meneghetti,casa,25,san vio,1,12.332045764172234,45.42962777801724
+gerolemo,venier,procurator,antonio rossetti,casa,40,san vio,1,12.331741134789414,45.430546776086686
+gerolemo,venier,procurator,carlo chiodo,"bottega, casa",18,san vio,2,12.331721502981964,45.43050863191135
+piero,foscarini,procurator,antonio brunello,casa,12,santa margherita,1,12.321998722612928,45.43453543052677
+marco antonio,giustinian,procurator,biasio meneghini,"bottega, casa",36,santa margherita,2,12.32231135163042,45.43421867002022
+marco antonio,giustinian,procurator,zuane p[o]lamon,casa,20,santa margherita,1,12.3222790413331,45.434246064610726
+marco antonio,giustinian,procurator,"iseppo baldissera, et gaetano fedeli",casa,95,santa margherita,1,12.322230706142063,45.434279883187344
+giovanni battista,albrici,procurator,bortolo costantini,casa,10,santa margherita,1,12.3254093148791,45.43400400077855
+benetto,saraval,dottor,iseppo ferrarese q. abram,casa,20,ghetto nuovo,1,12.32691968559156,45.445617959884544
+sarno,dal medico,medico,iseppo tabi,bottega,17,ghetto nuovo,1,12.327018228998826,45.44558263869881
+iseppo,corneggiano,dottor,david cutì,bottega,50,ghetto vecchio,1,12.325728520401688,45.44511692184914
+cremesina,dal medico contarini,medico,rachael q. salamon saraval,casa,17,ghetto vecchio,1,12.325999022409215,45.44474467640811
+cremesina,dal medico contarini,medico,manuel silva,casa,14,ghetto vecchio,1,12.326008038858609,45.444737629244585
+cremesina,dal medico contarini,medico,iacob marcania,casa,23,ghetto vecchio,1,12.325967273753866,45.444750426931286
+cremesina,dal medico contarini,medico,ester vedova jacob bagnon,casa,6,ghetto vecchio,1,12.325983372811994,45.44473132102009
+cremesina,dal medico contarini,medico,moisè e fratelli,casa,18,ghetto vecchio,1,12.325992371217929,45.4447246554565
+zuanne,balbi,peruchier,giustinian bianchini,casa,16,san simon apostolo,1,12.32246933802215,45.4398560455042
+tomaso,morosini bolani,medico,anzolo sardina,casa,20,san simon profeta,1,12.323819127748871,45.44112318853406
+daniel,bragadin,procurator,gerolemo de grandi,casa,74,san stae,1,12.33007834542824,45.44105393449812
+daniel,bragadin,procurator,meneghina dan,casa,14,san stae,1,12.330025053862052,45.441077264636256
+zuanne,nani,procurator,andrea mottoni,"bottega, casa",52,san stae,2,12.329577788900314,45.44049679129584
+zuanne,nani,procurator,lazaro mazzocco per antonia fedeli,"bottega, casa",56,san stae,2,12.32956608020807,45.4404857676775
+zuanne,basadona,procurator,reverendo don andrea tiozzi,casa,130,san stae,1,12.33081317187572,45.44044914877623
+zuanne,basadona,procurator,francesco baglioni,casa,130,san stae,1,12.330783990775435,45.44041567860037
+daniel,bragadin,procurator,anzola malanota,casa,11,santa croce,1,12.32205538493925,45.43793820930015
+chiara,pisani,procurator,nobil homo ser alvise foscarini,casa,245,santa croce,1,12.316524812982028,45.43892199118263
+marc'antonio,giustinian,procurator,maria rosa e maria anna sorelle michueletti quondam fermo,casa,45,santa maria mater domini,1,12.330131506839436,45.43971016819055
+marc'antonio,giustinian,procurator,zuanne abbondio,casa,65,santa maria mater domini,1,12.330084995795328,45.43972737359876
+ferigo,venier,procurator,antonio consolatti,casa,15,santa maria mater domini,1,12.330444972327914,45.44016158206514
+ferigo,venier,procurator,cattarina lorenzoni,casa,20,santa maria mater domini,1,12.330432603459382,45.44014621741908
+pietro,foscarini,procurator,iseppo nadali,"casa, forno",120,san benetto,2,12.33270521152943,45.43528530754052
+ferigo,venier,procurator,domenico pizzolato,casa,48,san benetto,1,12.332425830537389,45.43506783036758
+pietro,foscarini,procurator,michiel croxefida,casa,160,san benetto,1,12.332305982189665,45.43599267121033
+pietro,bassadona,procurator,giovanni battista peruzzi,"bottega, casa",52,san benetto,2,12.332147302866847,45.43553561038301
+pietro,bassadona,procurator,paulo gariboldi,casa,50,san benetto,1,12.332056348167782,45.43549059158395
+pietro,bassadona,procurator,madalenna porzona,casetta,24,san benetto,1,12.331991991897937,45.43545572620125
+francesco,biondi,nodaro veneto,bortolo pedralli,"bottega, casa",34,san luca,2,12.336491221164778,45.43546714205163
+francesco,biondi,nodaro veneto,francesco macarini,casa,70,san luca,1,12.336216811592418,45.43550945129259
+pietro,marcello,procurator,reddolfo santi,"bottega, casetta",25,san luca,2,12.335512074482128,45.43589706138311
+giovanni,emo,procuratore,francesco sguario,casa,180,san maurizio,1,12.33097035227346,45.43182013585875
+pietro,barera,specier da confetti,francesco pilla,casa,28,san maurizio,1,12.33185392609935,45.43294713954222
+giovanni battista,vanalli,mercante d'oro,giovanni maria spavento,casa,24,san maurizio,1,12.331448732719394,45.43257808438396
+giovanni battista,vanalli,mercante d'oro,giovanni maria spavento,casa,24,san maurizio,1,12.331995617565616,45.4328178565827
+chiara,pisani,tutrice,giacomo locadello,casa,100,san moise,1,12.336795699733878,45.43306110113096
+zuane,emo,procurator,giacomina morosini,casetta,34,san paternian,1,12.33337595767867,45.43505522015548
+zuane,emo,procurator,giacomo san vido,"bottega, casa, magazzeno",51,san paternian,3,12.333354573365956,45.43507795949563
+zuane,emo,procurator,zorzi massari da steffano,"appartamento, casa",80,san paternian,2,12.333382728532316,45.43509113062
+michiel,priuli,procurator,alvise bonfadini,casa,50,san paternian,1,12.33525093049352,45.434850519731775
+michiel,priuli,procurator,"gerolamo balbi, alvise minotto, giulio donado",casa,140,san paternian,1,12.335248581406065,45.43482494433634
+pietro,bragadin,procurator,giacomo ger e daniele azzal,"bottega, casa",190,san salvador,2,12.337809779122775,45.43639316920694
+cecilia,contarini bembo,tutrice,zuanne redolfi,"bottega, casa",172,san salvador,2,12.337202890921027,45.43718359673903
+gerolamo ascanio,giustinian,procurator,michiel pol,bottega,40,san salvador,1,12.337244193674472,45.43672894364174
+gerolamo ascanio,giustinian,procurator,carlo alessandri,bottega,36,san salvador,1,12.337299996748667,45.4367212382888
+gerolamo ascanio,giustinian,procurator,francesco moretti,bottega,36,san salvador,1,12.337348958665707,45.43670786887724
+gerolamo ascanio,giustinian,procurator,zuanne romano,bottega,34,san salvador,1,12.337397826452875,45.43669649885974
+gerolamo,venier,procurator,teodoro remigi,"bottega, casa",94,san salvador,2,12.337185585165177,45.43674925626142
+zuanne,querini,procurator,zuanne pezzi,"bottega, casa",82,san salvador,2,12.33762997037097,45.436490994557936
+francesco,querini,procurator,elisabetta battaglini,casa,40,san salvador,1,12.337618066422374,45.43639305051624
+bortolameo,gradenigo,procurator,carlo ochresel,casa,38,san salvador,1,12.336756766465186,45.4359607038189
+lorenzo,tiepolo,procurator,andrea alverà,"appartamento, bottega",180,san salvador,2,12.335646317157623,45.43629805407131
+lorenzo,tiepolo,procurator,andrea radi,appartamento,60,san salvador,1,12.335653211628578,45.43628495617768
+andrea,corner,procurator,nicoleto zanardi,casa,18,san samuel,1,12.328255933445313,45.43396411007345
+andrea,corner,procurator,scola del santissimo sacramento in s. samuel,magazzeno,16,san samuel,1,12.32830151557066,45.43385904233499
+andrea,corner,procurator,pellegrino zen,casa,120,san samuel,1,12.328445816271609,45.43388085076205
+zaccaria,canal,procurator,martin riosa,casa,36,san samuel,1,12.328803839693409,45.43398360803056
+giacomo,aliprandi,procuratore,francesco bosello,casa,18,san samuel,1,12.328680472326576,45.434378320418354
+francesco,biondi,nodaro veneto,andriana toderini,casa,10,san samuel,1,12.328903563910565,45.43425434288777
+francesco,biondi,nodaro veneto,pietro cavallieri,casa,84,san samuel,1,12.329498105242235,45.434354858334274
+angelo,negri,procuratore,francesco pigetti,"bottega, casa",100,san samuel,2,12.329616441322887,45.43441673031573
+francesco,biondi,nodaro veneto,bastian missiolli,casa,12,san samuel,1,12.329229576251905,45.43433790345236
+francesco,biondi,nodaro veneto,giovanni battista trentin,casa,24,san samuel,1,12.329292227853996,45.434295042160514
+antonio,milani,medico,zuanne mander e michiel lavon,casa,12,san samuel,1,12.329079225940816,45.433780080071074
+paulo antonio,belegno,procurator,giacomo negri,casa,64,san samuel,1,12.32917195307748,45.43317662923079
+marc'antonio,giustinian,procurator,cecilia rutti comica,casa,50,san samuel,1,12.32873156584081,45.43334503052263
+marc'antonio,giustinian,procurator,pietro dairal,casa,44,san samuel,1,12.328677776837598,45.43332281201313
+marc'antonio,giustinian,procurator,angela piccoli,casa,30,san samuel,1,12.32871839284624,45.4332794528118
+marc'antonio,giustinian,procurator,laura minio,casa,10,san samuel,1,12.328669893735404,45.43323794664568
+marc'antonio,giustinian,procurator,giovanni battista balla,casa,26,san samuel,1,12.328704139069291,45.43319272521528
+marc'antonio,giustinian,procurator,giulio bosello,casa,21,san samuel,1,12.328719719453648,45.433202778924525
+marc'antonio,giustinian,procurator,paolo indrich,casa,71,san samuel,1,12.328607642272887,45.43314767334429
+marc'antonio,giustinian,procurator,bernardo fabris,casa,52,san samuel,1,12.32861449339002,45.433302577518425
+marc'antonio,giustinian,procurator,lucialla maria semitecolo,casa,55,san samuel,1,12.328541888150315,45.4334133977985
+marc'antonio,giustinian,procurator,cattarina albinoni,casa,50,san samuel,1,12.328467297187188,45.43349990259191
+piero,bortoloni,procuratore,piero monica formaggier,bottega,8,san ziminian,1,12.337739042029312,45.43327829359996
+piero,bortoloni,procuratore,piero monica formaggier,bottega,8,san ziminian,1,12.337739042029312,45.43327829359996
+piero,foscarini,procurator,zuanne battista franceschini,bottega,80,san zulian,1,12.33863859194997,45.4350089101718
+piero,foscarini,procurator,iseppo lucatello,bottega,75,san zulian,1,12.338604849463527,45.435047674723286
+piero,foscarini,procurator,lunardo traian,"bottega, casa",75,san zulian,2,12.338403600157946,45.43505958406404
+piero,foscarini,procurator,antonio trentin,bottega,39,san zulian,1,12.338698228287615,45.43552056985718
+piero,foscarini,procurator,piero orsini,"bottega, casa",42,san zulian,2,12.339491984070238,45.43702222430316
+piero,marcello,procurator,iseppo uccelli,casa,52,sant'angelo,1,12.332914925577024,45.434418313116254
+piero,foscarini,procurator,lorenzo zambelli,casa,180,sant'angelo,1,12.333644705715036,45.43425571995853
+zuanne,emo,procurator,giovanni maria battochis dalla malvasia,"bottega, casa",26,sant'angelo,2,12.333229165449092,45.43403863363929
+zuanne,emo,procurator,giacomo perucci,casa,25,sant'angelo,1,12.33319277285452,45.43407396903672
+giovanni,emo,procurator,vicenza pisinelli,casa,16,sant'angelo,1,12.333162252773842,45.43410259569024
+francesco,venier,procurator,piero bon forner,"casa, forno",50,sant'angelo,2,12.333256686508069,45.43382314022119
+francesco,gritti,procurator,bernardin montanari fiscal,casa,170,santa maria zobenigo,1,12.332611120993612,45.43170506030805
+pietro,marcello,procurator,domenico bertin,bottega,60,san giovanni elmosinario,1,12.335838348243817,45.43816766129349
+pietro,marcello,procurator,marco dal pero,bottega,60,san giovanni elmosinario,1,12.335876371870723,45.438147839602806
+pietro,marcello,procurator,giovanni maria bertoli,bottega,60,san giovanni elmosinario,1,12.33569169446507,45.43814953131857
+pietro,marcello,procurator,zuanne meris,bottega,80,san giovanni elmosinario,1,12.335649169948184,45.43816534613222
+pietro,foscarini,procurator,nicolò fossati carter,bottega,42,san giovanni elmosinario,1,12.335438450395523,45.43862938650831
+pietro,foscarini,procurator,pietro manuzzi,bottega,18,san giovanni elmosinario,1,12.335455000179936,45.43862196939367
+francesco,bonamin,nodaro veneto,santo fornasotto,bottega,48,san giovanni elmosinario,1,12.335332511664737,45.43920075070892
+andrea,corner,procurator,giovanni battista lisoni,bottega,16,san giovanni elmosinario,1,12.335003933522732,45.43932747612934
+daniel,bragadin,procurator,giovanni battista povolari,bottega,80,san giovanni elmosinario,1,12.33464235520407,45.43950992211324
+pietro,foscarini,procurator,mattio crico,bottega,26,san giovanni elmosinario,1,12.334915884278065,45.439275401588205
+chiara,pisani,tutrice,paron marco pasin,magazzeno,18,san giovanni elmosinario,1,12.334766700880367,45.43926526588857
+piero,pisani,procurator,giuseppe rizzi,bottega,55,san giovanni elmosinario,1,12.33508043925112,45.438570925903015
+piero,pisani,procurator,gaetano fontana,bottega,60,san giovanni elmosinario,1,12.335108148454166,45.43855143753163
+marc'antonio,giustinian,procurator,zambattista casotto,bottega,40,san giovanni elmosinario,1,12.334922615542329,45.43860878581704
+nicolo,foscarini,procurator,domenico ruberti,volta,6,san giovanni elmosinario,1,12.335204077897334,45.43829038839146
+zamaria,canal,procurator,francesco zini,volta,20,san giovanni elmosinario,1,12.33468920153971,45.43872185344265
+ignacio,bianchini,dottor,simon zanata,casa,66,san giovanni elmosinario,1,12.334102332366848,45.43834241228581
+zaccaria,canal,procurator,scola de travasadori da vin,scuola,50,san giovanni elmosinario,1,12.334814433177774,45.437815882924
+girolamo,venier,procurator,francesco milesi,casa,22,san giovanni elmosinario,1,12.334659398632557,45.437917527112496
+zuanne,gradenigo,procurator,francesco luciani,bottega,32,san mattio,1,12.333928513779467,45.43970110185579
+nicolo,foscarini,procurator,chiara raniboldi,casa,46,san toma,1,12.328071183925983,45.436381532522205
+nicolo,foscarini,procurator,massimo cordini,casa,50,san toma,1,12.327902289067554,45.43646219793655
+giovanni maria,penso,fabro,pietro ferreton,casa,27,san toma,1,12.327114573036614,45.436261769919184
+zuanne,emo,procurator,domenico bordon,casa,36,sant'agostin,1,12.32974933201125,45.43849522337538
+zuanne,emo,procurator,giovanni maria cavapari,"bottega, casa",20,sant'agostin,2,12.329668043000474,45.43854586377773
+antonio,zorzi,procuratore,giuseppe gasperini,casa,14,sant'aponal,1,12.332464096872824,45.43856933893118

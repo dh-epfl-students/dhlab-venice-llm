@@ -101,8 +101,8 @@ def main(in_path):
     questions = questions[(questions['error_message'].isna()) & (questions['output'].notna())]
 
     ##### Filter sampled questions #####
-    sampled_questions = pd.read_csv("sampled_questions.csv")['question'].to_list()
-    questions = questions.isin(sampled_questions)
+    sampled_questions = pd.read_csv("../sampled_questions.csv")['question'].to_list()
+    questions = questions[questions['question'].isin(sampled_questions)].reset_index(drop=True)
     print(questions.shape)
     #####
 
@@ -110,7 +110,8 @@ def main(in_path):
         info = judge.invoke({
             'question':r['question'], 
             'code':f"```python\n{r['code']}\n```", 
-            'output':r['output']
+            'output':r['output'],
+            'index':i
         })
         try:
             info_code = extract_python_code(info)

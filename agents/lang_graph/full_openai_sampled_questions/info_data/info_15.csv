@@ -1,0 +1,679 @@
+parish,owner_family_name,building_count
+ghetto nuovo,coneglian,6
+ghetto nuovo,di mazo,9
+ghetto nuovo,erz olin,6
+ghetto nuovo,saraval,8
+ghetto vecchio,capello,17
+ghetto vecchio,coen,15
+ghetto vecchio,contarini,7
+ghetto vecchio,grimani,16
+san barnaba,alberti,10
+san barnaba,badoer,18
+san barnaba,bernardo,30
+san barnaba,bolani,6
+san barnaba,canal,26
+san barnaba,capello,12
+san barnaba,cappello,22
+san barnaba,carli,14
+san barnaba,cinelli,10
+san barnaba,contarini,12
+san barnaba,da mosto,10
+san barnaba,dolfin,16
+san barnaba,foscarini,6
+san barnaba,franceschi,12
+san barnaba,inviani,10
+san barnaba,marchesati,14
+san barnaba,memo,14
+san barnaba,patarol,14
+san barnaba,polani,8
+san barnaba,priuli,16
+san barnaba,quati,6
+san barnaba,rizzo,6
+san barnaba,scotti,8
+san barnaba,soranzo,8
+san barnaba,torni,10
+san barnaba,venier,6
+san barnaba,vidman,12
+san barnaba,zorzi,10
+san baseggio,bonfadini,6
+san baseggio,bragadin,7
+san baseggio,canal,10
+san baseggio,capello,12
+san baseggio,cassetti,6
+san baseggio,ferro,12
+san baseggio,loredan ruzini priuli,14
+san baseggio,michiel,6
+san baseggio,molin,17
+san baseggio,savorgnan,20
+san baseggio,venier,10
+san basso,aquisti,8
+san basso,contarini,6
+san basso,grimani,9
+san basso,trevisan,8
+san benetto,tiepolo,7
+san benetto,venier,12
+san biasio,contarini,8
+san biasio,morosini,8
+san biasio,nani,9
+san bortolomio,canal,9
+san bortolomio,gradenigo,7
+san bortolomio,hertz,17
+san bortolomio,loredan,6
+san bortolomio,marcello,9
+san bortolomio,morosini,22
+san bortolomio,pisani,12
+san bortolomio,rossi,10
+san bortolomio,trevisan,18
+san bortolomio,venier,6
+san cancian,balbi,10
+san cancian,bon,10
+san cancian,gradenigo,36
+san cancian,grimani,9
+san cancian,morosini,24
+san cancian,pisani,10
+san cancian,tiepolo,12
+san cancian,trevisan,13
+san cancian,zen,7
+san cassiano,badoer,7
+san cassiano,balbi,6
+san cassiano,barbarigo,20
+san cassiano,contarini,9
+san cassiano,duodo,8
+san cassiano,foscari,18
+san cassiano,grassi,6
+san cassiano,grimani,17
+san cassiano,guerra,7
+san cassiano,loredan,23
+san cassiano,morosini,14
+san cassiano,sardi,9
+san cassiano,vanella ferretti,8
+san cassiano,venier,17
+san fantin,grimani,6
+san felice,bembo,7
+san felice,dona,9
+san felice,duodo,6
+san felice,priuli,6
+san felice,tomasini,9
+san felice,venier,10
+san geremia,abriani,8
+san geremia,altobello,6
+san geremia,badoer,12
+san geremia,baggio,6
+san geremia,balbi,12
+san geremia,bodesson,12
+san geremia,bonfadini,6
+san geremia,bonfandin,11
+san geremia,bragadin,11
+san geremia,calvi,10
+san geremia,caratti,7
+san geremia,contarini,34
+san geremia,curti,10
+san geremia,da mosto,6
+san geremia,da pesaro,7
+san geremia,duodo,8
+san geremia,foscarini,10
+san geremia,magno,6
+san geremia,michiel,16
+san geremia,pasqualigo,7
+san geremia,pellegrini,6
+san geremia,pisani,6
+san geremia,querini,14
+san geremia,raspi,11
+san geremia,savorgnan,9
+san geremia,scalfarotto,7
+san geremia,testa,27
+san geremia,tiepolo,7
+san geremia,trevisan,20
+san geremia,venier,9
+san giacomo dall'orio,badoer,12
+san giacomo dall'orio,corner,7
+san giacomo dall'orio,ghirardi,9
+san giacomo dall'orio,loredan,9
+san giovanni decollato,giovanelli,6
+san giovanni elmosinario,barbarigo,8
+san giovanni elmosinario,canal,6
+san giovanni elmosinario,capelo,8
+san giovanni elmosinario,contarini,12
+san giovanni elmosinario,corner,7
+san giovanni elmosinario,da riva,19
+san giovanni elmosinario,dolfin,7
+san giovanni elmosinario,giustinian,10
+san giovanni elmosinario,lin,11
+san giovanni elmosinario,mocenigo,7
+san giovanni elmosinario,molin,14
+san giovanni elmosinario,morosini,16
+san giovanni elmosinario,pisani,10
+san giovanni elmosinario,priuli,11
+san giovanni elmosinario,querini,23
+san giovanni elmosinario,riva,6
+san giovanni elmosinario,valier bembo,6
+san giovanni elmosinario,zen,10
+san giovanni elmosinario,zulian,15
+san giovanni grisostomo,barbarigo,6
+san giovanni grisostomo,ciuran,11
+san giovanni grisostomo,corner,13
+san giovanni grisostomo,correggio,11
+san giovanni grisostomo,ferri,9
+san giovanni grisostomo,foscarini,16
+san giovanni grisostomo,pisani,6
+san giovanni grisostomo,valmarana pisani,7
+san giovanni in bragora,barbarigo,20
+san giovanni in bragora,contini,9
+san giovanni in bragora,erizzo,27
+san giovanni in bragora,foscarini,28
+san giovanni in bragora,gabrieli,11
+san giovanni in bragora,longo,6
+san giovanni in bragora,loredan,9
+san giovanni in bragora,moretti,6
+san giovanni in bragora,morosini,13
+san giovanni in bragora,tiepolo,11
+san giovanni nuovo,basadonna,10
+san giovanni nuovo,corner,6
+san giovanni nuovo,michiel,34
+san giovanni nuovo,mocenigo,7
+san giovanni nuovo,sardi,10
+san gregorio,bollani,8
+san gregorio,donini,9
+san gregorio,verdi,6
+san lio,dandolo,7
+san lio,duodo,21
+san lio,gritti,15
+san lio,massarini,6
+san lio,sardi,6
+san luca,biondi,12
+san luca,calbo,16
+san luca,dandolo,17
+san luca,falier corner,9
+san luca,foscari,14
+san luca,giustinian,11
+san luca,loredan,6
+san luca,manzoni,8
+san luca,michielli,13
+san luca,mocenigo,13
+san luca,nani,14
+san luca,pasqualigo,13
+san luca,renier,6
+san luca,savorgnian,6
+san luca,scotti,11
+san luca,valeresso,7
+san luca,vitturi,9
+san lunardo,giovanelli,19
+san lunardo,querini,9
+san marcilian,bembo,16
+san marcilian,benci,19
+san marcilian,filippini,7
+san marcilian,groppi,9
+san marcilian,lipamano,8
+san marcilian,perrazzo,6
+san marcilian,zen,18
+san marco,pisani,8
+san marcuola,alberegno,20
+san marcuola,balbi,6
+san marcuola,barbarigo,6
+san marcuola,bembo,7
+san marcuola,bonfadini,10
+san marcuola,contarini,20
+san marcuola,corner,18
+san marcuola,cossalli,9
+san marcuola,dolfin,29
+san marcuola,donini,9
+san marcuola,foscari,6
+san marcuola,gradenigo,12
+san marcuola,grimani,54
+san marcuola,grimani de servi,40
+san marcuola,memo,14
+san marcuola,michiel,47
+san marcuola,mora,7
+san marcuola,moro zen,26
+san marcuola,morosini,9
+san marcuola,nani,8
+san marcuola,perazzo,14
+san marcuola,priuli,10
+san marcuola,querini,15
+san marcuola,renier,7
+san marcuola,rubini,8
+san marcuola,tiepolo,9
+san marcuola,vendramin,20
+san marcuola,vidali,6
+san marcuola,zen,8
+san martin,canal,8
+san martin,contarini,9
+san martin,correr,14
+san martin,dario,16
+san martin,erizzo,9
+san martin,fini,31
+san martin,giovanelli,22
+san martin,gritti,11
+san martin,malipiero,17
+san martin,mocenigo,12
+san martin,morosini,47
+san martin,pianella,12
+san martin,piccoli zinelli,7
+san martin,soranzo,8
+san martin,soranzo crotta,10
+san martin,trevisan,17
+san mattio,dolfin,7
+san mattio,grimani,7
+san mattio,manolesso,14
+san mattio,molin,7
+san mattio,molin correr,10
+san moise,barbarigo,8
+san moise,barbaro,15
+san moise,contarini,9
+san moise,corner,8
+san moise,dandolo,10
+san moise,foscari,28
+san moise,frangini,7
+san moise,giustinian,15
+san moise,gritti,12
+san moise,manin,11
+san moise,michiel,11
+san moise,molin,6
+san moise,morosin,8
+san moise,morosini,8
+san moise,pisani,8
+san moise,soranzo,7
+san moise,tron,7
+san moise,venier,16
+san nicolo,alciati,7
+san nicolo,assonica,6
+san nicolo,barbarigo,58
+san nicolo,bembo,6
+san nicolo,bianchi,19
+san nicolo,bragadin,10
+san nicolo,callichiopoli,20
+san nicolo,faccini,6
+san nicolo,ferro,18
+san nicolo,franceschi,7
+san nicolo,ganassa,8
+san nicolo,grandi,6
+san nicolo,lombardo,30
+san nicolo,michieli,22
+san nicolo,mocenigo,7
+san nicolo,picchi,11
+san nicolo,pisani,20
+san nicolo,sardi,10
+san nicolo,terzi,9
+san nicolo,tron,34
+san nicolo,zen,6
+san nicolo,zuliani,17
+san pantalon,balbi,7
+san pantalon,barbarigo,15
+san pantalon,civran,6
+san pantalon,dona,11
+san pantalon,emo,8
+san pantalon,falier corner,17
+san pantalon,fonte,7
+san pantalon,giustinian,13
+san pantalon,loredan,32
+san pantalon,maffetti,23
+san pantalon,morosini,38
+san pantalon,mosto,13
+san pantalon,pasqualigo,30
+san pantalon,zuccato,12
+san pantalon,zulian,8
+san paternian,cussola,8
+san paternian,pasqualigo basadonna,8
+san paternian,pisani,6
+san paternian,priuli,6
+san paternian,tron,10
+san pietro di castello,antelmi,6
+san pietro di castello,balbi,7
+san pietro di castello,barbarigo,20
+san pietro di castello,bavella,6
+san pietro di castello,bettoni malipiero,12
+san pietro di castello,bon,8
+san pietro di castello,bragadin,8
+san pietro di castello,calvi,6
+san pietro di castello,contarini,10
+san pietro di castello,corner,10
+san pietro di castello,correr,9
+san pietro di castello,dolfin,30
+san pietro di castello,ferretti,20
+san pietro di castello,fonte,6
+san pietro di castello,gasparini,6
+san pietro di castello,giustinian,13
+san pietro di castello,grimani,13
+san pietro di castello,grimani dei servi,7
+san pietro di castello,lodoli,12
+san pietro di castello,loredan,8
+san pietro di castello,marcello,10
+san pietro di castello,mocenigo,23
+san pietro di castello,morosini,12
+san pietro di castello,negri,6
+san pietro di castello,nicoli,18
+san pietro di castello,olmo,10
+san pietro di castello,pasqualigo,16
+san pietro di castello,pisani,6
+san pietro di castello,pugna,13
+san pietro di castello,sagredo,29
+san pietro di castello,sanudo,6
+san pietro di castello,zorzi,14
+san polo,arrigoni,9
+san polo,bernardo,23
+san polo,contarini,17
+san polo,corner,9
+san polo,foscarini,9
+san polo,giustinian,6
+san polo,marcello,6
+san polo,molin,6
+san polo,pesaro,8
+san raffael,altobello,7
+san raffael,alviati,25
+san raffael,arrigoni lardoni,9
+san raffael,barbarigo,10
+san raffael,biondi,7
+san raffael,bragadin,18
+san raffael,cavalli,15
+san raffael,corner,7
+san raffael,dario,7
+san raffael,ferretti,10
+san raffael,foscarini,47
+san raffael,lardoni,7
+san raffael,marinoni,9
+san raffael,mazzocchi,6
+san raffael,mocenigo,11
+san raffael,molin,7
+san raffael,morosini,12
+san raffael,pasqualigo,8
+san raffael,patarol,7
+san raffael,pisani,17
+san raffael,rusca,6
+san raffael,vidman,11
+san raffael,zustinian,13
+san salvador,badoer mocenigo,14
+san salvador,calegari,6
+san salvador,coreggio,6
+san salvador,erizzo,6
+san salvador,filosi,7
+san salvador,giustinian,11
+san salvador,pasqualigo basadonna,6
+san salvador,querini,6
+san salvador,riva,7
+san salvador,ventura,6
+san samuel,balbi barbo,8
+san samuel,barbarigo dolfin,12
+san samuel,cocco,8
+san samuel,corner,17
+san samuel,dona,12
+san samuel,giustinian,22
+san samuel,malipiero,6
+san samuel,miani,7
+san samuel,nani,7
+san samuel,priuli,6
+san samuel,suzzi,12
+san severo,zorzi,13
+san silvestro,bragadin,7
+san silvestro,cassetti,21
+san silvestro,da ponte,6
+san silvestro,dolfin,7
+san silvestro,donado,8
+san silvestro,grimani,13
+san silvestro,malipiero,6
+san silvestro,morosini,7
+san silvestro,venier,6
+san silvestro,ventura,7
+san simon apostolo,morari,6
+san simon apostolo,pisani,12
+san simon apostolo,sanudo,19
+san simon apostolo,soranzo,10
+san simon profeta,barbarigo,15
+san simon profeta,bravi,9
+san simon profeta,ciuran polvaro,12
+san simon profeta,codognola,7
+san simon profeta,contarini,15
+san simon profeta,dona,37
+san simon profeta,foscari,18
+san simon profeta,gradenigo,8
+san simon profeta,morosini,9
+san simon profeta,origoni,6
+san simon profeta,ruzzini,7
+san simon profeta,soranzo,10
+san simon profeta,trevano,9
+san simon profeta,vendramin,15
+san simon profeta,zen,9
+san stae,barbaro,7
+san stae,bondumier,6
+san stae,calbo,11
+san stae,morosini,6
+san stae,nani,9
+san stae,pisani,8
+san stin,bellegno,6
+san stin,cassetti,25
+san stin,ciuran,10
+san stin,contarini,12
+san stin,gritti,7
+san toma,capello,9
+san toma,contarini,33
+san toma,dona,13
+san toma,loredan,6
+san toma,nani,7
+san toma,zen,12
+san trovaso,barbarigo,7
+san trovaso,basadona,7
+san trovaso,bertoti,7
+san trovaso,boldini,7
+san trovaso,bonfadini,16
+san trovaso,calbo,7
+san trovaso,calichiopoli,7
+san trovaso,capello,11
+san trovaso,contarini,9
+san trovaso,cornera polita,6
+san trovaso,curti,13
+san trovaso,ertz,6
+san trovaso,lipamano,8
+san trovaso,loredan,15
+san trovaso,malipiero,7
+san trovaso,marioni,23
+san trovaso,michiel,10
+san trovaso,mozzenigo,19
+san trovaso,nani,6
+san trovaso,priuli,6
+san trovaso,san giovan toffetti,11
+san trovaso,tiepolo,10
+san trovaso,vignola,9
+san trovaso,zen,9
+san vidal,bernardo,6
+san vidal,miani,13
+san vidal,pasqualigo,18
+san vio,barbarigo,6
+san vio,contarini ponte,6
+san vio,dona,8
+san vio,zustinian,14
+san ziminian,balbi barbo,10
+san ziminian,basadona,18
+san ziminian,basadonna,6
+san ziminian,benvenuti,6
+san ziminian,berlendis,8
+san ziminian,bragadin,12
+san ziminian,curnis,8
+san ziminian,da lezze,22
+san ziminian,dada,8
+san ziminian,dolfin,18
+san ziminian,filosi,6
+san ziminian,foscari,8
+san ziminian,foscarini,24
+san ziminian,franceschi,6
+san ziminian,lodovici,8
+san ziminian,malipiero,8
+san ziminian,manin,12
+san ziminian,olmo,14
+san ziminian,querini,10
+san ziminian,raffai,8
+san ziminian,raspi,36
+san ziminian,riva,6
+san ziminian,rota,10
+san ziminian,spinelli,18
+san ziminian,vezzi,13
+san ziminian,zen,22
+san zulian,badoer,7
+san zulian,barbarigo,6
+san zulian,contarini,10
+san zulian,lodovici,7
+san zulian,loredan,11
+san zulian,mocenigo,13
+san zulian,querini,9
+san zulian,soranzo,6
+san zulian,zen,7
+san zulian,zorzi,7
+sant'agnese,corner,7
+sant'agnese,franceschi,8
+sant'agnese,moro,7
+sant'agnese,sagredo,11
+sant'agnese,valle,10
+sant'agnese,vendramin,11
+sant'agostin,dona,9
+sant'agostin,querini,7
+sant'angelo,amigoni,6
+sant'angelo,barbarigo,10
+sant'angelo,benzon,6
+sant'angelo,duodo,7
+sant'angelo,grimani,10
+sant'angelo,gritti,7
+sant'angelo,marcello,8
+sant'angelo,moresini,7
+sant'angelo,morosini,9
+sant'angelo,pisani,11
+sant'antonino,balbi,10
+sant'antonino,contarini,26
+sant'antonino,erizzo,8
+sant'antonino,zaguri,6
+sant'aponal,boldu,6
+sant'aponal,bolis,6
+sant'aponal,dona,10
+sant'aponal,duodo,9
+sant'aponal,foscarini,11
+sant'aponal,michiel sagredo,6
+sant'aponal,nadali,13
+sant'aponal,scoli,8
+sant'aponal,vendramin,7
+sant'aponal,venier,19
+santa croce,barbaro,12
+santa croce,baseggio,11
+santa croce,berlendi,7
+santa croce,bernardo,27
+santa croce,capello,8
+santa croce,contarini,7
+santa croce,corner,19
+santa croce,dario,14
+santa croce,foscarini,6
+santa croce,grimani bernardo,29
+santa croce,marcello,8
+santa croce,mora,9
+santa croce,pasqualini,10
+santa croce,persego,7
+santa croce,picco,12
+santa croce,pisani,16
+santa croce,rizzi,15
+santa croce,tornielo,6
+santa croce,ventura,41
+santa fosca,correr,12
+santa fosca,dona,18
+santa giustina,donada,21
+santa giustina,foscarini,17
+santa giustina,giustinian,8
+santa giustina,malacarne,8
+santa giustina,malipiero,6
+santa giustina,marcello,10
+santa giustina,mozer,6
+santa giustina,priuli,9
+santa giustina,querini,8
+santa lucia,arigoni,6
+santa lucia,mocenigho,8
+santa lucia,pesaro,17
+santa lucia,rezzonico,9
+santa margherita,bernati,8
+santa margherita,calvi,7
+santa margherita,capello,27
+santa margherita,contarini,16
+santa margherita,duodo,11
+santa margherita,erizo,10
+santa margherita,grimani,8
+santa margherita,malipiero,9
+santa margherita,soranzo crotta,6
+santa margherita,vitti,7
+santa margherita,zen,6
+santa maria formosa,barbaro,8
+santa maria formosa,capello,8
+santa maria formosa,contarini,24
+santa maria formosa,da mula,6
+santa maria formosa,dolce,8
+santa maria formosa,dona,11
+santa maria formosa,grimani,13
+santa maria formosa,gritti,12
+santa maria formosa,magno,6
+santa maria formosa,moro zen,11
+santa maria formosa,morosini,24
+santa maria formosa,pisani,7
+santa maria formosa,priuli,8
+santa maria formosa,querini,11
+santa maria formosa,tasca,7
+santa maria formosa,trevisan,14
+santa maria formosa,valier,15
+santa maria formosa,vitturi,10
+santa maria formosa,zen,40
+santa maria formosa,zorzi,10
+santa maria formosa,zusto,10
+santa maria maddalena,molin,20
+santa maria mater domini,bonvicini,13
+santa maria mater domini,correr,21
+santa maria mater domini,morosini,13
+santa maria mater domini,raffai,11
+santa maria nova,badoer mocenigo,6
+santa maria nova,bembo,6
+santa maria nova,ciera,9
+santa maria zobenigo,barbarigo,14
+santa maria zobenigo,barbaro,6
+santa maria zobenigo,gritti,6
+santa maria zobenigo,morosini,20
+santa marina,badoer mocenigo,28
+santa marina,bragadin,6
+santa marina,corner,21
+santa marina,grimani,8
+santa marina,morosini,10
+santa marina,venantio,8
+santa marina,vendramin,14
+santa sofia,badoer,6
+santa sofia,basadonna,10
+santa sofia,capelo,6
+santa sofia,colalto,10
+santa sofia,corner,6
+santa sofia,gritti,10
+santa sofia,loredan,9
+santa sofia,manolesso,15
+santa sofia,marcello,6
+santa sofia,mora,6
+santa sofia,priuli,30
+santa sofia,sagredo,13
+santa sofia,sandei,16
+santa sofia,venier,9
+santa ternita,basadonna,11
+santa ternita,celsi,6
+santa ternita,contarini,15
+santa ternita,da riva,6
+santa ternita,dona,12
+santa ternita,giustinian,9
+santa ternita,lando corner,7
+santa ternita,loredan,9
+santa ternita,manolesso,18
+santa ternita,michiel,6
+santa ternita,morosini,11
+santa ternita,negri,6
+santa ternita,pasqualigo soranzo,6
+santa ternita,querini contarini,6
+santa ternita,sagredo,21
+santa ternita,soranzo,13
+santi apostoli,bianchini,7
+santi apostoli,combi,13
+santi apostoli,contarini,9
+santi apostoli,corner,23
+santi apostoli,corner tacco,11
+santi apostoli,giustinian,7
+santi apostoli,malipiero,12
+santi apostoli,pisani,7
+santi apostoli,soranzo,6
+santi apostoli,tron,8
+santi apostoli,venier,9
+santi apostoli,vidman,8
+santi apostoli,zen,13
+santi apostoli,zorzi,29

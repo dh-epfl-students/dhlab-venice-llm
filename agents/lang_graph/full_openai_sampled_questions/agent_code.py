@@ -171,7 +171,6 @@ def write_code(state):
                 "error_message": error_message,
                 "answer_format": answer_format
             })
-        print('*********************** DEBUG ***********************')
     else:
         coder = get_coder(state['llm'])
         code = coder.invoke({
@@ -179,8 +178,6 @@ def write_code(state):
                 "plan": plan,
                 "answer_format": answer_format
             })
-        print('*********************** CODE ***********************')
-    print(code)
 
     # extract the code block
     code_block = extract_python_code(code)
@@ -247,7 +244,6 @@ def main(out_path: str):
     
     # Read questions
     questions = read_questions()
-    questions = questions[questions['id'].isin([129])]
     
     # Get LLM
     llm = get_openai_llm()

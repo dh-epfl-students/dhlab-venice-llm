@@ -1,0 +1,805 @@
+district,owner_family_name,building_count
+cannaregio,albengo,10
+cannaregio,alberti,6
+cannaregio,albrizzi,24
+cannaregio,almeda levi,6
+cannaregio,angaran,11
+cannaregio,anselmi,11
+cannaregio,arrigoni,20
+cannaregio,astori,13
+cannaregio,avvanzetti,6
+cannaregio,bacchi,10
+cannaregio,bachi,7
+cannaregio,badoer,10
+cannaregio,balbi,84
+cannaregio,barbarigo,6
+cannaregio,barbaro,21
+cannaregio,baroni,7
+cannaregio,battagia,17
+cannaregio,battaglia,6
+cannaregio,bellato,10
+cannaregio,bembo,33
+cannaregio,beregan,6
+cannaregio,berlendis,13
+cannaregio,bernardi,12
+cannaregio,berti,10
+cannaregio,boerio,6
+cannaregio,boldù,14
+cannaregio,bonetti,10
+cannaregio,bonfadini,26
+cannaregio,bonicelli,12
+cannaregio,bontempo gradenigo,13
+cannaregio,bortolotti,12
+cannaregio,bragadin,15
+cannaregio,bravetti,8
+cannaregio,caldiera,20
+cannaregio,calvi,8
+cannaregio,cantoni,11
+cannaregio,caotorta,11
+cannaregio,capello,13
+cannaregio,caresana rotta,7
+cannaregio,carminati,7
+cannaregio,carrara,8
+cannaregio,cataneo,6
+cannaregio,civran,9
+cannaregio,clementi,8
+cannaregio,cobres,8
+cannaregio,codognato,10
+cannaregio,codognola,11
+cannaregio,coen porto,7
+cannaregio,coledani,7
+cannaregio,coletti,14
+cannaregio,condulmer,13
+cannaregio,connegliano,9
+cannaregio,contarini,86
+cannaregio,corner,74
+cannaregio,corner renier,13
+cannaregio,correr,11
+cannaregio,costantini,9
+cannaregio,crotta,8
+cannaregio,curnis,8
+cannaregio,da ponte,6
+cannaregio,dall'asta,9
+cannaregio,diedo,6
+cannaregio,dolfin,33
+cannaregio,donà,31
+cannaregio,duodo,15
+cannaregio,duprè,6
+cannaregio,emo,6
+cannaregio,erizo,23
+cannaregio,erizzo,28
+cannaregio,fabris,6
+cannaregio,falier,9
+cannaregio,ferrari,14
+cannaregio,ferri,19
+cannaregio,fischer,6
+cannaregio,fontana,15
+cannaregio,foscari,11
+cannaregio,foscarini,33
+cannaregio,foscolo,11
+cannaregio,freo bon,6
+cannaregio,garelli,8
+cannaregio,gavazzi,7
+cannaregio,gerardi,8
+cannaregio,giovanelli,55
+cannaregio,giustinian,11
+cannaregio,giustinian recanati,6
+cannaregio,gradenigo,38
+cannaregio,grassi,6
+cannaregio,grifalconi,7
+cannaregio,grimani,148
+cannaregio,gritti,22
+cannaregio,guizzetti,10
+cannaregio,labia,21
+cannaregio,latis,8
+cannaregio,lipomano,8
+cannaregio,lippomano,6
+cannaregio,loredan,8
+cannaregio,lucatelli,11
+cannaregio,luzzato,16
+cannaregio,malipiero,21
+cannaregio,malta,31
+cannaregio,manfredo,6
+cannaregio,manfrini,6
+cannaregio,manin,25
+cannaregio,manolesso,9
+cannaregio,marcello,12
+cannaregio,marchi,6
+cannaregio,marini,11
+cannaregio,marioni,41
+cannaregio,martinelli,10
+cannaregio,martinengo,10
+cannaregio,maruzzi,9
+cannaregio,massa,7
+cannaregio,memmo,19
+cannaregio,memo,10
+cannaregio,michieli,28
+cannaregio,mocenigo,34
+cannaregio,molin,39
+cannaregio,mora,35
+cannaregio,moretti,8
+cannaregio,moro,48
+cannaregio,morosini,44
+cannaregio,mozenigo,8
+cannaregio,namias,9
+cannaregio,nani,15
+cannaregio,nicoletti,15
+cannaregio,novello,7
+cannaregio,olivi,6
+cannaregio,olivo,8
+cannaregio,orio,8
+cannaregio,ortali,9
+cannaregio,palazzi,6
+cannaregio,pasqualigo,8
+cannaregio,persico,16
+cannaregio,pesaro,24
+cannaregio,pisani,77
+cannaregio,polese,7
+cannaregio,prezzato,16
+cannaregio,priuli,41
+cannaregio,querini,17
+cannaregio,quirini,13
+cannaregio,raspoli,12
+cannaregio,reali,15
+cannaregio,renier,33
+cannaregio,rezzonico,12
+cannaregio,rezzonico d.,14
+cannaregio,risegari,6
+cannaregio,riva,24
+cannaregio,robustello,9
+cannaregio,rossi,21
+cannaregio,rotta,6
+cannaregio,sagramora,10
+cannaregio,sagredo,11
+cannaregio,salerni,6
+cannaregio,savorgnan,13
+cannaregio,scandali milionopolo,8
+cannaregio,seraval,14
+cannaregio,solari,19
+cannaregio,sopetti,6
+cannaregio,soranzo,9
+cannaregio,staulo,6
+cannaregio,steffani,15
+cannaregio,sulam,22
+cannaregio,taboga,7
+cannaregio,tamagno,6
+cannaregio,tiepolo,22
+cannaregio,toderini,9
+cannaregio,todeschini,8
+cannaregio,todesco,19
+cannaregio,treves,16
+cannaregio,trevisan,27
+cannaregio,trombetta,7
+cannaregio,usiel,7
+cannaregio,vacrini,6
+cannaregio,valier,9
+cannaregio,vendramin,30
+cannaregio,vendramin calergi,17
+cannaregio,venier,61
+cannaregio,venier fonte,9
+cannaregio,venturali,6
+cannaregio,verdi,12
+cannaregio,vianello,10
+cannaregio,vidiman,12
+cannaregio,vigonzo,8
+cannaregio,widiman,9
+cannaregio,zambelli,6
+cannaregio,zanchi,8
+cannaregio,zaniboni,9
+cannaregio,zanon,6
+cannaregio,zen,73
+cannaregio,zen fabris,6
+cannaregio,zuliani,8
+castello,acquisti,10
+castello,alberghetti,7
+castello,albrizzi,7
+castello,badoer,9
+castello,balbi,34
+castello,barbarigo,13
+castello,barbaro,18
+castello,baseggio,8
+castello,bembo,14
+castello,berlendis,6
+castello,bernardi,12
+castello,berten,6
+castello,bevilacqua,6
+castello,boldu',14
+castello,bollani,7
+castello,bossi,8
+castello,bragadin,12
+castello,calegari,6
+castello,calvi,6
+castello,camerata,6
+castello,cantoni,6
+castello,capellari,11
+castello,capello,34
+castello,coledani,6
+castello,contarini,34
+castello,contarini venier,7
+castello,corner,37
+castello,correr,15
+castello,costantini,8
+castello,damula,6
+castello,daponte,11
+castello,diedo,15
+castello,dolfin,17
+castello,dona',42
+castello,duodo,6
+castello,erizo,34
+castello,fabbro,9
+castello,fabris,8
+castello,ferretti,13
+castello,ferri,13
+castello,ferro,8
+castello,fini,7
+castello,foscarini,33
+castello,foscolo,7
+castello,frangini,8
+castello,gambillo,7
+castello,giaccometti,6
+castello,giovich,9
+castello,giuradelli,6
+castello,giustinian,20
+castello,giustiniani,8
+castello,gradenigo,14
+castello,grimani,26
+castello,gritti,14
+castello,lamberti,13
+castello,luzzato,6
+castello,maderni,7
+castello,manin,8
+castello,manolezzo,8
+castello,marcello,11
+castello,martinelli,6
+castello,maruzzi,12
+castello,memo,7
+castello,michieli,12
+castello,milesi,6
+castello,mocenigo,21
+castello,molin,13
+castello,moro,19
+castello,moro lin,7
+castello,morosini,53
+castello,negri,19
+castello,nicoli,16
+castello,orio,8
+castello,paganello,7
+castello,papette,11
+castello,perini,13
+castello,pesaro,6
+castello,pianella,7
+castello,pisani,21
+castello,polese,8
+castello,ponte,12
+castello,pora,6
+castello,pori,8
+castello,priuli,22
+castello,querini,34
+castello,raspi,15
+castello,reali,9
+castello,renier,17
+castello,renier corner,8
+castello,rossi,14
+castello,rubelli,12
+castello,ruzzini,9
+castello,sagredo,40
+castello,sanudo,10
+castello,sartori,9
+castello,solari,11
+castello,soranzo,32
+castello,sossai,7
+castello,tabacchi,7
+castello,tiepolo,19
+castello,toderini,9
+castello,todeschini,8
+castello,tomasini,7
+castello,trevisan,6
+castello,valier,6
+castello,venier,11
+castello,venier contarini,7
+castello,vianello,12
+castello,violin,10
+castello,vitali,13
+castello,zambelli,8
+castello,zen,23
+castello,zon,14
+dorsoduro,acerboni,8
+dorsoduro,albrizzi,14
+dorsoduro,alpron,6
+dorsoduro,andreola,6
+dorsoduro,arnaldi,6
+dorsoduro,arrigoni,7
+dorsoduro,badoer,11
+dorsoduro,balbi,23
+dorsoduro,barbarigo,14
+dorsoduro,barbaro,8
+dorsoduro,barbieri,14
+dorsoduro,battaglia,6
+dorsoduro,belloni battaglia,6
+dorsoduro,bembo,19
+dorsoduro,beneco,6
+dorsoduro,berti,15
+dorsoduro,bertoti,9
+dorsoduro,bolani,21
+dorsoduro,boldu',11
+dorsoduro,bollani,8
+dorsoduro,bonfadini,13
+dorsoduro,bonlini,9
+dorsoduro,bosio,8
+dorsoduro,bossi,10
+dorsoduro,bragadin,41
+dorsoduro,calbo,6
+dorsoduro,calderari,6
+dorsoduro,calichiopoli,10
+dorsoduro,calliari fantinelli,9
+dorsoduro,calogera',6
+dorsoduro,calogera' foscarini,12
+dorsoduro,camerata,10
+dorsoduro,canal,23
+dorsoduro,canciani,11
+dorsoduro,capitanio,6
+dorsoduro,cappello,15
+dorsoduro,carli rubbi,7
+dorsoduro,cavagnis,12
+dorsoduro,cavalini,6
+dorsoduro,civran,8
+dorsoduro,coledani,6
+dorsoduro,condulmer,8
+dorsoduro,contarini,21
+dorsoduro,corner,16
+dorsoduro,correr,19
+dorsoduro,cossetti,7
+dorsoduro,crota,6
+dorsoduro,crotta,9
+dorsoduro,dal peder,16
+dorsoduro,dalla bella,11
+dorsoduro,damosto,28
+dorsoduro,damula,11
+dorsoduro,danieli,8
+dorsoduro,dapar,11
+dorsoduro,dario paulucci,10
+dorsoduro,dariva,14
+dorsoduro,dariva badoer,8
+dorsoduro,de biasio,12
+dorsoduro,demin,9
+dorsoduro,diedo,6
+dorsoduro,dolfin,34
+dorsoduro,dolfin gradenigo,17
+dorsoduro,dona',21
+dorsoduro,duodo,11
+dorsoduro,emo,6
+dorsoduro,erizzo,31
+dorsoduro,ferro,17
+dorsoduro,fontana,8
+dorsoduro,formenti,17
+dorsoduro,foscari,14
+dorsoduro,foscarini,45
+dorsoduro,foscati,6
+dorsoduro,foscolo,7
+dorsoduro,galli,8
+dorsoduro,gerardi,7
+dorsoduro,giovanelli,11
+dorsoduro,giustinian,14
+dorsoduro,gradenigo,26
+dorsoduro,grimani,29
+dorsoduro,grimani giustinian,15
+dorsoduro,griti,15
+dorsoduro,lippomano,12
+dorsoduro,locatello,10
+dorsoduro,loredan,11
+dorsoduro,loredan imberti,7
+dorsoduro,lovisello,6
+dorsoduro,lucatello,11
+dorsoduro,macaruzzi,6
+dorsoduro,magno,6
+dorsoduro,malvezi,10
+dorsoduro,manin,10
+dorsoduro,marcello,10
+dorsoduro,marchesi,8
+dorsoduro,marconi,19
+dorsoduro,marinoni,8
+dorsoduro,martini,7
+dorsoduro,mazzoni,9
+dorsoduro,memo,25
+dorsoduro,mocenigo,24
+dorsoduro,mocenigo soranzo,7
+dorsoduro,molin,32
+dorsoduro,monfera',14
+dorsoduro,mora,8
+dorsoduro,moro,19
+dorsoduro,morosini,17
+dorsoduro,nani,8
+dorsoduro,negri,6
+dorsoduro,ninfa,11
+dorsoduro,padoan,10
+dorsoduro,paron,7
+dorsoduro,pasineti,33
+dorsoduro,pastori,8
+dorsoduro,pavegio,8
+dorsoduro,pelai,6
+dorsoduro,penso,7
+dorsoduro,persico,9
+dorsoduro,pinzoni,6
+dorsoduro,piovene,7
+dorsoduro,pisani,21
+dorsoduro,pisoni,7
+dorsoduro,poli,8
+dorsoduro,priuli,40
+dorsoduro,querini,18
+dorsoduro,renier,33
+dorsoduro,rezzonico,7
+dorsoduro,riva,19
+dorsoduro,rivi,6
+dorsoduro,rizzi,6
+dorsoduro,rizzi galvani,8
+dorsoduro,rizzo patarol,6
+dorsoduro,rossi,17
+dorsoduro,ruzini,11
+dorsoduro,sagredo,9
+dorsoduro,savorgnan,12
+dorsoduro,simoncin,8
+dorsoduro,soavi,7
+dorsoduro,solari,47
+dorsoduro,soranzo,8
+dorsoduro,tarma,12
+dorsoduro,tiepolo,12
+dorsoduro,torni,7
+dorsoduro,traversi,9
+dorsoduro,trevisan,29
+dorsoduro,tron,6
+dorsoduro,tron dona',8
+dorsoduro,tron priuli,8
+dorsoduro,valier,9
+dorsoduro,verdi,7
+dorsoduro,vianello,8
+dorsoduro,vignola,9
+dorsoduro,widiman,17
+dorsoduro,zaguri,7
+dorsoduro,zambelli,9
+dorsoduro,zanchi,9
+dorsoduro,zen,25
+dorsoduro,zenobio,7
+dorsoduro,zinelli,11
+dorsoduro,zustinian,23
+san marco,albrizzi,18
+san marco,andrighetti,6
+san marco,angaran,8
+san marco,angeli,8
+san marco,armano,6
+san marco,baglioni,15
+san marco,balbi,34
+san marco,baraiter,6
+san marco,barbarigo,11
+san marco,barbaro,51
+san marco,baseggio,6
+san marco,bembo,22
+san marco,berlendis,6
+san marco,bernardi,15
+san marco,bernardo,7
+san marco,boldu',10
+san marco,bollani,7
+san marco,bonfadini,9
+san marco,bonvicini gritti,11
+san marco,bonzio,17
+san marco,bossi,10
+san marco,bragadin,14
+san marco,calvi,11
+san marco,cantu',8
+san marco,capello,6
+san marco,civran,12
+san marco,coletti,9
+san marco,contarini,51
+san marco,corner,63
+san marco,corner mocenigo,11
+san marco,cortinovis,6
+san marco,da ponte,11
+san marco,dandolo,12
+san marco,dariva,6
+san marco,diedo,18
+san marco,dolfin,38
+san marco,dolfini,6
+san marco,dona',60
+san marco,duodo,17
+san marco,erizo,6
+san marco,erizzo,13
+san marco,filosi,9
+san marco,fini,16
+san marco,foscarini,20
+san marco,francesconi,8
+san marco,gardani,7
+san marco,gargadori,8
+san marco,giovanelli,14
+san marco,giustinian,25
+san marco,giustinian lolin,6
+san marco,gradenigo,11
+san marco,grandis,7
+san marco,grassi,8
+san marco,grimani,31
+san marco,gritti,30
+san marco,lio,7
+san marco,lipomano,9
+san marco,luiselli,18
+san marco,malipiero,7
+san marco,manin,12
+san marco,marcello,6
+san marco,marchi,9
+san marco,marconi,7
+san marco,martinengo,14
+san marco,maruzzi,17
+san marco,memo,14
+san marco,michieli,16
+san marco,minelli,6
+san marco,minotto,7
+san marco,mizzana,10
+san marco,mocenigo,32
+san marco,mocenigo soranzo,10
+san marco,molin,22
+san marco,moro,13
+san marco,moro lin,12
+san marco,morosini,57
+san marco,morosini barbon,6
+san marco,nani,10
+san marco,negri,16
+san marco,paganello,7
+san marco,panziera,6
+san marco,pasqualigo,14
+san marco,pedrocchi,9
+san marco,petrogalli,6
+san marco,pezzana,7
+san marco,pisani,62
+san marco,porta,7
+san marco,priuli,24
+san marco,querini,16
+san marco,renier,21
+san marco,resaro,6
+san marco,rizzi,6
+san marco,rizzo,6
+san marco,rossi,12
+san marco,rubbi prezzato,6
+san marco,sagredo,15
+san marco,sandi,18
+san marco,seriman,9
+san marco,soranzo,18
+san marco,suardi,8
+san marco,tasca,10
+san marco,tiepolo,16
+san marco,todarini,19
+san marco,toderini,11
+san marco,trevisan,14
+san marco,tron,9
+san marco,valaresso,10
+san marco,valmarana,8
+san marco,vendramin,7
+san marco,vendramini,9
+san marco,venier,31
+san marco,venier contarini,7
+san marco,ventura,6
+san marco,vitturi veronese,7
+san marco,zen,42
+san marco,zenobrio,8
+san marco,zorzi,14
+san marco,zustinian recanati,9
+san polo,albrizzi,34
+san polo,armati,7
+san polo,astori,12
+san polo,badoer,12
+san polo,balbi,16
+san polo,barbarigo,19
+san polo,barbaro,17
+san polo,barozzi,11
+san polo,bembo,7
+san polo,bembo de medici,6
+san polo,benzon,8
+san polo,bernardi,19
+san polo,bernardo,17
+san polo,boldu',10
+san polo,bollani,13
+san polo,bollis,6
+san polo,bonfadini,17
+san polo,bonvicini,8
+san polo,bossi,14
+san polo,bragadin,12
+san polo,bujovich,8
+san polo,canal,12
+san polo,cappello,38
+san polo,carminati,10
+san polo,cassetti,39
+san polo,catonari,7
+san polo,celebrini,8
+san polo,civran,26
+san polo,contarini,70
+san polo,corner,23
+san polo,cornoldi,7
+san polo,correr,6
+san polo,cossali,12
+san polo,curnis,10
+san polo,dalla balla,15
+san polo,damosto,6
+san polo,dariva,15
+san polo,demin,8
+san polo,dolfin,15
+san polo,dolfin lippomano,10
+san polo,dona',48
+san polo,duodo,18
+san polo,erizzo,13
+san polo,farseti bacanello,7
+san polo,fiorina,8
+san polo,foscari,9
+san polo,foscarini,42
+san polo,foscolo,6
+san polo,freo,13
+san polo,garganego,7
+san polo,gidoni,8
+san polo,giovanelli,7
+san polo,giustinian,23
+san polo,gradenigo,40
+san polo,grassi,7
+san polo,grimani,40
+san polo,griti,16
+san polo,guizzetti,6
+san polo,imberti,12
+san polo,levi,8
+san polo,maffei,7
+san polo,maffetti,15
+san polo,manarin,6
+san polo,manfredi morari,7
+san polo,manin,16
+san polo,mantovani,8
+san polo,marcello,16
+san polo,martinelli,6
+san polo,mazzoni,30
+san polo,memo,6
+san polo,minoto,8
+san polo,mocenigo,29
+san polo,molin,27
+san polo,mora,20
+san polo,morando,8
+san polo,moro,27
+san polo,morosini,84
+san polo,morosini gattemburgo,6
+san polo,munerato,7
+san polo,negri,7
+san polo,ottoboni,8
+san polo,peretis,24
+san polo,persico,7
+san polo,pesaro,14
+san polo,pigazzo,6
+san polo,pisani,17
+san polo,pisani barbarigo,7
+san polo,poloni,6
+san polo,priuli,28
+san polo,querini,29
+san polo,raspi,21
+san polo,renier,15
+san polo,rizzi,13
+san polo,rizzo,6
+san polo,rossi,9
+san polo,sagredo,6
+san polo,salamon,8
+san polo,san giantoffetti,12
+san polo,sardi,11
+san polo,selvatici,8
+san polo,soardi,8
+san polo,soranzo,9
+san polo,soranzo vendramin,8
+san polo,tamossi,6
+san polo,tiepolo,24
+san polo,toderini,8
+san polo,todeschini,9
+san polo,tomasini degna,6
+san polo,trevisan,7
+san polo,tron dona',6
+san polo,vendramin,17
+san polo,venier,28
+san polo,venier fonte,6
+san polo,zambelli,6
+san polo,zampiereti,8
+san polo,zanchi,6
+san polo,zappella,7
+san polo,zen,35
+san polo,zen carloti,7
+san polo,zenobio,12
+san polo,zitti,6
+santa croce,albrizzi,9
+santa croce,angaran,6
+santa croce,appostoli,6
+santa croce,arnaldi,6
+santa croce,balbi,6
+santa croce,barbaro,6
+santa croce,baroncelli,15
+santa croce,baseggio,16
+santa croce,belli,6
+santa croce,bendussi,6
+santa croce,bernardo,10
+santa croce,berti,10
+santa croce,berti fracasso,9
+santa croce,bolini,7
+santa croce,boncio,18
+santa croce,bonvicini,17
+santa croce,bosio,6
+santa croce,bossi,7
+santa croce,bragadin,8
+santa croce,brunello,7
+santa croce,businello,8
+santa croce,canal,8
+santa croce,carminati,13
+santa croce,cataneo,8
+santa croce,catonari,7
+santa croce,cesana conti,14
+santa croce,civran,8
+santa croce,civran contarini,7
+santa croce,codognola,12
+santa croce,colalto camerata,8
+santa croce,contarini,24
+santa croce,corner,22
+santa croce,correr,20
+santa croce,crotta,11
+santa croce,crovato,6
+santa croce,curti,8
+santa croce,dadie,10
+santa croce,dalasta,9
+santa croce,dalcqua,6
+santa croce,dari,6
+santa croce,dari',6
+santa croce,de zanetti,22
+santa croce,diedo,10
+santa croce,dona',18
+santa croce,duodo,7
+santa croce,fabris,12
+santa croce,flantini,6
+santa croce,foscari,18
+santa croce,foscarini,8
+santa croce,fossa,6
+santa croce,galuccio,16
+santa croce,geremia,6
+santa croce,giovannelli,6
+santa croce,giustinian,11
+santa croce,giustinian recanati,11
+santa croce,gradenigo,40
+santa croce,grassi,11
+santa croce,grimani,27
+santa croce,griti,48
+santa croce,grivi,8
+santa croce,lavezari,8
+santa croce,lucatello,8
+santa croce,luzzato,6
+santa croce,manin,6
+santa croce,maruzzi,10
+santa croce,mazzoco,9
+santa croce,mazzoni,38
+santa croce,mocenigo,15
+santa croce,molin,15
+santa croce,molinari,8
+santa croce,moro,18
+santa croce,morosini,32
+santa croce,nerini,12
+santa croce,panciera,7
+santa croce,pasqualigo,8
+santa croce,pesaro,12
+santa croce,pisani,10
+santa croce,priuli,18
+santa croce,querini,12
+santa croce,raspi,11
+santa croce,renier,18
+santa croce,rizzi,10
+santa croce,ruberti,10
+santa croce,ruzini,15
+santa croce,sanfermo,6
+santa croce,savorgnan,7
+santa croce,scala,10
+santa croce,solari,6
+santa croce,soranzo,14
+santa croce,tagliapietra,7
+santa croce,tian,6
+santa croce,tiepolo,6
+santa croce,trevisan,6
+santa croce,trieste,7
+santa croce,tron dona',9
+santa croce,tron priuli,9
+santa croce,vanest,8
+santa croce,vendramin,6
+santa croce,venier,38
+santa croce,vio,7
+santa croce,zen,13
+santa croce,zinelli,9
+santa croce,zorzi,13

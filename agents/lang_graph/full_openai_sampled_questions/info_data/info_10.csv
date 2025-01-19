@@ -1,0 +1,669 @@
+owner_first_name,owner_family_name,owner_profession,tenant_name,building_functions,rent_price,parish,building_functions_count,longitude,latitude,near_church
+ottavio,bertotti,,rocco rimondi,magazzeno,22,san cancian,1,12.338224520594393,45.440222175120766,True
+giovanni francesco,morosini,,giacomo marchetti,magazzeno,9,san cancian,1,12.337938790209744,45.44060921739288,True
+giovanni francesco,morosini,,iseppo bellilios,magazzeno,46,san cancian,1,12.3379244054777,45.44061456716869,True
+lorenzo,tiepolo,,"zuanne briosi, nicolò fior e antonio bonomo",magazzeno,5,san cancian,1,12.33813046479572,45.439904092557285,True
+marc'antonio,tiepolo,,agostin visin,magazzeno,26,san cancian,1,12.337574950760118,45.43995331802891,True
+marc'antonio,tiepolo,,alessandra stoi,magazzeno,6,san cancian,1,12.337584727846243,45.43993862221454,True
+marc'antonio,tiepolo,,elisabetta gottardo castelli,"casetta, magazzeno",30,san cancian,2,12.33759840477958,45.439926860017735,True
+giovanni antonio,cavagnis,,antonio bianchi,magazzeno,12,san cancian,1,12.339726047619076,45.441350891234976,False
+giovanni antonio,cavagnis,,gincino,magazzeno,40,san cancian,1,12.33972066496938,45.44133655254839,False
+giacomo,bon,,battista romanello,magazzeno,4,san cancian,1,12.339351680078448,45.44205566846976,False
+bortolo,gradenigo,,battista pignatella,magazzeno,12,san cancian,1,12.339372782626535,45.44225088156141,False
+vicenzo,gradenigo,,alessandro fossa,magazzeno,8,san cancian,1,12.33958781643062,45.44248685902416,True
+zuanne battista,dedoni,,martin gualdi,magazzeno,70,san cancian,1,12.340141007998776,45.442927570437774,True
+zuanne,dona,,martin gualdi,magazzeno,30,san cancian,1,12.340158024689444,45.4429521294855,True
+zuanne,dona,,tolota,magazzeno,30,san cancian,1,12.340172957758218,45.44297806129463,True
+elena,fracasseti,,giovanni battista romanello,magazzeno,6,san cancian,1,12.340282681098468,45.4427915824634,False
+bonomo,algarotti,,antonio valle,magazzeno,27,san cancian,1,12.340466521245164,45.44122210735509,False
+bonomo,algarotti,,giacomo vegnudi,magazzeno,5,san cancian,1,12.340501674768904,45.44120444930896,False
+anibal,fonte,,bortolo chiapolini,magazzeno,4,san cancian,1,12.340439320748557,45.44119944302484,False
+paulo,bembo,,francesco maestrini,"bottega, casa, magazzeno",32,san felice,3,12.335595557551173,45.44330391622741,False
+marc'antonio,ronzoni,,ventura galdaldin,magazzeno,18,san felice,1,12.334140290306305,45.44152391138245,True
+giovanni,benzon,,dionisio ardito,magazzeno,26,san felice,1,12.333814485180456,45.4416873495235,True
+giovanni francesco,bonomo,,anzolo orsetti,"casetta, magazzeno",14,san felice,2,12.333117523999752,45.441561592059145,True
+iseppo,balbi,,antonio lazaroni,magazzeno,190,san felice,1,12.33307780337672,45.44152220874948,True
+francesco,bonomo,,cristoforo alferé,magazzeno,8,san felice,1,12.332879918640035,45.44147378575743,True
+luanrdo,dona,,perina romano,magazzeno,40,san felice,1,12.333566127712864,45.44252273760508,True
+cattarina angela,tomasini,,michiel bravetti,magazzeno,40,san felice,1,12.334170922080189,45.44257673429582,False
+cattarina angela,tomasini,,giacomo feruci,magazzeno,28,san felice,1,12.334188622110965,45.44259603543768,False
+cattarina angela,tomasini,,appostolo gogho,magazzeno,33,san felice,1,12.33421163849172,45.4426141826861,False
+cattarina angela,tomasini,,antonio guadagnino,magazzeno,10,san felice,1,12.334230758832916,45.44263438091218,False
+giovanni francesco,tiepolo,,zuanne pellegrini,"casa, orto",50,san geremia,2,12.322357063994628,45.44191850473688,True
+giovanni battista,bianconi,,francesco marchesi,"casa, orto",40,san geremia,2,12.322391652246424,45.44193424009367,True
+giorgio,boncio,,zuanne carrara,magazzeno,10,san geremia,1,12.323024524545591,45.44195761388743,True
+giacomo,soranzo,,zorzi coloredo,"casa, orto",58,san geremia,2,12.323391204279265,45.44227286416256,False
+giovanni maria,pellegrini,,nadalina codori,"bottega, casa, orto",65,san geremia,3,12.32452705288084,45.44309703587083,True
+lunardo,da pesaro,,giulia zuliani,"casa, magazzeno",4,san geremia,2,12.32432528573998,45.44352083456202,False
+lunardo,da pesaro,,francesco pain,"casa, orto",27,san geremia,2,12.324338615779167,45.44396459960477,False
+lunardo,da pesaro,,stefano radichio,magazzeno,5,san geremia,1,12.324465613681827,45.444011637805744,False
+francesco,savorgnan,,francesco cicogna,"casa, orto",90,san geremia,2,12.324227929568645,45.44412758870544,False
+giacomo,soranzo,,diversi compagni,"casa, orto",14,san geremia,2,12.32274630741655,45.44254075912579,False
+girolamo,calvi,,silvestro alfarè,"casa, orto",60,san geremia,2,12.32258832683533,45.442849744121474,False
+francesco,savorgnan,,antonio fabris,"casa, orto",30,san geremia,2,12.322769002080422,45.44289306879527,False
+calichio,poli,,giacomo vettor,"casa, orto",50,san geremia,2,12.322366643616675,45.44288362981948,False
+cattarina,falier,,francesco comin,"casa, orto",50,san geremia,2,12.322745631601672,45.44344008502942,False
+francesco,bonfandin,,giacomo arnosto,"casa, orto",40,san geremia,2,12.32308770341238,45.444104759564325,False
+uberto,testa,,nobil homini pietro e ferante collalto,"orto, palazzo",230,san geremia,2,12.323100536867113,45.44458013749242,False
+bernardo,ciera,,giovanni maria valier,"casa, orto",40,san geremia,2,12.322398288428635,45.44465676109629,True
+zuanne,pomer,,bernardo giozza,"casa, orto",60,san geremia,2,12.322313411906675,45.44487152142844,True
+pietro,rinaldi,,paolo girandi,"casa, orto",17,san geremia,2,12.31948990305258,45.44589895048767,True
+marc'antonio,dolfin,,pietro viero,"casa, orto",40,san geremia,2,12.318590391292611,45.445749191298496,False
+pietro,soldadini,,paolo mangini,magazzeno,10,san geremia,1,12.318439079972345,45.445341980849015,False
+alessandro,contarini,,nicolò cason,magazzeno,12,san geremia,1,12.320190502517644,45.44694408431075,True
+alessandro,contarini,,nicolò cason,magazzeno,6,san geremia,1,12.320180922246958,45.44693319945374,True
+alessandro,contarini,,nicolò cason,magazzeno,5,san geremia,1,12.32017137562026,45.44692160472504,True
+laura,magno,,nicolò colombaci,"casa, orto",170,san geremia,2,12.319996422380438,45.44639516093295,True
+iseppo,bosio,,alessandro raffael,"casa, orto",52,san geremia,2,12.321354615860509,45.44574978558074,True
+elena,minoto,,domenico bianchi,"casa, orto",26,san geremia,2,12.321334344044043,45.445879360757566,True
+andrea,poletti,,marco zuliani,"casa, fabrico, orto",50,san geremia,3,12.32326560135824,45.44526269013216,False
+giacomo,badoer,,zuanne tamagno,"orto, palazzo",165,san geremia,2,12.323558145096246,45.44488366185335,False
+pier'antonio,calvi,,giovanni maria fiorido,magazzeno,3,san geremia,1,12.323923249939476,45.44472059848756,False
+alessandro,trevisan,,pietro vereton,magazzeno,6,san geremia,1,12.324803809372968,45.44433190098171,False
+antonio maria,begna,,andrea bortolotti,magazzeno,12,san geremia,1,12.325286843299754,45.44415134353577,False
+paolo,campagna,,vittorio bozzato,magazzeno,12,san geremia,1,12.325452907099246,45.44426894093079,False
+iseppo,bodesson,,pietro perlasca,magazzeno,4,san geremia,1,12.325634853782788,45.44411472706809,False
+stefano,pozzo,,zuanne napusta,magazzeno,2,san geremia,1,12.325840285479044,45.444296495202,False
+marco,bucelli,,andrea e fratelli zanchi,magazzeno,2,san giovanni grisostomo,1,12.336901975619336,45.4394151922482,True
+anzolo,orio,,giovanni antonio brigoni,magazzeno,20,san giovanni grisostomo,1,12.336293489878768,45.43951754105186,True
+cattarina,rota,,andrea e fratelli zanchi,magazzeno,14,san giovanni grisostomo,1,12.336224920827611,45.439515940715495,True
+lorenzo,riva,,andrea e fratelli zanchi,magazzeno,17,san giovanni grisostomo,1,12.33622391791525,45.43953723715105,True
+giulio,querini,,domenico stefani,magazzeno,10,san giovanni grisostomo,1,12.336751343770826,45.43922690541825,True
+aurelio,agazi,,andrea e fratelli zanchi,magazzeno,14,san giovanni grisostomo,1,12.33683584578661,45.43923314118775,True
+zuanne battista,lavesi,,zuanne crestinelli,magazzeno,8,san giovanni grisostomo,1,12.336956794086062,45.439280024340185,True
+zuanne,loredan,,zuanne crestinelli,magazzeno,10,san giovanni grisostomo,1,12.336988994917782,45.43928219699835,True
+gerolamo,corner,,andrea e fratelli zanchi,magazzeno,7,san giovanni grisostomo,1,12.33701611360724,45.439135012163646,True
+gerolamo,ciuran,,corrado todesco,magazzeno,50,san giovanni grisostomo,1,12.336586506789072,45.43908305856365,True
+gerolamo,ciuran,,paolo rizzi,magazzeno,15,san giovanni grisostomo,1,12.336591108462846,45.439071084704096,True
+francesco,scotti,,gaetano marini,magazzeno,10,san giovanni grisostomo,1,12.336972606726269,45.43883694053792,True
+bastian,barbarigo,,giacomo carrara dalla malvasia,magazzeno,10,san giovanni grisostomo,1,12.336955364398229,45.4388386702093,True
+bastian,barbarigo,,francesco zambelli,magazzeno,12,san giovanni grisostomo,1,12.336935163839929,45.4388389095304,True
+francesco,lorenda ruzzini,,zuanne muradori cerer,magazzeno,71,san giovanni grisostomo,1,12.33693988660588,45.43865282641431,True
+agostin,correggio,,gabriel gabrielli,magazzeno,10,san giovanni grisostomo,1,12.337388505860536,45.43879405491998,True
+agostin,correggio,,antonio demore,magazzeno,12,san giovanni grisostomo,1,12.337479246062022,45.43875353208619,True
+marin,morosini,,francesco zambelli,magazzeno,18,san giovanni grisostomo,1,12.33783793529918,45.43870362490936,True
+pietro,foscarini,,zuanne battista visentini,magazzeno,10,san giovanni grisostomo,1,12.337442074842556,45.439007081747306,True
+marc'antonio,querini,,signor giuseppe smit,magazzeno,50,san lunardo,1,12.327001046340635,45.44299065806044,True
+pietro,zucherada,,antonio fiorina,magazzeno,4,san lunardo,1,12.327023206429333,45.44354461778241,True
+antonio,grimani,,lunardo curtegiorni,magazzeno,90,san marcilian,1,12.333419625087082,45.44445453851581,True
+francesco,groppi,,giacomo dorado,magazzeno,5,san marcilian,1,12.331900103849168,45.44480755799969,False
+onorio,arrigoni,,zuanne battista ratti,magazzeno,10,san marcilian,1,12.330811313243409,45.44530832110741,False
+gerolamo,tasca,,antonio milesi,magazzeno,5,san marcilian,1,12.333127450111924,45.445019998030745,False
+nicolo,bembo,,leopoldo dal pozzo,"casa, orto",150,san marcilian,2,12.332942096045825,45.44601676147686,True
+bortolamio,benci,,zuanne de lucca,"casa, corto",24,san marcilian,2,12.331287248791426,45.44767950902619,False
+bortolamio,benci,,piero tirroni,magazzeno,25,san marcilian,1,12.33141195896574,45.447825758929774,False
+bortolamio,benci,,anselmo gentili ebreo,magazzeno,14,san marcilian,1,12.331374025146362,45.44783968315962,False
+bortolamio,benci,,anselmo gentili ebreo,magazzeno,12,san marcilian,1,12.33115992915035,45.44775299479073,False
+marco,corner,,nobil domina marietta contarini donà,orto,140,san marcuola,1,12.324129317565728,45.44641645859263,True
+chiara,moro zen,,abitavano li nobili homeni conti di collalto,"orto, palazzo",150,san marcuola,2,12.322071604599452,45.44772271364221,False
+chiara,moro zen,,domino zuanne pomer,orto,120,san marcuola,1,12.32274338589551,45.4477114670673,False
+rosalba,schiaviari pesenti,,zuanne battista de luis,"casa, orto",60,san marcuola,2,12.323845023565,45.447108886189774,True
+zuanne battista,grimani de servi,,iseppo volpe,magazzeno,18,san marcuola,1,12.325056446946173,45.44668072377597,True
+simon,zender,,domenico bagunte,"casa, orto",36,san marcuola,2,12.325530152170735,45.447073787052105,True
+zorzi,contarini,,antonio morotto,magazzeno,4,san marcuola,1,12.325631532016011,45.44662381521612,True
+domenico,celsi paulone,,francesco volpe,magazzeno,12,san marcuola,1,12.326287551792886,45.44626410582836,True
+elena,moro zen,,bortolamio barcella,magazzeno,10,san marcuola,1,12.328220975810623,45.44604975617565,False
+michiel,grimani,,zuanne pilon,magazzeno,6,san marcuola,1,12.328513743047935,45.44596912183557,False
+antonio,barbarigo,,giacomo maisetto,magazzeno,6,san marcuola,1,12.328840249201926,45.44552032687995,False
+zuanne,gatta,,maddalena polacco,"casa, orto",80,san marcuola,2,12.329088475190396,45.44544796829939,False
+marcantonio,tiepolo,,nicolò toffolo,magazzeno,12,san marcuola,1,12.329559433750244,45.44548146809044,False
+marcantonio,tiepolo,,gelmo donà,magazzeno,12,san marcuola,1,12.329599353986698,45.44556251617529,False
+marco,zen,,zuanne maria simonato,magazzeno,10,san marcuola,1,12.328159511018312,45.446523974799845,False
+agustin,maffetti,,fabricio riva,"casa, orto",30,san marcuola,2,12.327696348107215,45.446682480325954,False
+antonio maria,zorzatto,,giacomo secchi,"casa, orto",9,san marcuola,2,12.32766431815618,45.44669012795472,False
+agustin,maffetti,,giacomo secchi,"casa, orto",11,san marcuola,2,12.327640163887525,45.4466983942168,False
+antonio maria,zorzatto,,badli diana,"casa, orto",24,san marcuola,2,12.327619490277886,45.44670101775914,False
+agustin,maffetti,,baldi diana,"casa, orto",26,san marcuola,2,12.327593367227276,45.44671762431005,False
+domenico,malvicini,,iseppo clementi dall'oglio,magazzeno,22,san marcuola,1,12.32758934462416,45.44689456452112,False
+nicolo,vendramin,,domino marco arontio,"casa, orto",108,san marcuola,2,12.32744543737028,45.44690646976875,False
+antonio,michiel,,nobil homo gerolamo foscarini,"orto, palazzo",230,san marcuola,2,12.32704033938614,45.44689387504104,False
+marcantonio,mocenigo,,iseppo goldin,"casa, corto",70,san marcuola,2,12.326882737551305,45.44692283141538,False
+francesco,dona,,bortolamio bortolotti,"casa, orto",100,san marcuola,2,12.327028758016525,45.44777807423216,True
+bortolamio,albrigoni,,nobil homo ser pier alvise barbaro,"orto, palazzo",120,san marcuola,2,12.328519493660078,45.44432088388502,False
+nicolo,rolandi,,giacinto zanpardeni beccher,"casa, orto",68,san marcuola,2,12.327711303414604,45.44417620311032,False
+nicolo,rolandi,,conte picceni,magazzeno,4,san marcuola,1,12.32775918040946,45.444122718671,False
+giovanni francesco,barbarigo,,eredi barcella,"bottega, casa, magazzeno",98,san marcuola,3,12.328048065812755,45.44396893427146,False
+piero gerolamo,capello,,antonio regazzettu,"magazzeno, orto",40,san marcuola,2,12.327200215069578,45.44398396929189,True
+antonio,dal re,,nicolò algieri frutarol,"bottega, casa, magazzeno",46,san marcuola,3,12.327749562587622,45.44372911287252,True
+francesco,vicenti foscarini,,pietro bulia,magazzeno,8,san marcuola,1,12.32957777122893,45.44489815193921,False
+antonio,chimoto,,piero merlo,magazzeno,6,san marcuola,1,12.329240492046244,45.44460110205976,False
+maria,memo molin,,zuanne battista r[a]ti,magazzeno,8,san marcuola,1,12.32925669553626,45.44390098766765,False
+piero,rubini,,antonio toscan,"casa, corto",16,san marcuola,2,12.3295461541019,45.44364847277573,False
+zorzi,manolesso,,bernardo rossi,"bottega, casa, corto",45,san marcuola,3,12.328671443094096,45.44369387263824,True
+lunardo,dona,,giacomo ghedini fenestrer,magazzeno,3,santa fosca,1,12.33271420659945,45.44280754324059,True
+sebastian,molin,,antonio pascotin,magazzeno,10,santa maria maddalena,1,12.331060924536134,45.44284135287467,True
+sebastian,molin,,perina stefani,magazzeno,6,santa maria maddalena,1,12.33108401126388,45.442618372186914,True
+pietro antonio,caltai,,andriana rizzi,"bottega, casa, magazzeno",75,santa maria nova,3,12.339737136720752,45.43901165259136,True
+antonio,venier,,giuseppe smit,magazzeno,33,santa sofia,1,12.337173978532151,45.444809060988135,False
+chiara,moro zen,,cristofolo alforè,magazzeno,14,santa sofia,1,12.335070906788095,45.44183382798809,True
+francesco,mosto,,cristofolo alforè,magazzeno,19,santa sofia,1,12.335049859022972,45.44180917405138,True
+vettor,sandi,,lodovico gavazi,magazzeno,6,santa sofia,1,12.334690300589465,45.44138433044364,True
+rinaldo,zoppi,,iseppo zanchi,magazzeno,8,santa sofia,1,12.334662404333184,45.44124794268292,True
+bortolo,filippini,,domenico varuto,magazzeno,7,santa sofia,1,12.334658080097388,45.44159677637595,True
+cattarina,bresolata,,maddalena giandini,magazzeno,9,santa sofia,1,12.334633016982076,45.44105750983272,True
+cecilia,grimani sagredo,,giacomo alberti,magazzeno,13,santa sofia,1,12.334689846975316,45.44079411564984,True
+cattarina,paolino,,pietro fabris,magazzeno,5,santa sofia,1,12.335504072236532,45.44109277239889,True
+lorenzo,bonotto,,pietro fabris,magazzeno,20,santa sofia,1,12.33550880808529,45.44107795907328,True
+zuanne,morelli,,pietro fabris,magazzeno,10,santa sofia,1,12.335521415612526,45.44108891332224,True
+felino,sandei,,pietro fabris,magazzeno,2,santa sofia,1,12.33569352687475,45.4413462819572,True
+elena,lando correr,,pietro fabris,magazzeno,3,santa sofia,1,12.335917358385752,45.44135221751768,True
+felino,sandei,,pietro fabris,magazzeno,12,santa sofia,1,12.335969538400516,45.441401760457616,True
+gasparo,gritti,,tomaso tantin,magazzeno,11,santa sofia,1,12.335303164164106,45.440868132221645,True
+scipion,boldu,,pietro merlini,magazzeno,6,santa sofia,1,12.335826546028096,45.44098694982789,True
+alvise,pisani,,nobil homo ser zilio badoer,"casa, orto",140,santi apostoli,2,12.336846050562473,45.44316784674506,False
+zuanne,vidman,,"signor pietro, e francesco scalabrini carminati",magazzeno,24,santi apostoli,1,12.33842064323421,45.4418711815468,False
+zuanne,vidman,,signori pietro e francesco scalabrini carminati,magazzeno,12,santi apostoli,1,12.338299403642536,45.441693062595775,False
+angelo,ponti,,signor francesco cisara,magazzeno,10,santi apostoli,1,12.33616213795171,45.4406532754083,True
+giovanni francesco,morosini,,chiara marinelli,magazzeno,8,san biasio,1,12.35149560346951,45.43248099155173,True
+alvise,contarini,,francesco zanchi,magazzeno,9,san biasio,1,12.35134729664123,45.4322845934952,True
+alvise,contarini,,antonio zipponi,magazzeno,7,san biasio,1,12.351370545693692,45.4322028500716,True
+domenico,morosini,,francesco castagna,magazzeno,10,san biasio,1,12.350488047539985,45.43227479698416,True
+marin,morosini,,andrea zipponi,magazzeno,6,san biasio,1,12.349833205234937,45.432939914564,True
+domenico,michiel,,zuanne mani,magazzeno,40,san giovanni nuovo,1,12.342007524309254,45.4340254251492,False
+domenico,michiel,,giuseppe lozza,magazzeno,10,san giovanni nuovo,1,12.342116441362307,45.43409192120585,False
+andrea,mocenigo,,giacomo moro,magazzeno,7,san giovanni nuovo,1,12.341906893809163,45.434942678018245,True
+giovanni,cucis,,filippo romanin,magazzeno,10,san giovanni nuovo,1,12.34190748650041,45.43490858005386,True
+pietro,zaguri,,giuseppe lozza,magazzeno,12,san giovanni nuovo,1,12.341891802789918,45.43494161589213,True
+giovanni,cucis,,antonio bettinelli,magazzeno,12,san giovanni nuovo,1,12.341903391916455,45.434737925850605,False
+antonio,sardi,,meneghina assatti,magazzeno,13,san giovanni nuovo,1,12.341500541125312,45.43490123373322,True
+mattio,pirano,,andrea de pian,magazzeno,20,san giovanni nuovo,1,12.341453175580442,45.4344914998629,False
+tadia,berti,,andrea de pian,magazzeno,3,san giovanni nuovo,1,12.341449776269377,45.43447791810508,False
+ignatio,bianchini,,andrea de pian,magazzeno,3,san giovanni nuovo,1,12.3414708318156,45.43452389092247,False
+zaccaria,gabrieli,,pasqualin rossi,magazzeno,6,san giovanni in bragora,1,12.347932252575564,45.43380171408428,True
+lodovico,corner,,pellegrin tironi,magazzeno,60,san giovanni in bragora,1,12.347864331463509,45.43383318877031,True
+antonio,molin,,zuanne barcella,magazzeno,4,san giovanni in bragora,1,12.34770078872439,45.43431205553419,True
+antonio,molin,,antonio ratti favro,magazzeno,4,san giovanni in bragora,1,12.347792107274618,45.43437041339782,True
+marchio,moretti,,zuanne barcella botter,magazzeno,16,san giovanni in bragora,1,12.34752206135486,45.43417395061146,True
+pasqua,bonomo,,chiara tentora,magazzeno,5,san giovanni in bragora,1,12.347744132684124,45.43458789016572,True
+francesco,barbarigo,,piero zanell,magazzeno,12,san giovanni in bragora,1,12.348073131833283,45.43498410184711,True
+marc'antonio,tiepolo,,florio planta d'acqua vita,magazzeno,12,san giovanni in bragora,1,12.347528380549674,45.435011620518814,True
+marchio,moretti,,bortolo sanzonio,magazzeno,42,san giovanni in bragora,1,12.347311078690268,45.43425781734474,True
+michiel,morosini,,martin berchich,magazzeno,10,san giovanni in bragora,1,12.346505322028676,45.434165110164734,True
+antonio,zavanti,,carlo cattani,magazzeno,12,san giovanni in bragora,1,12.346015695475025,45.43480462473222,True
+stefano,angeloni,,schiavoni,magazzeno,20,san giovanni in bragora,1,12.34580303984248,45.43473978174757,True
+nicolo maria,gritti,,antonio de marin e antonio de galli,magazzeno,26,san giovanni in bragora,1,12.34542955378223,45.43475896069599,True
+benetto,foscarini,,andrea de luca,magazzeno,24,san giovanni in bragora,1,12.345482798921822,45.43510921697506,True
+lunardo,querini,,antonio morasso,magazzeno,8,san giovanni in bragora,1,12.344542407751671,45.43523390831244,True
+lunardo,querini,,vicenzo marcovich,magazzeno,20,san giovanni in bragora,1,12.344514270212173,45.43516138893836,True
+giovanni giacomo,massarini,,isidoro manzoni,magazzeno,15,san lio,1,12.338071637438352,45.436653617243344,True
+giovanni giacomo,massarini,,francesco oreschi,magazzeno,13,san lio,1,12.338110642048964,45.43664855669,True
+cattarina anzola,brazzi tomasini,,bernardo e fratelli venier,"casa, magazzeno",170,san lio,2,12.338332209727598,45.43659313779952,True
+giovanni battista,pietrobelli,,giovanni colussi,magazzeno,6,san lio,1,12.33877043761102,45.43727468805308,True
+marin,contarini,,giovanni occhi,magazzeno,8,san lio,1,12.339180124591456,45.43759532919579,True
+piero,duodo,,giovanni sartori,magazzeno,10,san lio,1,12.339111043036349,45.43751779861674,True
+gasparo,gritti,,giovanni battista petrobelli,magazzeno,13,san lio,1,12.339242277526727,45.43750025969216,True
+gasparo,gritti,,domenico negri,magazzeno,7,san lio,1,12.339331693352548,45.43762534641644,True
+gasparo,gritti,,giovanni battista petrobelli,magazzeno,20,san lio,1,12.338919686659915,45.43678410974489,True
+domenico,giovanelli,,cattarin duodoni,magazzeno,3,san martin,1,12.349676473716515,45.43353373020238,False
+domenico,giovanelli,,diamante zancana,"casa, corto",12,san martin,2,12.349232868841778,45.43384055061594,True
+andrea,contarini,procurator,santo benvenuti,magazzeno,6,san martin,1,12.349774813450832,45.434666441788536,True
+filippo,crota,,andrea pinelli,"casa, corto",18,san martin,2,12.350310100889132,45.433689655331015,False
+ottavian,contarini,,iseppo piccoli,"casa, corto",16,san martin,2,12.349307141712858,45.43631790536004,False
+anzola,piccoli zinelli,,elisabetta muttoni balbi,"casa, corto",130,san martin,2,12.34875868466689,45.43534985792834,True
+benetto,soranzo,,gaeatno bevilaqua,"casa, corto",16,san martin,2,12.348132429778031,45.43582479321669,False
+bernardo,lodoli,,giacomo realli,"corto, magazzeno",20,san pietro di castello,2,12.361113404660165,45.433705922325125,False
+daniel,giustinian,,iseppo reali,magazzeno,14,san pietro di castello,1,12.35231432673006,45.43255522744708,False
+daniel,giustinian,,antonio ferruti,magazzeno,14,san pietro di castello,1,12.35231391644286,45.43254242601351,False
+antonio,corner,,giovanni battista ropan,magazzeno,4,san pietro di castello,1,12.351636439873602,45.43272462705787,False
+alvise,mocenigo,,francesco e fratelli marchi,"magazzeno, squero",220,san pietro di castello,2,12.353441027223605,45.431093055431774,False
+francesco,bonamin,,gasparo ongaro,magazzeno,6,san pietro di castello,1,12.353204562259355,45.43144432430789,False
+iseppo,maderini,,francesco rossi,"casa, magazzeno, squero",120,san pietro di castello,3,12.353086364486938,45.43168391894664,False
+pietro,grimani,,bortolo pelegrini arbarol,magazzeno,9,san severo,1,12.342430609317466,45.436467738552,False
+carlo,salvioni,,iseppo epis,magazzeno,17,sant'antonino,1,12.345546591671985,45.435425076086005,True
+marc'aurelio,soranzo,,lorenzo stopan protestante,magazzeno,15,sant'antonino,1,12.345498264522714,45.43576077568639,True
+vicenzo,molin,,biasio richpergher,magazzeno,12,santa giustina,1,12.344972250603238,45.43795847039858,True
+marc'antonio,giustinian,procurator,giovanni battista paganoni,magazzeno,16,santa giustina,1,12.344714886277682,45.43851747911957,True
+girolamo,tasca,,zuane biaciuto,magazzeno,40,santa maria formosa,1,12.343063063430558,45.44083673812833,True
+giambatta,grassi,,nicolò duan armeno,magazzeno,30,santa maria formosa,1,12.342882380716109,45.440375270167664,True
+antonio,grimani,,antonio mondini,"bottega, casa, magazzeno",82,santa maria formosa,3,12.34116895746251,45.4391581628902,True
+antonio,grimani,,francesco ponori e compagno,magazzeno,14,santa maria formosa,1,12.341425452781747,45.43882638801193,True
+antonio,grimani,,gasparo de gaspari,magazzeno,16,santa maria formosa,1,12.34166250579534,45.438692450322016,True
+lodovico,zustinian,,andrea buson fabro,magazzeno,9,santa maria formosa,1,12.342040187642326,45.43869417643953,True
+anzolo,zusto,,nabriet sava mercante armena,magazzeno,45,santa maria formosa,1,12.343220898603882,45.437986628106856,True
+giacomo,herz,,giacomo e fratelli bonadei,magazzeno,14,santa maria formosa,1,12.34216484515761,45.437787830935136,True
+gioseppe,guerrier,,francesco scansi,magazzeno,8,santa maria formosa,1,12.341392984186072,45.43795089114375,False
+gasparo,gritti,,francesco scansi,magazzeno,8,santa maria formosa,1,12.341409150571458,45.438204792194966,False
+apollonia,contarini,,zuanne zanetti,magazzeno,8,santa maria formosa,1,12.34239331313283,45.4377047318734,True
+andrea,vendramin,,giorgio mattias cosich,"casa, magazzeno",266,santa maria formosa,2,12.340330638604344,45.43819239970748,False
+lunardo,pesaro,,zuanne dellotto,"bottega, magazzeno",8,santa maria formosa,2,12.339831739011842,45.43604396873874,True
+francesco,diedo,,lorenzo mazza,magazzeno,32,santa maria formosa,1,12.340649738869365,45.43624758615599,True
+andrea,vendramin,,giacomo tigelin e da esso sublocato a bernardo marchetti,magazzeno,18,santa marina,1,12.339708247732208,45.43798101251149,False
+andrea,vendramin,,vicenzo noris,magazzeno,10,santa marina,1,12.339746799298796,45.43806041540266,False
+andrea,vendramin,,nascimben rozzio,magazzeno,20,santa marina,1,12.339787063849394,45.43814451022106,False
+zuanne,venantio,,francesco rubi,magazzeno,50,santa marina,1,12.338744327023017,45.43864778232691,False
+alessandro,armani,,francesco olivi,magazzeno,18,santa marina,1,12.338539277862283,45.43856828526582,False
+zuanne,bragadin,,giovanni battista falardi,magazzeno,16,santa marina,1,12.33863274088813,45.43844449947152,True
+zuanne,bragadin,,giovanni battista falardi,magazzeno,12,santa marina,1,12.338546481966976,45.43846355983896,False
+francesco,grimani,,gasparo carara,magazzeno,14,santa marina,1,12.33849172861561,45.43819518365783,True
+annibal,fonte,,nicolò moneda,"casa, magazzeno",29,santa marina,2,12.341051461919708,45.438597622016175,False
+anzolo,cassetti,,nicolò moneda,"casa, magazzeno",8,santa marina,2,12.341144160698857,45.43858446111543,False
+antonio,gardani,,andrea rigolo,magazzeno,27,santa marina,1,12.341823378602164,45.44138705381915,True
+antonio,gardani,,lorenzo diogna,magazzeno,24,santa marina,1,12.34176482509179,45.441311352257365,True
+alvise,malipiero,,antonio sora,magazzeno,50,santa marina,1,12.341440433378033,45.44113817396169,True
+domenico,morosini,,piero cavanis,magazzeno,70,santa marina,1,12.341727137258497,45.44110448406472,True
+domenico,morosin,,andrea falconi,magazzeno,22,santa marina,1,12.34184284234783,45.44106666364549,True
+cecilia,grimani,,iseppo roman,magazzeno,6,santa marina,1,12.341016906740412,45.44114088226215,False
+gerolamo,grifalconi,,santo chechini,"casa, corto",152,santa marina,2,12.340969711081728,45.440225402915146,False
+piero,sagredo,,zuanne lazzaroni fruttarioli,magazzeno,10,santa ternita,1,12.346573291759965,45.43726497198486,True
+antonia,collalto,,vincenzo rotta,"bottega, magazzeno",15,santa ternita,2,12.34762871424949,45.43658559388283,True
+antonio,giusti,,vicenzo rotta,magazzeno,15,santa ternita,1,12.34714881640625,45.4362716985038,True
+marc'antonio,zustinian,,zuanne fiorin,magazzeno,6,san raffael,1,12.318595626537116,45.43195142817927,True
+pietro,foscarini,,giacomo favagna,magazzeno,6,san raffael,1,12.31870064750168,45.43199298193553,True
+elisabetta,zustinian,,zuanne gagieta,"casa, orto",60,san raffael,2,12.317181142162584,45.43287509408033,True
+alvise,falier,,girolamo lin,"casa, orto",105,san raffael,2,12.318989163790896,45.43474398174811,False
+francesco,biondi,,antonio todescini,magazzeno,5,san raffael,1,12.319330657301478,45.4322874267646,True
+francesco maria,canal,,piero tosso,magazzeno,66,san barnaba,1,12.325591466781884,45.43297440998531,True
+francesco maria,canal,,piero tosso,magazzeno,66,san barnaba,1,12.325591466781884,45.43297440998531,True
+silvan,capato,,zuanne battista milesi,magazzeno,4,san barnaba,1,12.32268794987118,45.43213384578922,False
+silvan,capato,,zuanne battista milesi,magazzeno,4,san barnaba,1,12.32268794987118,45.43213384578922,False
+antonio,zorzi,,maria filacco,magazzeno,7,san barnaba,1,12.323277511624717,45.43270767618082,False
+antonio,zorzi,,maria filacco,magazzeno,7,san barnaba,1,12.323277511624717,45.43270767618082,False
+iseppo,benetti,,francesco vanta,magazzeno,6,san barnaba,1,12.326014502753194,45.43395437587267,False
+iseppo,benetti,,francesco vanta,magazzeno,6,san barnaba,1,12.326014502753194,45.43395437587267,False
+elena,rizzi,,domenico gentili,magazzeno,6,san barnaba,1,12.32571283622776,45.434015531281226,False
+elena,rizzi,,domenico gentili,magazzeno,6,san barnaba,1,12.32571283622776,45.434015531281226,False
+iseppo,benetti,,francesco vanta,magazzeno,5,san barnaba,1,12.32556497794902,45.4340579043227,False
+iseppo,benetti,,francesco vanta,magazzeno,5,san barnaba,1,12.32556497794902,45.4340579043227,False
+zuanne,tron,,zuanne di giovanni lamberti,"bottega, casa, magazzeno",114,san gregorio,3,12.334675281063385,45.42945877252848,True
+pietro,contarini,,bortolo milani,magazzeno,10,san gregorio,1,12.334267619217131,45.42937107876468,True
+iseppo,benetti,,marco larese,magazzeno,10,san gregorio,1,12.33427960157365,45.42915958122161,False
+francesco,zecchini,,zuanne armani,magazzeno,5,san gregorio,1,12.333181895863008,45.43032504631242,True
+michiel,cataorta,,giovanni francesco giudici,magazzeno,16,san gregorio,1,12.333120854879542,45.43021058587212,True
+giacomo,rizzardi,,reverendo padre giovanni francesco giudici,magazzeno,6,san gregorio,1,12.332691706525656,45.4305786296456,True
+marco,manolesso,,mattio angeli,magazzeno,8,san gregorio,1,12.333186947229692,45.42951497039856,True
+zuanne,tamagno,,zuanne nizza,"casa, orto",26,san gregorio,2,12.331283496686346,45.42855093269844,False
+zuanne,tamagno,,pietro toma,magazzeno,40,san gregorio,1,12.331231789587097,45.428507344320494,False
+marco,riva,,nicolò tabacco da castello,"casa, magazzeno",55,san gregorio,2,12.329863803051994,45.428759448220426,False
+maria,vendramin,,lasagner di san luca qui non abitante,magazzeno,5,san gregorio,1,12.330691687370058,45.42952638453977,False
+zuanne,tron,,francesco moro,magazzeno,5,san nicolo,1,12.316535852567872,45.43290855787269,True
+domenico,michieli,,marco nespola,magazzeno,16,san nicolo,1,12.31431523945776,45.43245005746604,False
+nicolo,bruzzoni,,ubaldo giusto,"casa, corto",40,san nicolo,2,12.314373994292504,45.43259389450176,False
+alessandro,armani,,andrea calzavara,"bottega, casa, orto",48,san nicolo,3,12.314358692236093,45.43276400067312,False
+domenico,ganassoni,,gerolamo canella,magazzeno,6,san nicolo,1,12.314781861661896,45.4327308481903,True
+agostina,fedrici,,anna giavarina,magazzeno,10,san nicolo,1,12.317643873009304,45.43333980085348,False
+gerolamo,da lezze,,daniel scaburi,"casa, orto",40,san nicolo,2,12.317273229658252,45.43350886216404,True
+bernardo,negri,,zuanne da canal,"casa, orto",15,san nicolo,2,12.317233459175528,45.43391778603601,False
+perina,travagnini,,lazaro baggio,magazzeno,4,san nicolo,1,12.316978511811318,45.43405308176099,False
+salvador maria,callichiopoli,,zuanne coccalin,magazzeno,8,san nicolo,1,12.316714332391443,45.434600000646704,False
+elisabetta,soranzo grotta,,giacomo bragato,"magazzeno, tagliapietra",18,san pantalon,2,12.322650624755935,45.43614385237916,False
+andrea,loredan,,lorenzo rizzo,magazzeno,10,san pantalon,1,12.32468522951444,45.43533794482102,True
+nicolo,venier,,francesco soardi,magazzeno,8,san pantalon,1,12.32597199614786,45.43650614988102,True
+faustin,giustinian,,zuanne battista rotta,magazzeno,6,san pantalon,1,12.326694298425393,45.43418602436192,False
+giustinian,molin,,vincenzo beni,magazzeno,90,san pantalon,1,12.325667783957297,45.43575454712588,True
+faustin,giustinian,,vincenzo beni,magazzeno,12,san pantalon,1,12.325647673279152,45.43576449768402,True
+filippo,dona,,domenico girardi,magazzeno,7,san pantalon,1,12.325489967293194,45.43589326324234,True
+zorzi,pasqualigo,,zuanne alvera,"casetta, magazzeno",14,san pantalon,2,12.32539054298078,45.43582273685276,True
+paulo pietro,morioni,,antonio veronese,magazzeno,36,san trovaso,1,12.327824559884318,45.4316287169494,False
+gregorio,marin malipiero,,nadalin vitusi,magazzeno,4,san trovaso,1,12.325326752613917,45.432493395200645,True
+salvador,girardini,procurator,bastian costa,magazzeno,6,san trovaso,1,12.325127461885227,45.431579421757775,True
+domenico,michiel,,valentin ongaretto,magazzeno,6,san trovaso,1,12.32448030289589,45.43096524630365,True
+gasparo,moro,,pietro zanardi,magazzeno,6,sant'agnese,1,12.329461977273194,45.42924025640719,False
+zuanne battista,razzonico,,marchio brenati,"casa, magazzeno",200,sant'agnese,2,12.329231084402068,45.43077485901429,True
+gasparo,moro,,giacomo e fratelli cavani,magazzeno,32,sant'agnese,1,12.32755686793078,45.429305815823646,True
+gasparo,moro,,giovanni maria amorevoli,magazzeno,26,sant'agnese,1,12.3275662456571,45.42932095932047,True
+perina,capello,,santo marcuzzi,magazzeno,4,santa margherita,1,12.322481624732342,45.4358246654842,False
+nicolo,berlendis,,martin e giacomo fratelli ferer,"casa, orto",120,santa margherita,2,12.322783207297332,45.435149076145855,False
+marco,contarini,,piero pelegrini,"casa, orto",34,santa margherita,2,12.322304849116694,45.435059936937854,False
+francesco,duodo,,zuane salchi,magazzeno,12,santa margherita,1,12.323839032347944,45.43502174639625,False
+alvise,contarini,,antonio balai,"casa, orto",130,santa margherita,2,12.32504138199331,45.43462274634238,False
+tomaso,balbi,,valentin colini botter,magazzeno,4,santa margherita,1,12.32453560317287,45.43503925312027,True
+mattio antonio,calvi,,valentin colini botter,magazzeno,22,santa margherita,1,12.324571009159866,45.4351109001488,True
+ricca,franca,,isach bachi,magazzeno,14,ghetto nuovissimo,1,12.3273955842274,45.4450478909642,False
+isach,treves,,david novaro,magazzeno,6,ghetto nuovissimo,1,12.327659916573063,45.44507012536089,False
+iacob geremia,d'ancona,,bastian zamentin,magazzeno,11,ghetto nuovo,1,12.326564032144825,45.44536341674351,False
+bianca iacob,coen,,raffale coen,magazzeno,3,ghetto vecchio,1,12.325039061389642,45.44442172148915,False
+zuanne,capello,,salvador maggior,magazzeno,6,ghetto vecchio,1,12.325312575981494,45.44455954705563,False
+giulio,fasoli bernardo,,salamon valenzian,magazzeno,37,ghetto vecchio,1,12.325233553412628,45.4445149087178,False
+isach,tobi,,andrea barbaro,"casa, magazzeno",75,ghetto vecchio,2,12.325360948187628,45.444540815527255,False
+sara,cacia,,david sefatti,magazzeno,4,ghetto vecchio,1,12.3255671378963,45.44486291621441,False
+brunetta marco,coen,,abram cessi,magazzeno,23,ghetto vecchio,1,12.325900256851432,45.44508312560569,False
+abram,luzato,,salamon raccà,magazzeno,6,ghetto vecchio,1,12.326114519559765,45.44465493311481,False
+sarra,todesca,,marco renier,magazzeno,20,ghetto vecchio,1,12.326075401369126,45.44470176934252,False
+mandolin,coen,,iseppo zacchin,magazzeno,2,ghetto vecchio,1,12.32603622734481,45.44472682901999,False
+samuel,lessi,,cancian zucchin,magazzeno,3,ghetto vecchio,1,12.326023686011611,45.444716602632205,False
+antonio,venier,,iseppo e fratello ventura,magazzeno,14,san cassiano,1,12.33158770032684,45.44018330363564,True
+elisabetta,zinelli,,bortolo rotta,magazzeno,18,san cassiano,1,12.330743858426631,45.43900483794015,False
+andrea,guerra,,francesco astori,magazzeno,20,san cassiano,1,12.330555805278651,45.43903241947095,False
+antonio,rubini,,alvise quasini,"casa, orto",54,san cassiano,2,12.330778925961871,45.438860683121895,False
+francesco,baffini,,zuanne bassi,magazzeno,16,san cassiano,1,12.330115042913544,45.43872505305974,False
+pietro,foscarini,,pietro fiocho,magazzeno,15,san cassiano,1,12.330959739898562,45.43896511497571,False
+pietro,contarini,,zuanne lionzi,magazzeno,16,san cassiano,1,12.331653161008466,45.43980143225164,True
+pietro,contarini,,bernarda lovisetto,magazzeno,8,san cassiano,1,12.331686031616687,45.43978940883788,True
+bastian,barbarigo,,il manzoni,magazzeno,16,san cassiano,1,12.33160993135539,45.43977625906861,True
+costantin,loredan,,nicolò parini,magazzeno,6,san cassiano,1,12.332169590426254,45.43950010322032,True
+vicenzo,giustinian,,zuanne ortalli,magazzeno,18,san cassiano,1,12.333319494989851,45.44001164745264,True
+domenico,vicenzi,,zuanne ortalli,magazzeno,36,san cassiano,1,12.333308871412592,45.440001449974375,True
+tranquillo,bollani,,zulian zuliani,"casa, magazzeno",42,san cassiano,2,12.333212953856,45.4398947415996,True
+matteo agostino,correggio,,gerolamo battagia,"casa, magazzeno",80,san cassiano,2,12.333179773664638,45.4398705144872,True
+pietro,benson,,pietro e fratelli federici,magazzeno,4,san cassiano,1,12.332813044596849,45.4394270200781,True
+nicolo,donado,,giacomo gerardi,magazzeno,15,san cassiano,1,12.332635183800871,45.4393240815147,True
+antonio,bosetti,,paolo belinati,magazzeno,10,san cassiano,1,12.33245442036374,45.4391542726496,True
+alvise,vendramin,,zuanne zuliani,magazzeno,8,san cassiano,1,12.332552271937653,45.43936975808312,True
+zorzi,contenti,,giacomo costanzi,magazzeno,17,san cassiano,1,12.332205080035065,45.43911149028797,True
+zorzi,contenti,,iseppo bonomi,magazzeno,13,san cassiano,1,12.332197548859002,45.439099943665255,True
+filippo,donado,,bortolo marinoni,magazzeno,30,san cassiano,1,12.333146319630842,45.44032313476632,False
+nicolo,bembo,,zuanne calvi,magazzeno,14,san cassiano,1,12.333174315697384,45.440307443717,False
+gabriel,herz,,iseppo lorensetto,magazzeno,12,san cassiano,1,12.332467728092965,45.44002798661108,True
+marina,barbariga dolfin,,francesco feron,magazzeno,6,san cassiano,1,12.332390024313334,45.44007023147562,True
+francesco benetto,varini,,francesco maggia,magazzeno,8,san cassiano,1,12.332295889047856,45.44013980801648,True
+anzolo,grassi,,andrea zigna,"casa, orto",60,san cassiano,2,12.33230725471741,45.43998443882608,True
+marco antonio,barbarigo,,zuanne ortali,magazzeno,43,san cassiano,1,12.332815994036224,45.43989967886531,True
+andrea,guerra,,zuanne murer,magazzeno,5,san cassiano,1,12.332762927116011,45.43976199172434,True
+vittoria,quati,,antonio acerbi,magazzeno,50,san cassiano,1,12.332523880587852,45.43977914618932,True
+costantino,loredan,,nobil homini zuanne e fratelli vezi,magazzeno,15,san cassiano,1,12.332036079185418,45.43929160115916,True
+anna,pulieri padovana,,simon pedrocchi,magazzeno,6,san cassiano,1,12.331903413672253,45.43910799185856,True
+giulio,rombiasi,,zuanne grismondi,magazzeno,16,san cassiano,1,12.331729068711612,45.43929437329782,True
+vincenzo,fusi,,antonio bortolotti,magazzeno,5,san giacomo dall'orio,1,12.329567377086192,45.44030803058613,True
+almoro,barbaro,,francesco vanin,magazzeno,6,san simon apostolo,1,12.321692512182846,45.439899290719545,True
+pietro,trevano,,pietro simonelli,magazzeno,8,san simon apostolo,1,12.322377846738336,45.4399334931684,True
+pietro andrea,morari,,andrea massimo,magazzeno,8,san simon apostolo,1,12.322100479605457,45.43997104658046,True
+giacomo,soranzo,,santo todesco frutariol,magazzeno,8,san simon apostolo,1,12.322966317228598,45.43942282944983,False
+scipion,boldu,,domenico peloso,magazzeno,10,san simon apostolo,1,12.322487887954326,45.43954947490376,True
+cristoforo,codognola,,marina lancerotti,"casa, magazzeno",16,san simon profeta,2,12.324247141196835,45.44082479681892,True
+giacomo,soranzo,,giovanni antonio noris,magazzeno,12,san simon profeta,1,12.32446723536596,45.441507216871365,True
+antonio,dona,,daniel bonfiol,magazzeno,40,san simon profeta,1,12.325331999273269,45.44177159796035,True
+giovanni,barbarigo,,giacomo garelli,magazzeno,5,san simon profeta,1,12.32499684753446,45.44038399416687,True
+pietro,foscari,,cattarina ragione,"casa, corto",10,san simon profeta,2,12.32479976251296,45.4394711493658,False
+pietro,foscari,,massimiliano offner,"casa, orto",42,san simon profeta,2,12.324637478566904,45.43935932482696,False
+pietro,foscari,,maria e sorelle capolin,"casa, orto",32,san simon profeta,2,12.324581411405006,45.43930684291043,False
+pietro,foscari,,giovanni battista dolcetta,"casa, orto",60,san simon profeta,2,12.324478045202229,45.439101881258736,False
+gerolamo,gradenigo,,domenico bodai,"casa, casetta, magazzeno, orto",80,san simon profeta,4,12.3239274657762,45.44032694537778,True
+antonio,origoni,,pietro zangrandi,"casa, orto",80,san simon profeta,2,12.323347049687165,45.44104069672061,True
+paolina,badoer mocenigo,,lazaro mazzoco,magazzeno,10,san stae,1,12.329637816196891,45.44054092952759,True
+polo,trevisan,,pietro snider per domenico succhet e giovanni sparagnapan,magazzeno,40,san stae,1,12.32939727208957,45.44042938685262,True
+zorzi,bondumier,,lorenzo oselier,magazzeno,9,san stae,1,12.329115779816323,45.44068861157738,False
+nicolo,tron,,antonio davare,magazzeno,10,san stae,1,12.329466293461795,45.441110559303446,True
+ottavio,razzolini,,francesco paglioni,"magazzeno, ponte",12,san stae,2,12.331200421627477,45.44046105355209,True
+marc'antonio,trevisan,,giovanni battista povoleri,"magazzeno, ponte",121,san stae,2,12.331269719664606,45.44053045891563,True
+pietro,berlendi,,francesco fracasso,magazzeno,15,santa croce,1,12.32214196817196,45.43900496746934,False
+pietro,persego,,"figlioli, et eredi del quonda iseppo bianchi",magazzeno,20,santa croce,1,12.321617570237237,45.43633886968146,False
+alvise,mocenigho,,antonio armani,magazzeno,20,santa lucia,1,12.321768409028806,45.4420082225932,True
+alvise,mocenigho,,michiel cavenezia,"casa, orto",22,santa lucia,2,12.321862937055364,45.4419560209758,True
+alvise,mocenigho,,iseppo pedreti,"bottega, casa, magazzeno",85,santa lucia,3,12.322361651669503,45.44162028833922,True
+alvise,mocenicho,,zentilla gossen,"casa, orto",40,santa lucia,2,12.322333016094904,45.44150995982168,True
+giovanni battista,rezzonico,,domenico farusso quondam leonardo,"casa, orto",60,santa lucia,2,12.3199760050909,45.442056132224565,False
+giorgio,arigoni,,nobil homo ser costantin memo,magazzeno,9,santa lucia,1,12.319619703881443,45.4409303778377,False
+leonardo,pesaro,,nicolò appiani,"casa, casetta, orto",130,santa lucia,3,12.320679294050477,45.44001734882198,False
+francesco,trevisan,,alvise carrara spicier,magazzeno,8,san basso,1,12.339944473078935,45.43540223911345,True
+francesco,trevisan,,zamaria managus scaleter,magazzeno,10,san basso,1,12.339970167008088,45.43540971434883,True
+zuane battista,aquisti,,pellegrin pamela galliner,magazzeno,6,san basso,1,12.339155959997283,45.43519614258149,True
+zuane battista,aquisti,,antonio formazieri spader in spaderia,magazzeno,6,san basso,1,12.339111616110213,45.43517977534964,True
+zuane battista,barbaro,,giacomo zancho frutarol,magazzeno,14,san basso,1,12.33897854409934,45.43499924343634,True
+zuane battista,barbaro,,tomà nani dal vedello,magazzeno,10,san basso,1,12.338947774149457,45.43499195456417,True
+nicolo,venier,,bastian tonasiol,"bottega, casa, casetta, magazzeno",100,san benetto,4,12.33272260470444,45.43523414905112,True
+marco,michiel,,francesco orsini,"bottega, magazzeno",34,san bortolomio,2,12.337713537885495,45.43774294850749,True
+benetto,degna,,cristofolo valsecchi,magazzeno,10,san bortolomio,1,12.337424543503891,45.43801333178797,True
+gasparo,stai,,anzola armati,magazzeno,12,san bortolomio,1,12.336340139541612,45.43802489396372,True
+angelo,tomasini,,gaetano faggiani,magazzeno,12,san bortolomio,1,12.336987053993733,45.43809383216112,True
+maffio,sorano senin,,iseppo pignol,magazzeno,12,san bortolomio,1,12.337204990524231,45.43806817222124,True
+giuseppe,rossi,,inaffittato,magazzeno,8,san bortolomio,1,12.337225912989126,45.43813158763457,True
+giuseppe,rossi,,zuanne grassi,magazzeno,3,san bortolomio,1,12.337133235757827,45.43816035830945,True
+costanza,negri,,bortolo e marco fratelli rizzotti,magazzeno,10,san bortolomio,1,12.337299969042672,45.43829707793372,True
+giuseppe,rossi,,gaetano faggiani,magazzeno,14,san bortolomio,1,12.337311190306457,45.43831492903545,True
+carlo,ruzzini,,antonio venturini,"casa, magazzeno",20,san bortolomio,2,12.337296889173077,45.43805136225125,True
+giovanni giacomo,hertz,,giovanni battista calcinardi,magazzeno,40,san bortolomio,1,12.337609263680246,45.43796296972015,True
+giovanni giacomo,hertz,,francesco zamellin,magazzeno,29,san bortolomio,1,12.337417032243165,45.4381483285904,False
+giovanni giacomo,hertz,,giovanni battista manzoni,magazzeno,25,san bortolomio,1,12.337412410530185,45.43813669673919,True
+giovanni giacomo,hertz,,inafittato,magazzeno,40,san bortolomio,1,12.3373259680608,45.43809707535964,True
+daniele,bragadin,,cristofolo valsechi,magazzeno,12,san bortolomio,1,12.337470019372969,45.43795608228358,True
+nicolo,dona,,giovanni battista sola,magazzeno,18,san bortolomio,1,12.337550570406457,45.43785545815473,True
+antonio,sardi,,francesco zambelli,magazzeno,40,san bortolomio,1,12.337339708096112,45.43788753722576,True
+marino,pesaro,,venantio festari,magazzeno,24,san bortolomio,1,12.337436340922352,45.437335424979366,True
+cristofolo,rotta,,inaffittato,magazzeno,16,san bortolomio,1,12.337443572837566,45.43734651119543,True
+pietro girolamo,capello,,antonio millesi,magazzeno,6,san bortolomio,1,12.337457570241952,45.43734198551135,True
+tadio,gradenigo,,antonio millesi,magazzeno,6,san bortolomio,1,12.337556441106134,45.43730971988571,True
+alessandro,buffetti,,carlo pezzi,magazzeno,12,san bortolomio,1,12.336876756522535,45.437428186764166,True
+alessandro,buffetti,,carlo pezzi,magazzeno,10,san bortolomio,1,12.33690124266221,45.43742294682266,True
+cristina,buffetti locatelli,,giovanni maria zipponi,magazzeno,10,san bortolomio,1,12.337014244307356,45.437384359824776,True
+cecilia,soranzo piovene,,fausti zanardini,magazzeno,16,san bortolomio,1,12.337407716834637,45.43724802370077,True
+cecilia,soranzo piovene,,andrea battilana,magazzeno,14,san bortolomio,1,12.337412281448636,45.43726086727767,True
+antonio,armati,,francesco morasciutti,magazzeno,24,san bortolomio,1,12.33752606644847,45.43717510935465,True
+vittorio,palmerini,,francesco morasciutti,magazzeno,6,san bortolomio,1,12.337116729065707,45.43729776595868,True
+girolamo,morosini,,bortolo galban,magazzeno,16,san bortolomio,1,12.33577997065582,45.43733489061918,True
+marco,magno,,carlo manganoni,magazzeno,50,san bortolomio,1,12.335745492010671,45.43753399095317,True
+francesco,foscari,,gugliemo berninza,magazzeno,9,san bortolomio,1,12.336128094449313,45.43752862045662,True
+giovanni battista,loredan,,antonio rizzer,magazzeno,6,san bortolomio,1,12.33604358572379,45.43750480267773,True
+marco,magno,,giacomo capovilla,magazzeno,12,san bortolomio,1,12.336163581016509,45.43745913892819,True
+marco,magno,,carlo manganoni,magazzeno,14,san bortolomio,1,12.336148152728256,45.43743988589407,True
+marc'antonio,minio,,santo sabadin,magazzeno,8,san fantin,1,12.334316897356596,45.43327754972308,True
+elena,querini,,carlo bertoldin,"appartamento, casa, magazzeno",62,san luca,3,12.336362187293922,45.43510277499284,True
+marc'antonio,erizo,,benedetto giuponi,magazzeno,10,san luca,1,12.336578810576098,45.43584402521319,True
+marc'antonio,erizo,,zuanne guizzetti,magazzeno,22,san luca,1,12.336602366274107,45.435858957229314,True
+michiel,priuli,,giuseppe facchinetti,magazzeno,10,san luca,1,12.336077167190645,45.435548415182055,False
+antonio,boncio,,carlo et pietro rubini,magazzeno,12,san luca,1,12.335920219275325,45.43571094951045,False
+pietro,cestari,,bortolo licini,magazzeno,12,san luca,1,12.335819792323166,45.435675814933255,False
+zuanne,pasqualigo,,giovanni maria degiustina,"casa, magazzeno",32,san luca,2,12.335775423974711,45.434938364023935,True
+zuanne,pasqualigo,,bernardo gismondi,magazzeno,10,san luca,1,12.335669449580983,45.43488558167441,False
+zuanne,pasqualigo,,iseppo zambelli,magazzeno,6,san luca,1,12.335638781381032,45.434913613458114,False
+gerolemo ascanio,giustinian,,antonio marangon,"bottega, magazzeno",46,san luca,2,12.33552562502562,45.43573466118888,False
+antonio,dandolo,,francesco diogna,"bottega, magazzeno",85,san luca,2,12.334477780477757,45.43673099522994,False
+antonio,dandolo,,nicolò berizzi,magazzeno,35,san luca,1,12.334442818598628,45.43671855921546,False
+oratio,bembo,,giulio tabacco,magazzeno,8,san luca,1,12.33441093998888,45.43669457571665,False
+giovanni battista,loredan,,giacomo planta,"bottega, casa, magazzeno",170,san luca,3,12.334044501471574,45.4365859105162,True
+antonio,dona,,pietro quazzi,magazzeno,18,san luca,1,12.334368478154364,45.43607900313597,True
+felippo,farsetti,,"antonio schiavi, et antonio chrestinelli",magazzeno,24,san luca,1,12.33422385349717,45.43608820235926,True
+felippo,farsetti,,pietro maffei,"casa, magazzeno",200,san luca,2,12.33424407232778,45.436065317092606,True
+giuseppe,guerriero,,piero giacomelli,"bottega, magazzeno",70,san maurizio,2,12.332044275543408,45.43280838640369,True
+francesco,foscari,,antonio salvi,magazzeno,6,san moise,1,12.336194015359386,45.43340577273871,True
+cristina,da mula contarini,,zuanne panciera,magazzeno,8,san moise,1,12.336224045755484,45.43341222366336,True
+francesco,foscari,,nicolò tagliapietra,magazzeno,6,san moise,1,12.33649363086157,45.43350969432404,True
+giovanni battista,baglioni,,cosmo canella q. angelo,"casa, magazzeno",75,san moise,2,12.336526887717612,45.43398043250893,True
+zuane,tron,,alessandro lazaroni,magazzeno,16,san moise,1,12.33603800382644,45.43460802627581,True
+antonio,venier,,antonio spadon,magazzeno,4,san moise,1,12.33574299332779,45.4345474068634,True
+cecilia,grimani caleri,,vincenzo crescenti,"appartamento, casa, magazzeno",163,san moise,3,12.335548712759126,45.43453547858786,False
+domenico,michiel,,giacomo zambetti,"bottega, casa, magazzeno",131,san moise,3,12.336377731916752,45.4338278615981,True
+daniel,giustinian,,giacomo zambeti,magazzeno,7,san moise,1,12.335610790421756,45.433576429084845,True
+bortolo,zanoli,,antonio cattani,magazzeno,10,san moise,1,12.3356619957069,45.43359519746817,True
+giovanni battista,bon,,tomaso giavanotto,magazzeno,12,san moise,1,12.335836708022477,45.43362983765204,True
+carlo,angaran,,bernardo michielini,magazzeno,10,san moise,1,12.335879612105211,45.43365085795468,True
+bortolo,mustitelli,,bernardo tirabosco,magazzeno,8,san moise,1,12.335913339133045,45.43365355204499,True
+giovanni battista,marchesati,,bernardo tirabosco,magazzeno,16,san moise,1,12.336107764730052,45.43366571748802,True
+tomaso,calvi,,giovanni battista marchesati,magazzeno,12,san moise,1,12.33610262261264,45.43383244450528,True
+giovanni battista,marchesati,,giacomo traversi,magazzeno,12,san moise,1,12.336119497282834,45.43387669530217,True
+giovanni antonio,querini,,anzola benetella,magazzeno,10,san moise,1,12.336318796178844,45.43372784756345,True
+zorzi,morosin,,tomaso giavaroto,magazzeno,12,san moise,1,12.336299813823882,45.4335557904429,True
+costantin,frangin,,zuanne caldari,magazzeno,36,san moise,1,12.33605703655479,45.43347766477157,True
+giovanni battista,contarini,,iseppo luchini,magazzeno,10,san moise,1,12.335858643316968,45.43346349980275,True
+piero,foscarini,,iseppo gerardi,magazzeno,14,san moise,1,12.337023958735235,45.43281472650017,True
+michela,michieli,,mattio calvi,magazzeno,30,san moise,1,12.336813106694487,45.43323788847764,True
+vetor,da mosto,,carlo calvi,magazzeno,28,san moise,1,12.336182712007552,45.43218896350281,False
+giacomo,badoer,,bernardo tirabosco,magazzeno,15,san moise,1,12.335511019821498,45.4322762528212,False
+giacomo,badoer,,lunardo capitanachi sive andrea bonifacio,magazzeno,28,san moise,1,12.33569278075282,45.432327213196345,True
+anzolo,michiel,,abbate sordina,magazzeno,6,san moise,1,12.335264610184216,45.43262040208177,True
+lauro,querini,,nicolò venier,magazzeno,10,san moise,1,12.334856534265969,45.43291811059102,False
+gerolamo,priuli,,piero e fratelli sonzi,magazzeno,10,san moise,1,12.334803341569788,45.43344362843176,True
+alvise,corner,,aurelio maldura,magazzeno,6,san moise,1,12.335121295557656,45.43340147541421,True
+nicolo,bobdumier,,piero e fratelli sonci,"bottega, magazzeno",16,san moise,2,12.335350736718556,45.43311880774618,True
+vicenzo,molin,,antonio massarin,"bottega, magazzeno",8,san moise,2,12.33532688332239,45.43309532950845,True
+zuane,emo,procurator,giacomo san vido,"bottega, casa, magazzeno",51,san paternian,3,12.333354573365956,45.43507795949563,True
+gasparo,gritti,,giacomo fanzelli,magazzeno,8,san paternian,1,12.334680509091909,45.43567954797198,True
+francesco,pasqualigo basadonna,,anna maria salvarina,"bottega, casa, corto",50,san paternian,3,12.335488050567855,45.43453103703826,False
+francesco,pasqualigo basadonna,,ludovica tintimar,"bottega, corto",50,san paternian,2,12.335467955154952,45.43457338741754,False
+nadal,dona,,giuseppe zorzi,magazzeno,20,san salvador,1,12.335697891908978,45.43652547250289,True
+annibale,fonte,,redolfo baldini,magazzeno,4,san salvador,1,12.335879236926138,45.43700575628235,True
+alvise,michieli,,domenico ricco,magazzeno,6,san salvador,1,12.335787189140468,45.43718948938741,True
+vicenzo,pisani,,domenico ricco,magazzeno,6,san salvador,1,12.33574727109516,45.43720545751553,True
+vicenzo,pisani,,battista nardini,magazzeno,10,san salvador,1,12.33570209566641,45.43722575025701,True
+zorzi,morosini,,carlo calvi,magazzeno,8,san salvador,1,12.335618356628206,45.43725337033876,True
+butta,buttacalice,,carlo chiarello,magazzeno,16,san salvador,1,12.33709682912655,45.43707683425297,True
+giovanni antonio,arizi,,carlo chiarello,magazzeno,16,san salvador,1,12.337091251857943,45.43705921633428,True
+antonio,ferro,,pietro valsechi,magazzeno,14,san salvador,1,12.337443119665307,45.43649405795748,True
+angelo,filosi,,francesco prina,"bottega, casa, magazzeno",104,san salvador,3,12.337138406300312,45.43605480897818,True
+ottavio,negri,,fratelli zucconi,magazzeno,18,san salvador,1,12.33479599502193,45.43685527524419,False
+francesco,moro,,carlo calvi,magazzeno,38,san salvador,1,12.335016094260146,45.436866598113454,False
+luigi,ferzi,,antonio gardani,magazzeno,20,san salvador,1,12.335270321928324,45.43665207715252,True
+cattarina,bolani,,giuseppe dir,magazzeno,12,san salvador,1,12.335426073500674,45.43650793749212,True
+zuanne,sagredo,,zuanne fontanella,magazzeno,28,san salvador,1,12.33593354113506,45.43631605337055,True
+paolina,badoer mocenigo,,giacomo fomadelli,magazzeno,18,san salvador,1,12.33596150087617,45.436122242996525,True
+paolina,badoer mocenigo,,vicenzo turaghelli,magazzeno,29,san salvador,1,12.335935813826069,45.43611967914119,True
+cecilia,vidiman bettoni,,angelo stainer,magazzeno,56,san salvador,1,12.336236090397335,45.43579200969511,False
+andrea,corner,procurator,scola del santissimo sacramento in s. samuel,magazzeno,16,san samuel,1,12.32830151557066,45.43385904233499,True
+pietro paolo,galante,,francesco pighetti,magazzeno,10,san samuel,1,12.329889445029986,45.4344994591516,True
+marco,nespola,,gasparo dalla todesca,"bottega, casa, magazzeno",50,san samuel,3,12.329839964343066,45.43448218174369,True
+zuanne,soravia,,zuanne santa ranna,magazzeno,2,san samuel,1,12.32933876201034,45.43399466387836,True
+bortolo,maffetti,,pietro e fratello novelli,magazzeno,12,san samuel,1,12.328319782836402,45.432958112658696,True
+lorenzo,vignola,,giacomo rossi ora carlo piai,magazzeno,22,san samuel,1,12.32848423644304,45.432891438520734,True
+giovanni maria,manzoni,,giacomo cataneo,magazzeno,36,san samuel,1,12.328182630309168,45.43277721895453,True
+gasparo,de lucca,,sublocata a gasparo dalla todesca da marco nespola,"bottega, casa, magazzeno",25,san samuel,3,12.329822901840162,45.43447655954517,True
+benedetto giovanni,toffetti,,antonio cenzato frutariol,magazzeno,7,san vidal,1,12.329669283112011,45.43305524618028,True
+giovanni battista,zen,,andrea pisenti formagier,"bottega, magazzeno",16,san ziminian,2,12.337645596421954,45.43325777677358,False
+giovanni battista,zen,,andrea pisenti formagier,"bottega, magazzeno",16,san ziminian,2,12.337645596421954,45.43325777677358,False
+giacomo,curnis,,giacomo rorsetto verier,"bottega, magazzeno",18,san ziminian,2,12.33721667039757,45.434381946208845,True
+giacomo,curnis,,giacomo rorsetto verier,"bottega, magazzeno",18,san ziminian,2,12.33721667039757,45.434381946208845,True
+nicolo,tron,,giovanni andrea castelli,magazzeno,5,san ziminian,1,12.337344973094323,45.43509721960029,True
+nicolo,tron,,giovanni andrea castelli,magazzeno,5,san ziminian,1,12.337344973094323,45.43509721960029,True
+zuanne,basadona,,francesco canazzo,magazzeno,12,san ziminian,1,12.337362311225652,45.43523802250249,True
+zuanne,basadona,,francesco canazzo,magazzeno,12,san ziminian,1,12.337362311225652,45.43523802250249,True
+girolamo,bragadin,,zuanne pezzide calderer,"bottega, casa, magazzeno",57,san ziminian,3,12.337330360810268,45.43476351673844,True
+girolamo,bragadin,,zuanne pezzide calderer,"bottega, casa, magazzeno",57,san ziminian,3,12.337330360810268,45.43476351673844,True
+zuanne,bragadin,,biasio dioniso,magazzeno,4,san ziminian,1,12.337322687095163,45.43448126219393,True
+zuanne,bragadin,,biasio dioniso,magazzeno,4,san ziminian,1,12.337322687095163,45.43448126219393,True
+nicolo,olmo,,giovanni battista grolla,magazzeno,20,san ziminian,1,12.33744146510648,45.43456884209091,True
+nicolo,olmo,,giovanni battista grolla,magazzeno,20,san ziminian,1,12.33744146510648,45.43456884209091,True
+nicolo,olmo,,giovanni battista grolla,"bottega, casa, magazzeno",130,san ziminian,3,12.337645837896604,45.434601688288886,True
+nicolo,olmo,,giovanni battista grolla,"bottega, casa, magazzeno",130,san ziminian,3,12.337645837896604,45.434601688288886,True
+andrea,spinelli,,carlo bertanini,magazzeno,22,san ziminian,1,12.337853920630076,45.43480001231589,True
+andrea,spinelli,,carlo bertanini,magazzeno,22,san ziminian,1,12.337853920630076,45.43480001231589,True
+andrea,spinelli,,andrea caribon fabro,magazzeno,7,san ziminian,1,12.33788186394452,45.43475102510731,True
+andrea,spinelli,,andrea caribon fabro,magazzeno,7,san ziminian,1,12.33788186394452,45.43475102510731,True
+gasparo,dolfin,,antonio faisol,magazzeno,12,san ziminian,1,12.337790862972849,45.43468911953186,True
+gasparo,dolfin,,antonio faisol,magazzeno,12,san ziminian,1,12.337790862972849,45.43468911953186,True
+girolamo,corner,,battista boni,magazzeno,6,san ziminian,1,12.337780527391647,45.4346846353985,True
+girolamo,corner,,battista boni,magazzeno,6,san ziminian,1,12.337780527391647,45.4346846353985,True
+domenico,mazo,,domenico garganico,magazzeno,6,san ziminian,1,12.337765651869349,45.434680575747,True
+domenico,mazo,,domenico garganico,magazzeno,6,san ziminian,1,12.337765651869349,45.434680575747,True
+gasparo,dolfin,,tomaso pizzoli,magazzeno,22,san ziminian,1,12.338062471798043,45.434811108341975,True
+gasparo,dolfin,,tomaso pizzoli,magazzeno,22,san ziminian,1,12.338062471798043,45.434811108341975,True
+gasparo,dolfin,,antonio auchaini dall'aglio,magazzeno,10,san ziminian,1,12.338061350570712,45.43491235436641,True
+gasparo,dolfin,,antonio auchaini dall'aglio,magazzeno,10,san ziminian,1,12.338061350570712,45.43491235436641,True
+gasparo,dolfin,,iseppo algaroti,magazzeno,10,san ziminian,1,12.337956566768982,45.434961887754994,True
+gasparo,dolfin,,iseppo algaroti,magazzeno,10,san ziminian,1,12.337956566768982,45.434961887754994,True
+antonio,zorzi,,giovanni paolo sanzonio,magazzeno,260,san zulian,1,12.337857816680586,45.436297114614376,True
+zuanne maria,raspi,,bernardin milesi,magazzeno,16,san zulian,1,12.338353559406237,45.43633540088929,True
+anzolo,filosi,,domenico irma,magazzeno,4,san zulian,1,12.338138105475268,45.43608451284833,True
+anzolo,filosi,,antonio de zuanne d'andrea,magazzeno,10,san zulian,1,12.337982236860514,45.43613587711541,True
+marco,querini,,piero cestari,magazzeno,10,san zulian,1,12.339524561570652,45.436639935846365,False
+antonio maria,rossi,,antonio scolari,magazzeno,5,san zulian,1,12.339445432199897,45.436598539915394,True
+nicolo,duodo,,vicenzo mosconi,magazzeno,12,sant'angelo,1,12.332611954058777,45.43443750388924,True
+domenico,piccoli,,gabriel berlendis,magazzeno,12,sant'angelo,1,12.333279688387796,45.43389507116208,True
+cattarina,vitturi moresini,,antonio mascaroni,magazzeno,7,sant'angelo,1,12.33234527321023,45.43401846643344,True
+francesco,rizzo,,antonio mascaroni,magazzeno,10,sant'angelo,1,12.332478840832566,45.434054627809104,True
+girolamo,morosini,,zuanne fiorentin marangon,"casa, magazzeno",12,santa maria zobenigo,2,12.333205368728931,45.43278749908053,True
+marc'antonio,barbarigo,,pietro dal pesce strazzarol,"bottega, magazzeno",20,santa maria zobenigo,2,12.33286625620676,45.43221928306534,True
+pisana,barbaro bragadin,,bortolo poli stramazer,magazzeno,6,santa maria zobenigo,1,12.33374950861906,45.43226109781316,True
+michiel,priuli,,giacomo gregorin,magazzeno,10,san boldo,1,12.328866657320898,45.43969655205532,False
+maria,zane venier,,zuanne e giulio fratelli roselli,magazzeno,80,san boldo,1,12.327930315758124,45.43898953554251,False
+antonio,albergoni,,pietro salamon,magazzeno,80,san boldo,1,12.326600101743145,45.43924065912747,False
+zuanne,mocenigo,,antonio fanton naranzer,magazzeno,8,san giovanni elmosinario,1,12.335639141715207,45.438369203291664,True
+giovanna,astori,,mattio fracasto da buttiro,magazzeno,41,san giovanni elmosinario,1,12.335646357778757,45.43844680637165,True
+giacomo,lazari,,carlo gavazzi da biave,magazzeno,11,san giovanni elmosinario,1,12.335674955560188,45.43848228953475,True
+francesco,capelo,,antonio persico,magazzeno,16,san giovanni elmosinario,1,12.334617780292838,45.43913718792237,True
+chiara,pisani,tutrice,paron marco pasin,magazzeno,18,san giovanni elmosinario,1,12.334766700880367,45.43926526588857,True
+marcantonio,michiel,,bortolo rotta,"bottega, magazzeno",20,san giovanni elmosinario,2,12.33519565192146,45.43903183613221,True
+zenura,loredana,,marco rizzotti,"bottega, magazzeno",95,san giovanni elmosinario,2,12.335353549574842,45.43831452332479,True
+vicenzo,riva,,valentin ziminiani,magazzeno,16,san giovanni elmosinario,1,12.334426873180966,45.438057886908105,True
+tomaso,querini,,picin zuccoli carter,magazzeno,14,san giovanni elmosinario,1,12.33436626765405,45.43830732888246,True
+tomaso,querini,,francesco minici,magazzeno,14,san giovanni elmosinario,1,12.334397772996184,45.43828361530805,True
+bastian,molin,,zuane ghet fabro,magazzeno,6,san giovanni elmosinario,1,12.334440550754646,45.43825099646845,True
+tomaso,querini,,zuanne spada,magazzeno,12,san giovanni elmosinario,1,12.334861141317225,45.43803122345787,True
+tomaso,querini,,zuanne bettini,"calle, magazzeno",53,san giovanni elmosinario,2,12.334956921750011,45.43811750482839,True
+marc'antonio,grimani,,andrea molinari,magazzeno,14,san giovanni elmosinario,1,12.33462297631579,45.43845620036811,True
+michiel,morosini,,carlo tomasini,magazzeno,4,san giovanni elmosinario,1,12.335055567345314,45.43824663946533,True
+michiel,morosini,,mattio pitton,magazzeno,15,san giovanni elmosinario,1,12.335060697429668,45.43824141094477,True
+zorzi,arigoni,,antonio margnani,magazzeno,20,san giovanni elmosinario,1,12.335099500385676,45.43828739554949,True
+tomaso,querini,,pietro vielli da chiodi,magazzeno,22,san giovanni elmosinario,1,12.334491888746715,45.43852037479393,True
+tomaso,querini,,mattio fracasso,magazzeno,32,san giovanni elmosinario,1,12.334478227110798,45.43851088720729,True
+marianna,cassetti,,giovanni battista ganassete,magazzeno,6,san giovanni elmosinario,1,12.334312242686517,45.43862467329824,True
+silvestro,valier bembo,,domenico disman,magazzeno,8,san giovanni elmosinario,1,12.334295225976163,45.43864032076929,True
+zuanne,zulian,,giannantonio tomasini,magazzeno,7,san giovanni elmosinario,1,12.333709429527191,45.43888033380761,True
+antonio,zenari,,sgualdo calici,magazzeno,6,san giovanni elmosinario,1,12.335333761071707,45.43797200083888,True
+alvise,lombardo,,sgualdo calici,magazzeno,3,san giovanni elmosinario,1,12.335321075645345,45.437964828275454,True
+cattarina angela,bavi tomasini,,francesco minici,magazzeno,9,san giovanni elmosinario,1,12.334347724021336,45.438468525104426,True
+pietro,foscarini,,francesco pipa mariani spezier,magazzeno,9,san giovanni elmosinario,1,12.33434198499604,45.4384981887683,True
+cattarina,bracci,,bortolo gardelini,magazzeno,6,san giovanni elmosinario,1,12.334311484435368,45.43847727710588,True
+tomaso,querini,,ubaldo albertini,magazzeno,10,san giovanni elmosinario,1,12.334300285976717,45.438507911454735,True
+tomaso,querini,,nicolò tosatti,magazzeno,10,san giovanni elmosinario,1,12.334250969957834,45.43855260222778,True
+bortolo,gradenigo,,nicolò tosatti,magazzeno,20,san giovanni elmosinario,1,12.334246312424131,45.43857083049147,True
+agostin,maffetti,,alessandro pelli,magazzeno,8,san mattio,1,12.333132198007402,45.4390781816138,False
+pietro maria,contarini suriani,,antonio lucatelli,magazzeno,8,san mattio,1,12.333216929750952,45.43897825364674,False
+pietro,grimani,,venantio da venezia,magazzeno,12,san mattio,1,12.333568573316256,45.439562786697415,False
+pietro,grimani,,giacomo curnis,"magazzeno, volta",70,san mattio,2,12.333527650930533,45.43957259108664,False
+angelo,memo,,antonio grotti,"bottega, magazzeno, volta",25,san mattio,3,12.334353125920314,45.43964443123383,False
+pietro,baroci,,antonio grotti,"bottega, magazzeno, volta",26,san mattio,3,12.334364093014306,45.43963663142442,False
+giacomo,baroci,,antonio grotti,"bottega, magazzeno, volta",26,san mattio,3,12.334380992893704,45.439631418816205,False
+pietro,baroci,,antonio grotti,"bottega, magazzeno, volta",11,san mattio,3,12.334344923838806,45.43962853737513,False
+pietro,castelli,,antonio grotti,"bottega, magazzeno, volta",5,san mattio,3,12.334377300987754,45.43961756917999,False
+vicenzo,contarini ponte,,carlo astori,magazzeno,12,san mattio,1,12.334425899731022,45.439388297627694,True
+cristina,damula,,giovanni battista mazocco,magazzeno,9,san mattio,1,12.334365377066163,45.43931699357549,True
+francesco maria,lini,,carlo lucatelli,"casa, magazzeno",47,san mattio,2,12.334089749457684,45.4393221029053,True
+francesco,vitti,,giovanni battista mazocco,"magazzeno, volta",15,san mattio,2,12.334353582056298,45.4395306438616,True
+nicoletto,capogrosso,,iseppo venturelli,magazzeno,7,san mattio,1,12.33428138719431,45.43945055874129,True
+giacomo,correr,,iseppo rogante,magazzeno,36,san mattio,1,12.33358045416044,45.4391976210885,True
+giacomo,correr,,pescatori,magazzeno,12,san mattio,1,12.333551224601234,45.43921334728692,True
+zorzi,manolesso,,giacomo pini,magazzeno,16,san mattio,1,12.333962194552692,45.43909035630409,True
+zorzi,manolesso,,martin astolfoni,magazzeno,16,san mattio,1,12.333886431087617,45.43904251590717,True
+francesco,molin,,lorenzo nogari,magazzeno,8,san mattio,1,12.33383129014815,45.43899502489744,True
+alvise,damosto,,battista sagramora,magazzeno,5,san mattio,1,12.333858651794063,45.43898229371068,True
+giorgio,emo,,angelo pelli,"casa, magazzeno",50,san mattio,2,12.33376637769159,45.43895747464476,True
+isabella,molin correr,,musino dacier di pesce,magazzeno,5,san mattio,1,12.334031360968302,45.438901922759406,True
+isabella,molin correr,,musino dacier di pesce,magazzeno,6,san mattio,1,12.334040531922238,45.43890998130975,True
+elisabetta,tron,,francesco filiasi,magazzeno,12,san mattio,1,12.333879793087164,45.43852973823323,True
+piero,sanudo,,signori rubbi,"casa, magazzeno",55,san polo,2,12.32897907108748,45.438083998453024,False
+polo,trevisan,,antonio armati,"casa, magazzeno",160,san polo,2,12.329224125867755,45.43821503637075,False
+giulio,querini,,lorenzo pezzana,magazzeno,24,san polo,1,12.329192690530837,45.43823722206746,False
+marc'antonio,molin,,marco bullo,magazzeno,24,san polo,1,12.330516897190767,45.43664690121724,True
+filippo,pasqualigo,,zuanne andrea bullo,magazzeno,20,san polo,1,12.329559325024803,45.43667798316072,True
+zuanne,pasqualigo,,antonio bontio,magazzeno,26,san polo,1,12.32953377612341,45.4366674527969,True
+zuanne,zuliani,,ferigo boato,magazzeno,10,san polo,1,12.329512500978309,45.43672731446663,True
+maria,contarini,,santo fornasato,magazzeno,27,san polo,1,12.32936649683194,45.43685454963526,True
+zuanne,foscarini,,di un mercante schiavon,magazzeno,50,san polo,1,12.329580786125629,45.436913046782514,True
+marc'antonio,tiepolo,,francesco bencioni,magazzeno,66,san polo,1,12.328554736122626,45.4360844966931,True
+cattarina angela,tomasini,,zuanne valle,magazzeno,24,san polo,1,12.328246265961424,45.4371010948899,False
+cattarina angela,tomasini,,aron viel,magazzeno,35,san polo,1,12.328225887772652,45.43711895490047,False
+cattarina angela,tomasini,,giacomo gambara,magazzeno,20,san polo,1,12.32820242698458,45.43704123725816,False
+fiorenza,gron marcello,,domenico tavellini,magazzeno,15,san polo,1,12.327998621414562,45.43701354471671,False
+andriana,moro,,zuanne brada,magazzeno,35,san polo,1,12.32845236479138,45.43726407643352,True
+francesco,bragadin,,antonio capellan,magazzeno,12,san silvestro,1,12.333058531448732,45.43761489726767,True
+giulio,querini,,zuanne bevilaqua,magazzeno,8,san silvestro,1,12.332983381754076,45.4370497192245,True
+andrea,ventura,,piero lanza,magazzeno,21,san silvestro,1,12.33203162815428,45.43733948360875,True
+andrea,ventura,,anzolo forini,magazzeno,8,san silvestro,1,12.33214246022428,45.43734090908557,True
+piero,bembo,,zuane battista piccolin,"bottega, magazzeno",3,san silvestro,2,12.331987086209194,45.437581989833554,True
+francesco,querini,,piero battagia,magazzeno,5,san silvestro,1,12.332166061931716,45.43789556035425,True
+zuanne,bragadin,,andrea facchetti,magazzeno,4,san silvestro,1,12.332589636564148,45.43775863297469,True
+girolamo,cassetti,,vendramin rizzuto,magazzeno,12,san silvestro,1,12.33353962473659,45.437996181654455,True
+giovanni maria,raspi,,giacomo di marco,"corto, magazzeno",16,san silvestro,2,12.333597912969314,45.43812216911696,True
+zuanne,barbarigo,,bernardo simoni,"bottega, magazzeno",16,san silvestro,2,12.333632585611488,45.438282042418194,True
+nicolo,da ponte,,orazio maria mornigo,"bottega, magazzeno",12,san silvestro,2,12.333655658586627,45.438319288357135,True
+silvestro,valier bembo,,pancratio guarnieri,magazzeno,12,san silvestro,1,12.334178820696962,45.43778800662776,True
+lorenzo,pezzana,,francesco gelmi,magazzeno,18,san silvestro,1,12.33420200565734,45.43777019470894,True
+cristoforo,zane,,marian fantoni,magazzeno,10,san silvestro,1,12.334099576490695,45.43804703691809,True
+polo,donado,,marco pasini,magazzeno,12,san silvestro,1,12.334300669270885,45.437849845867845,True
+anzola,capello,,francesco gelmi,magazzeno,13,san silvestro,1,12.334337923865371,45.43781007619655,True
+giulio,damian,,lunardo zen,magazzeno,12,san silvestro,1,12.334481114654846,45.43765610513046,True
+alvise,contarini,,bortolo ossi,magazzeno,10,san silvestro,1,12.334011201585549,45.43780834415013,True
+lunardo zuanne,zen,,paolo ploaser,magazzeno,10,san silvestro,1,12.334049522733832,45.43782497081257,True
+giovanni battista,contarini,,bernardo e antonio fratelli saletti spezieri,magazzeno,12,san stin,1,12.32712180792154,45.4379192259405,True
+zorzi,mazzari,,giacomo spada,magazzeno,16,san toma,1,12.328551513200155,45.43573162267335,True
+carlo,tessini,,zuanne cillis,magazzeno,24,san toma,1,12.327286515548735,45.436997806427975,True
+marc'antonio,zorzi,,francesco dandolo,magazzeno,18,san toma,1,12.327717584677645,45.43562001893167,True
+girolamo,corner,,bortolo zanchi,magazzeno,12,san toma,1,12.32776926626066,45.43557919515029,True
+tomaso,querini,,fratelli marcelli,magazzeno,28,sant'agostin,1,12.329434732972455,45.43871504535021,False
+pasquale,tagliapietra,,giovanni molinari,magazzeno,12,sant'aponal,1,12.331570838449457,45.4371973510431,False
+antonio,nadali,,valentin sergato,magazzeno,8,sant'aponal,1,12.332018825238876,45.43690794180616,False
+antonio,nadali,,zorzi martini,magazzeno,8,sant'aponal,1,12.332067959462933,45.43681371793826,False
+marin,zorzi,,antonio de cavoli,"casa, magazzeno",210,sant'aponal,2,12.331365193293694,45.43826834785112,False
+marin,zorzi,,antonio persico,"casa, magazzeno",120,sant'aponal,2,12.33140976386872,45.4381228900944,True
+angelo,simoni,,francesco melchiori,magazzeno,12,sant'aponal,1,12.331003850713165,45.438141911869074,False
+marc'antonio,premuda,,giacomo franzoni,magazzeno,24,sant'aponal,1,12.332295390483086,45.438592925920304,True
+piero,venier,,giacomo franzoni,magazzeno,18,sant'aponal,1,12.332318452845636,45.43857773344231,True
+piero,venier,,pietro fagiol,magazzeno,11,sant'aponal,1,12.332330447201818,45.438560315820354,True
+piero,duodo,,carlo garcanico,magazzeno,6,sant'aponal,1,12.333720581980876,45.43840893742811,True
+angela,benvenuti,,bortolo lioni,magazzeno,7,sant'aponal,1,12.333182754808927,45.43850059319448,True
+marco,molin,,bernardo donini,"casa, magazzeno",7,sant'aponal,2,12.333327643395585,45.43821196201632,True
+zaccaria,valier,,iseppo preba,magazzeno,8,sant'aponal,1,12.333356186930104,45.43816936721274,True
+benedetto,musitelli,,pellegrin gallicci,magazzeno,3,sant'aponal,1,12.333234841991882,45.4381807886808,True
+daniel,morosini,,pellegrin gallicci,magazzeno,12,sant'aponal,1,12.33324122248082,45.43817135136212,True
+girolamo,corner,,pellegrin gallicci,magazzeno,18,sant'aponal,1,12.333247219473945,45.43816264249807,True
+nicolo,moro,,pellegrin gallicci,magazzeno,18,sant'aponal,1,12.333256168658869,45.43815056134021,True
+sebastian,molin,,luca zanetti,magazzeno,6,sant'aponal,1,12.333105685429972,45.43789356616215,True
+sebastian,molin,,gioachin zardini,magazzeno,10,sant'aponal,1,12.33311204366225,45.43788531025176,True
